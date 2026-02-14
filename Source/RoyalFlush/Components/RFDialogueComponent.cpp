@@ -1,8 +1,8 @@
-#include "DialogueComponent.h"
+#include "RFDialogueComponent.h"
 
 
 // Sets default values for this component's properties
-UDialogueComponent::UDialogueComponent()
+URFDialogueComponent::URFDialogueComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
@@ -13,7 +13,7 @@ UDialogueComponent::UDialogueComponent()
 
 
 // Called when the game starts
-void UDialogueComponent::BeginPlay()
+void URFDialogueComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -23,7 +23,7 @@ void UDialogueComponent::BeginPlay()
 
 
 // Called every frame
-void UDialogueComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void URFDialogueComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 

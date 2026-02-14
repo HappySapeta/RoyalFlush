@@ -3,17 +3,17 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "DlgSystem/DlgDialogueParticipant.h"
-#include "DialogueComponent.generated.h"
+#include "RFDialogueComponent.generated.h"
 
 
 UCLASS(Blueprintable, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class ROYALFLUSH_API UDialogueComponent : public UActorComponent, public IDlgDialogueParticipant
+class ROYALFLUSH_API URFDialogueComponent : public UActorComponent, public IDlgDialogueParticipant
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UDialogueComponent();
+	URFDialogueComponent();
  
 protected:
 	// Called when the game starts
