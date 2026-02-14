@@ -1,5 +1,6 @@
-#include "RFDialogueComponent.h"
+// Copyright (c) 2026 VINNIE BRIGHTEY, FELICITY ZABAVA, ARTHUR NORTH, JOSH BENNETTS, LEWIS TAIT, KYLE MURRAY, HOLLY ALBERT, ANUPAM SAHU, ARAMINTA MCDIARMID. All rights reserved.
 
+#include "RFDialogueComponent.h"
 
 // Sets default values for this component's properties
 URFDialogueComponent::URFDialogueComponent()
