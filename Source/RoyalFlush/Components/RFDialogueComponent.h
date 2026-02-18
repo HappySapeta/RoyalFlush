@@ -8,7 +8,7 @@
 #include "RFDialogueComponent.generated.h"
 
 
-UCLASS(Blueprintable, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(DisplayName = "DialogueComponent", ClassGroup=(RoyalFlush), Blueprintable, meta=(BlueprintSpawnableComponent) )
 class ROYALFLUSH_API URFDialogueComponent : public UActorComponent, public IDlgDialogueParticipant
 {
 	GENERATED_BODY()
