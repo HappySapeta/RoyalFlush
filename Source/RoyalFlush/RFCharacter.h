@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "RFCharacter.generated.h"
 
+class URFDialogueComponent;
+
 UCLASS()
 class ROYALFLUSH_API ARFCharacter : public ACharacter
 {
@@ -18,19 +20,4 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void OnInteractionStarted(const ARFCharacter* Other);
-	
-protected:
-
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-public:
-
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-
 };
