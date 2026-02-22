@@ -20,4 +20,7 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void OnInteractionStarted(const ARFCharacter* Other);
+	
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void OnInteractionFinished(const ARFCharacter* Other);
 };
