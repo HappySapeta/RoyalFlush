@@ -19,8 +19,8 @@ public:
 	ARFCharacter();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	void OnInteractionStarted(const ARFCharacter* Other);
+	void OnDialogueStarted(const ARFCharacter* Other, const UDlgContext* Context);
 	
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	void OnInteractionFinished(const ARFCharacter* Other);
+	void OnDialogueFinished(const ARFCharacter* Other);
 };
