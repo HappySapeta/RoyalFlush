@@ -3,13 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "DlgSystem/DlgDialogueParticipant.h"
 #include "GameFramework/Character.h"
 #include "RFCharacter.generated.h"
 
 class URFDialogueComponent;
 
 UCLASS()
-class ROYALFLUSH_API ARFCharacter : public ACharacter
+class ROYALFLUSH_API ARFCharacter : public ACharacter, public IDlgDialogueParticipant
 {
 	GENERATED_BODY()
 
@@ -19,5 +20,8 @@ public:
 	ARFCharacter();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	void OnInteractionStarted(const ARFCharacter* Other);
+	void OnDialogueStarted(const ARFCharacter* Other, const UDlgContext* Context);
+	
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void OnDialogueFinished(const ARFCharacter* Other);
 };

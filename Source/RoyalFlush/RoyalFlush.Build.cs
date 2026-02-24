@@ -15,7 +15,8 @@ public class RoyalFlush : ModuleRules
             "Engine", 
             "InputCore", 
             "EnhancedInput",
-            "DlgSystem"
+            "DlgSystem",
+            "UMG"
         });
 
         PublicIncludePaths.AddRange(new string[] { "../Plugins/DlgSystem/Source" });
