@@ -13,10 +13,18 @@ class UDialogueListItem : public UObject
 {
 	GENERATED_BODY()
 
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDialogueChosenDelegate, int, OptionIndex);
+	
 public:
 
 	UPROPERTY(BlueprintReadWrite)
 	FText DialogueText;
+	
+	UPROPERTY(BlueprintReadWrite)
+	int DialogueOptionIndex;
+	
+	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	FOnDialogueChosenDelegate OnDialogueChosen;
 };
 
 class UTextBlock;
