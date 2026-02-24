@@ -2,3 +2,14 @@
 
 
 #include "DialogueOptionEntryWidget.h"
+
+#include "Components/TextBlock.h"
+
+void UDialogueOptionEntryWidget::NativeOnListItemObjectSet(UObject* ListItemObject)
+{
+	IUserObjectListEntry::NativeOnListItemObjectSet(ListItemObject);
+	if (UDialogueListItem* DialogueListItem = Cast<UDialogueListItem>(ListItemObject))
+	{
+		DialogueTextBlock->SetText(DialogueListItem->DialogueText);
+	}
+}

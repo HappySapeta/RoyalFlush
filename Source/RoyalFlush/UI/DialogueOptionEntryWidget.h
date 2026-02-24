@@ -8,6 +8,18 @@
 
 #include "DialogueOptionEntryWidget.generated.h"
 
+UCLASS(BlueprintType)
+class UDialogueListItem : public UObject
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(BlueprintReadWrite)
+	FText DialogueText;
+};
+
+class UTextBlock;
 /**
  * 
  */
@@ -15,4 +27,11 @@ UCLASS()
 class ROYALFLUSH_API UDialogueOptionEntryWidget : public UUserWidget, public IUserObjectListEntry
 {
 	GENERATED_BODY()
+
+protected:
+
+	virtual void NativeOnListItemObjectSet(UObject* ListItemObject) override;
+
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UTextBlock> DialogueTextBlock;
 };
