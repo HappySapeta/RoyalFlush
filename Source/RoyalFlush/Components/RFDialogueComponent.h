@@ -12,16 +12,53 @@ UCLASS(DisplayName = "DialogueComponent", ClassGroup=(RoyalFlush), Blueprintable
 class ROYALFLUSH_API URFDialogueComponent : public UActorComponent, public IDlgDialogueParticipant
 {
 	GENERATED_BODY()
+	
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDialogueStartedDelegate);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDialogueEndedDelegate);
+	
+public:
+	
+	UFUNCTION(BlueprintCallable)
+	void StartInteraction(const UDlgContext* Context, const URFDialogueComponent* Other);
+	
+	UFUNCTION(BlueprintCallable)
+	void EndInteraction(const UDlgContext* Context, const URFDialogueComponent* Other);
+	
+	UFUNCTION(BlueprintCallable)
+	void SetDialogueContext(const UDlgContext* Context)
+	{
+		DialogueContext = Context;
+	}
+	
+	virtual FText GetParticipantDisplayName_Implementation(FName ActiveSpeaker) const override
+	{
+		return ParticipantDisplayName;
+	}
+	
+	virtual FName GetParticipantName_Implementation() const override
+	{
+		return ParticipantName;
+	}
 
-public:	
-	// Sets default values for this component's properties
-	URFDialogueComponent();
- 
+public:
+	
+	UPROPERTY(BlueprintAssignable)
+	FOnDialogueStartedDelegate OnDialogueStartedEvent;
+	
+	UPROPERTY(BlueprintAssignable)
+	FOnDialogueEndedDelegate OnDialogueEndedEvent;
+	
 protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	
+	UPROPERTY(BlueprintReadOnly)
+	const UDlgContext* DialogueContext;
+	
+	UPROPERTY(BlueprintReadOnly)
+	const URFDialogueComponent* OtherParticipant;
+	
+	UPROPERTY(EditAnywhere)
+	FName ParticipantName;
+	
+	UPROPERTY(EditAnywhere)
+	FText ParticipantDisplayName;
 };
