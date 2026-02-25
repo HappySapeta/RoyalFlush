@@ -2,33 +2,16 @@
 
 #include "RFDialogueComponent.h"
 
-// Sets default values for this component's properties
-URFDialogueComponent::URFDialogueComponent()
+void URFDialogueComponent::StartInteraction(const UDlgContext* Context, const URFDialogueComponent* Other)
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
+	DialogueContext = Context;
+	OtherParticipant = Other;
+	OnDialogueStartedEvent.Broadcast();
 }
 
-
-// Called when the game starts
-void URFDialogueComponent::BeginPlay()
+void URFDialogueComponent::EndInteraction(const UDlgContext* Context, const URFDialogueComponent* Other)
 {
-	Super::BeginPlay();
-
-	// ...
-	
+	DialogueContext = nullptr;
+	OtherParticipant = nullptr;
+	OnDialogueEndedEvent.Broadcast();
 }
-
-
-// Called every frame
-void URFDialogueComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
-}
-
-
