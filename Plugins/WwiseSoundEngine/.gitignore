@@ -1,0 +1,7 @@
+# Ignore debug files and executables in ThirdParty
+ThirdParty/**/*.pdb
+ThirdParty/**/*.exe
+
+# Don't ignore library files
+!ThirdParty/**/*.dll
+!ThirdParty/**/*.lib
