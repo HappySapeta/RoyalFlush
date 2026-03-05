@@ -9,6 +9,25 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
+		<SoundBank Id="576110585" Type="Event" GUID="{878A9B63-0BEB-4DD0-90C4-C77042093B89}" Language="SFX" Hash="{301D9076-0DC6-6C6F-3EBA-EF7326127280}">
+			<ObjectPath>Test2</ObjectPath>
+			<ShortName>Test2</ShortName>
+			<Path>Event/Test2.bnk</Path>
+			<Media>
+				<File Id="68818871" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>fart.wav</ShortName>
+					<Path>Media/68818871.wem</Path>
+					<CachePath>D4/{D4A5FEA3-585D-6295-72CD-F36F57AB1AF7}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="576110585" Name="Test2" ObjectPath="\Events\Default Work Unit\Test\Test2" GUID="{878A9B63-0BEB-4DD0-90C4-C77042093B89}" DurationType="OneShot" DurationMin="1.125" DurationMax="1.125">
+					<MediaRefs>
+						<MediaRef Id="68818871"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{1F4AC6ED-6B82-10DD-1BFB-D1EE6BC8BD88}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
@@ -42,5 +61,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E59DFD57-843D-C3EC-4046-D9FFF10B7057}</FileHash>
+	<FileHash>{730646B8-666E-D5C7-FF18-8CEA871B092C}</FileHash>
 </SoundBanksInfo>
