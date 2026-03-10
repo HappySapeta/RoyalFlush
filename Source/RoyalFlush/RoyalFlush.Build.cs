@@ -6,6 +6,7 @@ public class RoyalFlush : ModuleRules
 {
     public RoyalFlush(ReadOnlyTargetRules Target) : base(Target)
     {
+        PrivateDependencyModuleNames.AddRange(new string[] { "GameplayCameras" });
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
         PublicDependencyModuleNames.AddRange(new string[] 
