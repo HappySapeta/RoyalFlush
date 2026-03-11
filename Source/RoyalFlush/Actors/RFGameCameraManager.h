@@ -8,20 +8,46 @@
 
 class UCameraComponent;
 
+struct FCameraCandidate
+{
+	float CosineScore;
+	float Distance;
+	ACameraActor* CameraActor;
+};
+
 UCLASS()
 class ROYALFLUSH_API ARFGameCameraManager : public AActor
 {
 	GENERATED_BODY()
 
 public:
-
-	// Sets default values for this actor's properties
+	
 	ARFGameCameraManager();
 	
+	virtual void BeginPlay() override;
+
 	virtual void Tick(float DeltaSeconds) override;
 	
-protected:
+private:
+
+	void CheckCameras(float DeltaSeconds);
+
+	float GetCandidateScore(UCameraComponent* CameraComponent);
 	
-	UPROPERTY(EditDefaultsOnly)
-	TObjectPtr<UCameraComponent> CameraComponent;
+	void SwitchToCamera(ACameraActor* TargetCameraActor);
+
+private:
+	
+	// Time to blend between cameras.
+	UPROPERTY(EditAnywhere)
+	float BlendTime;
+	
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<APlayerController> PlayerController;
+	
+	UPROPERTY(VisibleAnywhere)
+	TArray<ACameraActor*> CameraActors;
+	
+	UPROPERTY(VisibleAnywhere)
+	ACameraActor* CurrentCameraActor;
 };
