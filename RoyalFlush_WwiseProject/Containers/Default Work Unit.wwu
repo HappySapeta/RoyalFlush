@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}" SchemaVersion="133">
+	<Containers>
+		<WorkUnit Name="Default Work Unit" ID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Testing" ID="{AFE489EB-1CE5-41C9-A014-ACA24CB45452}" ShortID="837390418">
+					<ChildrenList>
+						<Sound Name="Designed, Impact, Cinematic, Heavy, Distorted, Powerful, Futuristic SND122894" ID="{1BCC29D1-E09A-42C6-B858-BBC37470F13A}" ShortID="849149682">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{591F85B7-0A1E-46D9-B6EE-547AC16D5395}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="4800"/>
+													<Property Name="Min" Type="Real64" Value="-4700"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Designed, Impact, Cinematic, Heavy, Distorted, Powerful, Futuristic SND122894" ID="{53C5D155-0C7E-49DA-806F-96A3795F4662}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.126655042066725"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Designed, Impact, Cinematic, Heavy, Distorted, Powerful, Futuristic SND122894.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="395279038"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Designed, Impact, Cinematic, Heavy, Distorted, Powerful, Futuristic SND122894" ID="{53C5D155-0C7E-49DA-806F-96A3795F4662}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="fart" ID="{81E912B4-D476-4CFF-ABB7-D74DFA013D4C}" ShortID="828218832">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fart" ID="{7A5BC7AB-0DD3-4E95-BB3E-D17AD246B870}">
+									<Language>SFX</Language>
+									<AudioFile>fart.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="68818871"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fart" ID="{7A5BC7AB-0DD3-4E95-BB3E-D17AD246B870}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>
