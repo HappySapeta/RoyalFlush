@@ -8,13 +8,6 @@
 
 class UCameraComponent;
 
-struct FCameraCandidate
-{
-	float CosineScore;
-	float Distance;
-	ACameraActor* CameraActor;
-};
-
 UCLASS()
 class ROYALFLUSH_API ARFGameCameraManager : public AActor
 {
@@ -32,9 +25,10 @@ private:
 
 	void CheckCameras(float DeltaSeconds);
 
-	float GetCandidateScore(UCameraComponent* CameraComponent);
+	float GetCosineScore(UCameraComponent* CameraComponent);
 	
 	void SwitchToCamera(ACameraActor* TargetCameraActor);
+	bool IsPlayerInFrustum(UCameraComponent* CameraComponent);
 
 private:
 	
