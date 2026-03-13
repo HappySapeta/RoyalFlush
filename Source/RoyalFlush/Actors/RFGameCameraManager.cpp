@@ -6,6 +6,12 @@
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
 
+struct FCameraCandidate
+{
+	float CosineScore;
+	ACameraActor* CameraActor;
+};
+
 ARFGameCameraManager::ARFGameCameraManager()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -49,25 +55,37 @@ void ARFGameCameraManager::CheckCameras(float DeltaSeconds)
 		return;
 	}
 	
-	ACameraActor* DesiredCameraActor = nullptr;
-	float HighestCosineSoFar = TNumericLimits<float>::Min();
+	static TArray<FCameraCandidate> CameraCandidates;
+	CameraCandidates.Reserve(CameraActors.Num());
+	
 	for (ACameraActor* CameraActor : CameraActors)
 	{
-		const float CosineScore = GetCandidateScore(CameraActor->GetCameraComponent());
-		if (CosineScore > HighestCosineSoFar)
+		if (IsPlayerInFrustum(CameraActor->GetCameraComponent()))
 		{
-			HighestCosineSoFar = CosineScore;
-			DesiredCameraActor = CameraActor;
+			const float CosineScore = GetCosineScore(CameraActor->GetCameraComponent());
+			CameraCandidates.Push(FCameraCandidate{CosineScore, CameraActor});
 		}
 	}
 	
-	if (DesiredCameraActor && DesiredCameraActor != CurrentCameraActor)
+	ACameraActor* DesiredCameraTarget = nullptr;
+	if (!CameraCandidates.IsEmpty())
 	{
-		SwitchToCamera(DesiredCameraActor);
+		CameraCandidates.Sort([](const FCameraCandidate& A, const FCameraCandidate& B)
+		{
+			return A.CosineScore > B.CosineScore;
+		});
+			
+		DesiredCameraTarget = CameraCandidates[0].CameraActor;
+		CameraCandidates.Empty();
+	}
+	
+	if (DesiredCameraTarget)
+	{
+		SwitchToCamera(DesiredCameraTarget);
 	}
 }
 
-float ARFGameCameraManager::GetCandidateScore(UCameraComponent* CameraComponent)
+float ARFGameCameraManager::GetCosineScore(UCameraComponent* CameraComponent)
 {
 	if (const AActor* Pawn = PlayerController->GetPawn())
 	{
@@ -79,30 +97,28 @@ float ARFGameCameraManager::GetCandidateScore(UCameraComponent* CameraComponent)
 	return -1.0f;
 }
 
+bool ARFGameCameraManager::IsPlayerInFrustum(UCameraComponent* CameraComponent)
+{
+	FMinimalViewInfo ViewInfo;
+	CameraComponent->GetCameraView(0.0f, ViewInfo);
+	ViewInfo.OrthoFarClipPlane = 1000.0f;
+
+	FMatrix ViewProjectionMatrix, ProjectionMatrix, ViewMatrix;
+	UGameplayStatics::GetViewProjectionMatrix(ViewInfo, ViewMatrix, ProjectionMatrix, ViewProjectionMatrix);
+	
+	FConvexVolume Frustum;
+	GetViewFrustumBounds(Frustum, ViewProjectionMatrix, true);
+	
+	if (const AActor* Pawn = PlayerController->GetPawn())
+	{
+		return Frustum.IntersectPoint(Pawn->GetActorLocation());
+	}
+	
+	return false;
+}
+
 void ARFGameCameraManager::SwitchToCamera(ACameraActor* TargetCameraActor)
 {
 	CurrentCameraActor = TargetCameraActor;
 	PlayerController->SetViewTargetWithBlend(CurrentCameraActor, BlendTime);
 }
-
-//void ARFGameCameraManager::IsPlayerInFrustum()
-//{
-//	FMinimalViewInfo ViewInfo;
-//	CameraComponent->GetCameraView(DeltaSeconds, ViewInfo);
-//
-//	FMatrix ViewProjectionMatrix, ProjectionMatrix, ViewMatrix;
-//	UGameplayStatics::GetViewProjectionMatrix(ViewInfo, ViewMatrix, ProjectionMatrix, ViewProjectionMatrix);
-//	
-//	FConvexVolume Frustum;
-//	GetViewFrustumBounds(Frustum, ViewProjectionMatrix, true);
-//	
-//	if (const AActor* PlayerCharacter = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0))
-//	{
-//		const FString Message = Frustum.IntersectPoint(PlayerCharacter->GetActorLocation()) ? "True" : "False";
-//	}
-//	
-//	if (ViewInfo.PreviousViewTransform)
-//	{
-//		UKismetSystemLibrary::DrawDebugFrustum(GetWorld(), *ViewInfo.PreviousViewTransform);
-//	}
-//}
