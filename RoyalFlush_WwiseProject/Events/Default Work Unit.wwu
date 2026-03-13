@@ -29,6 +29,21 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Ambiences" ID="{B66E0CE2-A97C-47DF-BE33-DA25B3BF5913}" ShortID="257376222">
+					<ChildrenList>
+						<Event Name="Amb_Level_Switch" ID="{919DC7C9-B6D7-46B1-B87D-EDA7CAEB9342}">
+							<ChildrenList>
+								<Action Name="" ID="{61CF5F84-E3E5-430F-BAAA-AA99718DEB4F}" ShortID="478551781">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_FirstLevel_Loop" ID="{E9A5DA10-6D7C-46B0-A4CD-6750F78EE436}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
