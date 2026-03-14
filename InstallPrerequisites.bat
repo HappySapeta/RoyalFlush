@@ -1,6 +1,14 @@
-winget install -e --id Microsoft.VisualStudio.BuildTools
+@echo off
 
-"C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe" modify ^
+echo Downloading 'Microsoft Visual Studio Build Tools' ...
+echo:
+
+call winget install -e --id Microsoft.VisualStudio.BuildTools
+
+echo Launching 'Microsoft Visual Studio Installer' ...
+echo:
+
+call "C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe" modify ^
 --installPath "C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools" ^
 --add Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools ^
 --add Microsoft.VisualStudio.Workload.VCTools ^
@@ -10,3 +18,6 @@ winget install -e --id Microsoft.VisualStudio.BuildTools
 --add Microsoft.NetCore.Component.SDK ^
 --add Microsoft.Net.ComponentGroup.DevelopmentPrerequisites ^
 --add Microsoft.Net.ComponentGroup.4.8.DeveloperTools ^
+
+echo
+pause

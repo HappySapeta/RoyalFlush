@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3331313354",
+    "Type": "User",
+    "GUID": "{D9E95AA2-D16F-48AC-B33C-DF494DC30C9C}",
+    "Language": "SFX",
+    "Hash": "{2FEA2355-637E-7B0F-4E0D-CEEEF5EE4C42}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\TestSB",
+    "ShortName": "TestSB",
+    "Path": "TestSB.bnk",
+    "Media": [
+     {
+      "Id": "395279038",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Designed, Impact, Cinematic, Heavy, Distorted, Powerful, Futuristic SND122894.wav",
+      "CachePath": "5D/{5D787D59-905A-C996-3067-C3C623B14A64}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3157003241",
+      "Name": "Test",
+      "ObjectPath": "\\Events\\Default Work Unit\\Test\\Test",
+      "GUID": "{232EDD70-971B-42D3-8211-95AD12343685}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.2771797",
+      "DurationMax": "4.434875",
+      "MediaRefs": [
+       {
+        "Id": "395279038"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{ED4F16E5-2F21-3615-DE13-AB517C23A9E1}"
+ }
+}

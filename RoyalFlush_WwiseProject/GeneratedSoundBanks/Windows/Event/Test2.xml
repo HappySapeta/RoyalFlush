@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="576110585" Type="Event" GUID="{878A9B63-0BEB-4DD0-90C4-C77042093B89}" Language="SFX" Hash="{301D9076-0DC6-6C6F-3EBA-EF7326127280}">
+			<ObjectPath>Test2</ObjectPath>
+			<ShortName>Test2</ShortName>
+			<Path>Event/Test2.bnk</Path>
+			<Media>
+				<File Id="68818871" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>fart.wav</ShortName>
+					<Path>Media/68818871.wem</Path>
+					<CachePath>D4/{D4A5FEA3-585D-6295-72CD-F36F57AB1AF7}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="576110585" Name="Test2" ObjectPath="\Events\Default Work Unit\Test\Test2" GUID="{878A9B63-0BEB-4DD0-90C4-C77042093B89}" DurationType="OneShot" DurationMin="1.125" DurationMax="1.125">
+					<MediaRefs>
+						<MediaRef Id="68818871"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{0F560290-5525-64DF-535E-07D7AD0CC5B9}</FileHash>
+</SoundBanksInfo>

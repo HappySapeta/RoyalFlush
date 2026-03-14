@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3157003241	Test			\Default Work Unit\Test\Test	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	395279038	Designed, Impact, Cinematic, Heavy, Distorted, Powerful, Futuristic SND122894	.cache\5D\{5D787D59-905A-C996-3067-C3C623B14A64}.wem		\Containers\Default Work Unit\Designed, Impact, Cinematic, Heavy, Distorted, Powerful, Futuristic SND122894		212968
+

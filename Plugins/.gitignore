@@ -1,0 +1,17 @@
+# Ignore unnecessary Wwise files.
+Wwise/*.chm
+Wwise/Binaries/Mac
+Wwise/Binaries/Win64/*.pdb
+WwiseNiagara/Binaries/Mac
+WwiseNiagara/Binaries/Win64/*.pdb
+WwiseSoundEngine/Binaries/Mac
+WwiseSoundEngine/Binaries/Win64/*.pdb
+WwiseSoundEngine/ThirdParty/x64_vc160
+WwiseSoundEngine/ThirdParty/x64_vc170/Debug(StaticCRT)
+WwiseSoundEngine/ThirdParty/x64_vc170/Profile(StaticCRT)
+WwiseSoundEngine/ThirdParty/x64_vc170/Release(StaticCRT)
+Wwise/WwiseSoundEngine/x64_vc170/Debug/lib
+Wwise/WwiseSoundEngine/x64_vc170/Profile/lib
+Wwise/WwiseSoundEngine/x64_vc170/Debug/bin/*.pdb
+Wwise/WwiseSoundEngine/x64_vc170/Profile/bin/*.pdb
+Wwise/WwiseSoundEngine/x64_vc170/Release/bin/*.pdb
