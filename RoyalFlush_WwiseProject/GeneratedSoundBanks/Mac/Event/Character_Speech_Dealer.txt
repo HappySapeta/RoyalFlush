@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1402278545	Character_Speech_Dealer			\Default Work Unit\Character\Speech\Character_Speech_Dealer	
+

@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	509666419	Character_Speech_King			\Default Work Unit\Character\Speech\Character_Speech_King	
+

@@ -1,0 +1,72 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2367099639",
+    "Type": "Event",
+    "GUID": "{75319BAB-0AC0-46EB-BB95-F13B0D94647F}",
+    "Language": "SFX",
+    "Hash": "{A4713FFA-9E89-D23D-662A-BBFB9E26A4EC}",
+    "ObjectPath": "Poker_Card_Shuffle",
+    "ShortName": "Poker_Card_Shuffle",
+    "Path": "Event/Poker_Card_Shuffle.bnk",
+    "Media": [
+     {
+      "Id": "584284627",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Card_Shuffle_1.wav",
+      "Path": "Media/584284627.wem",
+      "CachePath": "A2/{A2BC12E0-F0EC-B62D-51E7-24B2D9A9CDA6}.wem"
+     },
+     {
+      "Id": "743840350",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Card_Shuffle_2.wav",
+      "Path": "Media/743840350.wem",
+      "CachePath": "E3/{E381FC28-9676-3065-40E0-DB36029E099C}.wem"
+     },
+     {
+      "Id": "756856600",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Card_Shuffle_3.wav",
+      "Path": "Media/756856600.wem",
+      "CachePath": "7D/{7DE29071-4150-64F9-0608-F7A2693AC8AF}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2367099639",
+      "Name": "Poker_Card_Shuffle",
+      "ObjectPath": "\\Events\\Default Work Unit\\Poker\\Card\\Poker_Card_Shuffle",
+      "GUID": "{75319BAB-0AC0-46EB-BB95-F13B0D94647F}",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "584284627"
+       },
+       {
+        "Id": "743840350"
+       },
+       {
+        "Id": "756856600"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{25AA6323-7FB7-3F21-3812-04667E264266}"
+ }
+}

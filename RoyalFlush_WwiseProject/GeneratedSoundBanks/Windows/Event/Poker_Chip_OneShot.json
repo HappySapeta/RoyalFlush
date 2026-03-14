@@ -1,0 +1,120 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2021701688",
+    "Type": "Event",
+    "GUID": "{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}",
+    "Language": "SFX",
+    "Hash": "{12A508CB-D7CD-C02E-9F38-9C50DA49A147}",
+    "ObjectPath": "Poker_Chip_OneShot",
+    "ShortName": "Poker_Chip_OneShot",
+    "Path": "Event/Poker_Chip_OneShot.bnk",
+    "Media": [
+     {
+      "Id": "127527105",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Chip_Oneshot_7.wav",
+      "Path": "Media/127527105.wem",
+      "CachePath": "89/{89076659-A25F-61B7-ACDA-2A5122451BF4}.wem"
+     },
+     {
+      "Id": "131327950",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Chip_Oneshot_1.wav",
+      "Path": "Media/131327950.wem",
+      "CachePath": "D1/{D195FF7E-E18A-83F6-BD74-8216F207C68E}.wem"
+     },
+     {
+      "Id": "299019671",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Chip_Oneshot_2.wav",
+      "Path": "Media/299019671.wem",
+      "CachePath": "1B/{1B45DA03-CD95-EA26-349C-005033B58555}.wem"
+     },
+     {
+      "Id": "443513428",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Chip_Oneshot_5.wav",
+      "Path": "Media/443513428.wem",
+      "CachePath": "03/{03FAA340-1874-2214-A010-3C634CA53BA3}.wem"
+     },
+     {
+      "Id": "885049361",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Chip_Oneshot_3.wav",
+      "Path": "Media/885049361.wem",
+      "CachePath": "A7/{A7A64777-3566-8977-8C80-5B9020D22378}.wem"
+     },
+     {
+      "Id": "954928338",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Chip_Oneshot_4.wav",
+      "Path": "Media/954928338.wem",
+      "CachePath": "1E/{1EB59AA4-6BCF-08B0-BB6F-AFEEFD6CB49D}.wem"
+     },
+     {
+      "Id": "1054748537",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Chip_Oneshot_6.wav",
+      "Path": "Media/1054748537.wem",
+      "CachePath": "3A/{3A7DD44C-AD07-0891-D97C-618E856F58D3}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2021701688",
+      "Name": "Poker_Chip_OneShot",
+      "ObjectPath": "\\Events\\Default Work Unit\\Poker\\Chip\\Poker_Chip_OneShot",
+      "GUID": "{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.5",
+      "DurationMax": "0.5",
+      "MediaRefs": [
+       {
+        "Id": "127527105"
+       },
+       {
+        "Id": "131327950"
+       },
+       {
+        "Id": "299019671"
+       },
+       {
+        "Id": "443513428"
+       },
+       {
+        "Id": "885049361"
+       },
+       {
+        "Id": "954928338"
+       },
+       {
+        "Id": "1054748537"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{E94318AF-0A9C-1CF4-EE83-CFBE88CA8492}"
+ }
+}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{1F4AC6ED-6B82-10DD-1BFB-D1EE6BC8BD88}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{F7F73E60-DEED-DF9E-A413-6BA3DC0075ED}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -14,7 +14,39 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus" ObjectPath="\Busses\Default Work Unit\Master Audio Bus" GUID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 			</Busses>
+			<StateGroups>
+				<StateGroup Id="85412153" Name="Ambience" ObjectPath="\States\Default Work Unit\Ambience" GUID="{C3E27FFC-F0E4-4B6D-9BA0-C398BBF5CDB9}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Ambience\None" GUID="{503536D5-3BB1-4492-A5CC-B8D68DABE4D5}"/>
+						<State Id="1290008369" Name="Level_1" ObjectPath="\States\Default Work Unit\Ambience\Level_1" GUID="{0DA12C57-D084-4807-880C-A3BF60EBDFE0}"/>
+						<State Id="1290008370" Name="Level_2" ObjectPath="\States\Default Work Unit\Ambience\Level_2" GUID="{FBB6B095-AEDA-468F-9F92-AE43CB4A30F9}"/>
+						<State Id="1290008371" Name="Level_3" ObjectPath="\States\Default Work Unit\Ambience\Level_3" GUID="{BEFF315C-6324-4DDA-AF11-41C06100433D}"/>
+						<State Id="3062523257" Name="Misc" ObjectPath="\States\Default Work Unit\Ambience\Misc" GUID="{994F7DCD-FCF2-4761-9167-AE63EC3A6807}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="649345183" Name="BGM_Level1" ObjectPath="\States\Default Work Unit\BGM_Level1" GUID="{95FD7CC8-A2D1-4247-B671-5F304DD70335}">
+					<States>
+						<State Id="362564855" Name="Dealer_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Dealer_Loop" GUID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\BGM_Level1\None" GUID="{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"/>
+						<State Id="1125500713" Name="Intro" ObjectPath="\States\Default Work Unit\BGM_Level1\Intro" GUID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
+						<State Id="2858725581" Name="Transition_Out" ObjectPath="\States\Default Work Unit\BGM_Level1\Transition_Out" GUID="{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"/>
+						<State Id="3813340491" Name="Main_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Main_Loop" GUID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
+						<State Id="3919849458" Name="Transition_In" ObjectPath="\States\Default Work Unit\BGM_Level1\Transition_In" GUID="{B792CAAF-BC28-49FA-9003-5060C201FC18}"/>
+						<State Id="3992321431" Name="Ace_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Ace_Loop" GUID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="1368630905" Name="Foot_Steps" ObjectPath="\Switches\Default Work Unit\Foot_Steps" GUID="{061CA91F-4F6D-4E5E-A0E5-CBBFF6474DEA}">
+					<Switches>
+						<Switch Id="1216965916" Name="Stone" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Stone" GUID="{6D0240EC-37BC-4A3F-AF09-7D04D5D7E5BA}"/>
+						<Switch Id="2058049674" Name="Wood" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Wood" GUID="{5991F025-F8E7-4679-B1C3-70CF08ACE181}"/>
+						<Switch Id="2412606308" Name="Carpet" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Carpet" GUID="{3CC1B7D3-CBA7-43AD-9376-4E9FDB490246}"/>
+						<Switch Id="2473969246" Name="Metal" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Metal" GUID="{FF85422E-956B-45C5-95EE-7F7F4213A7A6}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2C1CB511-4C01-98A1-86ED-A35A00998A6B}</FileHash>
+	<FileHash>{236D6D6A-2A37-BB76-1ED0-ABA845E701BE}</FileHash>
 </SoundBanksInfo>

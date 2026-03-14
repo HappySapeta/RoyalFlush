@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1877487096	UI_Click_Start_Game			\Default Work Unit\UI\UI_Click_Start_Game	
+

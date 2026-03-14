@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{58302215-9284-A6E2-619B-8B51649284D7}">
+			<ObjectPath>Character_Speech_Ace</ObjectPath>
+			<ShortName>Character_Speech_Ace</ShortName>
+			<Path>Event/Character_Speech_Ace.bnk</Path>
+			<Media>
+				<File Id="327533658" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_2.wav</ShortName>
+					<Path>Media/327533658.wem</Path>
+					<CachePath>65/{65732FAB-7203-9B4B-49AD-701BDCBC5093}.wem</CachePath>
+				</File>
+				<File Id="444130920" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_5.wav</ShortName>
+					<Path>Media/444130920.wem</Path>
+					<CachePath>C6/{C6FAD30A-8FC9-0423-2F51-CFE8B6177620}.wem</CachePath>
+				</File>
+				<File Id="690746034" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_1.wav</ShortName>
+					<Path>Media/690746034.wem</Path>
+					<CachePath>6F/{6F041F36-2951-3F4B-42B0-1EC69F5DD0E6}.wem</CachePath>
+				</File>
+				<File Id="919250946" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_3.wav</ShortName>
+					<Path>Media/919250946.wem</Path>
+					<CachePath>A5/{A5B13359-BB56-005A-D5DA-92913E47FB3C}.wem</CachePath>
+				</File>
+				<File Id="968226134" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_4.wav</ShortName>
+					<Path>Media/968226134.wem</Path>
+					<CachePath>A8/{A8406584-9A8B-7EA9-358A-EB85D550120B}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1200163247" Name="Character_Speech_Ace" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Ace" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" DurationType="OneShot" DurationMin="0.072118044" DurationMax="0.091110125">
+					<MediaRefs>
+						<MediaRef Id="327533658"/>
+						<MediaRef Id="444130920"/>
+						<MediaRef Id="690746034"/>
+						<MediaRef Id="919250946"/>
+						<MediaRef Id="968226134"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{E1D27E56-9C5E-0FFF-5812-328F29F5F295}</FileHash>
+</SoundBanksInfo>

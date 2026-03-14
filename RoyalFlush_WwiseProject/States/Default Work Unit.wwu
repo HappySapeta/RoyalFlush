@@ -12,6 +12,17 @@
 						<State Name="Misc" ID="{994F7DCD-FCF2-4761-9167-AE63EC3A6807}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="BGM_Level1" ID="{95FD7CC8-A2D1-4247-B671-5F304DD70335}">
+					<ChildrenList>
+						<State Name="None" ID="{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"/>
+						<State Name="Intro" ID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
+						<State Name="Main_Loop" ID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
+						<State Name="Transition_In" ID="{B792CAAF-BC28-49FA-9003-5060C201FC18}"/>
+						<State Name="Transition_Out" ID="{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"/>
+						<State Name="Ace_Loop" ID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+						<State Name="Dealer_Loop" ID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

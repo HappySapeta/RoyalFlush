@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="2538807153" Type="Event" GUID="{B0E82FB0-C4DC-4804-A046-AC160C653704}" Language="SFX" Hash="{388FB121-1F66-CB58-856F-2F171329F7C1}">
+			<ObjectPath>Poker_Card_Dissolve</ObjectPath>
+			<ShortName>Poker_Card_Dissolve</ShortName>
+			<Path>Event/Poker_Card_Dissolve.bnk</Path>
+			<Media>
+				<File Id="40866203" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_7.wav</ShortName>
+					<Path>Media/40866203.wem</Path>
+					<CachePath>8A/{8A758086-16C1-448E-B6A8-F4FC0C9D12EF}.wem</CachePath>
+				</File>
+				<File Id="265605047" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_6.wav</ShortName>
+					<Path>Media/265605047.wem</Path>
+					<CachePath>FE/{FE4D5771-0EEE-ECF5-0D91-3A1C9921FCAC}.wem</CachePath>
+				</File>
+				<File Id="346698651" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_3.wav</ShortName>
+					<Path>Media/346698651.wem</Path>
+					<CachePath>A5/{A5C9E30B-5DFB-C566-51E2-E293D859E54D}.wem</CachePath>
+				</File>
+				<File Id="568205174" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_1.wav</ShortName>
+					<Path>Media/568205174.wem</Path>
+					<CachePath>95/{95DC667C-C466-4B51-C01D-00D5292D6320}.wem</CachePath>
+				</File>
+				<File Id="662265792" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_2.wav</ShortName>
+					<Path>Media/662265792.wem</Path>
+					<CachePath>E7/{E74E57BB-BFB3-4DA0-CB6E-3E79A3CE9D3F}.wem</CachePath>
+				</File>
+				<File Id="805903401" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_5.wav</ShortName>
+					<Path>Media/805903401.wem</Path>
+					<CachePath>57/{577AF791-3439-1663-8E00-CDCE257B6E14}.wem</CachePath>
+				</File>
+				<File Id="814932653" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_4.wav</ShortName>
+					<Path>Media/814932653.wem</Path>
+					<CachePath>35/{35A5D24D-E06B-9227-49B1-268D12AC27A1}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2538807153" Name="Poker_Card_Dissolve" ObjectPath="\Events\Default Work Unit\Poker\Card\Poker_Card_Dissolve" GUID="{B0E82FB0-C4DC-4804-A046-AC160C653704}" DurationType="OneShot" DurationMin="1.6576812" DurationMax="2.413009">
+					<MediaRefs>
+						<MediaRef Id="40866203"/>
+						<MediaRef Id="265605047"/>
+						<MediaRef Id="346698651"/>
+						<MediaRef Id="568205174"/>
+						<MediaRef Id="662265792"/>
+						<MediaRef Id="805903401"/>
+						<MediaRef Id="814932653"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{8DF5864A-AA4F-1A33-79DE-5AAEF122559F}</FileHash>
+</SoundBanksInfo>

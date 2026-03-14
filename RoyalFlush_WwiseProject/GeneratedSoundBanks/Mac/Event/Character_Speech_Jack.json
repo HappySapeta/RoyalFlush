@@ -1,0 +1,144 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2402462855",
+    "Type": "Event",
+    "GUID": "{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}",
+    "Language": "SFX",
+    "Hash": "{25B744FF-6613-2B87-63B7-E7E11161A1D7}",
+    "ObjectPath": "Character_Speech_Jack",
+    "ShortName": "Character_Speech_Jack",
+    "Path": "Event/Character_Speech_Jack.bnk",
+    "Media": [
+     {
+      "Id": "56859308",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Jack_Speech_Oneshot_3.wav",
+      "Path": "Media/56859308.wem",
+      "CachePath": "A1/{A178AF0F-548F-8EF4-BA78-DC818E8A9C73}.wem"
+     },
+     {
+      "Id": "216739166",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Jack_Speech_Oneshot_5.wav",
+      "Path": "Media/216739166.wem",
+      "CachePath": "FA/{FA84E7C4-9841-EB91-80AF-1FD92EF71837}.wem"
+     },
+     {
+      "Id": "705260286",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Jack_Speech_Oneshot_8.wav",
+      "Path": "Media/705260286.wem",
+      "CachePath": "12/{12747E7A-D559-75B8-C782-1663E0DF9F8A}.wem"
+     },
+     {
+      "Id": "817262234",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Jack_Speech_Oneshot_6.wav",
+      "Path": "Media/817262234.wem",
+      "CachePath": "9F/{9F1126E0-D124-9270-900C-953802B13DAF}.wem"
+     },
+     {
+      "Id": "859578213",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Jack_Speech_Oneshot_2.wav",
+      "Path": "Media/859578213.wem",
+      "CachePath": "44/{44FADCD2-E9DB-443B-C99D-185AFF4ACC0D}.wem"
+     },
+     {
+      "Id": "932874341",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Jack_Speech_Oneshot_1.wav",
+      "Path": "Media/932874341.wem",
+      "CachePath": "AF/{AF40DF2C-284A-CD25-9D85-147332FB6B69}.wem"
+     },
+     {
+      "Id": "963672790",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Jack_Speech_Oneshot_7.wav",
+      "Path": "Media/963672790.wem",
+      "CachePath": "55/{5510BCCF-F5C2-4E30-7AB4-BE6D73C1A176}.wem"
+     },
+     {
+      "Id": "1027906375",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Jack_Speech_Oneshot_9.wav",
+      "Path": "Media/1027906375.wem",
+      "CachePath": "3D/{3D023648-8DC2-0446-2320-F2B8667B5662}.wem"
+     },
+     {
+      "Id": "1071326686",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Jack_Speech_Oneshot_4.wav",
+      "Path": "Media/1071326686.wem",
+      "CachePath": "A4/{A47C41A1-42DD-2F34-DD26-35A040E82215}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2402462855",
+      "Name": "Character_Speech_Jack",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character\\Speech\\Character_Speech_Jack",
+      "GUID": "{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.097716",
+      "DurationMax": "0.112919964",
+      "MediaRefs": [
+       {
+        "Id": "56859308"
+       },
+       {
+        "Id": "216739166"
+       },
+       {
+        "Id": "705260286"
+       },
+       {
+        "Id": "817262234"
+       },
+       {
+        "Id": "859578213"
+       },
+       {
+        "Id": "932874341"
+       },
+       {
+        "Id": "963672790"
+       },
+       {
+        "Id": "1027906375"
+       },
+       {
+        "Id": "1071326686"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{9C729C8C-F2A4-7DB0-6AB9-C9A295C100EF}"
+ }
+}

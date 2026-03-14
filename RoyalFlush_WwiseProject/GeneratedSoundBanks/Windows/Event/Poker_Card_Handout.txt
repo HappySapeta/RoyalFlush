@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1653387933	Poker_Card_Handout			\Default Work Unit\Poker\Card\Poker_Card_Handout	
+

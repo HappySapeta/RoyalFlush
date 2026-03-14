@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="3470146927" Type="Event" GUID="{43D316F3-3A89-49F0-B7A0-F568FE500807}" Language="SFX" Hash="{623591CF-E145-9020-0649-F4C808D55CA3}">
+			<ObjectPath>Poker_Impact_Lose</ObjectPath>
+			<ShortName>Poker_Impact_Lose</ShortName>
+			<Path>Event/Poker_Impact_Lose.bnk</Path>
+			<Media>
+				<File Id="455184232" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Lose.wav</ShortName>
+					<Path>Media/455184232.wem</Path>
+					<CachePath>F4/{F40332F0-3690-3C5C-8262-13DB2C6FE717}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3470146927" Name="Poker_Impact_Lose" ObjectPath="\Events\Default Work Unit\Poker\Impact\Poker_Impact_Lose" GUID="{43D316F3-3A89-49F0-B7A0-F568FE500807}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="455184232"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{4FA0F6DA-DCC2-960E-7786-125753CF800B}</FileHash>
+</SoundBanksInfo>

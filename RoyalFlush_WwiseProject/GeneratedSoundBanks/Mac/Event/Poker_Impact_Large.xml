@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="597521017" Type="Event" GUID="{B8E3BC6D-65B8-4EF6-8DE2-8FD689931DCA}" Language="SFX" Hash="{8FB09D2B-FA71-C9DE-32CC-3E84EEBFD156}">
+			<ObjectPath>Poker_Impact_Large</ObjectPath>
+			<ShortName>Poker_Impact_Large</ShortName>
+			<Path>Event/Poker_Impact_Large.bnk</Path>
+			<Media>
+				<File Id="277144921" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Big_2.wav</ShortName>
+					<Path>Media/277144921.wem</Path>
+					<CachePath>DA/{DA3677F3-F3B6-4937-8C7D-A061ECC9DEB6}.wem</CachePath>
+				</File>
+				<File Id="757678230" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Big_3.wav</ShortName>
+					<Path>Media/757678230.wem</Path>
+					<CachePath>70/{70CD0E8C-250F-7A40-90BC-849A906CFC22}.wem</CachePath>
+				</File>
+				<File Id="946203076" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Big_1.wav</ShortName>
+					<Path>Media/946203076.wem</Path>
+					<CachePath>2F/{2FBEF8E5-D810-2AFE-A31C-A324923F29BB}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="597521017" Name="Poker_Impact_Large" ObjectPath="\Events\Default Work Unit\Poker\Impact\Poker_Impact_Large" GUID="{B8E3BC6D-65B8-4EF6-8DE2-8FD689931DCA}" DurationType="OneShot" DurationMin="3" DurationMax="3">
+					<MediaRefs>
+						<MediaRef Id="277144921"/>
+						<MediaRef Id="757678230"/>
+						<MediaRef Id="946203076"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{E21B001C-5E5F-AE42-32CF-FA6FE9178941}</FileHash>
+</SoundBanksInfo>

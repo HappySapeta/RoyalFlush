@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2021701688	Poker_Chip_OneShot			\Default Work Unit\Poker\Chip\Poker_Chip_OneShot	
+

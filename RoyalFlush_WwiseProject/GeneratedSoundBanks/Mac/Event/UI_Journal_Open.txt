@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3638217758	UI_Journal_Open			\Default Work Unit\UI\UI_Journal_Open	
+

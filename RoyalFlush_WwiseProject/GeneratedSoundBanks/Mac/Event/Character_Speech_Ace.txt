@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1200163247	Character_Speech_Ace			\Default Work Unit\Character\Speech\Character_Speech_Ace	
+

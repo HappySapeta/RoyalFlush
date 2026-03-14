@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="2021701688" Type="Event" GUID="{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}" Language="SFX" Hash="{12A508CB-D7CD-C02E-9F38-9C50DA49A147}">
+			<ObjectPath>Poker_Chip_OneShot</ObjectPath>
+			<ShortName>Poker_Chip_OneShot</ShortName>
+			<Path>Event/Poker_Chip_OneShot.bnk</Path>
+			<Media>
+				<File Id="127527105" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_7.wav</ShortName>
+					<Path>Media/127527105.wem</Path>
+					<CachePath>89/{89076659-A25F-61B7-ACDA-2A5122451BF4}.wem</CachePath>
+				</File>
+				<File Id="131327950" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_1.wav</ShortName>
+					<Path>Media/131327950.wem</Path>
+					<CachePath>D1/{D195FF7E-E18A-83F6-BD74-8216F207C68E}.wem</CachePath>
+				</File>
+				<File Id="299019671" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_2.wav</ShortName>
+					<Path>Media/299019671.wem</Path>
+					<CachePath>1B/{1B45DA03-CD95-EA26-349C-005033B58555}.wem</CachePath>
+				</File>
+				<File Id="443513428" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_5.wav</ShortName>
+					<Path>Media/443513428.wem</Path>
+					<CachePath>03/{03FAA340-1874-2214-A010-3C634CA53BA3}.wem</CachePath>
+				</File>
+				<File Id="885049361" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_3.wav</ShortName>
+					<Path>Media/885049361.wem</Path>
+					<CachePath>A7/{A7A64777-3566-8977-8C80-5B9020D22378}.wem</CachePath>
+				</File>
+				<File Id="954928338" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_4.wav</ShortName>
+					<Path>Media/954928338.wem</Path>
+					<CachePath>1E/{1EB59AA4-6BCF-08B0-BB6F-AFEEFD6CB49D}.wem</CachePath>
+				</File>
+				<File Id="1054748537" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_6.wav</ShortName>
+					<Path>Media/1054748537.wem</Path>
+					<CachePath>3A/{3A7DD44C-AD07-0891-D97C-618E856F58D3}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2021701688" Name="Poker_Chip_OneShot" ObjectPath="\Events\Default Work Unit\Poker\Chip\Poker_Chip_OneShot" GUID="{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="127527105"/>
+						<MediaRef Id="131327950"/>
+						<MediaRef Id="299019671"/>
+						<MediaRef Id="443513428"/>
+						<MediaRef Id="885049361"/>
+						<MediaRef Id="954928338"/>
+						<MediaRef Id="1054748537"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{28831200-A4FC-A4E6-39A1-5310110731D2}</FileHash>
+</SoundBanksInfo>

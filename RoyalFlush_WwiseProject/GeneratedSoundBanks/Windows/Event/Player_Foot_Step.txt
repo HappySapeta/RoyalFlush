@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3171998138	Player_Foot_Step			\Default Work Unit\Player\Player_Foot_Step	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1368630905	Foot_Steps			\Default Work Unit\Foot_Steps	
+
+Switch	ID	Name	Switch Group			Notes
+	1216965916	Stone	Foot_Steps			
+	2058049674	Wood	Foot_Steps			
+	2412606308	Carpet	Foot_Steps			
+	2473969246	Metal	Foot_Steps			
+

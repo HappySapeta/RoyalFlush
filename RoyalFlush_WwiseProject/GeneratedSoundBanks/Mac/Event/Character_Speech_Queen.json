@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2977716840",
+    "Type": "Event",
+    "GUID": "{3D03E3EC-9D73-43BF-B3F0-D92C17738D78}",
+    "Language": "SFX",
+    "Hash": "{9E5F8D8C-82D8-F8D5-124F-B4623D7ACD31}",
+    "ObjectPath": "Character_Speech_Queen",
+    "ShortName": "Character_Speech_Queen",
+    "Path": "Event/Character_Speech_Queen.bnk",
+    "Events": [
+     {
+      "Id": "2977716840",
+      "Name": "Character_Speech_Queen",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character\\Speech\\Character_Speech_Queen",
+      "GUID": "{3D03E3EC-9D73-43BF-B3F0-D92C17738D78}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{A578AA49-885E-0E1F-A5EC-EB28308E0F1E}"
+ }
+}

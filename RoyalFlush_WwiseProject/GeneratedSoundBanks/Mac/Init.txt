@@ -1,3 +1,21 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	85412153	Ambience			\Default Work Unit\Ambience	
+	649345183	BGM_Level1			\Default Work Unit\BGM_Level1	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Ambience			
+	1290008369	Level_1	Ambience			
+	1290008370	Level_2	Ambience			
+	1290008371	Level_3	Ambience			
+	3062523257	Misc	Ambience			
+	362564855	Dealer_Loop	BGM_Level1			
+	748895195	None	BGM_Level1			
+	1125500713	Intro	BGM_Level1			
+	2858725581	Transition_Out	BGM_Level1			
+	3813340491	Main_Loop	BGM_Level1			
+	3919849458	Transition_In	BGM_Level1			
+	3992321431	Ace_Loop	BGM_Level1			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 

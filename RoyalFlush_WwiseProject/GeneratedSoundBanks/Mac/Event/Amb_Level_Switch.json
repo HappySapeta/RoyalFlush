@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1793476039",
+    "Type": "Event",
+    "GUID": "{919DC7C9-B6D7-46B1-B87D-EDA7CAEB9342}",
+    "Language": "SFX",
+    "Hash": "{80CD5589-5C78-31D0-35B0-0A108A38C060}",
+    "ObjectPath": "Amb_Level_Switch",
+    "ShortName": "Amb_Level_Switch",
+    "Path": "Event/Amb_Level_Switch.bnk",
+    "Media": [
+     {
+      "Id": "639620273",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Amb_FirstLevel_Loop.wav",
+      "Path": "Media/639620273.wem",
+      "CachePath": "13/{13211B98-E68A-ADA0-9007-9E7B23F2888D}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1793476039",
+      "Name": "Amb_Level_Switch",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ambiences\\Amb_Level_Switch",
+      "GUID": "{919DC7C9-B6D7-46B1-B87D-EDA7CAEB9342}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "639620273"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{6D8983B5-73DE-0E69-41CB-47A50D6F677C}"
+ }
+}
