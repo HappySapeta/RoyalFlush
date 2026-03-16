@@ -1305,6 +1305,11 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Jack Speech" ID="{1000AC8F-88CC-4A49-9CA4-D2FA1EE6422A}" ShortID="550798201">
 							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>40</Value>
@@ -1927,6 +1932,11 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="King Speech" ID="{07FDE516-4860-4C08-889E-9ED03FDDCE9A}" ShortID="851006684">
 							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>33</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>-150</Value>
