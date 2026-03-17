@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1648916886" Type="Event" GUID="{F3916218-2FBA-4A6E-BFAE-ED570484A083}" Language="SFX" Hash="{4ACE2112-9449-74C2-BD62-1D1CEC1C0138}">
+		<SoundBank Id="1648916886" Type="Event" GUID="{F3916218-2FBA-4A6E-BFAE-ED570484A083}" Language="SFX" Hash="{EE2A6385-7990-1B58-7C2F-8F09511AA2BB}">
 			<ObjectPath>Poker_Impact_Win</ObjectPath>
 			<ShortName>Poker_Impact_Win</ShortName>
 			<Path>Event/Poker_Impact_Win.bnk</Path>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{97E8F2D1-6329-A885-F52F-C3AD3DF52CA8}</FileHash>
+	<FileHash>{4541F099-CFBD-6FEB-B45C-9F6D0DE94796}</FileHash>
 </SoundBanksInfo>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2538807153" Type="Event" GUID="{B0E82FB0-C4DC-4804-A046-AC160C653704}" Language="SFX" Hash="{388FB121-1F66-CB58-856F-2F171329F7C1}">
+		<SoundBank Id="2538807153" Type="Event" GUID="{B0E82FB0-C4DC-4804-A046-AC160C653704}" Language="SFX" Hash="{01225A91-C419-D10A-DE54-75CDB88D7F85}">
 			<ObjectPath>Poker_Card_Dissolve</ObjectPath>
 			<ShortName>Poker_Card_Dissolve</ShortName>
 			<Path>Event/Poker_Card_Dissolve.bnk</Path>
@@ -57,5 +57,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D94B2E6E-43A4-ABA7-7C84-198F4AD00652}</FileHash>
+	<FileHash>{ADE69ED4-511F-04BC-3CBC-F7CF21F7B2D3}</FileHash>
 </SoundBanksInfo>

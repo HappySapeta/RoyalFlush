@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2021701688" Type="Event" GUID="{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}" Language="SFX" Hash="{12A508CB-D7CD-C02E-9F38-9C50DA49A147}">
+		<SoundBank Id="2021701688" Type="Event" GUID="{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}" Language="SFX" Hash="{F3A0E473-A7A7-9066-3D72-500202104D51}">
 			<ObjectPath>Poker_Chip_OneShot</ObjectPath>
 			<ShortName>Poker_Chip_OneShot</ShortName>
 			<Path>Event/Poker_Chip_OneShot.bnk</Path>
@@ -57,5 +57,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A5693BBE-8200-3A4E-294B-5E840905FB9F}</FileHash>
+	<FileHash>{17E79385-A642-129C-53FD-06030D9E2495}</FileHash>
 </SoundBanksInfo>

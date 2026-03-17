@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{F8C0BC30-1DEB-9F82-7442-BE22D40E0255}">
+		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{D5BE7409-9BFA-D199-5C8C-9C822889FB72}">
 			<ObjectPath>Character_Speech_Joker</ObjectPath>
 			<ShortName>Character_Speech_Joker</ShortName>
 			<Path>Event/Character_Speech_Joker.bnk</Path>
@@ -75,5 +75,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DC924F2B-33A7-0555-B226-3A160E9375FA}</FileHash>
+	<FileHash>{C1CF0CCF-638F-AA5F-DDD8-F6A1F8A0F5C5}</FileHash>
 </SoundBanksInfo>

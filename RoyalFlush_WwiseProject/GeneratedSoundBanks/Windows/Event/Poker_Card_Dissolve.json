@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{B0E82FB0-C4DC-4804-A046-AC160C653704}",
     "Language": "SFX",
-    "Hash": "{388FB121-1F66-CB58-856F-2F171329F7C1}",
+    "Hash": "{01225A91-C419-D10A-DE54-75CDB88D7F85}",
     "ObjectPath": "Poker_Card_Dissolve",
     "ShortName": "Poker_Card_Dissolve",
     "Path": "Event/Poker_Card_Dissolve.bnk",
@@ -115,6 +115,6 @@
     ]
    }
   ],
-  "FileHash": "{859F0EC9-5C3D-C15D-8800-1902B09AF27C}"
+  "FileHash": "{A80294E9-4B0D-498A-8D54-6783B79334F5}"
  }
 }

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}",
     "Language": "SFX",
-    "Hash": "{DB8E74CB-3238-3C08-0C05-FF8F61AD66BA}",
+    "Hash": "{34D69932-89A5-DABF-5F20-CDFBC9695000}",
     "ObjectPath": "Poker_Chip_Collect",
     "ShortName": "Poker_Chip_Collect",
     "Path": "Event/Poker_Chip_Collect.bnk",
@@ -67,6 +67,6 @@
     ]
    }
   ],
-  "FileHash": "{012FD3B4-B1F4-A5C8-7EC3-5D99B3E09D02}"
+  "FileHash": "{F41C5589-338F-F9DD-CC14-47684AFF3B04}"
  }
 }

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}" SchemaVersion="133">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="UI_LowPass" ID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

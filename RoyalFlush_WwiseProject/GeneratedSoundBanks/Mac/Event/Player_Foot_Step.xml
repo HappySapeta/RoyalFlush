@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="3171998138" Type="Event" GUID="{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}" Language="SFX" Hash="{D6FE3974-3EA9-64FE-77E1-28F68D08BDDB}">
+		<SoundBank Id="3171998138" Type="Event" GUID="{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}" Language="SFX" Hash="{6DE4D882-48C8-24AF-2E9F-F99F90A867A9}">
 			<ObjectPath>Player_Foot_Step</ObjectPath>
 			<ShortName>Player_Foot_Step</ShortName>
 			<Path>Event/Player_Foot_Step.bnk</Path>
@@ -16,10 +16,25 @@
 					<Path>Media/29028791.wem</Path>
 					<CachePath>3F/{3F7146B4-D342-8880-38A5-D4FFE807B7DB}.wem</CachePath>
 				</File>
+				<File Id="64209393" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep1.wav</ShortName>
+					<Path>Media/64209393.wem</Path>
+					<CachePath>3D/{3D388A6F-21A7-1F8D-5F0E-55D7085C9153}.wem</CachePath>
+				</File>
+				<File Id="264403800" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep2.wav</ShortName>
+					<Path>Media/264403800.wem</Path>
+					<CachePath>98/{98622BE0-823E-48D1-00D1-738DBB66BC34}.wem</CachePath>
+				</File>
 				<File Id="300382410" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Player_Footstep_Stone_2.wav</ShortName>
 					<Path>Media/300382410.wem</Path>
 					<CachePath>99/{998F78D8-58F6-E71A-1CB3-3D8E63AD1DF1}.wem</CachePath>
+				</File>
+				<File Id="344757656" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep3.wav</ShortName>
+					<Path>Media/344757656.wem</Path>
+					<CachePath>45/{4573E771-9C0E-0B82-8A87-2867AA1C4A7B}.wem</CachePath>
 				</File>
 				<File Id="521714472" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Player_Footstep_Carpet_6.wav</ShortName>
@@ -31,10 +46,20 @@
 					<Path>Media/698444392.wem</Path>
 					<CachePath>B3/{B36A6895-CDA5-6AB3-D9E5-58F3C7B66007}.wem</CachePath>
 				</File>
+				<File Id="739225321" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep6.wav</ShortName>
+					<Path>Media/739225321.wem</Path>
+					<CachePath>15/{15425245-BB30-67C4-A8C5-8A51F0B1C6D5}.wem</CachePath>
+				</File>
 				<File Id="793453065" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Player_Footstep_Stone_1.wav</ShortName>
 					<Path>Media/793453065.wem</Path>
 					<CachePath>68/{68B49521-AD2E-8D03-5F6E-F69AD95F94BD}.wem</CachePath>
+				</File>
+				<File Id="813856796" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep4.wav</ShortName>
+					<Path>Media/813856796.wem</Path>
+					<CachePath>F0/{F0D16688-953C-1D2C-3314-F3214C783611}.wem</CachePath>
 				</File>
 				<File Id="814075878" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Player_Footstep_Stone_6.wav</ShortName>
@@ -50,6 +75,11 @@
 					<ShortName>Player_Footstep_Carpet_5.wav</ShortName>
 					<Path>Media/968188620.wem</Path>
 					<CachePath>C0/{C0A46601-8C08-144F-B96F-30293579FB26}.wem</CachePath>
+				</File>
+				<File Id="988786257" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep5.wav</ShortName>
+					<Path>Media/988786257.wem</Path>
+					<CachePath>8A/{8A66D6F8-F311-180D-9E79-B9B710F76F00}.wem</CachePath>
 				</File>
 				<File Id="1001647276" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Player_Footstep_Carpet_1.wav</ShortName>
@@ -73,10 +103,32 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3171998138" Name="Player_Foot_Step" ObjectPath="\Events\Default Work Unit\Player\Player_Foot_Step" GUID="{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}" DurationType="OneShot" DurationMin="0.44544935" DurationMax="0.6120268">
+				<Event Id="3171998138" Name="Player_Foot_Step" ObjectPath="\Events\Default Work Unit\Player\Player_Foot_Step" GUID="{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}" DurationType="OneShot" DurationMin="0.44544935" DurationMax="0.625">
 					<SwitchContainers>
 						<SwitchContainer>
-							<SwitchValue GroupType="Switch" GroupId="1368630905" Id="2412606308" GUID="{3CC1B7D3-CBA7-43AD-9376-4E9FDB490246}"/>
+							<SwitchValue GroupType="Switch" GroupId="1368630905" Id="2058049674" GUID="{5991F025-F8E7-4679-B1C3-70CF08ACE181}"/>
+							<MediaRefs>
+								<MediaRef Id="64209393"/>
+								<MediaRef Id="264403800"/>
+								<MediaRef Id="344757656"/>
+								<MediaRef Id="739225321"/>
+								<MediaRef Id="813856796"/>
+								<MediaRef Id="988786257"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1368630905" Id="2473969246" GUID="{FF85422E-956B-45C5-95EE-7F7F4213A7A6}"/>
+							<MediaRefs>
+								<MediaRef Id="64209393"/>
+								<MediaRef Id="264403800"/>
+								<MediaRef Id="344757656"/>
+								<MediaRef Id="739225321"/>
+								<MediaRef Id="813856796"/>
+								<MediaRef Id="988786257"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1368630905" Id="2412606308" GUID="{3CC1B7D3-CBA7-43AD-9376-4E9FDB490246}" Default="true"/>
 							<MediaRefs>
 								<MediaRef Id="20469416"/>
 								<MediaRef Id="521714472"/>
@@ -113,5 +165,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BF275533-23A5-C392-EA60-2F0B2539AFFE}</FileHash>
+	<FileHash>{276913CD-36C4-D114-313D-5E2E7CD1BA80}</FileHash>
 </SoundBanksInfo>

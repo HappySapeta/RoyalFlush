@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}",
     "Language": "SFX",
-    "Hash": "{D6FE3974-3EA9-64FE-77E1-28F68D08BDDB}",
+    "Hash": "{6DE4D882-48C8-24AF-2E9F-F99F90A867A9}",
     "ObjectPath": "Player_Foot_Step",
     "ShortName": "Player_Foot_Step",
     "Path": "Event/Player_Foot_Step.bnk",
@@ -34,6 +34,24 @@
       "CachePath": "3F/{3F7146B4-D342-8880-38A5-D4FFE807B7DB}.wem"
      },
      {
+      "Id": "64209393",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MetalStep1.wav",
+      "Path": "Media/64209393.wem",
+      "CachePath": "3D/{3D388A6F-21A7-1F8D-5F0E-55D7085C9153}.wem"
+     },
+     {
+      "Id": "264403800",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MetalStep2.wav",
+      "Path": "Media/264403800.wem",
+      "CachePath": "98/{98622BE0-823E-48D1-00D1-738DBB66BC34}.wem"
+     },
+     {
       "Id": "300382410",
       "Language": "SFX",
       "Streaming": "false",
@@ -41,6 +59,15 @@
       "ShortName": "Player_Footstep_Stone_2.wav",
       "Path": "Media/300382410.wem",
       "CachePath": "99/{998F78D8-58F6-E71A-1CB3-3D8E63AD1DF1}.wem"
+     },
+     {
+      "Id": "344757656",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MetalStep3.wav",
+      "Path": "Media/344757656.wem",
+      "CachePath": "45/{4573E771-9C0E-0B82-8A87-2867AA1C4A7B}.wem"
      },
      {
       "Id": "521714472",
@@ -61,6 +88,15 @@
       "CachePath": "B3/{B36A6895-CDA5-6AB3-D9E5-58F3C7B66007}.wem"
      },
      {
+      "Id": "739225321",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MetalStep6.wav",
+      "Path": "Media/739225321.wem",
+      "CachePath": "15/{15425245-BB30-67C4-A8C5-8A51F0B1C6D5}.wem"
+     },
+     {
       "Id": "793453065",
       "Language": "SFX",
       "Streaming": "false",
@@ -68,6 +104,15 @@
       "ShortName": "Player_Footstep_Stone_1.wav",
       "Path": "Media/793453065.wem",
       "CachePath": "68/{68B49521-AD2E-8D03-5F6E-F69AD95F94BD}.wem"
+     },
+     {
+      "Id": "813856796",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MetalStep4.wav",
+      "Path": "Media/813856796.wem",
+      "CachePath": "F0/{F0D16688-953C-1D2C-3314-F3214C783611}.wem"
      },
      {
       "Id": "814075878",
@@ -95,6 +140,15 @@
       "ShortName": "Player_Footstep_Carpet_5.wav",
       "Path": "Media/968188620.wem",
       "CachePath": "C0/{C0A46601-8C08-144F-B96F-30293579FB26}.wem"
+     },
+     {
+      "Id": "988786257",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MetalStep5.wav",
+      "Path": "Media/988786257.wem",
+      "CachePath": "8A/{8A66D6F8-F311-180D-9E79-B9B710F76F00}.wem"
      },
      {
       "Id": "1001647276",
@@ -141,14 +195,71 @@
       "GUID": "{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}",
       "DurationType": "OneShot",
       "DurationMin": "0.44544935",
-      "DurationMax": "0.6120268",
+      "DurationMax": "0.625",
       "SwitchContainers": [
        {
         "SwitchValue": {
          "GroupType": "Switch",
          "GroupId": "1368630905",
+         "Id": "2058049674",
+         "GUID": "{5991F025-F8E7-4679-B1C3-70CF08ACE181}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "64209393"
+         },
+         {
+          "Id": "264403800"
+         },
+         {
+          "Id": "344757656"
+         },
+         {
+          "Id": "739225321"
+         },
+         {
+          "Id": "813856796"
+         },
+         {
+          "Id": "988786257"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1368630905",
+         "Id": "2473969246",
+         "GUID": "{FF85422E-956B-45C5-95EE-7F7F4213A7A6}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "64209393"
+         },
+         {
+          "Id": "264403800"
+         },
+         {
+          "Id": "344757656"
+         },
+         {
+          "Id": "739225321"
+         },
+         {
+          "Id": "813856796"
+         },
+         {
+          "Id": "988786257"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "1368630905",
          "Id": "2412606308",
-         "GUID": "{3CC1B7D3-CBA7-43AD-9376-4E9FDB490246}"
+         "GUID": "{3CC1B7D3-CBA7-43AD-9376-4E9FDB490246}",
+         "Default": "true"
         },
         "MediaRefs": [
          {
@@ -241,6 +352,6 @@
     ]
    }
   ],
-  "FileHash": "{E689BA1B-AEE7-69F9-31E9-19042A117657}"
+  "FileHash": "{704BBF18-B693-4939-F650-C774B88E765C}"
  }
 }

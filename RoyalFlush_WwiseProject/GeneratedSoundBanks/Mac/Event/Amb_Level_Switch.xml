@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1793476039" Type="Event" GUID="{919DC7C9-B6D7-46B1-B87D-EDA7CAEB9342}" Language="SFX" Hash="{80CD5589-5C78-31D0-35B0-0A108A38C060}">
+		<SoundBank Id="1793476039" Type="Event" GUID="{919DC7C9-B6D7-46B1-B87D-EDA7CAEB9342}" Language="SFX" Hash="{F02E4FD8-F3E5-1709-61FB-6F1619A57812}">
 			<ObjectPath>Amb_Level_Switch</ObjectPath>
 			<ShortName>Amb_Level_Switch</ShortName>
 			<Path>Event/Amb_Level_Switch.bnk</Path>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{89E7565B-9D28-A6B2-0E64-4AD9764E422F}</FileHash>
+	<FileHash>{1162D4EA-335B-D581-5B0C-7E96B8B1782C}</FileHash>
 </SoundBanksInfo>

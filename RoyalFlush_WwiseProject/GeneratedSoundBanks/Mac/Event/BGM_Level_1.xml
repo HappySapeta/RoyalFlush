@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="3736445778" Type="Event" GUID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}" Language="SFX" Hash="{9B5D329A-6820-93BF-2E47-1EBB45F34E88}">
+		<SoundBank Id="3736445778" Type="Event" GUID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}" Language="SFX" Hash="{51D84C06-41BB-FFC0-560B-CA1D61BD221E}">
 			<ObjectPath>BGM_Level_1</ObjectPath>
 			<ShortName>BGM_Level_1</ShortName>
 			<Path>Event/BGM_Level_1.bnk</Path>
@@ -81,6 +81,9 @@
 					</SwitchContainers>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="3636347407" Name="UI_LowPass" ObjectPath="\Game Parameters\Default Work Unit\UI_LowPass" GUID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}"/>
+			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="649345183" Name="BGM_Level1" ObjectPath="\States\Default Work Unit\BGM_Level1" GUID="{95FD7CC8-A2D1-4247-B671-5F304DD70335}">
 					<States>
@@ -96,5 +99,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{112DFD26-7CCE-BE25-BC27-830EC1A4C4A6}</FileHash>
+	<FileHash>{77B1D0A2-2F1F-1F94-4A36-A7E0FC03E8ED}</FileHash>
 </SoundBanksInfo>

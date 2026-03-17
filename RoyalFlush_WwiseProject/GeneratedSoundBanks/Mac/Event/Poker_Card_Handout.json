@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{F3ADAFCE-3866-4366-BC9A-50C5969A70EC}",
     "Language": "SFX",
-    "Hash": "{501202B5-0A3C-7B16-A81B-F389F043D075}",
+    "Hash": "{C640AD4E-37D4-2123-C57C-5B41034F3073}",
     "ObjectPath": "Poker_Card_Handout",
     "ShortName": "Poker_Card_Handout",
     "Path": "Event/Poker_Card_Handout.bnk",
@@ -127,6 +127,6 @@
     ]
    }
   ],
-  "FileHash": "{9DC46EC8-30B2-5B1D-4831-46B1E06E2FBF}"
+  "FileHash": "{41585968-A632-A294-3C68-EAD4AA28D31E}"
  }
 }

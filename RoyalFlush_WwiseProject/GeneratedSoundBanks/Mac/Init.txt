@@ -16,8 +16,12 @@ State	ID	Name	State Group			Notes
 	3919849458	Transition_In	BGM_Level1			
 	3992321431	Ace_Loop	BGM_Level1			
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3636347407	UI_LowPass			\Default Work Unit\UI_LowPass	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3833275939	In-Game Audio Bus			\Default Work Unit\In-Game Audio Bus	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

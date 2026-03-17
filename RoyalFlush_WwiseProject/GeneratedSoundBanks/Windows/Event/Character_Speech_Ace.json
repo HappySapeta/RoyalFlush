@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}",
     "Language": "SFX",
-    "Hash": "{58302215-9284-A6E2-619B-8B51649284D7}",
+    "Hash": "{5E19E7A6-AA77-82D3-CB40-F2EF65FE4341}",
     "ObjectPath": "Character_Speech_Ace",
     "ShortName": "Character_Speech_Ace",
     "Path": "Event/Character_Speech_Ace.bnk",
@@ -91,6 +91,6 @@
     ]
    }
   ],
-  "FileHash": "{F16D496C-2AA0-9ED2-0930-14EC5ED71F79}"
+  "FileHash": "{4CAB9A8F-5908-55AE-856E-1B7F0CCA437F}"
  }
 }

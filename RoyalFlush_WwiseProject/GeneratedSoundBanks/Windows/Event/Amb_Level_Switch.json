@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{919DC7C9-B6D7-46B1-B87D-EDA7CAEB9342}",
     "Language": "SFX",
-    "Hash": "{80CD5589-5C78-31D0-35B0-0A108A38C060}",
+    "Hash": "{F02E4FD8-F3E5-1709-61FB-6F1619A57812}",
     "ObjectPath": "Amb_Level_Switch",
     "ShortName": "Amb_Level_Switch",
     "Path": "Event/Amb_Level_Switch.bnk",
@@ -41,6 +41,6 @@
     ]
    }
   ],
-  "FileHash": "{234DC746-AC4E-3DBD-737F-AE1AA7484D5F}"
+  "FileHash": "{8DF1C58A-10DE-E524-BF07-5406ED4B0BDA}"
  }
 }

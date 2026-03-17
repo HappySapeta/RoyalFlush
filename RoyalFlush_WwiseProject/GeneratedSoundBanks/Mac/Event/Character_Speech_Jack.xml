@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2402462855" Type="Event" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" Language="SFX" Hash="{25B744FF-6613-2B87-63B7-E7E11161A1D7}">
+		<SoundBank Id="2402462855" Type="Event" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" Language="SFX" Hash="{72AF4046-93B4-25F7-D084-A150246EE748}">
 			<ObjectPath>Character_Speech_Jack</ObjectPath>
 			<ShortName>Character_Speech_Jack</ShortName>
 			<Path>Event/Character_Speech_Jack.bnk</Path>
@@ -69,5 +69,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{415606D0-8DAB-6D86-D2AF-AD48427FDF1C}</FileHash>
+	<FileHash>{62B0611E-DAD1-BA4F-3051-3F2FBE98F7D6}</FileHash>
 </SoundBanksInfo>

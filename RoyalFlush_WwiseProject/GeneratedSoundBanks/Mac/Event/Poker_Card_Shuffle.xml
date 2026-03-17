@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2367099639" Type="Event" GUID="{75319BAB-0AC0-46EB-BB95-F13B0D94647F}" Language="SFX" Hash="{A4713FFA-9E89-D23D-662A-BBFB9E26A4EC}">
+		<SoundBank Id="2367099639" Type="Event" GUID="{75319BAB-0AC0-46EB-BB95-F13B0D94647F}" Language="SFX" Hash="{3A930623-A200-7B0A-69E6-81FCBC873861}">
 			<ObjectPath>Poker_Card_Shuffle</ObjectPath>
 			<ShortName>Poker_Card_Shuffle</ShortName>
 			<Path>Event/Poker_Card_Shuffle.bnk</Path>
@@ -33,5 +33,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2839711A-385F-E2C9-404B-3CC34647D270}</FileHash>
+	<FileHash>{7C2FE3E6-77FE-35A2-58AD-D8E7FD3457BF}</FileHash>
 </SoundBanksInfo>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{A2D9C3C2-A325-AE51-59AA-75BA34BDD2E3}">
+		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{EBD83DB8-EDCC-06EF-D0AA-92B9604CCE1C}">
 			<ObjectPath>Character_Speech_Dealer</ObjectPath>
 			<ShortName>Character_Speech_Dealer</ShortName>
 			<Path>Event/Character_Speech_Dealer.bnk</Path>
@@ -69,5 +69,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D23035EE-49EC-480F-6DF3-5277F5ADC147}</FileHash>
+	<FileHash>{708233F4-4F88-A3A0-5E35-2755A7A2B1F1}</FileHash>
 </SoundBanksInfo>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="752672192" Type="Event" GUID="{5AFCEA88-5D06-4E32-B141-2E89B83987F2}" Language="SFX" Hash="{F0A82023-EDBC-9724-6A4F-E42ED834DA1C}">
+		<SoundBank Id="752672192" Type="Event" GUID="{5AFCEA88-5D06-4E32-B141-2E89B83987F2}" Language="SFX" Hash="{C136EA49-22EA-DCEC-F386-6743C5CDB847}">
 			<ObjectPath>Poker_Impact_Regular</ObjectPath>
 			<ShortName>Poker_Impact_Regular</ShortName>
 			<Path>Event/Poker_Impact_Regular.bnk</Path>
@@ -45,5 +45,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FC345275-722C-486F-558C-1B1CE0A18ED1}</FileHash>
+	<FileHash>{07A59E16-8D31-DDBF-708D-A609F8A2C814}</FileHash>
 </SoundBanksInfo>

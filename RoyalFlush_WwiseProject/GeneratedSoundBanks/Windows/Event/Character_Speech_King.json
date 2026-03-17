@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}",
     "Language": "SFX",
-    "Hash": "{6272D073-FF20-1D5D-8A9F-B929CE5A6EF7}",
+    "Hash": "{1120D532-9286-320E-6B1A-F179A6D40F3B}",
     "ObjectPath": "Character_Speech_King",
     "ShortName": "Character_Speech_King",
     "Path": "Event/Character_Speech_King.bnk",
@@ -115,6 +115,6 @@
     ]
    }
   ],
-  "FileHash": "{3C16157B-A250-76A0-0A0D-BF106302DA58}"
+  "FileHash": "{849DB193-60BD-EAB8-7F68-CC0E0C53C5B3}"
  }
 }

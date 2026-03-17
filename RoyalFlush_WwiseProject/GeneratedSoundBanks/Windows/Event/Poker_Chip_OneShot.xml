@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2021701688" Type="Event" GUID="{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}" Language="SFX" Hash="{12A508CB-D7CD-C02E-9F38-9C50DA49A147}">
+		<SoundBank Id="2021701688" Type="Event" GUID="{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}" Language="SFX" Hash="{F3A0E473-A7A7-9066-3D72-500202104D51}">
 			<ObjectPath>Poker_Chip_OneShot</ObjectPath>
 			<ShortName>Poker_Chip_OneShot</ShortName>
 			<Path>Event/Poker_Chip_OneShot.bnk</Path>
@@ -57,5 +57,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{28831200-A4FC-A4E6-39A1-5310110731D2}</FileHash>
+	<FileHash>{1E332996-C7BD-769F-9A61-46EC7840744A}</FileHash>
 </SoundBanksInfo>

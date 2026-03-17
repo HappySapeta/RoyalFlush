@@ -296,6 +296,9 @@
 					</CurveUsageInfoList>
 				</Attenuation>
 				<Attenuation Name="Enviromental Loops" ID="{BABA1BAB-0A1E-4D87-88ED-333B2000B074}" ShortID="634362016">
+					<PropertyList>
+						<Property Name="RadiusMax" Type="Real64" Value="2000"/>
+					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
 							<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
@@ -310,7 +313,7 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>100</XPos>
+											<XPos>2000</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>

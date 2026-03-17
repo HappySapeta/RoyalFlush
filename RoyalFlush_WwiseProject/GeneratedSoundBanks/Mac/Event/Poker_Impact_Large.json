@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{B8E3BC6D-65B8-4EF6-8DE2-8FD689931DCA}",
     "Language": "SFX",
-    "Hash": "{8FB09D2B-FA71-C9DE-32CC-3E84EEBFD156}",
+    "Hash": "{654EB21B-DB12-3C68-ACDC-2ACF866E92E0}",
     "ObjectPath": "Poker_Impact_Large",
     "ShortName": "Poker_Impact_Large",
     "Path": "Event/Poker_Impact_Large.bnk",
@@ -67,6 +67,6 @@
     ]
    }
   ],
-  "FileHash": "{AE14B4F7-A6E4-47F7-D4F3-366FAF2C7871}"
+  "FileHash": "{93008E02-6AAE-E66C-8E2E-0EF0EA2E2FDF}"
  }
 }

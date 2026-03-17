@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}",
     "Language": "SFX",
-    "Hash": "{9B5D329A-6820-93BF-2E47-1EBB45F34E88}",
+    "Hash": "{51D84C06-41BB-FFC0-560B-CA1D61BD221E}",
     "ObjectPath": "BGM_Level_1",
     "ShortName": "BGM_Level_1",
     "Path": "Event/BGM_Level_1.bnk",
@@ -165,6 +165,14 @@
       ]
      }
     ],
+    "GameParameters": [
+     {
+      "Id": "3636347407",
+      "Name": "UI_LowPass",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\UI_LowPass",
+      "GUID": "{6887D41A-E6D6-4546-AEE8-39D96C84F133}"
+     }
+    ],
     "StateGroups": [
      {
       "Id": "649345183",
@@ -219,6 +227,6 @@
     ]
    }
   ],
-  "FileHash": "{642D9B91-8393-35FB-B048-7DABFDFB274E}"
+  "FileHash": "{A1F04289-A7B2-0654-9245-722AF04D3307}"
  }
 }

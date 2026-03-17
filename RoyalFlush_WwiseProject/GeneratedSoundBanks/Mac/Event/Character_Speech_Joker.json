@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
     "Language": "SFX",
-    "Hash": "{F8C0BC30-1DEB-9F82-7442-BE22D40E0255}",
+    "Hash": "{D5BE7409-9BFA-D199-5C8C-9C822889FB72}",
     "ObjectPath": "Character_Speech_Joker",
     "ShortName": "Character_Speech_Joker",
     "Path": "Event/Character_Speech_Joker.bnk",
@@ -151,6 +151,6 @@
     ]
    }
   ],
-  "FileHash": "{7DF3E668-3506-0DD7-5E14-E48E9EC355D1}"
+  "FileHash": "{E12664B3-4122-45F9-ADCE-5C8B6E461710}"
  }
 }

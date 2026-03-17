@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{75319BAB-0AC0-46EB-BB95-F13B0D94647F}",
     "Language": "SFX",
-    "Hash": "{A4713FFA-9E89-D23D-662A-BBFB9E26A4EC}",
+    "Hash": "{3A930623-A200-7B0A-69E6-81FCBC873861}",
     "ObjectPath": "Poker_Card_Shuffle",
     "ShortName": "Poker_Card_Shuffle",
     "Path": "Event/Poker_Card_Shuffle.bnk",
@@ -67,6 +67,6 @@
     ]
    }
   ],
-  "FileHash": "{25AA6323-7FB7-3F21-3812-04667E264266}"
+  "FileHash": "{CBEE0C1B-1FE5-4FFA-1EB1-D26DEC9FBEDD}"
  }
 }

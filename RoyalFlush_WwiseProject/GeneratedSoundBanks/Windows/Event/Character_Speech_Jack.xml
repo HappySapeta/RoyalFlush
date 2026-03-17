@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2402462855" Type="Event" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" Language="SFX" Hash="{25B744FF-6613-2B87-63B7-E7E11161A1D7}">
+		<SoundBank Id="2402462855" Type="Event" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" Language="SFX" Hash="{72AF4046-93B4-25F7-D084-A150246EE748}">
 			<ObjectPath>Character_Speech_Jack</ObjectPath>
 			<ShortName>Character_Speech_Jack</ShortName>
 			<Path>Event/Character_Speech_Jack.bnk</Path>
@@ -69,5 +69,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F87BDD84-12A1-C1B0-A68E-E125C04A5BC9}</FileHash>
+	<FileHash>{0C666CBB-DE06-4F89-E37C-F263DDA9E358}</FileHash>
 </SoundBanksInfo>

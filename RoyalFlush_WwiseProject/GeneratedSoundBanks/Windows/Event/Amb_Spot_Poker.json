@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}",
     "Language": "SFX",
-    "Hash": "{B1D5CAD7-E81A-4030-31AD-2F2863788A37}",
+    "Hash": "{D3C98122-439A-54D3-7EA5-CA6DF9F70733}",
     "ObjectPath": "Amb_Spot_Poker",
     "ShortName": "Amb_Spot_Poker",
     "Path": "Event/Amb_Spot_Poker.bnk",
@@ -31,7 +31,7 @@
       "Name": "Amb_Spot_Poker",
       "ObjectPath": "\\Events\\Default Work Unit\\Ambiences\\Spot Ambiences\\Amb_Spot_Poker",
       "GUID": "{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "2000",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -42,6 +42,6 @@
     ]
    }
   ],
-  "FileHash": "{2818DBF1-F494-ADE6-970A-3327CDD69B9E}"
+  "FileHash": "{BDC5C167-196E-00E5-18FD-E499D4A55221}"
  }
 }

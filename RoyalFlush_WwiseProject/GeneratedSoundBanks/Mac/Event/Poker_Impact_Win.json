@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{F3916218-2FBA-4A6E-BFAE-ED570484A083}",
     "Language": "SFX",
-    "Hash": "{4ACE2112-9449-74C2-BD62-1D1CEC1C0138}",
+    "Hash": "{EE2A6385-7990-1B58-7C2F-8F09511AA2BB}",
     "ObjectPath": "Poker_Impact_Win",
     "ShortName": "Poker_Impact_Win",
     "Path": "Event/Poker_Impact_Win.bnk",
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{C23CBD4F-AC60-1146-99AC-8733F822F1B4}"
+  "FileHash": "{C2DC3603-3444-78A1-D631-1EA2DAA85F2E}"
  }
 }

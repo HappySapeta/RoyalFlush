@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{43D316F3-3A89-49F0-B7A0-F568FE500807}",
     "Language": "SFX",
-    "Hash": "{623591CF-E145-9020-0649-F4C808D55CA3}",
+    "Hash": "{D600A02C-1E49-872B-15B1-393CACB3C054}",
     "ObjectPath": "Poker_Impact_Lose",
     "ShortName": "Poker_Impact_Lose",
     "Path": "Event/Poker_Impact_Lose.bnk",
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{4AAE4455-25FF-884B-0E48-1FEE951FDBE4}"
+  "FileHash": "{53B0B717-DE49-D19A-230C-E5F9F4E7DEA1}"
  }
 }

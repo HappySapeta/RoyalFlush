@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2819840396" Type="Event" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" Language="SFX" Hash="{C1FAACF8-B6C9-682A-2E76-35312CE608E2}">
+		<SoundBank Id="2819840396" Type="Event" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" Language="SFX" Hash="{16D22B3C-65FB-E9A1-E454-173BA373BAE5}">
 			<ObjectPath>Amb_Spot_Slots</ObjectPath>
 			<ShortName>Amb_Spot_Slots</ShortName>
 			<Path>Event/Amb_Spot_Slots.bnk</Path>
@@ -13,7 +13,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2819840396" Name="Amb_Spot_Slots" ObjectPath="\Events\Default Work Unit\Ambiences\Spot Ambiences\Amb_Spot_Slots" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" MaxAttenuation="100" DurationType="Infinite">
+				<Event Id="2819840396" Name="Amb_Spot_Slots" ObjectPath="\Events\Default Work Unit\Ambiences\Spot Ambiences\Amb_Spot_Slots" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" MaxAttenuation="2000" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="109367632"/>
 					</MediaRefs>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E5C11D21-6C28-EA34-5ABE-BE1430A7F446}</FileHash>
+	<FileHash>{26FB0CA7-0691-74FF-5783-E3E386967FDA}</FileHash>
 </SoundBanksInfo>

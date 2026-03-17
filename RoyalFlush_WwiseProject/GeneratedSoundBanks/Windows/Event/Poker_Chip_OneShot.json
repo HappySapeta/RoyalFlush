@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}",
     "Language": "SFX",
-    "Hash": "{12A508CB-D7CD-C02E-9F38-9C50DA49A147}",
+    "Hash": "{F3A0E473-A7A7-9066-3D72-500202104D51}",
     "ObjectPath": "Poker_Chip_OneShot",
     "ShortName": "Poker_Chip_OneShot",
     "Path": "Event/Poker_Chip_OneShot.bnk",
@@ -115,6 +115,6 @@
     ]
    }
   ],
-  "FileHash": "{E94318AF-0A9C-1CF4-EE83-CFBE88CA8492}"
+  "FileHash": "{A492E5A1-0852-91F2-8A0E-C13A05BC43FF}"
  }
 }
