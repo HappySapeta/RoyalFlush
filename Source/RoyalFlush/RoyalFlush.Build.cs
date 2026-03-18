@@ -6,6 +6,7 @@ public class RoyalFlush : ModuleRules
 {
     public RoyalFlush(ReadOnlyTargetRules Target) : base(Target)
     {
+        PrivateDependencyModuleNames.AddRange(new string[] { "GameplayCameras" });
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
         PublicDependencyModuleNames.AddRange(new string[] 
@@ -16,7 +17,8 @@ public class RoyalFlush : ModuleRules
             "InputCore", 
             "EnhancedInput",
             "DlgSystem",
-            "UMG"
+            "UMG",
+            "GameplayTags"
         });
 
         PublicIncludePaths.AddRange(new string[] { "../Plugins/DlgSystem/Source" });
