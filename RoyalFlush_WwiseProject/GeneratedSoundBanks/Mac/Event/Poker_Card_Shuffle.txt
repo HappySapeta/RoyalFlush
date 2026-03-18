@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2367099639	Poker_Card_Shuffle			\Default Work Unit\Poker\Card\Poker_Card_Shuffle	
+

@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1648916886	Poker_Impact_Win			\Default Work Unit\Poker\Impact\Poker_Impact_Win	
+

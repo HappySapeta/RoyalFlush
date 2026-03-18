@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="509666419" Type="Event" GUID="{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}" Language="SFX" Hash="{1120D532-9286-320E-6B1A-F179A6D40F3B}">
+			<ObjectPath>Character_Speech_King</ObjectPath>
+			<ShortName>Character_Speech_King</ShortName>
+			<Path>Event/Character_Speech_King.bnk</Path>
+			<Media>
+				<File Id="165316155" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_2.wav</ShortName>
+					<Path>Media/165316155.wem</Path>
+					<CachePath>6D/{6DA82B0E-8A45-237A-275A-EC5820DB0E83}.wem</CachePath>
+				</File>
+				<File Id="223110650" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_4.wav</ShortName>
+					<Path>Media/223110650.wem</Path>
+					<CachePath>EF/{EFA84849-DC46-D579-A743-2D77FDE5025B}.wem</CachePath>
+				</File>
+				<File Id="371861220" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_7.wav</ShortName>
+					<Path>Media/371861220.wem</Path>
+					<CachePath>A0/{A023D521-2B64-CC06-CC5D-1C19CF455EB3}.wem</CachePath>
+				</File>
+				<File Id="451688503" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_6.wav</ShortName>
+					<Path>Media/451688503.wem</Path>
+					<CachePath>31/{310D1C9D-8D95-D923-2447-14E8938BD1FC}.wem</CachePath>
+				</File>
+				<File Id="603172419" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_5.wav</ShortName>
+					<Path>Media/603172419.wem</Path>
+					<CachePath>E6/{E62CD031-415E-90B9-FDBF-3914510683EA}.wem</CachePath>
+				</File>
+				<File Id="786569382" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_1.wav</ShortName>
+					<Path>Media/786569382.wem</Path>
+					<CachePath>88/{8875C5D9-F0FE-7D59-F8F8-FB5F8B681C53}.wem</CachePath>
+				</File>
+				<File Id="915967804" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_3.wav</ShortName>
+					<Path>Media/915967804.wem</Path>
+					<CachePath>2D/{2DCAD2F6-9954-C739-609F-7527CCAB10B3}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="509666419" Name="Character_Speech_King" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_King" GUID="{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}" DurationType="OneShot" DurationMin="0.10905077" DurationMax="0.15425321">
+					<MediaRefs>
+						<MediaRef Id="165316155"/>
+						<MediaRef Id="223110650"/>
+						<MediaRef Id="371861220"/>
+						<MediaRef Id="451688503"/>
+						<MediaRef Id="603172419"/>
+						<MediaRef Id="786569382"/>
+						<MediaRef Id="915967804"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{DFE6CDBD-90D0-BB55-166F-8CB4F066FED4}</FileHash>
+</SoundBanksInfo>

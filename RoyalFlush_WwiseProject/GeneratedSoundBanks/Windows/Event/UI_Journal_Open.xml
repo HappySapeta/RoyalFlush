@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="3638217758" Type="Event" GUID="{8DB07D75-FFF2-47D4-B8F5-6487175863A3}" Language="SFX" Hash="{FCF5B447-CA1F-4873-E9C1-8230381BBC52}">
+			<ObjectPath>UI_Journal_Open</ObjectPath>
+			<ShortName>UI_Journal_Open</ShortName>
+			<Path>Event/UI_Journal_Open.bnk</Path>
+			<Media>
+				<File Id="594152882" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Journal_Open.wav</ShortName>
+					<Path>Media/594152882.wem</Path>
+					<CachePath>91/{916588E4-50DC-0C92-AB48-46DF217E0B2D}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3638217758" Name="UI_Journal_Open" ObjectPath="\Events\Default Work Unit\UI\UI_Journal_Open" GUID="{8DB07D75-FFF2-47D4-B8F5-6487175863A3}" DurationType="OneShot" DurationMin="3.5" DurationMax="3.5">
+					<MediaRefs>
+						<MediaRef Id="594152882"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{5F8BD456-1701-2CEA-2470-167840FD434E}</FileHash>
+</SoundBanksInfo>

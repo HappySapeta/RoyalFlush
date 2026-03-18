@@ -1,0 +1,132 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2118900976",
+    "Type": "Event",
+    "GUID": "{2A6EB89A-CDFB-400A-B065-EA527AEC0DF2}",
+    "Language": "SFX",
+    "Hash": "{07374804-AE95-BFA3-DBCE-D2B584A1DA24}",
+    "ObjectPath": "UI_Hover",
+    "ShortName": "UI_Hover",
+    "Path": "Event/UI_Hover.bnk",
+    "Media": [
+     {
+      "Id": "292700569",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Hover_1.wav",
+      "Path": "Media/292700569.wem",
+      "CachePath": "E1/{E1E89AB4-8D77-1BDC-2FF2-F7B61449DFF8}.wem"
+     },
+     {
+      "Id": "370047884",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Hover_3.wav",
+      "Path": "Media/370047884.wem",
+      "CachePath": "CD/{CD06D2E2-2DDC-D500-3D4C-39EE7B4B85E9}.wem"
+     },
+     {
+      "Id": "493048695",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Hover_6.wav",
+      "Path": "Media/493048695.wem",
+      "CachePath": "F8/{F8A67766-D133-EDA9-31A8-E250ABF459E8}.wem"
+     },
+     {
+      "Id": "517860784",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Hover_8.wav",
+      "Path": "Media/517860784.wem",
+      "CachePath": "D2/{D2FF9797-0354-3746-5256-39B39405330A}.wem"
+     },
+     {
+      "Id": "703504247",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Hover_5.wav",
+      "Path": "Media/703504247.wem",
+      "CachePath": "4D/{4D0E5135-62DF-B053-06DF-E2BD8E2257D8}.wem"
+     },
+     {
+      "Id": "714540727",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Hover_2.wav",
+      "Path": "Media/714540727.wem",
+      "CachePath": "86/{867488E3-77C7-5DDD-009A-6168213B2846}.wem"
+     },
+     {
+      "Id": "740581551",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Hover_4.wav",
+      "Path": "Media/740581551.wem",
+      "CachePath": "D5/{D5759632-3D70-49E0-6DA0-33ADEB3E289F}.wem"
+     },
+     {
+      "Id": "1069049292",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Hover_7.wav",
+      "Path": "Media/1069049292.wem",
+      "CachePath": "6F/{6F721521-F00D-67E6-CE32-C6F095D16AB3}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2118900976",
+      "Name": "UI_Hover",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\UI_Hover",
+      "GUID": "{2A6EB89A-CDFB-400A-B065-EA527AEC0DF2}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "292700569"
+       },
+       {
+        "Id": "370047884"
+       },
+       {
+        "Id": "493048695"
+       },
+       {
+        "Id": "517860784"
+       },
+       {
+        "Id": "703504247"
+       },
+       {
+        "Id": "714540727"
+       },
+       {
+        "Id": "740581551"
+       },
+       {
+        "Id": "1069049292"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{6CCEA9F5-4617-7E3C-98C0-F21B6AF4B814}"
+ }
+}

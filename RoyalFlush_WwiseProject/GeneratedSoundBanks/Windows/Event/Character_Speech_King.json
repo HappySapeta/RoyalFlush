@@ -1,0 +1,120 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "509666419",
+    "Type": "Event",
+    "GUID": "{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}",
+    "Language": "SFX",
+    "Hash": "{1120D532-9286-320E-6B1A-F179A6D40F3B}",
+    "ObjectPath": "Character_Speech_King",
+    "ShortName": "Character_Speech_King",
+    "Path": "Event/Character_Speech_King.bnk",
+    "Media": [
+     {
+      "Id": "165316155",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_King_Speech_Oneshot_2.wav",
+      "Path": "Media/165316155.wem",
+      "CachePath": "6D/{6DA82B0E-8A45-237A-275A-EC5820DB0E83}.wem"
+     },
+     {
+      "Id": "223110650",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_King_Speech_Oneshot_4.wav",
+      "Path": "Media/223110650.wem",
+      "CachePath": "EF/{EFA84849-DC46-D579-A743-2D77FDE5025B}.wem"
+     },
+     {
+      "Id": "371861220",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_King_Speech_Oneshot_7.wav",
+      "Path": "Media/371861220.wem",
+      "CachePath": "A0/{A023D521-2B64-CC06-CC5D-1C19CF455EB3}.wem"
+     },
+     {
+      "Id": "451688503",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_King_Speech_Oneshot_6.wav",
+      "Path": "Media/451688503.wem",
+      "CachePath": "31/{310D1C9D-8D95-D923-2447-14E8938BD1FC}.wem"
+     },
+     {
+      "Id": "603172419",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_King_Speech_Oneshot_5.wav",
+      "Path": "Media/603172419.wem",
+      "CachePath": "E6/{E62CD031-415E-90B9-FDBF-3914510683EA}.wem"
+     },
+     {
+      "Id": "786569382",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_King_Speech_Oneshot_1.wav",
+      "Path": "Media/786569382.wem",
+      "CachePath": "88/{8875C5D9-F0FE-7D59-F8F8-FB5F8B681C53}.wem"
+     },
+     {
+      "Id": "915967804",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_King_Speech_Oneshot_3.wav",
+      "Path": "Media/915967804.wem",
+      "CachePath": "2D/{2DCAD2F6-9954-C739-609F-7527CCAB10B3}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "509666419",
+      "Name": "Character_Speech_King",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character\\Speech\\Character_Speech_King",
+      "GUID": "{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.10905077",
+      "DurationMax": "0.15425321",
+      "MediaRefs": [
+       {
+        "Id": "165316155"
+       },
+       {
+        "Id": "223110650"
+       },
+       {
+        "Id": "371861220"
+       },
+       {
+        "Id": "451688503"
+       },
+       {
+        "Id": "603172419"
+       },
+       {
+        "Id": "786569382"
+       },
+       {
+        "Id": "915967804"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{849DB193-60BD-EAB8-7F68-CC0E0C53C5B3}"
+ }
+}

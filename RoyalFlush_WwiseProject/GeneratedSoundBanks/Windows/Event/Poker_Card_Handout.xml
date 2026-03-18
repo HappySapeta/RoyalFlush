@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="1653387933" Type="Event" GUID="{F3ADAFCE-3866-4366-BC9A-50C5969A70EC}" Language="SFX" Hash="{C640AD4E-37D4-2123-C57C-5B41034F3073}">
+			<ObjectPath>Poker_Card_Handout</ObjectPath>
+			<ShortName>Poker_Card_Handout</ShortName>
+			<Path>Event/Poker_Card_Handout.bnk</Path>
+			<Media>
+				<File Id="12961085" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_6.wav</ShortName>
+					<Path>Media/12961085.wem</Path>
+					<CachePath>93/{9391E23F-A050-ECE9-0CA6-8E6738B513C0}.wem</CachePath>
+				</File>
+				<File Id="288127463" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_1.wav</ShortName>
+					<Path>Media/288127463.wem</Path>
+					<CachePath>23/{23EA9850-27D0-F611-F56F-7AE379B4BCFA}.wem</CachePath>
+				</File>
+				<File Id="618090078" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_7.wav</ShortName>
+					<Path>Media/618090078.wem</Path>
+					<CachePath>CD/{CD915BC3-2A1B-0B9D-F3EA-5CBBB829DBFE}.wem</CachePath>
+				</File>
+				<File Id="667399548" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_2.wav</ShortName>
+					<Path>Media/667399548.wem</Path>
+					<CachePath>5B/{5B33719F-7A27-9AD0-9154-86EC65BF5BCC}.wem</CachePath>
+				</File>
+				<File Id="753345062" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_4.wav</ShortName>
+					<Path>Media/753345062.wem</Path>
+					<CachePath>51/{5183A680-FEF9-1516-3B01-94E4650280DA}.wem</CachePath>
+				</File>
+				<File Id="798212714" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_3.wav</ShortName>
+					<Path>Media/798212714.wem</Path>
+					<CachePath>87/{8794E47D-1812-096A-AE3B-93C92CFE7405}.wem</CachePath>
+				</File>
+				<File Id="967861081" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_8.wav</ShortName>
+					<Path>Media/967861081.wem</Path>
+					<CachePath>D4/{D428E6E8-9149-8D7B-F864-F5867C387723}.wem</CachePath>
+				</File>
+				<File Id="1043338643" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_5.wav</ShortName>
+					<Path>Media/1043338643.wem</Path>
+					<CachePath>E2/{E25985BC-2ACF-38FA-98CB-F1745D53E142}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1653387933" Name="Poker_Card_Handout" ObjectPath="\Events\Default Work Unit\Poker\Card\Poker_Card_Handout" GUID="{F3ADAFCE-3866-4366-BC9A-50C5969A70EC}" DurationType="OneShot" DurationMin="0.44544935" DurationMax="0.6120268">
+					<MediaRefs>
+						<MediaRef Id="12961085"/>
+						<MediaRef Id="288127463"/>
+						<MediaRef Id="618090078"/>
+						<MediaRef Id="667399548"/>
+						<MediaRef Id="753345062"/>
+						<MediaRef Id="798212714"/>
+						<MediaRef Id="967861081"/>
+						<MediaRef Id="1043338643"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{97067EC2-3843-CCFE-FA54-BF2716301EF5}</FileHash>
+</SoundBanksInfo>

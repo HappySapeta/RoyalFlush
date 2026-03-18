@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1057270552",
+    "Type": "Event",
+    "GUID": "{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}",
+    "Language": "SFX",
+    "Hash": "{D3C98122-439A-54D3-7EA5-CA6DF9F70733}",
+    "ObjectPath": "Amb_Spot_Poker",
+    "ShortName": "Amb_Spot_Poker",
+    "Path": "Event/Amb_Spot_Poker.bnk",
+    "Media": [
+     {
+      "Id": "789521920",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Amb_PokerTable_Loop.wav",
+      "Path": "Media/789521920.wem",
+      "CachePath": "66/{66506688-21CF-5923-C4F4-E00513187815}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1057270552",
+      "Name": "Amb_Spot_Poker",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ambiences\\Spot Ambiences\\Amb_Spot_Poker",
+      "GUID": "{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}",
+      "MaxAttenuation": "2000",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "789521920"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{BDC5C167-196E-00E5-18FD-E499D4A55221}"
+ }
+}

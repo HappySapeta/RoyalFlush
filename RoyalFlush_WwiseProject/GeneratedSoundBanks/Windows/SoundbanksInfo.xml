@@ -9,26 +9,198 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="576110585" Type="Event" GUID="{878A9B63-0BEB-4DD0-90C4-C77042093B89}" Language="SFX" Hash="{301D9076-0DC6-6C6F-3EBA-EF7326127280}">
-			<ObjectPath>Test2</ObjectPath>
-			<ShortName>Test2</ShortName>
-			<Path>Event/Test2.bnk</Path>
+		<SoundBank Id="509666419" Type="Event" GUID="{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}" Language="SFX" Hash="{1120D532-9286-320E-6B1A-F179A6D40F3B}">
+			<ObjectPath>Character_Speech_King</ObjectPath>
+			<ShortName>Character_Speech_King</ShortName>
+			<Path>Event/Character_Speech_King.bnk</Path>
 			<Media>
-				<File Id="68818871" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>fart.wav</ShortName>
-					<Path>Media/68818871.wem</Path>
-					<CachePath>D4/{D4A5FEA3-585D-6295-72CD-F36F57AB1AF7}.wem</CachePath>
+				<File Id="165316155" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_2.wav</ShortName>
+					<Path>Media/165316155.wem</Path>
+					<CachePath>6D/{6DA82B0E-8A45-237A-275A-EC5820DB0E83}.wem</CachePath>
+				</File>
+				<File Id="223110650" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_4.wav</ShortName>
+					<Path>Media/223110650.wem</Path>
+					<CachePath>EF/{EFA84849-DC46-D579-A743-2D77FDE5025B}.wem</CachePath>
+				</File>
+				<File Id="371861220" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_7.wav</ShortName>
+					<Path>Media/371861220.wem</Path>
+					<CachePath>A0/{A023D521-2B64-CC06-CC5D-1C19CF455EB3}.wem</CachePath>
+				</File>
+				<File Id="451688503" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_6.wav</ShortName>
+					<Path>Media/451688503.wem</Path>
+					<CachePath>31/{310D1C9D-8D95-D923-2447-14E8938BD1FC}.wem</CachePath>
+				</File>
+				<File Id="603172419" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_5.wav</ShortName>
+					<Path>Media/603172419.wem</Path>
+					<CachePath>E6/{E62CD031-415E-90B9-FDBF-3914510683EA}.wem</CachePath>
+				</File>
+				<File Id="786569382" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_1.wav</ShortName>
+					<Path>Media/786569382.wem</Path>
+					<CachePath>88/{8875C5D9-F0FE-7D59-F8F8-FB5F8B681C53}.wem</CachePath>
+				</File>
+				<File Id="915967804" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_King_Speech_Oneshot_3.wav</ShortName>
+					<Path>Media/915967804.wem</Path>
+					<CachePath>2D/{2DCAD2F6-9954-C739-609F-7527CCAB10B3}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="576110585" Name="Test2" ObjectPath="\Events\Default Work Unit\Test\Test2" GUID="{878A9B63-0BEB-4DD0-90C4-C77042093B89}" DurationType="OneShot" DurationMin="1.125" DurationMax="1.125">
+				<Event Id="509666419" Name="Character_Speech_King" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_King" GUID="{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}" DurationType="OneShot" DurationMin="0.10905077" DurationMax="0.15425321">
 					<MediaRefs>
-						<MediaRef Id="68818871"/>
+						<MediaRef Id="165316155"/>
+						<MediaRef Id="223110650"/>
+						<MediaRef Id="371861220"/>
+						<MediaRef Id="451688503"/>
+						<MediaRef Id="603172419"/>
+						<MediaRef Id="786569382"/>
+						<MediaRef Id="915967804"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{1F4AC6ED-6B82-10DD-1BFB-D1EE6BC8BD88}">
+		<SoundBank Id="597521017" Type="Event" GUID="{B8E3BC6D-65B8-4EF6-8DE2-8FD689931DCA}" Language="SFX" Hash="{654EB21B-DB12-3C68-ACDC-2ACF866E92E0}">
+			<ObjectPath>Poker_Impact_Large</ObjectPath>
+			<ShortName>Poker_Impact_Large</ShortName>
+			<Path>Event/Poker_Impact_Large.bnk</Path>
+			<Media>
+				<File Id="277144921" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Big_2.wav</ShortName>
+					<Path>Media/277144921.wem</Path>
+					<CachePath>DA/{DA3677F3-F3B6-4937-8C7D-A061ECC9DEB6}.wem</CachePath>
+				</File>
+				<File Id="757678230" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Big_3.wav</ShortName>
+					<Path>Media/757678230.wem</Path>
+					<CachePath>70/{70CD0E8C-250F-7A40-90BC-849A906CFC22}.wem</CachePath>
+				</File>
+				<File Id="946203076" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Big_1.wav</ShortName>
+					<Path>Media/946203076.wem</Path>
+					<CachePath>2F/{2FBEF8E5-D810-2AFE-A31C-A324923F29BB}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="597521017" Name="Poker_Impact_Large" ObjectPath="\Events\Default Work Unit\Poker\Impact\Poker_Impact_Large" GUID="{B8E3BC6D-65B8-4EF6-8DE2-8FD689931DCA}" DurationType="OneShot" DurationMin="3" DurationMax="3">
+					<MediaRefs>
+						<MediaRef Id="277144921"/>
+						<MediaRef Id="757678230"/>
+						<MediaRef Id="946203076"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="752672192" Type="Event" GUID="{5AFCEA88-5D06-4E32-B141-2E89B83987F2}" Language="SFX" Hash="{C136EA49-22EA-DCEC-F386-6743C5CDB847}">
+			<ObjectPath>Poker_Impact_Regular</ObjectPath>
+			<ShortName>Poker_Impact_Regular</ShortName>
+			<Path>Event/Poker_Impact_Regular.bnk</Path>
+			<Media>
+				<File Id="177382840" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Regular_2.wav</ShortName>
+					<Path>Media/177382840.wem</Path>
+					<CachePath>92/{92B09459-C73A-3D7D-3D96-BB023F9507BC}.wem</CachePath>
+				</File>
+				<File Id="601075332" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Regular_1.wav</ShortName>
+					<Path>Media/601075332.wem</Path>
+					<CachePath>1E/{1E4BE5CA-3239-CA60-60BD-4F5812514D7F}.wem</CachePath>
+				</File>
+				<File Id="725965430" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Regular_3.wav</ShortName>
+					<Path>Media/725965430.wem</Path>
+					<CachePath>E2/{E238FB64-6FEE-C510-6CA5-FD1B11704663}.wem</CachePath>
+				</File>
+				<File Id="806056087" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Regular_5.wav</ShortName>
+					<Path>Media/806056087.wem</Path>
+					<CachePath>EC/{EC1022ED-037A-F549-F7CA-FC8985BD2890}.wem</CachePath>
+				</File>
+				<File Id="864933856" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Regular_4.wav</ShortName>
+					<Path>Media/864933856.wem</Path>
+					<CachePath>8E/{8E3F5918-792E-C41F-2A8A-D863DBBB8AC9}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="752672192" Name="Poker_Impact_Regular" ObjectPath="\Events\Default Work Unit\Poker\Impact\Poker_Impact_Regular" GUID="{5AFCEA88-5D06-4E32-B141-2E89B83987F2}" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<MediaRefs>
+						<MediaRef Id="177382840"/>
+						<MediaRef Id="601075332"/>
+						<MediaRef Id="725965430"/>
+						<MediaRef Id="806056087"/>
+						<MediaRef Id="864933856"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1057270552" Type="Event" GUID="{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}" Language="SFX" Hash="{D3C98122-439A-54D3-7EA5-CA6DF9F70733}">
+			<ObjectPath>Amb_Spot_Poker</ObjectPath>
+			<ShortName>Amb_Spot_Poker</ShortName>
+			<Path>Event/Amb_Spot_Poker.bnk</Path>
+			<Media>
+				<File Id="789521920" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Amb_PokerTable_Loop.wav</ShortName>
+					<Path>Media/789521920.wem</Path>
+					<CachePath>66/{66506688-21CF-5923-C4F4-E00513187815}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1057270552" Name="Amb_Spot_Poker" ObjectPath="\Events\Default Work Unit\Ambiences\Spot Ambiences\Amb_Spot_Poker" GUID="{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}" MaxAttenuation="2000" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="789521920"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{5E19E7A6-AA77-82D3-CB40-F2EF65FE4341}">
+			<ObjectPath>Character_Speech_Ace</ObjectPath>
+			<ShortName>Character_Speech_Ace</ShortName>
+			<Path>Event/Character_Speech_Ace.bnk</Path>
+			<Media>
+				<File Id="327533658" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_2.wav</ShortName>
+					<Path>Media/327533658.wem</Path>
+					<CachePath>65/{65732FAB-7203-9B4B-49AD-701BDCBC5093}.wem</CachePath>
+				</File>
+				<File Id="444130920" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_5.wav</ShortName>
+					<Path>Media/444130920.wem</Path>
+					<CachePath>C6/{C6FAD30A-8FC9-0423-2F51-CFE8B6177620}.wem</CachePath>
+				</File>
+				<File Id="690746034" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_1.wav</ShortName>
+					<Path>Media/690746034.wem</Path>
+					<CachePath>6F/{6F041F36-2951-3F4B-42B0-1EC69F5DD0E6}.wem</CachePath>
+				</File>
+				<File Id="919250946" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_3.wav</ShortName>
+					<Path>Media/919250946.wem</Path>
+					<CachePath>A5/{A5B13359-BB56-005A-D5DA-92913E47FB3C}.wem</CachePath>
+				</File>
+				<File Id="968226134" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Ace_Speech_Oneshot_4.wav</ShortName>
+					<Path>Media/968226134.wem</Path>
+					<CachePath>A8/{A8406584-9A8B-7EA9-358A-EB85D550120B}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1200163247" Name="Character_Speech_Ace" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Ace" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" DurationType="OneShot" DurationMin="0.072118044" DurationMax="0.091110125">
+					<MediaRefs>
+						<MediaRef Id="327533658"/>
+						<MediaRef Id="444130920"/>
+						<MediaRef Id="690746034"/>
+						<MediaRef Id="919250946"/>
+						<MediaRef Id="968226134"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{6CE2B8E0-5EF7-CD8E-D41E-C0C9E39E2784}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -40,26 +212,988 @@
 			</Plugins>
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus" ObjectPath="\Busses\Default Work Unit\Master Audio Bus" GUID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
+				<Bus Id="3833275939" Name="In-Game Audio Bus" ObjectPath="\Busses\Default Work Unit\In-Game Audio Bus" GUID="{89A25BB1-D592-4CFF-8959-81B4070A0D9F}"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="3636347407" Name="UI_LowPass" ObjectPath="\Game Parameters\Default Work Unit\UI_LowPass" GUID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="85412153" Name="Ambience" ObjectPath="\States\Default Work Unit\Ambience" GUID="{C3E27FFC-F0E4-4B6D-9BA0-C398BBF5CDB9}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Ambience\None" GUID="{503536D5-3BB1-4492-A5CC-B8D68DABE4D5}"/>
+						<State Id="1290008369" Name="Level_1" ObjectPath="\States\Default Work Unit\Ambience\Level_1" GUID="{0DA12C57-D084-4807-880C-A3BF60EBDFE0}"/>
+						<State Id="1290008370" Name="Level_2" ObjectPath="\States\Default Work Unit\Ambience\Level_2" GUID="{FBB6B095-AEDA-468F-9F92-AE43CB4A30F9}"/>
+						<State Id="1290008371" Name="Level_3" ObjectPath="\States\Default Work Unit\Ambience\Level_3" GUID="{BEFF315C-6324-4DDA-AF11-41C06100433D}"/>
+						<State Id="3062523257" Name="Misc" ObjectPath="\States\Default Work Unit\Ambience\Misc" GUID="{994F7DCD-FCF2-4761-9167-AE63EC3A6807}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="649345183" Name="BGM_Level1" ObjectPath="\States\Default Work Unit\BGM_Level1" GUID="{95FD7CC8-A2D1-4247-B671-5F304DD70335}">
+					<States>
+						<State Id="362564855" Name="Dealer_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Dealer_Loop" GUID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\BGM_Level1\None" GUID="{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"/>
+						<State Id="1125500713" Name="Intro" ObjectPath="\States\Default Work Unit\BGM_Level1\Intro" GUID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
+						<State Id="2858725581" Name="Transition_Out" ObjectPath="\States\Default Work Unit\BGM_Level1\Transition_Out" GUID="{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"/>
+						<State Id="3813340491" Name="Main_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Main_Loop" GUID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
+						<State Id="3919849458" Name="Transition_In" ObjectPath="\States\Default Work Unit\BGM_Level1\Transition_In" GUID="{B792CAAF-BC28-49FA-9003-5060C201FC18}"/>
+						<State Id="3992321431" Name="Ace_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Ace_Loop" GUID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="1368630905" Name="Foot_Steps" ObjectPath="\Switches\Default Work Unit\Foot_Steps" GUID="{061CA91F-4F6D-4E5E-A0E5-CBBFF6474DEA}">
+					<Switches>
+						<Switch Id="1216965916" Name="Stone" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Stone" GUID="{6D0240EC-37BC-4A3F-AF09-7D04D5D7E5BA}"/>
+						<Switch Id="2058049674" Name="Wood" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Wood" GUID="{5991F025-F8E7-4679-B1C3-70CF08ACE181}"/>
+						<Switch Id="2412606308" Name="Carpet" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Carpet" GUID="{3CC1B7D3-CBA7-43AD-9376-4E9FDB490246}"/>
+						<Switch Id="2473969246" Name="Metal" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Metal" GUID="{FF85422E-956B-45C5-95EE-7F7F4213A7A6}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3331313354" Type="User" GUID="{D9E95AA2-D16F-48AC-B33C-DF494DC30C9C}" Language="SFX" Hash="{2FEA2355-637E-7B0F-4E0D-CEEEF5EE4C42}">
-			<ObjectPath>\SoundBanks\Default Work Unit\TestSB</ObjectPath>
-			<ShortName>TestSB</ShortName>
-			<Path>TestSB.bnk</Path>
+		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{EBD83DB8-EDCC-06EF-D0AA-92B9604CCE1C}">
+			<ObjectPath>Character_Speech_Dealer</ObjectPath>
+			<ShortName>Character_Speech_Dealer</ShortName>
+			<Path>Event/Character_Speech_Dealer.bnk</Path>
 			<Media>
-				<File Id="395279038" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Designed, Impact, Cinematic, Heavy, Distorted, Powerful, Futuristic SND122894.wav</ShortName>
-					<CachePath>5D/{5D787D59-905A-C996-3067-C3C623B14A64}.wem</CachePath>
+				<File Id="252900410" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_8.wav</ShortName>
+					<Path>Media/252900410.wem</Path>
+					<CachePath>58/{58166830-25E6-CCF4-D522-6DE16AAE3CDF}.wem</CachePath>
+				</File>
+				<File Id="295450687" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_9.wav</ShortName>
+					<Path>Media/295450687.wem</Path>
+					<CachePath>86/{86907FB8-BBB4-94AA-3BD9-65B5A54384E5}.wem</CachePath>
+				</File>
+				<File Id="311680424" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_7.wav</ShortName>
+					<Path>Media/311680424.wem</Path>
+					<CachePath>2D/{2DC129B3-1144-184D-0E41-2BD405A1A1B5}.wem</CachePath>
+				</File>
+				<File Id="421461186" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_5.wav</ShortName>
+					<Path>Media/421461186.wem</Path>
+					<CachePath>93/{93EE5801-7826-1326-0D82-CD67EDA8C243}.wem</CachePath>
+				</File>
+				<File Id="483519037" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_6.wav</ShortName>
+					<Path>Media/483519037.wem</Path>
+					<CachePath>31/{3179ACA9-2F04-9655-616F-74EEEC5ED1DB}.wem</CachePath>
+				</File>
+				<File Id="591661577" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_2.wav</ShortName>
+					<Path>Media/591661577.wem</Path>
+					<CachePath>DB/{DB814070-7FD9-92EF-2FAC-A122FDBA4E10}.wem</CachePath>
+				</File>
+				<File Id="753993133" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_4.wav</ShortName>
+					<Path>Media/753993133.wem</Path>
+					<CachePath>30/{3087EC15-1444-AF94-F3FC-E194CE5D6792}.wem</CachePath>
+				</File>
+				<File Id="932306053" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_1.wav</ShortName>
+					<Path>Media/932306053.wem</Path>
+					<CachePath>E6/{E6CC5CDA-A73D-B2BC-FA20-61BC189137D7}.wem</CachePath>
+				</File>
+				<File Id="952140260" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_3.wav</ShortName>
+					<Path>Media/952140260.wem</Path>
+					<CachePath>AB/{ABE5543A-C17D-1697-647F-93B9E4478051}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Test\Test" GUID="{232EDD70-971B-42D3-8211-95AD12343685}" DurationType="OneShot" DurationMin="0.2771797" DurationMax="4.434875">
+				<Event Id="1402278545" Name="Character_Speech_Dealer" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Dealer" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" DurationType="OneShot" DurationMin="0.1" DurationMax="0.11724018">
 					<MediaRefs>
-						<MediaRef Id="395279038"/>
+						<MediaRef Id="252900410"/>
+						<MediaRef Id="295450687"/>
+						<MediaRef Id="311680424"/>
+						<MediaRef Id="421461186"/>
+						<MediaRef Id="483519037"/>
+						<MediaRef Id="591661577"/>
+						<MediaRef Id="753993133"/>
+						<MediaRef Id="932306053"/>
+						<MediaRef Id="952140260"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1648916886" Type="Event" GUID="{F3916218-2FBA-4A6E-BFAE-ED570484A083}" Language="SFX" Hash="{EE2A6385-7990-1B58-7C2F-8F09511AA2BB}">
+			<ObjectPath>Poker_Impact_Win</ObjectPath>
+			<ShortName>Poker_Impact_Win</ShortName>
+			<Path>Event/Poker_Impact_Win.bnk</Path>
+			<Media>
+				<File Id="455934351" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Win.wav</ShortName>
+					<Path>Media/455934351.wem</Path>
+					<CachePath>2F/{2F8A96EC-6818-883E-7F79-58491DC4565E}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1648916886" Name="Poker_Impact_Win" ObjectPath="\Events\Default Work Unit\Poker\Impact\Poker_Impact_Win" GUID="{F3916218-2FBA-4A6E-BFAE-ED570484A083}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="455934351"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1653387933" Type="Event" GUID="{F3ADAFCE-3866-4366-BC9A-50C5969A70EC}" Language="SFX" Hash="{C640AD4E-37D4-2123-C57C-5B41034F3073}">
+			<ObjectPath>Poker_Card_Handout</ObjectPath>
+			<ShortName>Poker_Card_Handout</ShortName>
+			<Path>Event/Poker_Card_Handout.bnk</Path>
+			<Media>
+				<File Id="12961085" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_6.wav</ShortName>
+					<Path>Media/12961085.wem</Path>
+					<CachePath>93/{9391E23F-A050-ECE9-0CA6-8E6738B513C0}.wem</CachePath>
+				</File>
+				<File Id="288127463" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_1.wav</ShortName>
+					<Path>Media/288127463.wem</Path>
+					<CachePath>23/{23EA9850-27D0-F611-F56F-7AE379B4BCFA}.wem</CachePath>
+				</File>
+				<File Id="618090078" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_7.wav</ShortName>
+					<Path>Media/618090078.wem</Path>
+					<CachePath>CD/{CD915BC3-2A1B-0B9D-F3EA-5CBBB829DBFE}.wem</CachePath>
+				</File>
+				<File Id="667399548" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_2.wav</ShortName>
+					<Path>Media/667399548.wem</Path>
+					<CachePath>5B/{5B33719F-7A27-9AD0-9154-86EC65BF5BCC}.wem</CachePath>
+				</File>
+				<File Id="753345062" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_4.wav</ShortName>
+					<Path>Media/753345062.wem</Path>
+					<CachePath>51/{5183A680-FEF9-1516-3B01-94E4650280DA}.wem</CachePath>
+				</File>
+				<File Id="798212714" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_3.wav</ShortName>
+					<Path>Media/798212714.wem</Path>
+					<CachePath>87/{8794E47D-1812-096A-AE3B-93C92CFE7405}.wem</CachePath>
+				</File>
+				<File Id="967861081" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_8.wav</ShortName>
+					<Path>Media/967861081.wem</Path>
+					<CachePath>D4/{D428E6E8-9149-8D7B-F864-F5867C387723}.wem</CachePath>
+				</File>
+				<File Id="1043338643" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Handout_5.wav</ShortName>
+					<Path>Media/1043338643.wem</Path>
+					<CachePath>E2/{E25985BC-2ACF-38FA-98CB-F1745D53E142}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1653387933" Name="Poker_Card_Handout" ObjectPath="\Events\Default Work Unit\Poker\Card\Poker_Card_Handout" GUID="{F3ADAFCE-3866-4366-BC9A-50C5969A70EC}" DurationType="OneShot" DurationMin="0.44544935" DurationMax="0.6120268">
+					<MediaRefs>
+						<MediaRef Id="12961085"/>
+						<MediaRef Id="288127463"/>
+						<MediaRef Id="618090078"/>
+						<MediaRef Id="667399548"/>
+						<MediaRef Id="753345062"/>
+						<MediaRef Id="798212714"/>
+						<MediaRef Id="967861081"/>
+						<MediaRef Id="1043338643"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1713188097" Type="Event" GUID="{2A417C38-1362-48C7-AFD8-4D04BE4086B0}" Language="SFX" Hash="{0AC27FDC-85D1-A05A-C4D7-423FC47111C0}">
+			<ObjectPath>UI_Click_Basic</ObjectPath>
+			<ShortName>UI_Click_Basic</ShortName>
+			<Path>Event/UI_Click_Basic.bnk</Path>
+			<Media>
+				<File Id="144485973" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Basic_3.wav</ShortName>
+					<Path>Media/144485973.wem</Path>
+					<CachePath>DE/{DE7CBFA8-D10E-65BE-09FF-7D1183909788}.wem</CachePath>
+				</File>
+				<File Id="523207238" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Basic_1.wav</ShortName>
+					<Path>Media/523207238.wem</Path>
+					<CachePath>A6/{A6EC99EC-9901-4CF2-2886-E2D72AEB76F9}.wem</CachePath>
+				</File>
+				<File Id="614961529" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Basic_4.wav</ShortName>
+					<Path>Media/614961529.wem</Path>
+					<CachePath>B8/{B8B01280-9591-5C39-060F-7EC3B911B38B}.wem</CachePath>
+				</File>
+				<File Id="1059505828" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Basic_2.wav</ShortName>
+					<Path>Media/1059505828.wem</Path>
+					<CachePath>44/{44F18FB9-9294-53AE-D240-2A4434A93AAE}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1713188097" Name="UI_Click_Basic" ObjectPath="\Events\Default Work Unit\UI\UI_Click_Basic" GUID="{2A417C38-1362-48C7-AFD8-4D04BE4086B0}" DurationType="OneShot" DurationMin="0.8288406" DurationMax="1.1063696">
+					<MediaRefs>
+						<MediaRef Id="144485973"/>
+						<MediaRef Id="523207238"/>
+						<MediaRef Id="614961529"/>
+						<MediaRef Id="1059505828"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1793476039" Type="Event" GUID="{919DC7C9-B6D7-46B1-B87D-EDA7CAEB9342}" Language="SFX" Hash="{F02E4FD8-F3E5-1709-61FB-6F1619A57812}">
+			<ObjectPath>Amb_Level_Switch</ObjectPath>
+			<ShortName>Amb_Level_Switch</ShortName>
+			<Path>Event/Amb_Level_Switch.bnk</Path>
+			<Media>
+				<File Id="639620273" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Amb_FirstLevel_Loop.wav</ShortName>
+					<Path>Media/639620273.wem</Path>
+					<CachePath>13/{13211B98-E68A-ADA0-9007-9E7B23F2888D}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1793476039" Name="Amb_Level_Switch" ObjectPath="\Events\Default Work Unit\Ambiences\Amb_Level_Switch" GUID="{919DC7C9-B6D7-46B1-B87D-EDA7CAEB9342}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="639620273"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1877487096" Type="Event" GUID="{E0FB9962-0F04-4A81-96C2-997A97C84DBB}" Language="SFX" Hash="{3A797B07-7930-D733-69B2-0FF905C40E5A}">
+			<ObjectPath>UI_Click_Start_Game</ObjectPath>
+			<ShortName>UI_Click_Start_Game</ShortName>
+			<Path>Event/UI_Click_Start_Game.bnk</Path>
+			<Media>
+				<File Id="706829535" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Start_Game.wav</ShortName>
+					<Path>Media/706829535.wem</Path>
+					<CachePath>8F/{8FDCFCA4-97F4-702B-D0DE-663B077F137D}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1877487096" Name="UI_Click_Start_Game" ObjectPath="\Events\Default Work Unit\UI\UI_Click_Start_Game" GUID="{E0FB9962-0F04-4A81-96C2-997A97C84DBB}" DurationType="OneShot" DurationMin="4.2" DurationMax="4.2">
+					<MediaRefs>
+						<MediaRef Id="706829535"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2021701688" Type="Event" GUID="{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}" Language="SFX" Hash="{F3A0E473-A7A7-9066-3D72-500202104D51}">
+			<ObjectPath>Poker_Chip_OneShot</ObjectPath>
+			<ShortName>Poker_Chip_OneShot</ShortName>
+			<Path>Event/Poker_Chip_OneShot.bnk</Path>
+			<Media>
+				<File Id="127527105" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_7.wav</ShortName>
+					<Path>Media/127527105.wem</Path>
+					<CachePath>89/{89076659-A25F-61B7-ACDA-2A5122451BF4}.wem</CachePath>
+				</File>
+				<File Id="131327950" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_1.wav</ShortName>
+					<Path>Media/131327950.wem</Path>
+					<CachePath>D1/{D195FF7E-E18A-83F6-BD74-8216F207C68E}.wem</CachePath>
+				</File>
+				<File Id="299019671" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_2.wav</ShortName>
+					<Path>Media/299019671.wem</Path>
+					<CachePath>1B/{1B45DA03-CD95-EA26-349C-005033B58555}.wem</CachePath>
+				</File>
+				<File Id="443513428" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_5.wav</ShortName>
+					<Path>Media/443513428.wem</Path>
+					<CachePath>03/{03FAA340-1874-2214-A010-3C634CA53BA3}.wem</CachePath>
+				</File>
+				<File Id="885049361" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_3.wav</ShortName>
+					<Path>Media/885049361.wem</Path>
+					<CachePath>A7/{A7A64777-3566-8977-8C80-5B9020D22378}.wem</CachePath>
+				</File>
+				<File Id="954928338" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_4.wav</ShortName>
+					<Path>Media/954928338.wem</Path>
+					<CachePath>1E/{1EB59AA4-6BCF-08B0-BB6F-AFEEFD6CB49D}.wem</CachePath>
+				</File>
+				<File Id="1054748537" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Oneshot_6.wav</ShortName>
+					<Path>Media/1054748537.wem</Path>
+					<CachePath>3A/{3A7DD44C-AD07-0891-D97C-618E856F58D3}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2021701688" Name="Poker_Chip_OneShot" ObjectPath="\Events\Default Work Unit\Poker\Chip\Poker_Chip_OneShot" GUID="{CC80332D-3BCF-4D3B-9078-99F1FBF8066C}" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="127527105"/>
+						<MediaRef Id="131327950"/>
+						<MediaRef Id="299019671"/>
+						<MediaRef Id="443513428"/>
+						<MediaRef Id="885049361"/>
+						<MediaRef Id="954928338"/>
+						<MediaRef Id="1054748537"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2118900976" Type="Event" GUID="{2A6EB89A-CDFB-400A-B065-EA527AEC0DF2}" Language="SFX" Hash="{07374804-AE95-BFA3-DBCE-D2B584A1DA24}">
+			<ObjectPath>UI_Hover</ObjectPath>
+			<ShortName>UI_Hover</ShortName>
+			<Path>Event/UI_Hover.bnk</Path>
+			<Media>
+				<File Id="292700569" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_1.wav</ShortName>
+					<Path>Media/292700569.wem</Path>
+					<CachePath>E1/{E1E89AB4-8D77-1BDC-2FF2-F7B61449DFF8}.wem</CachePath>
+				</File>
+				<File Id="370047884" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_3.wav</ShortName>
+					<Path>Media/370047884.wem</Path>
+					<CachePath>CD/{CD06D2E2-2DDC-D500-3D4C-39EE7B4B85E9}.wem</CachePath>
+				</File>
+				<File Id="493048695" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_6.wav</ShortName>
+					<Path>Media/493048695.wem</Path>
+					<CachePath>F8/{F8A67766-D133-EDA9-31A8-E250ABF459E8}.wem</CachePath>
+				</File>
+				<File Id="517860784" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_8.wav</ShortName>
+					<Path>Media/517860784.wem</Path>
+					<CachePath>D2/{D2FF9797-0354-3746-5256-39B39405330A}.wem</CachePath>
+				</File>
+				<File Id="703504247" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_5.wav</ShortName>
+					<Path>Media/703504247.wem</Path>
+					<CachePath>4D/{4D0E5135-62DF-B053-06DF-E2BD8E2257D8}.wem</CachePath>
+				</File>
+				<File Id="714540727" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_2.wav</ShortName>
+					<Path>Media/714540727.wem</Path>
+					<CachePath>86/{867488E3-77C7-5DDD-009A-6168213B2846}.wem</CachePath>
+				</File>
+				<File Id="740581551" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_4.wav</ShortName>
+					<Path>Media/740581551.wem</Path>
+					<CachePath>D5/{D5759632-3D70-49E0-6DA0-33ADEB3E289F}.wem</CachePath>
+				</File>
+				<File Id="1069049292" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_7.wav</ShortName>
+					<Path>Media/1069049292.wem</Path>
+					<CachePath>6F/{6F721521-F00D-67E6-CE32-C6F095D16AB3}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2118900976" Name="UI_Hover" ObjectPath="\Events\Default Work Unit\UI\UI_Hover" GUID="{2A6EB89A-CDFB-400A-B065-EA527AEC0DF2}" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<MediaRefs>
+						<MediaRef Id="292700569"/>
+						<MediaRef Id="370047884"/>
+						<MediaRef Id="493048695"/>
+						<MediaRef Id="517860784"/>
+						<MediaRef Id="703504247"/>
+						<MediaRef Id="714540727"/>
+						<MediaRef Id="740581551"/>
+						<MediaRef Id="1069049292"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2367099639" Type="Event" GUID="{75319BAB-0AC0-46EB-BB95-F13B0D94647F}" Language="SFX" Hash="{3A930623-A200-7B0A-69E6-81FCBC873861}">
+			<ObjectPath>Poker_Card_Shuffle</ObjectPath>
+			<ShortName>Poker_Card_Shuffle</ShortName>
+			<Path>Event/Poker_Card_Shuffle.bnk</Path>
+			<Media>
+				<File Id="584284627" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Shuffle_1.wav</ShortName>
+					<Path>Media/584284627.wem</Path>
+					<CachePath>A2/{A2BC12E0-F0EC-B62D-51E7-24B2D9A9CDA6}.wem</CachePath>
+				</File>
+				<File Id="743840350" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Shuffle_2.wav</ShortName>
+					<Path>Media/743840350.wem</Path>
+					<CachePath>E3/{E381FC28-9676-3065-40E0-DB36029E099C}.wem</CachePath>
+				</File>
+				<File Id="756856600" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Shuffle_3.wav</ShortName>
+					<Path>Media/756856600.wem</Path>
+					<CachePath>7D/{7DE29071-4150-64F9-0608-F7A2693AC8AF}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2367099639" Name="Poker_Card_Shuffle" ObjectPath="\Events\Default Work Unit\Poker\Card\Poker_Card_Shuffle" GUID="{75319BAB-0AC0-46EB-BB95-F13B0D94647F}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="584284627"/>
+						<MediaRef Id="743840350"/>
+						<MediaRef Id="756856600"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2402462855" Type="Event" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" Language="SFX" Hash="{72AF4046-93B4-25F7-D084-A150246EE748}">
+			<ObjectPath>Character_Speech_Jack</ObjectPath>
+			<ShortName>Character_Speech_Jack</ShortName>
+			<Path>Event/Character_Speech_Jack.bnk</Path>
+			<Media>
+				<File Id="56859308" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Jack_Speech_Oneshot_3.wav</ShortName>
+					<Path>Media/56859308.wem</Path>
+					<CachePath>A1/{A178AF0F-548F-8EF4-BA78-DC818E8A9C73}.wem</CachePath>
+				</File>
+				<File Id="216739166" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Jack_Speech_Oneshot_5.wav</ShortName>
+					<Path>Media/216739166.wem</Path>
+					<CachePath>FA/{FA84E7C4-9841-EB91-80AF-1FD92EF71837}.wem</CachePath>
+				</File>
+				<File Id="705260286" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Jack_Speech_Oneshot_8.wav</ShortName>
+					<Path>Media/705260286.wem</Path>
+					<CachePath>12/{12747E7A-D559-75B8-C782-1663E0DF9F8A}.wem</CachePath>
+				</File>
+				<File Id="817262234" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Jack_Speech_Oneshot_6.wav</ShortName>
+					<Path>Media/817262234.wem</Path>
+					<CachePath>9F/{9F1126E0-D124-9270-900C-953802B13DAF}.wem</CachePath>
+				</File>
+				<File Id="859578213" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Jack_Speech_Oneshot_2.wav</ShortName>
+					<Path>Media/859578213.wem</Path>
+					<CachePath>44/{44FADCD2-E9DB-443B-C99D-185AFF4ACC0D}.wem</CachePath>
+				</File>
+				<File Id="932874341" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Jack_Speech_Oneshot_1.wav</ShortName>
+					<Path>Media/932874341.wem</Path>
+					<CachePath>AF/{AF40DF2C-284A-CD25-9D85-147332FB6B69}.wem</CachePath>
+				</File>
+				<File Id="963672790" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Jack_Speech_Oneshot_7.wav</ShortName>
+					<Path>Media/963672790.wem</Path>
+					<CachePath>55/{5510BCCF-F5C2-4E30-7AB4-BE6D73C1A176}.wem</CachePath>
+				</File>
+				<File Id="1027906375" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Jack_Speech_Oneshot_9.wav</ShortName>
+					<Path>Media/1027906375.wem</Path>
+					<CachePath>3D/{3D023648-8DC2-0446-2320-F2B8667B5662}.wem</CachePath>
+				</File>
+				<File Id="1071326686" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Jack_Speech_Oneshot_4.wav</ShortName>
+					<Path>Media/1071326686.wem</Path>
+					<CachePath>A4/{A47C41A1-42DD-2F34-DD26-35A040E82215}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2402462855" Name="Character_Speech_Jack" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Jack" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" DurationType="OneShot" DurationMin="0.097716" DurationMax="0.112919964">
+					<MediaRefs>
+						<MediaRef Id="56859308"/>
+						<MediaRef Id="216739166"/>
+						<MediaRef Id="705260286"/>
+						<MediaRef Id="817262234"/>
+						<MediaRef Id="859578213"/>
+						<MediaRef Id="932874341"/>
+						<MediaRef Id="963672790"/>
+						<MediaRef Id="1027906375"/>
+						<MediaRef Id="1071326686"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2538807153" Type="Event" GUID="{B0E82FB0-C4DC-4804-A046-AC160C653704}" Language="SFX" Hash="{01225A91-C419-D10A-DE54-75CDB88D7F85}">
+			<ObjectPath>Poker_Card_Dissolve</ObjectPath>
+			<ShortName>Poker_Card_Dissolve</ShortName>
+			<Path>Event/Poker_Card_Dissolve.bnk</Path>
+			<Media>
+				<File Id="40866203" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_7.wav</ShortName>
+					<Path>Media/40866203.wem</Path>
+					<CachePath>8A/{8A758086-16C1-448E-B6A8-F4FC0C9D12EF}.wem</CachePath>
+				</File>
+				<File Id="265605047" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_6.wav</ShortName>
+					<Path>Media/265605047.wem</Path>
+					<CachePath>FE/{FE4D5771-0EEE-ECF5-0D91-3A1C9921FCAC}.wem</CachePath>
+				</File>
+				<File Id="346698651" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_3.wav</ShortName>
+					<Path>Media/346698651.wem</Path>
+					<CachePath>A5/{A5C9E30B-5DFB-C566-51E2-E293D859E54D}.wem</CachePath>
+				</File>
+				<File Id="568205174" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_1.wav</ShortName>
+					<Path>Media/568205174.wem</Path>
+					<CachePath>95/{95DC667C-C466-4B51-C01D-00D5292D6320}.wem</CachePath>
+				</File>
+				<File Id="662265792" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_2.wav</ShortName>
+					<Path>Media/662265792.wem</Path>
+					<CachePath>E7/{E74E57BB-BFB3-4DA0-CB6E-3E79A3CE9D3F}.wem</CachePath>
+				</File>
+				<File Id="805903401" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_5.wav</ShortName>
+					<Path>Media/805903401.wem</Path>
+					<CachePath>57/{577AF791-3439-1663-8E00-CDCE257B6E14}.wem</CachePath>
+				</File>
+				<File Id="814932653" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Card_Dissolve_4.wav</ShortName>
+					<Path>Media/814932653.wem</Path>
+					<CachePath>35/{35A5D24D-E06B-9227-49B1-268D12AC27A1}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2538807153" Name="Poker_Card_Dissolve" ObjectPath="\Events\Default Work Unit\Poker\Card\Poker_Card_Dissolve" GUID="{B0E82FB0-C4DC-4804-A046-AC160C653704}" DurationType="OneShot" DurationMin="1.6576812" DurationMax="2.413009">
+					<MediaRefs>
+						<MediaRef Id="40866203"/>
+						<MediaRef Id="265605047"/>
+						<MediaRef Id="346698651"/>
+						<MediaRef Id="568205174"/>
+						<MediaRef Id="662265792"/>
+						<MediaRef Id="805903401"/>
+						<MediaRef Id="814932653"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{D5BE7409-9BFA-D199-5C8C-9C822889FB72}">
+			<ObjectPath>Character_Speech_Joker</ObjectPath>
+			<ShortName>Character_Speech_Joker</ShortName>
+			<Path>Event/Character_Speech_Joker.bnk</Path>
+			<Media>
+				<File Id="182677997" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_8.wav</ShortName>
+					<Path>Media/182677997.wem</Path>
+					<CachePath>37/{37C1BC39-1496-354D-9D88-2A56B1D3BD52}.wem</CachePath>
+				</File>
+				<File Id="397322122" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_2.wav</ShortName>
+					<Path>Media/397322122.wem</Path>
+					<CachePath>57/{57256850-891F-1EFB-0505-2EFC8AEDAF93}.wem</CachePath>
+				</File>
+				<File Id="487891601" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_7.wav</ShortName>
+					<Path>Media/487891601.wem</Path>
+					<CachePath>D7/{D7C2BA8D-954E-9FE4-BBDE-BCC33D1F09EA}.wem</CachePath>
+				</File>
+				<File Id="660396686" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_10.wav</ShortName>
+					<Path>Media/660396686.wem</Path>
+					<CachePath>2D/{2D7F200B-DE39-4B22-9ED1-14C2698FEA59}.wem</CachePath>
+				</File>
+				<File Id="699183672" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_3.wav</ShortName>
+					<Path>Media/699183672.wem</Path>
+					<CachePath>A3/{A3F2F9E5-AA61-8C5D-5E95-63A0C53389C4}.wem</CachePath>
+				</File>
+				<File Id="733270745" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_5.wav</ShortName>
+					<Path>Media/733270745.wem</Path>
+					<CachePath>D9/{D992B6B1-AB4D-62B0-D1FF-502A589EEAD0}.wem</CachePath>
+				</File>
+				<File Id="911606311" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_9.wav</ShortName>
+					<Path>Media/911606311.wem</Path>
+					<CachePath>46/{46CD766A-9BD0-F4DC-46B3-983FE320695F}.wem</CachePath>
+				</File>
+				<File Id="947576081" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_1.wav</ShortName>
+					<Path>Media/947576081.wem</Path>
+					<CachePath>A3/{A3B55EFC-2893-9BA9-4A49-6FD2F197F0F2}.wem</CachePath>
+				</File>
+				<File Id="984726317" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_4.wav</ShortName>
+					<Path>Media/984726317.wem</Path>
+					<CachePath>F7/{F7DC99B9-6169-B6D6-4202-964A4F87120B}.wem</CachePath>
+				</File>
+				<File Id="1069705565" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Joker_Speech_Oneshot_6.wav</ShortName>
+					<Path>Media/1069705565.wem</Path>
+					<CachePath>AC/{ACDCFCB1-CF52-6FC4-369A-DFE6E9364130}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2809965227" Name="Character_Speech_Joker" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Joker" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" DurationType="OneShot" DurationMin="0.073076375" DurationMax="0.15469936">
+					<MediaRefs>
+						<MediaRef Id="182677997"/>
+						<MediaRef Id="397322122"/>
+						<MediaRef Id="487891601"/>
+						<MediaRef Id="660396686"/>
+						<MediaRef Id="699183672"/>
+						<MediaRef Id="733270745"/>
+						<MediaRef Id="911606311"/>
+						<MediaRef Id="947576081"/>
+						<MediaRef Id="984726317"/>
+						<MediaRef Id="1069705565"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2819840396" Type="Event" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" Language="SFX" Hash="{16D22B3C-65FB-E9A1-E454-173BA373BAE5}">
+			<ObjectPath>Amb_Spot_Slots</ObjectPath>
+			<ShortName>Amb_Spot_Slots</ShortName>
+			<Path>Event/Amb_Spot_Slots.bnk</Path>
+			<Media>
+				<File Id="109367632" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Amb_SlotMachines_Loop.wav</ShortName>
+					<Path>Media/109367632.wem</Path>
+					<CachePath>08/{08FC37D8-BC18-CF6B-1FC2-C2827867D4AB}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2819840396" Name="Amb_Spot_Slots" ObjectPath="\Events\Default Work Unit\Ambiences\Spot Ambiences\Amb_Spot_Slots" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" MaxAttenuation="2000" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="109367632"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2864326682" Type="Event" GUID="{57536178-8EF9-4A43-8591-B34399BC23F0}" Language="SFX" Hash="{228E11CA-8844-4C38-1E33-EF3F8517BB01}">
+			<ObjectPath>UI_Journal_Close</ObjectPath>
+			<ShortName>UI_Journal_Close</ShortName>
+			<Path>Event/UI_Journal_Close.bnk</Path>
+			<Media>
+				<File Id="51674403" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Journal_Close.wav</ShortName>
+					<Path>Media/51674403.wem</Path>
+					<CachePath>26/{26C232A4-48B7-8E22-FAE6-FF47F443DDE1}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2864326682" Name="UI_Journal_Close" ObjectPath="\Events\Default Work Unit\UI\UI_Journal_Close" GUID="{57536178-8EF9-4A43-8591-B34399BC23F0}" DurationType="OneShot" DurationMin="4.2" DurationMax="4.2">
+					<MediaRefs>
+						<MediaRef Id="51674403"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2977716840" Type="Event" GUID="{3D03E3EC-9D73-43BF-B3F0-D92C17738D78}" Language="SFX" Hash="{9E5F8D8C-82D8-F8D5-124F-B4623D7ACD31}">
+			<ObjectPath>Character_Speech_Queen</ObjectPath>
+			<ShortName>Character_Speech_Queen</ShortName>
+			<Path>Event/Character_Speech_Queen.bnk</Path>
+			<Events>
+				<Event Id="2977716840" Name="Character_Speech_Queen" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Queen" GUID="{3D03E3EC-9D73-43BF-B3F0-D92C17738D78}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3171998138" Type="Event" GUID="{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}" Language="SFX" Hash="{6DE4D882-48C8-24AF-2E9F-F99F90A867A9}">
+			<ObjectPath>Player_Foot_Step</ObjectPath>
+			<ShortName>Player_Foot_Step</ShortName>
+			<Path>Event/Player_Foot_Step.bnk</Path>
+			<Media>
+				<File Id="20469416" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Carpet_4.wav</ShortName>
+					<Path>Media/20469416.wem</Path>
+					<CachePath>D5/{D50F7254-BFA7-8D05-A3A6-801F7B7CA476}.wem</CachePath>
+				</File>
+				<File Id="29028791" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Stone_4.wav</ShortName>
+					<Path>Media/29028791.wem</Path>
+					<CachePath>3F/{3F7146B4-D342-8880-38A5-D4FFE807B7DB}.wem</CachePath>
+				</File>
+				<File Id="64209393" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep1.wav</ShortName>
+					<Path>Media/64209393.wem</Path>
+					<CachePath>3D/{3D388A6F-21A7-1F8D-5F0E-55D7085C9153}.wem</CachePath>
+				</File>
+				<File Id="264403800" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep2.wav</ShortName>
+					<Path>Media/264403800.wem</Path>
+					<CachePath>98/{98622BE0-823E-48D1-00D1-738DBB66BC34}.wem</CachePath>
+				</File>
+				<File Id="300382410" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Stone_2.wav</ShortName>
+					<Path>Media/300382410.wem</Path>
+					<CachePath>99/{998F78D8-58F6-E71A-1CB3-3D8E63AD1DF1}.wem</CachePath>
+				</File>
+				<File Id="344757656" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep3.wav</ShortName>
+					<Path>Media/344757656.wem</Path>
+					<CachePath>45/{4573E771-9C0E-0B82-8A87-2867AA1C4A7B}.wem</CachePath>
+				</File>
+				<File Id="521714472" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Carpet_6.wav</ShortName>
+					<Path>Media/521714472.wem</Path>
+					<CachePath>5F/{5F04B940-7620-627B-4A54-9D517AF6A76D}.wem</CachePath>
+				</File>
+				<File Id="698444392" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Carpet_3.wav</ShortName>
+					<Path>Media/698444392.wem</Path>
+					<CachePath>B3/{B36A6895-CDA5-6AB3-D9E5-58F3C7B66007}.wem</CachePath>
+				</File>
+				<File Id="739225321" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep6.wav</ShortName>
+					<Path>Media/739225321.wem</Path>
+					<CachePath>15/{15425245-BB30-67C4-A8C5-8A51F0B1C6D5}.wem</CachePath>
+				</File>
+				<File Id="793453065" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Stone_1.wav</ShortName>
+					<Path>Media/793453065.wem</Path>
+					<CachePath>68/{68B49521-AD2E-8D03-5F6E-F69AD95F94BD}.wem</CachePath>
+				</File>
+				<File Id="813856796" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep4.wav</ShortName>
+					<Path>Media/813856796.wem</Path>
+					<CachePath>F0/{F0D16688-953C-1D2C-3314-F3214C783611}.wem</CachePath>
+				</File>
+				<File Id="814075878" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Stone_6.wav</ShortName>
+					<Path>Media/814075878.wem</Path>
+					<CachePath>8B/{8B9B677A-AFE8-30B3-75B9-F8C4C8472DA4}.wem</CachePath>
+				</File>
+				<File Id="910084495" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Carpet_2.wav</ShortName>
+					<Path>Media/910084495.wem</Path>
+					<CachePath>DC/{DC6C8BB5-7108-3B20-7317-0358BC236EAA}.wem</CachePath>
+				</File>
+				<File Id="968188620" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Carpet_5.wav</ShortName>
+					<Path>Media/968188620.wem</Path>
+					<CachePath>C0/{C0A46601-8C08-144F-B96F-30293579FB26}.wem</CachePath>
+				</File>
+				<File Id="988786257" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalStep5.wav</ShortName>
+					<Path>Media/988786257.wem</Path>
+					<CachePath>8A/{8A66D6F8-F311-180D-9E79-B9B710F76F00}.wem</CachePath>
+				</File>
+				<File Id="1001647276" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Carpet_1.wav</ShortName>
+					<Path>Media/1001647276.wem</Path>
+					<CachePath>77/{775F5219-6B39-C0D4-6576-E04797759E4F}.wem</CachePath>
+				</File>
+				<File Id="1025356051" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Stone_3.wav</ShortName>
+					<Path>Media/1025356051.wem</Path>
+					<CachePath>6B/{6B2FBF4A-2010-9A82-6582-75A238A694F8}.wem</CachePath>
+				</File>
+				<File Id="1026057094" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Carpet_7.wav</ShortName>
+					<Path>Media/1026057094.wem</Path>
+					<CachePath>7D/{7DE0A120-F762-2516-9633-BEA50E1E4708}.wem</CachePath>
+				</File>
+				<File Id="1046744931" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Player_Footstep_Stone_5.wav</ShortName>
+					<Path>Media/1046744931.wem</Path>
+					<CachePath>08/{08555189-E446-D65C-6255-471EACF865B5}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3171998138" Name="Player_Foot_Step" ObjectPath="\Events\Default Work Unit\Player\Player_Foot_Step" GUID="{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}" DurationType="OneShot" DurationMin="0.44544935" DurationMax="0.625">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1368630905" Id="2058049674" GUID="{5991F025-F8E7-4679-B1C3-70CF08ACE181}"/>
+							<MediaRefs>
+								<MediaRef Id="64209393"/>
+								<MediaRef Id="264403800"/>
+								<MediaRef Id="344757656"/>
+								<MediaRef Id="739225321"/>
+								<MediaRef Id="813856796"/>
+								<MediaRef Id="988786257"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1368630905" Id="2473969246" GUID="{FF85422E-956B-45C5-95EE-7F7F4213A7A6}"/>
+							<MediaRefs>
+								<MediaRef Id="64209393"/>
+								<MediaRef Id="264403800"/>
+								<MediaRef Id="344757656"/>
+								<MediaRef Id="739225321"/>
+								<MediaRef Id="813856796"/>
+								<MediaRef Id="988786257"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1368630905" Id="2412606308" GUID="{3CC1B7D3-CBA7-43AD-9376-4E9FDB490246}" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="20469416"/>
+								<MediaRef Id="521714472"/>
+								<MediaRef Id="698444392"/>
+								<MediaRef Id="910084495"/>
+								<MediaRef Id="968188620"/>
+								<MediaRef Id="1001647276"/>
+								<MediaRef Id="1026057094"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1368630905" Id="1216965916" GUID="{6D0240EC-37BC-4A3F-AF09-7D04D5D7E5BA}"/>
+							<MediaRefs>
+								<MediaRef Id="29028791"/>
+								<MediaRef Id="300382410"/>
+								<MediaRef Id="793453065"/>
+								<MediaRef Id="814075878"/>
+								<MediaRef Id="1025356051"/>
+								<MediaRef Id="1046744931"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="1368630905" Name="Foot_Steps" ObjectPath="\Switches\Default Work Unit\Foot_Steps" GUID="{061CA91F-4F6D-4E5E-A0E5-CBBFF6474DEA}">
+					<Switches>
+						<Switch Id="1216965916" Name="Stone" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Stone" GUID="{6D0240EC-37BC-4A3F-AF09-7D04D5D7E5BA}"/>
+						<Switch Id="2058049674" Name="Wood" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Wood" GUID="{5991F025-F8E7-4679-B1C3-70CF08ACE181}"/>
+						<Switch Id="2412606308" Name="Carpet" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Carpet" GUID="{3CC1B7D3-CBA7-43AD-9376-4E9FDB490246}"/>
+						<Switch Id="2473969246" Name="Metal" ObjectPath="\Switches\Default Work Unit\Foot_Steps\Metal" GUID="{FF85422E-956B-45C5-95EE-7F7F4213A7A6}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="3331313354" Type="User" GUID="{D9E95AA2-D16F-48AC-B33C-DF494DC30C9C}" Language="SFX" Hash="{9A34C843-92D3-79F3-D359-990DD2F37B26}">
+			<ObjectPath>\SoundBanks\Default Work Unit\TestSB</ObjectPath>
+			<ShortName>TestSB</ShortName>
+			<Path>TestSB.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3470146927" Type="Event" GUID="{43D316F3-3A89-49F0-B7A0-F568FE500807}" Language="SFX" Hash="{D600A02C-1E49-872B-15B1-393CACB3C054}">
+			<ObjectPath>Poker_Impact_Lose</ObjectPath>
+			<ShortName>Poker_Impact_Lose</ShortName>
+			<Path>Event/Poker_Impact_Lose.bnk</Path>
+			<Media>
+				<File Id="455184232" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Lose.wav</ShortName>
+					<Path>Media/455184232.wem</Path>
+					<CachePath>F4/{F40332F0-3690-3C5C-8262-13DB2C6FE717}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3470146927" Name="Poker_Impact_Lose" ObjectPath="\Events\Default Work Unit\Poker\Impact\Poker_Impact_Lose" GUID="{43D316F3-3A89-49F0-B7A0-F568FE500807}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="455184232"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3638217758" Type="Event" GUID="{8DB07D75-FFF2-47D4-B8F5-6487175863A3}" Language="SFX" Hash="{FCF5B447-CA1F-4873-E9C1-8230381BBC52}">
+			<ObjectPath>UI_Journal_Open</ObjectPath>
+			<ShortName>UI_Journal_Open</ShortName>
+			<Path>Event/UI_Journal_Open.bnk</Path>
+			<Media>
+				<File Id="594152882" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Journal_Open.wav</ShortName>
+					<Path>Media/594152882.wem</Path>
+					<CachePath>91/{916588E4-50DC-0C92-AB48-46DF217E0B2D}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3638217758" Name="UI_Journal_Open" ObjectPath="\Events\Default Work Unit\UI\UI_Journal_Open" GUID="{8DB07D75-FFF2-47D4-B8F5-6487175863A3}" DurationType="OneShot" DurationMin="3.5" DurationMax="3.5">
+					<MediaRefs>
+						<MediaRef Id="594152882"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3736445778" Type="Event" GUID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}" Language="SFX" Hash="{51D84C06-41BB-FFC0-560B-CA1D61BD221E}">
+			<ObjectPath>BGM_Level_1</ObjectPath>
+			<ShortName>BGM_Level_1</ShortName>
+			<Path>Event/BGM_Level_1.bnk</Path>
+			<Media>
+				<File Id="371000174" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_TransitionEnd_80bpm4_4_8Bar.wav</ShortName>
+					<Path>Media/371000174.wem</Path>
+					<CachePath>89/{8991027B-597E-A5A3-2C73-06AF1751D8BC}.wem</CachePath>
+				</File>
+				<File Id="444367158" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_AceLoop_80bpm4_4_8Bar_1P_1T.wav</ShortName>
+					<Path>Media/444367158.wem</Path>
+					<CachePath>33/{33A5CE5A-602F-423C-B875-26AF40C1A89A}.wem</CachePath>
+				</File>
+				<File Id="685348968" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_TransitionIn_80bpm4_4_4Bar_1P_1T.wav</ShortName>
+					<Path>Media/685348968.wem</Path>
+					<CachePath>A2/{A2E06CF8-10B8-0BDF-8A73-07A28525B0D6}.wem</CachePath>
+				</File>
+				<File Id="812670376" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_Intro_80bpm4_4_2Bar.wav</ShortName>
+					<Path>Media/812670376.wem</Path>
+					<CachePath>A1/{A1E9C67C-E55B-659A-87BC-922F6CADD44D}.wem</CachePath>
+				</File>
+				<File Id="985732951" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_DealerLoop_80bpm4_4_8Bar_1P_1T.wav</ShortName>
+					<Path>Media/985732951.wem</Path>
+					<CachePath>66/{6633C26C-CB11-1FDF-D5E1-878F3B570656}.wem</CachePath>
+				</File>
+				<File Id="1027520005" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_MainLoop_80bpm4_4_16Bar_1P_1T.wav</ShortName>
+					<Path>Media/1027520005.wem</Path>
+					<CachePath>47/{4709A70A-8A18-2172-E194-C79D41FF677A}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3736445778" Name="BGM_Level_1" ObjectPath="\Events\Default Work Unit\Music\BGM_Level_1" GUID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="3992321431" GUID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+							<MediaRefs>
+								<MediaRef Id="444367158"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="362564855" GUID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
+							<MediaRefs>
+								<MediaRef Id="985732951"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="1125500713" GUID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
+							<MediaRefs>
+								<MediaRef Id="812670376"/>
+								<MediaRef Id="1027520005"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="3813340491" GUID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
+							<MediaRefs>
+								<MediaRef Id="371000174"/>
+								<MediaRef Id="1027520005"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="3919849458" GUID="{B792CAAF-BC28-49FA-9003-5060C201FC18}"/>
+							<MediaRefs>
+								<MediaRef Id="685348968"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="2858725581" GUID="{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"/>
+							<MediaRefs>
+								<MediaRef Id="371000174"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="3636347407" Name="UI_LowPass" ObjectPath="\Game Parameters\Default Work Unit\UI_LowPass" GUID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="649345183" Name="BGM_Level1" ObjectPath="\States\Default Work Unit\BGM_Level1" GUID="{95FD7CC8-A2D1-4247-B671-5F304DD70335}">
+					<States>
+						<State Id="362564855" Name="Dealer_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Dealer_Loop" GUID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\BGM_Level1\None" GUID="{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"/>
+						<State Id="1125500713" Name="Intro" ObjectPath="\States\Default Work Unit\BGM_Level1\Intro" GUID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
+						<State Id="2858725581" Name="Transition_Out" ObjectPath="\States\Default Work Unit\BGM_Level1\Transition_Out" GUID="{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"/>
+						<State Id="3813340491" Name="Main_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Main_Loop" GUID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
+						<State Id="3919849458" Name="Transition_In" ObjectPath="\States\Default Work Unit\BGM_Level1\Transition_In" GUID="{B792CAAF-BC28-49FA-9003-5060C201FC18}"/>
+						<State Id="3992321431" Name="Ace_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Ace_Loop" GUID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="4187610610" Type="Event" GUID="{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}" Language="SFX" Hash="{34D69932-89A5-DABF-5F20-CDFBC9695000}">
+			<ObjectPath>Poker_Chip_Collect</ObjectPath>
+			<ShortName>Poker_Chip_Collect</ShortName>
+			<Path>Event/Poker_Chip_Collect.bnk</Path>
+			<Media>
+				<File Id="402992790" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Collect_3.wav</ShortName>
+					<Path>Media/402992790.wem</Path>
+					<CachePath>BD/{BDE64BDD-23A3-9638-768A-E8CD54FE99F0}.wem</CachePath>
+				</File>
+				<File Id="851016046" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Collect_1.wav</ShortName>
+					<Path>Media/851016046.wem</Path>
+					<CachePath>CC/{CC9E6467-37C8-2500-6ECD-BE6D7A78EA26}.wem</CachePath>
+				</File>
+				<File Id="892472531" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Collect_2.wav</ShortName>
+					<Path>Media/892472531.wem</Path>
+					<CachePath>1F/{1FE9D7E2-1A23-9610-9B41-00843541E632}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="4187610610" Name="Poker_Chip_Collect" ObjectPath="\Events\Default Work Unit\Poker\Chip\Poker_Chip_Collect" GUID="{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="402992790"/>
+						<MediaRef Id="851016046"/>
+						<MediaRef Id="892472531"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{730646B8-666E-D5C7-FF18-8CEA871B092C}</FileHash>
+	<FileHash>{72FB7FD4-F84B-9B44-6293-A6D5DCA734C2}</FileHash>
 </SoundBanksInfo>

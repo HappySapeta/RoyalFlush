@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="1713188097" Type="Event" GUID="{2A417C38-1362-48C7-AFD8-4D04BE4086B0}" Language="SFX" Hash="{0AC27FDC-85D1-A05A-C4D7-423FC47111C0}">
+			<ObjectPath>UI_Click_Basic</ObjectPath>
+			<ShortName>UI_Click_Basic</ShortName>
+			<Path>Event/UI_Click_Basic.bnk</Path>
+			<Media>
+				<File Id="144485973" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Basic_3.wav</ShortName>
+					<Path>Media/144485973.wem</Path>
+					<CachePath>DE/{DE7CBFA8-D10E-65BE-09FF-7D1183909788}.wem</CachePath>
+				</File>
+				<File Id="523207238" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Basic_1.wav</ShortName>
+					<Path>Media/523207238.wem</Path>
+					<CachePath>A6/{A6EC99EC-9901-4CF2-2886-E2D72AEB76F9}.wem</CachePath>
+				</File>
+				<File Id="614961529" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Basic_4.wav</ShortName>
+					<Path>Media/614961529.wem</Path>
+					<CachePath>B8/{B8B01280-9591-5C39-060F-7EC3B911B38B}.wem</CachePath>
+				</File>
+				<File Id="1059505828" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Basic_2.wav</ShortName>
+					<Path>Media/1059505828.wem</Path>
+					<CachePath>44/{44F18FB9-9294-53AE-D240-2A4434A93AAE}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1713188097" Name="UI_Click_Basic" ObjectPath="\Events\Default Work Unit\UI\UI_Click_Basic" GUID="{2A417C38-1362-48C7-AFD8-4D04BE4086B0}" DurationType="OneShot" DurationMin="0.8288406" DurationMax="1.1063696">
+					<MediaRefs>
+						<MediaRef Id="144485973"/>
+						<MediaRef Id="523207238"/>
+						<MediaRef Id="614961529"/>
+						<MediaRef Id="1059505828"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{7958B130-734C-4A5A-F3E8-C7993FF2A364}</FileHash>
+</SoundBanksInfo>

@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2864326682",
+    "Type": "Event",
+    "GUID": "{57536178-8EF9-4A43-8591-B34399BC23F0}",
+    "Language": "SFX",
+    "Hash": "{228E11CA-8844-4C38-1E33-EF3F8517BB01}",
+    "ObjectPath": "UI_Journal_Close",
+    "ShortName": "UI_Journal_Close",
+    "Path": "Event/UI_Journal_Close.bnk",
+    "Media": [
+     {
+      "Id": "51674403",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Journal_Close.wav",
+      "Path": "Media/51674403.wem",
+      "CachePath": "26/{26C232A4-48B7-8E22-FAE6-FF47F443DDE1}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2864326682",
+      "Name": "UI_Journal_Close",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\UI_Journal_Close",
+      "GUID": "{57536178-8EF9-4A43-8591-B34399BC23F0}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.2",
+      "DurationMax": "4.2",
+      "MediaRefs": [
+       {
+        "Id": "51674403"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{1FDF3A10-E480-9C2B-0252-D67652E026E2}"
+ }
+}

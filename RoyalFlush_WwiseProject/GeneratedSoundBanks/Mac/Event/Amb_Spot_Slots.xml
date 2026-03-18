@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="2819840396" Type="Event" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" Language="SFX" Hash="{16D22B3C-65FB-E9A1-E454-173BA373BAE5}">
+			<ObjectPath>Amb_Spot_Slots</ObjectPath>
+			<ShortName>Amb_Spot_Slots</ShortName>
+			<Path>Event/Amb_Spot_Slots.bnk</Path>
+			<Media>
+				<File Id="109367632" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Amb_SlotMachines_Loop.wav</ShortName>
+					<Path>Media/109367632.wem</Path>
+					<CachePath>08/{08FC37D8-BC18-CF6B-1FC2-C2827867D4AB}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2819840396" Name="Amb_Spot_Slots" ObjectPath="\Events\Default Work Unit\Ambiences\Spot Ambiences\Amb_Spot_Slots" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" MaxAttenuation="2000" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="109367632"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{464C2B1E-A737-FAEE-9F56-7DDBFDEE5B7F}</FileHash>
+</SoundBanksInfo>

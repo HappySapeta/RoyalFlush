@@ -1,0 +1,72 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "597521017",
+    "Type": "Event",
+    "GUID": "{B8E3BC6D-65B8-4EF6-8DE2-8FD689931DCA}",
+    "Language": "SFX",
+    "Hash": "{654EB21B-DB12-3C68-ACDC-2ACF866E92E0}",
+    "ObjectPath": "Poker_Impact_Large",
+    "ShortName": "Poker_Impact_Large",
+    "Path": "Event/Poker_Impact_Large.bnk",
+    "Media": [
+     {
+      "Id": "277144921",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Impact_Big_2.wav",
+      "Path": "Media/277144921.wem",
+      "CachePath": "DA/{DA3677F3-F3B6-4937-8C7D-A061ECC9DEB6}.wem"
+     },
+     {
+      "Id": "757678230",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Impact_Big_3.wav",
+      "Path": "Media/757678230.wem",
+      "CachePath": "70/{70CD0E8C-250F-7A40-90BC-849A906CFC22}.wem"
+     },
+     {
+      "Id": "946203076",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Impact_Big_1.wav",
+      "Path": "Media/946203076.wem",
+      "CachePath": "2F/{2FBEF8E5-D810-2AFE-A31C-A324923F29BB}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "597521017",
+      "Name": "Poker_Impact_Large",
+      "ObjectPath": "\\Events\\Default Work Unit\\Poker\\Impact\\Poker_Impact_Large",
+      "GUID": "{B8E3BC6D-65B8-4EF6-8DE2-8FD689931DCA}",
+      "DurationType": "OneShot",
+      "DurationMin": "3",
+      "DurationMax": "3",
+      "MediaRefs": [
+       {
+        "Id": "277144921"
+       },
+       {
+        "Id": "757678230"
+       },
+       {
+        "Id": "946203076"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{93008E02-6AAE-E66C-8E2E-0EF0EA2E2FDF}"
+ }
+}

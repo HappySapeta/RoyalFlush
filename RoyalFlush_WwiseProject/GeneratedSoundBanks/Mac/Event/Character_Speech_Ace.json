@@ -1,0 +1,96 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1200163247",
+    "Type": "Event",
+    "GUID": "{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}",
+    "Language": "SFX",
+    "Hash": "{5E19E7A6-AA77-82D3-CB40-F2EF65FE4341}",
+    "ObjectPath": "Character_Speech_Ace",
+    "ShortName": "Character_Speech_Ace",
+    "Path": "Event/Character_Speech_Ace.bnk",
+    "Media": [
+     {
+      "Id": "327533658",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Ace_Speech_Oneshot_2.wav",
+      "Path": "Media/327533658.wem",
+      "CachePath": "65/{65732FAB-7203-9B4B-49AD-701BDCBC5093}.wem"
+     },
+     {
+      "Id": "444130920",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Ace_Speech_Oneshot_5.wav",
+      "Path": "Media/444130920.wem",
+      "CachePath": "C6/{C6FAD30A-8FC9-0423-2F51-CFE8B6177620}.wem"
+     },
+     {
+      "Id": "690746034",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Ace_Speech_Oneshot_1.wav",
+      "Path": "Media/690746034.wem",
+      "CachePath": "6F/{6F041F36-2951-3F4B-42B0-1EC69F5DD0E6}.wem"
+     },
+     {
+      "Id": "919250946",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Ace_Speech_Oneshot_3.wav",
+      "Path": "Media/919250946.wem",
+      "CachePath": "A5/{A5B13359-BB56-005A-D5DA-92913E47FB3C}.wem"
+     },
+     {
+      "Id": "968226134",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Character_Ace_Speech_Oneshot_4.wav",
+      "Path": "Media/968226134.wem",
+      "CachePath": "A8/{A8406584-9A8B-7EA9-358A-EB85D550120B}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1200163247",
+      "Name": "Character_Speech_Ace",
+      "ObjectPath": "\\Events\\Default Work Unit\\Character\\Speech\\Character_Speech_Ace",
+      "GUID": "{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.072118044",
+      "DurationMax": "0.091110125",
+      "MediaRefs": [
+       {
+        "Id": "327533658"
+       },
+       {
+        "Id": "444130920"
+       },
+       {
+        "Id": "690746034"
+       },
+       {
+        "Id": "919250946"
+       },
+       {
+        "Id": "968226134"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{60143B77-8758-6952-7300-2FDEEE6AD99D}"
+ }
+}

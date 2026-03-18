@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1057270552	Amb_Spot_Poker			\Default Work Unit\Ambiences\Spot Ambiences\Amb_Spot_Poker	
+

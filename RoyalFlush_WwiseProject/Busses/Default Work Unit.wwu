@@ -10,6 +10,79 @@
 						</Reference>
 					</ReferenceList>
 				</Bus>
+				<Bus Name="In-Game Audio Bus" ID="{89A25BB1-D592-4CFF-8959-81B4070A0D9F}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{D36E010F-01CC-4A01-9D30-A87961D8A9E2}" WorkUnitID="{DBB3B194-843D-4757-B0C0-2FA49B6BAB5B}"/>
+						</Reference>
+					</ReferenceList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<RTPC Name="" ID="{3FEC7A6B-947B-4CCB-A5C8-0A0EF69C2DB8}" ShortID="193028878">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="UI_LowPass" ID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{FE40C29F-57A6-43B0-AA8D-B9F04130033C}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>71</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+							<RTPC Name="" ID="{A9D38B1F-7490-4C84-BB03-F0E188A4BEB9}" ShortID="856343322">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="Pitch"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="UI_LowPass" ID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{0C2E3155-FFF9-49EE-AF9F-4D19BE37615E}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-924</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+						</ObjectList>
+					</ObjectLists>
+				</Bus>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="1877487096" Type="Event" GUID="{E0FB9962-0F04-4A81-96C2-997A97C84DBB}" Language="SFX" Hash="{3A797B07-7930-D733-69B2-0FF905C40E5A}">
+			<ObjectPath>UI_Click_Start_Game</ObjectPath>
+			<ShortName>UI_Click_Start_Game</ShortName>
+			<Path>Event/UI_Click_Start_Game.bnk</Path>
+			<Media>
+				<File Id="706829535" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Click_Start_Game.wav</ShortName>
+					<Path>Media/706829535.wem</Path>
+					<CachePath>8F/{8FDCFCA4-97F4-702B-D0DE-663B077F137D}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1877487096" Name="UI_Click_Start_Game" ObjectPath="\Events\Default Work Unit\UI\UI_Click_Start_Game" GUID="{E0FB9962-0F04-4A81-96C2-997A97C84DBB}" DurationType="OneShot" DurationMin="4.2" DurationMax="4.2">
+					<MediaRefs>
+						<MediaRef Id="706829535"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{A2749E66-6F97-6DDF-B4F4-E94A66069D7E}</FileHash>
+</SoundBanksInfo>

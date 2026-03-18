@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="1648916886" Type="Event" GUID="{F3916218-2FBA-4A6E-BFAE-ED570484A083}" Language="SFX" Hash="{EE2A6385-7990-1B58-7C2F-8F09511AA2BB}">
+			<ObjectPath>Poker_Impact_Win</ObjectPath>
+			<ShortName>Poker_Impact_Win</ShortName>
+			<Path>Event/Poker_Impact_Win.bnk</Path>
+			<Media>
+				<File Id="455934351" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Impact_Win.wav</ShortName>
+					<Path>Media/455934351.wem</Path>
+					<CachePath>2F/{2F8A96EC-6818-883E-7F79-58491DC4565E}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1648916886" Name="Poker_Impact_Win" ObjectPath="\Events\Default Work Unit\Poker\Impact\Poker_Impact_Win" GUID="{F3916218-2FBA-4A6E-BFAE-ED570484A083}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="455934351"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{4541F099-CFBD-6FEB-B45C-9F6D0DE94796}</FileHash>
+</SoundBanksInfo>

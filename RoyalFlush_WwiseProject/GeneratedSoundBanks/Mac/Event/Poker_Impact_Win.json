@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1648916886",
+    "Type": "Event",
+    "GUID": "{F3916218-2FBA-4A6E-BFAE-ED570484A083}",
+    "Language": "SFX",
+    "Hash": "{EE2A6385-7990-1B58-7C2F-8F09511AA2BB}",
+    "ObjectPath": "Poker_Impact_Win",
+    "ShortName": "Poker_Impact_Win",
+    "Path": "Event/Poker_Impact_Win.bnk",
+    "Media": [
+     {
+      "Id": "455934351",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Impact_Win.wav",
+      "Path": "Media/455934351.wem",
+      "CachePath": "2F/{2F8A96EC-6818-883E-7F79-58491DC4565E}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1648916886",
+      "Name": "Poker_Impact_Win",
+      "ObjectPath": "\\Events\\Default Work Unit\\Poker\\Impact\\Poker_Impact_Win",
+      "GUID": "{F3916218-2FBA-4A6E-BFAE-ED570484A083}",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "455934351"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C2DC3603-3444-78A1-D631-1EA2DAA85F2E}"
+ }
+}

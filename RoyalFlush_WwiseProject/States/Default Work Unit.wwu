@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{6FB26471-D20F-4078-A1FB-C374CC09412D}" SchemaVersion="133">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{6FB26471-D20F-4078-A1FB-C374CC09412D}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{6FB26471-D20F-4078-A1FB-C374CC09412D}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Ambience" ID="{C3E27FFC-F0E4-4B6D-9BA0-C398BBF5CDB9}">
+					<ChildrenList>
+						<State Name="None" ID="{503536D5-3BB1-4492-A5CC-B8D68DABE4D5}"/>
+						<State Name="Level_1" ID="{0DA12C57-D084-4807-880C-A3BF60EBDFE0}"/>
+						<State Name="Level_2" ID="{FBB6B095-AEDA-468F-9F92-AE43CB4A30F9}"/>
+						<State Name="Level_3" ID="{BEFF315C-6324-4DDA-AF11-41C06100433D}"/>
+						<State Name="Misc" ID="{994F7DCD-FCF2-4761-9167-AE63EC3A6807}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="BGM_Level1" ID="{95FD7CC8-A2D1-4247-B671-5F304DD70335}">
+					<ChildrenList>
+						<State Name="None" ID="{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"/>
+						<State Name="Intro" ID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
+						<State Name="Main_Loop" ID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
+						<State Name="Transition_In" ID="{B792CAAF-BC28-49FA-9003-5060C201FC18}"/>
+						<State Name="Transition_Out" ID="{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"/>
+						<State Name="Ace_Loop" ID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+						<State Name="Dealer_Loop" ID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

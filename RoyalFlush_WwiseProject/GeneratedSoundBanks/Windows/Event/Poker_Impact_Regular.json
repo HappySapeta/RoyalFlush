@@ -1,0 +1,96 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "752672192",
+    "Type": "Event",
+    "GUID": "{5AFCEA88-5D06-4E32-B141-2E89B83987F2}",
+    "Language": "SFX",
+    "Hash": "{C136EA49-22EA-DCEC-F386-6743C5CDB847}",
+    "ObjectPath": "Poker_Impact_Regular",
+    "ShortName": "Poker_Impact_Regular",
+    "Path": "Event/Poker_Impact_Regular.bnk",
+    "Media": [
+     {
+      "Id": "177382840",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Impact_Regular_2.wav",
+      "Path": "Media/177382840.wem",
+      "CachePath": "92/{92B09459-C73A-3D7D-3D96-BB023F9507BC}.wem"
+     },
+     {
+      "Id": "601075332",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Impact_Regular_1.wav",
+      "Path": "Media/601075332.wem",
+      "CachePath": "1E/{1E4BE5CA-3239-CA60-60BD-4F5812514D7F}.wem"
+     },
+     {
+      "Id": "725965430",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Impact_Regular_3.wav",
+      "Path": "Media/725965430.wem",
+      "CachePath": "E2/{E238FB64-6FEE-C510-6CA5-FD1B11704663}.wem"
+     },
+     {
+      "Id": "806056087",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Impact_Regular_5.wav",
+      "Path": "Media/806056087.wem",
+      "CachePath": "EC/{EC1022ED-037A-F549-F7CA-FC8985BD2890}.wem"
+     },
+     {
+      "Id": "864933856",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Poker_Impact_Regular_4.wav",
+      "Path": "Media/864933856.wem",
+      "CachePath": "8E/{8E3F5918-792E-C41F-2A8A-D863DBBB8AC9}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "752672192",
+      "Name": "Poker_Impact_Regular",
+      "ObjectPath": "\\Events\\Default Work Unit\\Poker\\Impact\\Poker_Impact_Regular",
+      "GUID": "{5AFCEA88-5D06-4E32-B141-2E89B83987F2}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "177382840"
+       },
+       {
+        "Id": "601075332"
+       },
+       {
+        "Id": "725965430"
+       },
+       {
+        "Id": "806056087"
+       },
+       {
+        "Id": "864933856"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{37051795-7435-66F2-E4DE-44FB7849287A}"
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1877487096",
+    "Type": "Event",
+    "GUID": "{E0FB9962-0F04-4A81-96C2-997A97C84DBB}",
+    "Language": "SFX",
+    "Hash": "{3A797B07-7930-D733-69B2-0FF905C40E5A}",
+    "ObjectPath": "UI_Click_Start_Game",
+    "ShortName": "UI_Click_Start_Game",
+    "Path": "Event/UI_Click_Start_Game.bnk",
+    "Media": [
+     {
+      "Id": "706829535",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "UI_Click_Start_Game.wav",
+      "Path": "Media/706829535.wem",
+      "CachePath": "8F/{8FDCFCA4-97F4-702B-D0DE-663B077F137D}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1877487096",
+      "Name": "UI_Click_Start_Game",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\UI_Click_Start_Game",
+      "GUID": "{E0FB9962-0F04-4A81-96C2-997A97C84DBB}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.2",
+      "DurationMax": "4.2",
+      "MediaRefs": [
+       {
+        "Id": "706829535"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{E4993F21-D2AB-433E-4251-64FA9B6DD0DF}"
+ }
+}

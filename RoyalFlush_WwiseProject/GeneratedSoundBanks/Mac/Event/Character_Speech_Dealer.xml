@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{EBD83DB8-EDCC-06EF-D0AA-92B9604CCE1C}">
+			<ObjectPath>Character_Speech_Dealer</ObjectPath>
+			<ShortName>Character_Speech_Dealer</ShortName>
+			<Path>Event/Character_Speech_Dealer.bnk</Path>
+			<Media>
+				<File Id="252900410" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_8.wav</ShortName>
+					<Path>Media/252900410.wem</Path>
+					<CachePath>58/{58166830-25E6-CCF4-D522-6DE16AAE3CDF}.wem</CachePath>
+				</File>
+				<File Id="295450687" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_9.wav</ShortName>
+					<Path>Media/295450687.wem</Path>
+					<CachePath>86/{86907FB8-BBB4-94AA-3BD9-65B5A54384E5}.wem</CachePath>
+				</File>
+				<File Id="311680424" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_7.wav</ShortName>
+					<Path>Media/311680424.wem</Path>
+					<CachePath>2D/{2DC129B3-1144-184D-0E41-2BD405A1A1B5}.wem</CachePath>
+				</File>
+				<File Id="421461186" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_5.wav</ShortName>
+					<Path>Media/421461186.wem</Path>
+					<CachePath>93/{93EE5801-7826-1326-0D82-CD67EDA8C243}.wem</CachePath>
+				</File>
+				<File Id="483519037" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_6.wav</ShortName>
+					<Path>Media/483519037.wem</Path>
+					<CachePath>31/{3179ACA9-2F04-9655-616F-74EEEC5ED1DB}.wem</CachePath>
+				</File>
+				<File Id="591661577" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_2.wav</ShortName>
+					<Path>Media/591661577.wem</Path>
+					<CachePath>DB/{DB814070-7FD9-92EF-2FAC-A122FDBA4E10}.wem</CachePath>
+				</File>
+				<File Id="753993133" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_4.wav</ShortName>
+					<Path>Media/753993133.wem</Path>
+					<CachePath>30/{3087EC15-1444-AF94-F3FC-E194CE5D6792}.wem</CachePath>
+				</File>
+				<File Id="932306053" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_1.wav</ShortName>
+					<Path>Media/932306053.wem</Path>
+					<CachePath>E6/{E6CC5CDA-A73D-B2BC-FA20-61BC189137D7}.wem</CachePath>
+				</File>
+				<File Id="952140260" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Character_Dealer_Speech_Oneshot_3.wav</ShortName>
+					<Path>Media/952140260.wem</Path>
+					<CachePath>AB/{ABE5543A-C17D-1697-647F-93B9E4478051}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1402278545" Name="Character_Speech_Dealer" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Dealer" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" DurationType="OneShot" DurationMin="0.1" DurationMax="0.11724018">
+					<MediaRefs>
+						<MediaRef Id="252900410"/>
+						<MediaRef Id="295450687"/>
+						<MediaRef Id="311680424"/>
+						<MediaRef Id="421461186"/>
+						<MediaRef Id="483519037"/>
+						<MediaRef Id="591661577"/>
+						<MediaRef Id="753993133"/>
+						<MediaRef Id="932306053"/>
+						<MediaRef Id="952140260"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{6460B4CC-F168-0C92-64D2-5400A994B34E}</FileHash>
+</SoundBanksInfo>

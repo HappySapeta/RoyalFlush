@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1793476039	Amb_Level_Switch			\Default Work Unit\Ambiences\Amb_Level_Switch	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	85412153	Ambience			\Default Work Unit\Ambience	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Ambience			
+	1290008369	Level_1	Ambience			
+	1290008370	Level_2	Ambience			
+	1290008371	Level_3	Ambience			
+	3062523257	Misc	Ambience			
+

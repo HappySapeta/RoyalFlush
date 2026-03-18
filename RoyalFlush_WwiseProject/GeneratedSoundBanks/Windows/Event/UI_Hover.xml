@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="2118900976" Type="Event" GUID="{2A6EB89A-CDFB-400A-B065-EA527AEC0DF2}" Language="SFX" Hash="{07374804-AE95-BFA3-DBCE-D2B584A1DA24}">
+			<ObjectPath>UI_Hover</ObjectPath>
+			<ShortName>UI_Hover</ShortName>
+			<Path>Event/UI_Hover.bnk</Path>
+			<Media>
+				<File Id="292700569" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_1.wav</ShortName>
+					<Path>Media/292700569.wem</Path>
+					<CachePath>E1/{E1E89AB4-8D77-1BDC-2FF2-F7B61449DFF8}.wem</CachePath>
+				</File>
+				<File Id="370047884" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_3.wav</ShortName>
+					<Path>Media/370047884.wem</Path>
+					<CachePath>CD/{CD06D2E2-2DDC-D500-3D4C-39EE7B4B85E9}.wem</CachePath>
+				</File>
+				<File Id="493048695" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_6.wav</ShortName>
+					<Path>Media/493048695.wem</Path>
+					<CachePath>F8/{F8A67766-D133-EDA9-31A8-E250ABF459E8}.wem</CachePath>
+				</File>
+				<File Id="517860784" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_8.wav</ShortName>
+					<Path>Media/517860784.wem</Path>
+					<CachePath>D2/{D2FF9797-0354-3746-5256-39B39405330A}.wem</CachePath>
+				</File>
+				<File Id="703504247" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_5.wav</ShortName>
+					<Path>Media/703504247.wem</Path>
+					<CachePath>4D/{4D0E5135-62DF-B053-06DF-E2BD8E2257D8}.wem</CachePath>
+				</File>
+				<File Id="714540727" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_2.wav</ShortName>
+					<Path>Media/714540727.wem</Path>
+					<CachePath>86/{867488E3-77C7-5DDD-009A-6168213B2846}.wem</CachePath>
+				</File>
+				<File Id="740581551" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_4.wav</ShortName>
+					<Path>Media/740581551.wem</Path>
+					<CachePath>D5/{D5759632-3D70-49E0-6DA0-33ADEB3E289F}.wem</CachePath>
+				</File>
+				<File Id="1069049292" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>UI_Hover_7.wav</ShortName>
+					<Path>Media/1069049292.wem</Path>
+					<CachePath>6F/{6F721521-F00D-67E6-CE32-C6F095D16AB3}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2118900976" Name="UI_Hover" ObjectPath="\Events\Default Work Unit\UI\UI_Hover" GUID="{2A6EB89A-CDFB-400A-B065-EA527AEC0DF2}" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<MediaRefs>
+						<MediaRef Id="292700569"/>
+						<MediaRef Id="370047884"/>
+						<MediaRef Id="493048695"/>
+						<MediaRef Id="517860784"/>
+						<MediaRef Id="703504247"/>
+						<MediaRef Id="714540727"/>
+						<MediaRef Id="740581551"/>
+						<MediaRef Id="1069049292"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{3A6C033A-4815-2421-6CA7-70EAE2C37FD9}</FileHash>
+</SoundBanksInfo>

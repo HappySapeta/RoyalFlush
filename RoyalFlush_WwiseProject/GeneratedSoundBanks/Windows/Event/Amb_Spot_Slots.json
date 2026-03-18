@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2819840396",
+    "Type": "Event",
+    "GUID": "{8861D6C1-590B-48D9-8086-809FC1F2BD69}",
+    "Language": "SFX",
+    "Hash": "{16D22B3C-65FB-E9A1-E454-173BA373BAE5}",
+    "ObjectPath": "Amb_Spot_Slots",
+    "ShortName": "Amb_Spot_Slots",
+    "Path": "Event/Amb_Spot_Slots.bnk",
+    "Media": [
+     {
+      "Id": "109367632",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Amb_SlotMachines_Loop.wav",
+      "Path": "Media/109367632.wem",
+      "CachePath": "08/{08FC37D8-BC18-CF6B-1FC2-C2827867D4AB}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2819840396",
+      "Name": "Amb_Spot_Slots",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ambiences\\Spot Ambiences\\Amb_Spot_Slots",
+      "GUID": "{8861D6C1-590B-48D9-8086-809FC1F2BD69}",
+      "MaxAttenuation": "2000",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "109367632"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{3DA3F67B-6910-6F3B-7178-C57EB5C16AEB}"
+ }
+}

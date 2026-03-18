@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="4187610610" Type="Event" GUID="{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}" Language="SFX" Hash="{34D69932-89A5-DABF-5F20-CDFBC9695000}">
+			<ObjectPath>Poker_Chip_Collect</ObjectPath>
+			<ShortName>Poker_Chip_Collect</ShortName>
+			<Path>Event/Poker_Chip_Collect.bnk</Path>
+			<Media>
+				<File Id="402992790" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Collect_3.wav</ShortName>
+					<Path>Media/402992790.wem</Path>
+					<CachePath>BD/{BDE64BDD-23A3-9638-768A-E8CD54FE99F0}.wem</CachePath>
+				</File>
+				<File Id="851016046" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Collect_1.wav</ShortName>
+					<Path>Media/851016046.wem</Path>
+					<CachePath>CC/{CC9E6467-37C8-2500-6ECD-BE6D7A78EA26}.wem</CachePath>
+				</File>
+				<File Id="892472531" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Poker_Chip_Collect_2.wav</ShortName>
+					<Path>Media/892472531.wem</Path>
+					<CachePath>1F/{1FE9D7E2-1A23-9610-9B41-00843541E632}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="4187610610" Name="Poker_Chip_Collect" ObjectPath="\Events\Default Work Unit\Poker\Chip\Poker_Chip_Collect" GUID="{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="402992790"/>
+						<MediaRef Id="851016046"/>
+						<MediaRef Id="892472531"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{92F6E8FD-7BDB-A538-20CD-773F7DCDC4AA}</FileHash>
+</SoundBanksInfo>
