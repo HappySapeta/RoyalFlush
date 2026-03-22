@@ -6,6 +6,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "RFGameMode.generated.h"
 
+class URpStateMachineComponent;
 /**
  * 
  */
@@ -14,5 +15,12 @@ class ROYALFLUSH_API ARFGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+public:
+	
+	ARFGameMode();
 
+private:
+	
+	UPROPERTY(EditAnywhere)
+	URpStateMachineComponent* PokerStateMachine;
 };
