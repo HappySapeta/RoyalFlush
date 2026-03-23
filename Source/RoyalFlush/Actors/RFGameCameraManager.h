@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "RFGameCameraManager.generated.h"
 
+class ARFCamera;
 class UCameraComponent;
 
 UCLASS()
@@ -25,9 +26,9 @@ private:
 
 	void CheckCameras(float DeltaSeconds);
 
-	float GetCosineScore(UCameraComponent* CameraComponent);
+	float GetCosineScore(UCameraComponent* CameraComponent, const AActor* Pawn);
 	
-	void SwitchToCamera(ACameraActor* TargetCameraActor);
+	void SwitchToCamera(ARFCamera* TargetCameraActor);
 	bool IsPlayerInFrustum(UCameraComponent* CameraComponent);
 
 private:
@@ -40,7 +41,7 @@ private:
 	TObjectPtr<APlayerController> PlayerController;
 	
 	UPROPERTY(VisibleAnywhere)
-	TArray<ACameraActor*> CameraActors;
+	TArray<ARFCamera*> CameraActors;
 	
 	UPROPERTY(VisibleAnywhere)
 	ACameraActor* CurrentCameraActor;
