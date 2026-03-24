@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1057270552" Type="Event" GUID="{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}" Language="SFX" Hash="{D3C98122-439A-54D3-7EA5-CA6DF9F70733}">
+		<SoundBank Id="1057270552" Type="Event" GUID="{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}" Language="SFX" Hash="{A0B2EAE6-86B3-1A09-C363-424DE1C79AEF}">
 			<ObjectPath>Amb_Spot_Poker</ObjectPath>
 			<ShortName>Amb_Spot_Poker</ShortName>
 			<Path>Event/Amb_Spot_Poker.bnk</Path>
@@ -13,7 +13,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1057270552" Name="Amb_Spot_Poker" ObjectPath="\Events\Default Work Unit\Ambiences\Spot Ambiences\Amb_Spot_Poker" GUID="{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}" MaxAttenuation="2000" DurationType="Infinite">
+				<Event Id="1057270552" Name="Amb_Spot_Poker" ObjectPath="\Events\Default Work Unit\Ambiences\Spot Ambiences\Amb_Spot_Poker" GUID="{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}" MaxAttenuation="400" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="789521920"/>
 					</MediaRefs>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8DCB8EA3-9313-2537-5BD5-B36E35EDDD6E}</FileHash>
+	<FileHash>{9C902165-7555-E6F5-AE2F-204C20C2001B}</FileHash>
 </SoundBanksInfo>

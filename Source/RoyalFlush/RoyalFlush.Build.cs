@@ -21,6 +21,15 @@ public class RoyalFlush : ModuleRules
             "GameplayTags"
         });
 
-        PublicIncludePaths.AddRange(new string[] { "../Plugins/DlgSystem/Source" });
+        PrivateDependencyModuleNames.AddRange(new string[]
+        {
+            "Ripple"
+        });
+        
+        PublicIncludePaths.AddRange(new string[]
+        {
+            "../Plugins/DlgSystem/Source",
+            "../Plugins/Ripple/Source"
+        });
     }
 }

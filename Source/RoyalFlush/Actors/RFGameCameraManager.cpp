@@ -2,14 +2,14 @@
 
 #include "RFGameCameraManager.h"
 
-#include "Camera/CameraActor.h"
+#include "RFCamera.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
 
 struct FCameraCandidate
 {
 	float CosineScore;
-	ACameraActor* CameraActor;
+	ARFCamera* CameraActor;
 };
 
 ARFGameCameraManager::ARFGameCameraManager()
@@ -30,13 +30,13 @@ void ARFGameCameraManager::BeginPlay()
 		UGameplayStatics::GetAllActorsOfClass
 		(
 			GetWorld(),
-			ACameraActor::StaticClass(), 
+			ARFCamera::StaticClass(), 
 			Actors
 		);
 	
 		for (AActor* Actor : Actors)
 		{
-			CameraActors.Push(Cast<ACameraActor>(Actor));
+			CameraActors.Push(Cast<ARFCamera>(Actor));
 		}
 	}
 }
@@ -54,20 +54,21 @@ void ARFGameCameraManager::CheckCameras(float DeltaSeconds)
 		UE_LOG(LogTemp, Warning, TEXT("No player controller found. Cameras will not update."));
 		return;
 	}
+	const AActor* PlayerPawn = PlayerController->GetPawn();
 	
 	static TArray<FCameraCandidate> CameraCandidates;
 	CameraCandidates.Reserve(CameraActors.Num());
 	
-	for (ACameraActor* CameraActor : CameraActors)
+	for (ARFCamera* CameraActor : CameraActors)
 	{
-		if (IsPlayerInFrustum(CameraActor->GetCameraComponent()))
+		if (CameraActor->IsActorInRoom(PlayerPawn))
 		{
-			const float CosineScore = GetCosineScore(CameraActor->GetCameraComponent());
+			const float CosineScore = GetCosineScore(CameraActor->GetCameraComponent(), PlayerPawn);
 			CameraCandidates.Push(FCameraCandidate{CosineScore, CameraActor});
 		}
 	}
 	
-	ACameraActor* DesiredCameraTarget = nullptr;
+	ARFCamera* DesiredCameraTarget = nullptr;
 	if (!CameraCandidates.IsEmpty())
 	{
 		CameraCandidates.Sort([](const FCameraCandidate& A, const FCameraCandidate& B)
@@ -79,45 +80,20 @@ void ARFGameCameraManager::CheckCameras(float DeltaSeconds)
 		CameraCandidates.Empty();
 	}
 	
-	if (DesiredCameraTarget)
+	if (DesiredCameraTarget && DesiredCameraTarget != CurrentCameraActor)
 	{
 		SwitchToCamera(DesiredCameraTarget);
 	}
 }
 
-float ARFGameCameraManager::GetCosineScore(UCameraComponent* CameraComponent)
+float ARFGameCameraManager::GetCosineScore(UCameraComponent* CameraComponent, const AActor* Pawn)
 {
-	if (const AActor* Pawn = PlayerController->GetPawn())
-	{
-		const FVector PawnDirection = (Pawn->GetActorLocation() - CameraComponent->GetComponentLocation()).GetSafeNormal();
-		const float Cosine = FVector::DotProduct(PawnDirection, CameraComponent->GetForwardVector());
-		return Cosine;
-	}
-	
-	return -1.0f;
+	const FVector PawnDirection = (Pawn->GetActorLocation() - CameraComponent->GetComponentLocation()).GetSafeNormal();
+	const float Cosine = FVector::DotProduct(PawnDirection, CameraComponent->GetForwardVector());
+	return Cosine;
 }
 
-bool ARFGameCameraManager::IsPlayerInFrustum(UCameraComponent* CameraComponent)
-{
-	FMinimalViewInfo ViewInfo;
-	CameraComponent->GetCameraView(0.0f, ViewInfo);
-	ViewInfo.OrthoFarClipPlane = 1000.0f;
-
-	FMatrix ViewProjectionMatrix, ProjectionMatrix, ViewMatrix;
-	UGameplayStatics::GetViewProjectionMatrix(ViewInfo, ViewMatrix, ProjectionMatrix, ViewProjectionMatrix);
-	
-	FConvexVolume Frustum;
-	GetViewFrustumBounds(Frustum, ViewProjectionMatrix, true);
-	
-	if (const AActor* Pawn = PlayerController->GetPawn())
-	{
-		return Frustum.IntersectPoint(Pawn->GetActorLocation());
-	}
-	
-	return false;
-}
-
-void ARFGameCameraManager::SwitchToCamera(ACameraActor* TargetCameraActor)
+void ARFGameCameraManager::SwitchToCamera(ARFCamera* TargetCameraActor)
 {
 	CurrentCameraActor = TargetCameraActor;
 	PlayerController->SetViewTargetWithBlend(CurrentCameraActor, BlendTime);

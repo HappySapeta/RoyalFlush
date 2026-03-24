@@ -1,3 +1,6 @@
 [submodule "Plugins/DlgSystem"]
 	path = Plugins/DlgSystem
 	url = https://github.com/NotYetGames/DlgSystem.git
+[submodule "Plugins/Ripple"]
+	path = Plugins/Ripple
+	url = https://github.com/HappySapeta/Ripple.git
