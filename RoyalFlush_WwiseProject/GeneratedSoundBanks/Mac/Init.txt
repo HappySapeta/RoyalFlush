@@ -1,5 +1,6 @@
 State Group	ID	Name			Wwise Object Path	Notes
 	85412153	Ambience			\Default Work Unit\Ambience	
+	649345180	BGM_Level2			\Default Work Unit\BGM_Level2	
 	649345183	BGM_Level1			\Default Work Unit\BGM_Level1	
 
 State	ID	Name	State Group			Notes
@@ -8,6 +9,11 @@ State	ID	Name	State Group			Notes
 	1290008370	Level_2	Ambience			
 	1290008371	Level_3	Ambience			
 	3062523257	Misc	Ambience			
+	633613142	Lvl2_Joker_Loop	BGM_Level2			
+	748895195	None	BGM_Level2			
+	878686745	Lvl2_Main_Loop_Transistion	BGM_Level2			
+	2391201298	Lvl2_Intro	BGM_Level2			
+	3360398578	Lvl2_Jack_Loop	BGM_Level2			
 	362564855	Dealer_Loop	BGM_Level1			
 	748895195	None	BGM_Level1			
 	1125500713	Intro	BGM_Level1			
