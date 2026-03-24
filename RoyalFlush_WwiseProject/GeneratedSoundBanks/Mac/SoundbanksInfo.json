@@ -273,7 +273,7 @@
     "Type": "Event",
     "GUID": "{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}",
     "Language": "SFX",
-    "Hash": "{D3C98122-439A-54D3-7EA5-CA6DF9F70733}",
+    "Hash": "{A0B2EAE6-86B3-1A09-C363-424DE1C79AEF}",
     "ObjectPath": "Amb_Spot_Poker",
     "ShortName": "Amb_Spot_Poker",
     "Path": "Event/Amb_Spot_Poker.bnk",
@@ -294,7 +294,7 @@
       "Name": "Amb_Spot_Poker",
       "ObjectPath": "\\Events\\Default Work Unit\\Ambiences\\Spot Ambiences\\Amb_Spot_Poker",
       "GUID": "{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}",
-      "MaxAttenuation": "2000",
+      "MaxAttenuation": "400",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -394,7 +394,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{92A9844E-EEC3-747D-5FA1-FE2E96DAF79B}",
+    "Hash": "{BD8621F1-CE3B-4BC6-57C3-7E4DAEAF2DFE}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -476,6 +476,44 @@
         "Name": "Misc",
         "ObjectPath": "\\States\\Default Work Unit\\Ambience\\Misc",
         "GUID": "{994F7DCD-FCF2-4761-9167-AE63EC3A6807}"
+       }
+      ]
+     },
+     {
+      "Id": "649345180",
+      "Name": "BGM_Level2",
+      "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2",
+      "GUID": "{197F90A4-3E9B-4E43-AD6E-9B2FAA27A1FC}",
+      "States": [
+       {
+        "Id": "633613142",
+        "Name": "Lvl2_Joker_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\Lvl2_Joker_Loop",
+        "GUID": "{6586F4AC-33A0-47F6-AB10-3D166E32BE87}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\None",
+        "GUID": "{A85EEFD6-C50E-4DBF-8F26-6EE633A87D89}"
+       },
+       {
+        "Id": "878686745",
+        "Name": "Lvl2_Main_Loop_Transistion",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\Lvl2_Main_Loop_Transistion",
+        "GUID": "{F2BD589B-042A-424E-A826-D0BD91DC91B0}"
+       },
+       {
+        "Id": "2391201298",
+        "Name": "Lvl2_Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\Lvl2_Intro",
+        "GUID": "{5CEFAEB9-E0CB-4E2C-87D9-9FA622573C9B}"
+       },
+       {
+        "Id": "3360398578",
+        "Name": "Lvl2_Jack_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\Lvl2_Jack_Loop",
+        "GUID": "{54D36442-E3C3-4394-80BE-41A6D8F0BDEC}"
        }
       ]
      },
@@ -1684,7 +1722,7 @@
     "Type": "Event",
     "GUID": "{8861D6C1-590B-48D9-8086-809FC1F2BD69}",
     "Language": "SFX",
-    "Hash": "{16D22B3C-65FB-E9A1-E454-173BA373BAE5}",
+    "Hash": "{940FCB2D-DE98-27C5-4E5A-7F35445F87CA}",
     "ObjectPath": "Amb_Spot_Slots",
     "ShortName": "Amb_Spot_Slots",
     "Path": "Event/Amb_Spot_Slots.bnk",
@@ -1705,7 +1743,7 @@
       "Name": "Amb_Spot_Slots",
       "ObjectPath": "\\Events\\Default Work Unit\\Ambiences\\Spot Ambiences\\Amb_Spot_Slots",
       "GUID": "{8861D6C1-590B-48D9-8086-809FC1F2BD69}",
-      "MaxAttenuation": "2000",
+      "MaxAttenuation": "400",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -2487,6 +2525,6 @@
     ]
    }
   ],
-  "FileHash": "{1A33970D-236D-26DD-05D2-06E725E67803}"
+  "FileHash": "{EDE338B4-032D-7EB0-C231-2997390AECFA}"
  }
 }
