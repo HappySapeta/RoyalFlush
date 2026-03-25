@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="3736445776" Type="Event" GUID="{180D9611-C6FB-43E3-B9F2-B97362E1E97B}" Language="SFX" Hash="{69A5CB49-C94E-FB3E-3EC3-2FA6BA815303}">
+			<ObjectPath>BGM_Level_3</ObjectPath>
+			<ShortName>BGM_Level_3</ShortName>
+			<Path>Event/BGM_Level_3.bnk</Path>
+			<Media>
+				<File Id="371000174" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_TransitionEnd_80bpm4_4_8Bar.wav</ShortName>
+					<Path>Media/371000174.wem</Path>
+					<CachePath>89/{8991027B-597E-A5A3-2C73-06AF1751D8BC}.wem</CachePath>
+				</File>
+				<File Id="444367158" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_AceLoop_80bpm4_4_8Bar_1P_1T.wav</ShortName>
+					<Path>Media/444367158.wem</Path>
+					<CachePath>33/{33A5CE5A-602F-423C-B875-26AF40C1A89A}.wem</CachePath>
+				</File>
+				<File Id="812670376" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_Intro_80bpm4_4_2Bar.wav</ShortName>
+					<Path>Media/812670376.wem</Path>
+					<CachePath>A1/{A1E9C67C-E55B-659A-87BC-922F6CADD44D}.wem</CachePath>
+				</File>
+				<File Id="985732951" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_DealerLoop_80bpm4_4_8Bar_1P_1T.wav</ShortName>
+					<Path>Media/985732951.wem</Path>
+					<CachePath>66/{6633C26C-CB11-1FDF-D5E1-878F3B570656}.wem</CachePath>
+				</File>
+				<File Id="1027520005" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Level1_MainLoop_80bpm4_4_16Bar_1P_1T.wav</ShortName>
+					<Path>Media/1027520005.wem</Path>
+					<CachePath>47/{4709A70A-8A18-2172-E194-C79D41FF677A}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3736445776" Name="BGM_Level_3" ObjectPath="\Events\Default Work Unit\Music\BGM_Level_3" GUID="{180D9611-C6FB-43E3-B9F2-B97362E1E97B}" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="910418227" GUID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+							<MediaRefs>
+								<MediaRef Id="444367158"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="816946595" GUID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
+							<MediaRefs>
+								<MediaRef Id="985732951"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="3297021469" GUID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
+							<MediaRefs>
+								<MediaRef Id="812670376"/>
+								<MediaRef Id="1027520005"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="649345183" Id="1818238519" GUID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
+							<MediaRefs>
+								<MediaRef Id="371000174"/>
+								<MediaRef Id="1027520005"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="3636347407" Name="UI_LowPass" ObjectPath="\Game Parameters\Default Work Unit\UI_LowPass" GUID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="649345183" Name="BGM_Level1" ObjectPath="\States\Default Work Unit\Music\BGM_Level1" GUID="{95FD7CC8-A2D1-4247-B671-5F304DD70335}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\None" GUID="{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"/>
+						<State Id="816946595" Name="Lvl1_Dealer_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\Lvl1_Dealer_Loop" GUID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
+						<State Id="910418227" Name="Lvl1_Ace_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\Lvl1_Ace_Loop" GUID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+						<State Id="1818238519" Name="Lvl1_Main_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\Lvl1_Main_Loop" GUID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
+						<State Id="3297021469" Name="Lvl1_Intro" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\Lvl1_Intro" GUID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{1BBC631C-337C-0F03-4A3C-C78059854DEF}</FileHash>
+</SoundBanksInfo>
