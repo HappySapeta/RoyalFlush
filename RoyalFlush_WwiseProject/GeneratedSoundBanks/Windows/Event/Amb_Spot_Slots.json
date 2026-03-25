@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{8861D6C1-590B-48D9-8086-809FC1F2BD69}",
     "Language": "SFX",
-    "Hash": "{16D22B3C-65FB-E9A1-E454-173BA373BAE5}",
+    "Hash": "{940FCB2D-DE98-27C5-4E5A-7F35445F87CA}",
     "ObjectPath": "Amb_Spot_Slots",
     "ShortName": "Amb_Spot_Slots",
     "Path": "Event/Amb_Spot_Slots.bnk",
@@ -31,7 +31,7 @@
       "Name": "Amb_Spot_Slots",
       "ObjectPath": "\\Events\\Default Work Unit\\Ambiences\\Spot Ambiences\\Amb_Spot_Slots",
       "GUID": "{8861D6C1-590B-48D9-8086-809FC1F2BD69}",
-      "MaxAttenuation": "2000",
+      "MaxAttenuation": "400",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -42,6 +42,6 @@
     ]
    }
   ],
-  "FileHash": "{3DA3F67B-6910-6F3B-7178-C57EB5C16AEB}"
+  "FileHash": "{04F9A951-99F4-D5F1-52B6-3DF45B3F08E6}"
  }
 }
