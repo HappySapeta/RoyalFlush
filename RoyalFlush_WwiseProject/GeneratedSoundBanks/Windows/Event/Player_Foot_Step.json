@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}",
     "Language": "SFX",
-    "Hash": "{6DE4D882-48C8-24AF-2E9F-F99F90A867A9}",
+    "Hash": "{30F15A13-86E1-9CAD-A02B-711D3B7989D1}",
     "ObjectPath": "Player_Foot_Step",
     "ShortName": "Player_Foot_Step",
     "Path": "Event/Player_Foot_Step.bnk",
@@ -25,6 +25,15 @@
       "CachePath": "D5/{D50F7254-BFA7-8D05-A3A6-801F7B7CA476}.wem"
      },
      {
+      "Id": "24361596",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_6.wav",
+      "Path": "Media/24361596.wem",
+      "CachePath": "F4/{F4CC1890-EE7B-E7EB-4C56-6FCD11A404A9}.wem"
+     },
+     {
       "Id": "29028791",
       "Language": "SFX",
       "Streaming": "false",
@@ -32,6 +41,15 @@
       "ShortName": "Player_Footstep_Stone_4.wav",
       "Path": "Media/29028791.wem",
       "CachePath": "3F/{3F7146B4-D342-8880-38A5-D4FFE807B7DB}.wem"
+     },
+     {
+      "Id": "57309619",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_7.wav",
+      "Path": "Media/57309619.wem",
+      "CachePath": "9A/{9A573D68-B20D-183B-F854-55422DEEE0E8}.wem"
      },
      {
       "Id": "64209393",
@@ -52,6 +70,15 @@
       "CachePath": "98/{98622BE0-823E-48D1-00D1-738DBB66BC34}.wem"
      },
      {
+      "Id": "300069844",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_2.wav",
+      "Path": "Media/300069844.wem",
+      "CachePath": "38/{38850730-5592-6FE5-B4D6-8E3B39C65E28}.wem"
+     },
+     {
       "Id": "300382410",
       "Language": "SFX",
       "Streaming": "false",
@@ -70,6 +97,15 @@
       "CachePath": "45/{4573E771-9C0E-0B82-8A87-2867AA1C4A7B}.wem"
      },
      {
+      "Id": "387590266",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_1.wav",
+      "Path": "Media/387590266.wem",
+      "CachePath": "3D/{3D7E13BA-4BAE-E1B0-3CB6-A4B620686516}.wem"
+     },
+     {
       "Id": "521714472",
       "Language": "SFX",
       "Streaming": "false",
@@ -79,6 +115,15 @@
       "CachePath": "5F/{5F04B940-7620-627B-4A54-9D517AF6A76D}.wem"
      },
      {
+      "Id": "573702088",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_3.wav",
+      "Path": "Media/573702088.wem",
+      "CachePath": "D9/{D9CFEF5B-8CC5-BDD6-BE5D-68778482CFB7}.wem"
+     },
+     {
       "Id": "698444392",
       "Language": "SFX",
       "Streaming": "false",
@@ -86,6 +131,24 @@
       "ShortName": "Player_Footstep_Carpet_3.wav",
       "Path": "Media/698444392.wem",
       "CachePath": "B3/{B36A6895-CDA5-6AB3-D9E5-58F3C7B66007}.wem"
+     },
+     {
+      "Id": "716283801",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_5.wav",
+      "Path": "Media/716283801.wem",
+      "CachePath": "B1/{B1BF1672-706B-FDA4-61C3-E45951A3F09A}.wem"
+     },
+     {
+      "Id": "730832548",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_4.wav",
+      "Path": "Media/730832548.wem",
+      "CachePath": "ED/{EDB098AD-4D40-5928-FBB5-91B8C7232E8B}.wem"
      },
      {
       "Id": "739225321",
@@ -206,22 +269,25 @@
         },
         "MediaRefs": [
          {
-          "Id": "64209393"
+          "Id": "24361596"
          },
          {
-          "Id": "264403800"
+          "Id": "57309619"
          },
          {
-          "Id": "344757656"
+          "Id": "300069844"
          },
          {
-          "Id": "739225321"
+          "Id": "387590266"
          },
          {
-          "Id": "813856796"
+          "Id": "573702088"
          },
          {
-          "Id": "988786257"
+          "Id": "716283801"
+         },
+         {
+          "Id": "730832548"
          }
         ]
        },
@@ -352,6 +418,6 @@
     ]
    }
   ],
-  "FileHash": "{67A628E1-C175-E67E-ACA3-30CE83F0A4B4}"
+  "FileHash": "{09759D37-7F06-8F6A-5DB1-29F8555F3A3F}"
  }
 }

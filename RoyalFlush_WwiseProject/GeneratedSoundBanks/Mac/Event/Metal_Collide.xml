@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="3674931761" Type="Event" GUID="{41F162D7-B6D6-425C-A562-DFA1D785B6A8}" Language="SFX" Hash="{66F3D53F-DB9A-6D25-8919-C17A5C10B5DA}">
+			<ObjectPath>Metal_Collide</ObjectPath>
+			<ShortName>Metal_Collide</ShortName>
+			<Path>Event/Metal_Collide.bnk</Path>
+			<Media>
+				<File Id="58078063" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalHit1.wav</ShortName>
+					<Path>Media/58078063.wem</Path>
+					<CachePath>6E/{6EFCC885-D8D5-362F-1E7E-4E88E4203AA1}.wem</CachePath>
+				</File>
+				<File Id="669944673" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalHit2.wav</ShortName>
+					<Path>Media/669944673.wem</Path>
+					<CachePath>51/{51A77AAD-8F3C-1ED8-689A-72817A21B8BC}.wem</CachePath>
+				</File>
+				<File Id="950083327" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>MetalHit3.wav</ShortName>
+					<Path>Media/950083327.wem</Path>
+					<CachePath>85/{85CB1C10-EB5B-31F9-C7FC-D4C5DA760029}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3674931761" Name="Metal_Collide" ObjectPath="\Events\Default Work Unit\Enviroment\Metal_Collide" GUID="{41F162D7-B6D6-425C-A562-DFA1D785B6A8}" DurationType="OneShot" DurationMin="0.272759" DurationMax="0.44519603">
+					<MediaRefs>
+						<MediaRef Id="58078063"/>
+						<MediaRef Id="669944673"/>
+						<MediaRef Id="950083327"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{F3D3DC79-0FE0-02C4-3816-946F664F053F}</FileHash>
+</SoundBanksInfo>

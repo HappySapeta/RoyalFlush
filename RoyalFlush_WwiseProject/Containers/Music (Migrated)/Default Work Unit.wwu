@@ -37,11 +37,7 @@
 													</MusicFade>
 												</SourceFadeOut>
 												<DestinationFadeIn>
-													<MusicFade Name="Destination Fade-in" ID="{D1E30A4F-D0DB-4645-AEB0-852EE1C291A2}">
-														<PropertyList>
-															<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-														</PropertyList>
-													</MusicFade>
+													<MusicFade Name="Destination Fade-in" ID="{D1E30A4F-D0DB-4645-AEB0-852EE1C291A2}"/>
 												</DestinationFadeIn>
 											</TransitionInfo>
 										</MusicTransition>
