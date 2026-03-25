@@ -57,6 +57,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="BGM_Level_2" ID="{18BD2425-39AD-4DBC-A894-8F5EBD1287E8}">
+							<ChildrenList>
+								<Action Name="" ID="{4DC18E38-462F-4103-86BF-9C8F9A947E39}" ShortID="941562814">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Level 1 Switch" ID="{1294F058-1441-476C-B9A6-012A7A7FA99A}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="BGM_Level_3" ID="{180D9611-C6FB-43E3-B9F2-B97362E1E97B}">
+							<ChildrenList>
+								<Action Name="" ID="{1C03BCED-0DFA-4006-93AB-6539C8136158}" ShortID="772789520">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Level 1 Switch" ID="{1294F058-1441-476C-B9A6-012A7A7FA99A}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Poker" ID="{BA22E753-88D0-4045-A85B-FBB6D8436C95}" ShortID="229474820">
