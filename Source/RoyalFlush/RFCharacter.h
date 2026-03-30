@@ -6,8 +6,6 @@
 #include "GameFramework/Character.h"
 #include "RFCharacter.generated.h"
 
-class URFDialogueComponent;
-
 UCLASS()
 class ROYALFLUSH_API ARFCharacter : public ACharacter
 {
