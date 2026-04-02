@@ -31,16 +31,20 @@ void URFInteractionComponent::OnTriggerEnter
 	{
 		InteractionWidget->SetVisibility(true);
 		InteractionInstigator = OtherActor;
+		
+		OnInteractionStarted.Broadcast(InteractionInstigator);
 	}
 }
 
 void URFInteractionComponent::OnTriggerExited(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	const AActor* PlayerActor = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
+	AActor* PlayerActor = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
 	if (PlayerActor == OtherActor)
 	{
 		InteractionWidget->SetVisibility(false);
+		
+		OnInteractionStopped.Broadcast(PlayerActor);
 	}
 }
 

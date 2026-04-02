@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "GameFramework/GameModeBase.h"
 #include "RFGameMode.generated.h"
 
@@ -18,9 +19,22 @@ class ROYALFLUSH_API ARFGameMode : public AGameModeBase
 public:
 	
 	ARFGameMode();
+	
+	UFUNCTION(BlueprintCallable)
+	void StartPokerGame();
+	
+protected:
+	
+	virtual void BeginPlay() override;
 
 private:
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	URpStateMachineComponent* PokerStateMachine;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PokerPlayerTag;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PokerScoreTag;
 };

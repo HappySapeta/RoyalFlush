@@ -14,6 +14,8 @@ UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class ROYALFLUSH_API URFInteractionComponent : public USceneComponent
 {
 	GENERATED_BODY()
+	
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnInteractionDelegate, AActor*, Instigator);
 
 public:
 	
@@ -38,6 +40,14 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetShowInteractionWidget(const bool bNewVisibility);
+	
+protected:
+	
+	UPROPERTY(BlueprintAssignable)
+	FOnInteractionDelegate OnInteractionStarted;
+	
+	UPROPERTY(BlueprintAssignable)
+	FOnInteractionDelegate OnInteractionStopped;
 	
 protected:
 
