@@ -21,14 +21,20 @@ class ROYALFLUSH_API URFPokerBeginState : public URFPokerState
 {
 	GENERATED_BODY()
 	
-public:
+protected:
 	
-	virtual void OnActivate_Implementation() override;
+	virtual void OnActivate() override;
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_SwitchToPokerCamera();
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_EnablePokerUI();
 	
 private:
 	
 	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PoolMoneyKey;  
+	FGameplayTag PoolMoneyKey;
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag RoundNumKey;
@@ -38,4 +44,70 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag ScoreMultiplierKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag CardsKey;
+};
+
+UCLASS(Blueprintable, BlueprintType)
+class ROYALFLUSH_API URFPokerDealingState : public URFPokerState
+{
+	GENERATED_BODY()
+	
+protected:
+	
+	virtual void OnActivate() override;
+	
+private:
+
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PotMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag CardsKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PlayerHandKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag NPCHandKey;
+};
+
+UCLASS(Blueprintable, BlueprintType)
+class URFCards : public UObject
+{
+	GENERATED_BODY()
+
+public:
+	
+	URFCards();
+	
+	UFUNCTION(BlueprintCallable)
+	void Shuffle();
+	
+	UFUNCTION(BlueprintCallable)
+	TArray<int> NewHand();
+	
+	UFUNCTION(BlueprintCallable)
+	void Reset();
+
+private:
+	
+	TArray<int> Cards;
+	int LastHandEndIndex = -1;
+};
+
+UCLASS(NotBlueprintable, NotBlueprintType)
+class URFHand : public UObject
+{
+	GENERATED_BODY()
+
+public:
+	
+	void SetHand(const TArray<int>& NewHand);
+
+private:
+	
+	TArray<int> Cards;
+	
 };
