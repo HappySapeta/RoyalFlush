@@ -7,6 +7,13 @@
 #include "GameFramework/GameModeBase.h"
 #include "RFGameMode.generated.h"
 
+UENUM(BlueprintType)
+enum EPokerPlayer : uint8
+{
+	NPC,
+	Player
+};
+
 class URpStateMachineComponent;
 /**
  * 
@@ -22,6 +29,12 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	void StartPokerGame();
+	
+	UFUNCTION(BlueprintCallable)
+	void Poker_Pass(const EPokerPlayer Player);
+	
+	UFUNCTION(BlueprintCallable)
+	void Poker_Discard(const EPokerPlayer Player);
 	
 protected:
 	

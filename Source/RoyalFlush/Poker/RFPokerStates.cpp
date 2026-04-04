@@ -63,6 +63,30 @@ void URFPokerDealingState::OnActivate()
 			NPCHand->SetHand(CardsObject->NewHand());
 		}
 	}
+	
+	OnUpdateUI();
+}
+
+void URFPokerDiscardingState::OnActivate()
+{
+	Super::OnActivate();
+	SetFinished(false);
+	BP_ShowPassDiscardUI(); 
+}
+
+void URFBettingState::OnActivate()
+{
+	Super::OnActivate();
+	
+	int PoolMoney = GetBlackboard()->GetValuesAsInt(PoolMoneyKey);
+	int ScoreMultiplier = GetBlackboard()->GetValuesAsInt(ScoreMultiplierKey);
+	int TransferAmount = 2 * ScoreMultiplier;
+	PoolMoney -= TransferAmount;
+	GetBlackboard()->SetValuesAsInt(PoolMoneyKey, PoolMoney);
+	
+	int PotMoney = GetBlackboard()->GetValuesAsInt(PotMoneyKey);
+	PotMoney += TransferAmount;
+	GetBlackboard()->SetValuesAsInt(PotMoneyKey, PotMoney);
 }
 
 URFCards::URFCards()

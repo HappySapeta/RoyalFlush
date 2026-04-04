@@ -14,6 +14,12 @@ UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFPokerState : public URpState
 {
 	GENERATED_BODY()
+	
+protected:
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnUpdateUI();
+	
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -74,7 +80,58 @@ private:
 };
 
 UCLASS(Blueprintable, BlueprintType)
-class URFCards : public UObject
+class ROYALFLUSH_API URFPokerDiscardingState : public URFPokerState
+{
+	GENERATED_BODY()
+
+public:
+	
+	virtual void OnActivate() override;
+
+protected:
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_ShowPassDiscardUI();
+
+private:
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PlayerDiscardNumKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag NPCDiscardNumKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PlayerPassedKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag NPCPassedKey;
+};
+
+UCLASS(Blueprintable, BlueprintType)
+class ROYALFLUSH_API URFBettingState : public URFPokerState
+{
+	GENERATED_BODY()
+
+public:
+	
+	virtual void OnActivate() override;
+	
+private:
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PoolMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PotMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag ScoreMultiplierKey;
+
+};
+
+UCLASS(Blueprintable, BlueprintType)
+class ROYALFLUSH_API URFCards : public UObject
 {
 	GENERATED_BODY()
 
@@ -98,7 +155,7 @@ private:
 };
 
 UCLASS(NotBlueprintable, NotBlueprintType)
-class URFHand : public UObject
+class ROYALFLUSH_API URFHand : public UObject
 {
 	GENERATED_BODY()
 
