@@ -30,12 +30,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void StartPokerGame();
 	
-	UFUNCTION(BlueprintCallable)
-	void Poker_Pass(const EPokerPlayer Player);
-	
-	UFUNCTION(BlueprintCallable)
-	void Poker_Discard(const EPokerPlayer Player);
-	
 protected:
 	
 	virtual void BeginPlay() override;
