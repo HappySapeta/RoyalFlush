@@ -7,6 +7,13 @@
 #include "StateMachine/RpState.h"
 #include "RFPokerStates.generated.h"
 
+UENUM(BlueprintType)
+enum EPokerPlayer : uint8
+{
+	NPC,
+	Player
+};
+
 /**
  * 
  */
@@ -116,7 +123,15 @@ class ROYALFLUSH_API URFBettingState : public URFPokerState
 public:
 	
 	virtual void OnActivate() override;
+
+	virtual void StateUpdate_Implementation(const float DeltaTime) override;
 	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnNPCPass();
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnPlayerPass();
+
 private:
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -127,7 +142,31 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag ScoreMultiplierKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag CurrentTurnKey;
 
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PlayerMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PassStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag FoldStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag DoubleDownStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag NPCMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag RoundEndKey;
+	
+private:
+	
+	EPokerPlayer CurrentPlayer;
 };
 
 UCLASS(Blueprintable, BlueprintType)

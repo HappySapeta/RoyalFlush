@@ -89,6 +89,77 @@ void URFBettingState::OnActivate()
 	GetBlackboard()->SetValuesAsInt(PotMoneyKey, PotMoney);
 }
 
+void URFBettingState::StateUpdate_Implementation(const float DeltaTime)
+{
+	Super::StateUpdate_Implementation(DeltaTime);
+	
+	auto PlaySubprocess = [this](const EPokerPlayer CurrentPlayer)
+	{
+		bool bDidPlayerPass = GetBlackboard()->GetValuesAsBool(PassStatusKey);
+		bool bDidPlayerFold = GetBlackboard()->GetValuesAsBool(FoldStatusKey);
+		bool bDidPlayerDoubleDown = GetBlackboard()->GetValuesAsBool(DoubleDownStatusKey);
+		
+		if (bDidPlayerPass)
+		{
+			if (CurrentPlayer == EPokerPlayer::Player)
+			{
+				BP_OnPlayerPass();
+			}
+			else if (CurrentPlayer == EPokerPlayer::NPC)
+			{
+				BP_OnNPCPass();
+			}
+		}
+		else if (bDidPlayerFold)
+		{
+			GetBlackboard()->SetValuesAsBool(RoundEndKey, true);
+			const FGameplayTag CurrentPlayerMoneyKey = CurrentPlayer == Player ? PlayerMoneyKey : NPCMoneyKey;
+		}
+		else if (bDidPlayerDoubleDown)
+		{
+			int PoolMoney = GetBlackboard()->GetValuesAsInt(PoolMoneyKey);
+			int PotMoney = GetBlackboard()->GetValuesAsInt(PotMoneyKey);
+		
+			PoolMoney -= PotMoney;
+			PotMoney += PotMoney;
+		
+			GetBlackboard()->SetValuesAsInt(PoolMoneyKey, PoolMoney);
+			GetBlackboard()->SetValuesAsInt(PotMoneyKey, PotMoney);
+		
+			if (CurrentPlayer == EPokerPlayer::Player)
+			{
+				BP_OnPlayerPass();
+			}
+			else if (CurrentPlayer == EPokerPlayer::NPC)
+			{
+				BP_OnNPCPass();
+			}
+		}
+	};
+	
+	if (CurrentPlayer == EPokerPlayer::NPC)
+	{
+		static bool bHasNPCTurnUpdated = false;
+		if (!bHasNPCTurnUpdated)
+		{
+			GetBlackboard()->SetValuesAsInt(CurrentTurnKey, EPokerPlayer::NPC);
+			bHasNPCTurnUpdated = true;
+		}
+		PlaySubprocess(EPokerPlayer::NPC);
+	}
+	
+	if (CurrentPlayer == EPokerPlayer::Player)
+	{
+		static bool bHasNPCTurnUpdated = false;
+		if (!bHasNPCTurnUpdated)
+		{
+			GetBlackboard()->SetValuesAsInt(CurrentTurnKey, EPokerPlayer::NPC);
+			bHasNPCTurnUpdated = true;
+		}
+		PlaySubprocess(EPokerPlayer::NPC);
+	}
+}
+
 URFCards::URFCards()
 {
 	for (int Index = 0; Index < NUM_PLAYING_CARDS; ++Index)
