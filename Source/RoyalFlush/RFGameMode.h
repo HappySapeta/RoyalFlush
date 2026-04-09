@@ -6,6 +6,8 @@
 #include "GameFramework/GameModeBase.h"
 #include "RFGameMode.generated.h"
 
+class URFJournalComponent;
+
 /**
  * 
  */
@@ -14,5 +16,13 @@ class ROYALFLUSH_API ARFGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+public:
+	
+	ARFGameMode();
 
+protected:
+	
+	UPROPERTY(BlueprintReadOnly)
+	TObjectPtr<URFJournalComponent> JournalComponent;
+	
 };

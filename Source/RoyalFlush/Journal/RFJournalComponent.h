@@ -25,6 +25,9 @@ public:
 	void StageClue(const int ClueIndex);
 	
 	UFUNCTION(BlueprintCallable)
+	void GetAllClues(TArray<FRFClue>& Out_Clues);
+	
+	UFUNCTION(BlueprintCallable)
 	void GetStagedClues(TArray<FRFClue>& Out_StagedClues);
 	
 	UFUNCTION(BlueprintCallable)
