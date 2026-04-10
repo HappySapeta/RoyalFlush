@@ -20,6 +20,11 @@ public:
 	
 	ARFGameMode();
 
+	URFJournalComponent* GetJournalComponent()
+	{
+		return JournalComponent;
+	}
+	
 protected:
 	
 	UPROPERTY(BlueprintReadOnly)

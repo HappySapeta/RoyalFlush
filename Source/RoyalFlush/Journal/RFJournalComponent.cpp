@@ -31,9 +31,9 @@ void URFJournalComponent::StageClue(const int ClueIndex)
 	}
 }
 
-void URFJournalComponent::GetAllClues(TArray<FRFClue>& Out_Clues)
+const TArray<FRFClue>& URFJournalComponent::GetAllClues() const
 {
-	Out_Clues = Clues;
+	return Clues;
 }
 
 void URFJournalComponent::GetStagedClues(TArray<FRFClue>& Out_StagedClues)
