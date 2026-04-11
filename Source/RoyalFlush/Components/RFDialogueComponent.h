@@ -7,7 +7,6 @@
 #include "DlgSystem/DlgDialogueParticipant.h"
 #include "RFDialogueComponent.generated.h"
 
-
 UCLASS(DisplayName = "DialogueComponent", ClassGroup=(RoyalFlush), Blueprintable, meta=(BlueprintSpawnableComponent) )
 class ROYALFLUSH_API URFDialogueComponent : public UActorComponent, public IDlgDialogueParticipant
 {
