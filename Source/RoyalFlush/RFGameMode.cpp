@@ -4,12 +4,14 @@
 
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
+#include "Journal/RFJournalComponent.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
 #include "StateMachine/RpStateMachineComponent.h"
 
 ARFGameMode::ARFGameMode()
 {
 	PokerStateMachine = CreateDefaultSubobject<URpStateMachineComponent>(TEXT("PokerStateMachine"));
+	JournalComponent = CreateDefaultSubobject<URFJournalComponent>(TEXT("JournalComponent"));
 }
 
 void ARFGameMode::BeginPlay()

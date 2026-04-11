@@ -8,6 +8,8 @@
 #include "RFGameMode.generated.h"
 
 class URpStateMachineComponent;
+class URFJournalComponent;
+
 /**
  * 
  */
@@ -23,10 +25,15 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void StartPokerGame();
 	
+	URFJournalComponent* GetJournalComponent()
+	{
+		return JournalComponent;
+	}
+	
 protected:
 	
 	virtual void BeginPlay() override;
-
+	
 private:
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -37,4 +44,10 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag PokerScoreTag;
+	
+protected:
+	
+	UPROPERTY(BlueprintReadOnly)
+	TObjectPtr<URFJournalComponent> JournalComponent;
+	
 };
