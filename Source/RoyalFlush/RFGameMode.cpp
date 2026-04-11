@@ -31,7 +31,3 @@ void ARFGameMode::StartPokerGame()
 		PokerStateMachine->Start();
 	}
 }
-
-//PokerStateMachine->Initialize();
-//PokerStateMachine->Start();
-//PokerStateMachine->GetBlackboard()->SetValuesAsObject(FGameplayTag::EmptyTag, GetNetOwningPlayer());
