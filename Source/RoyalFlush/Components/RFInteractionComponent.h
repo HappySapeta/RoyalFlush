@@ -21,6 +21,18 @@ public:
 	
 	virtual void BeginPlay() override;
 	
+	UFUNCTION(BlueprintCallable)
+	void SetInteractable(const bool bValue)
+	{
+		bIsInteractable = bValue;
+	}
+	
+	UFUNCTION(BlueprintCallable)
+	bool GetIsInteractable()
+	{
+		return bIsInteractable;
+	}
+	
 	UFUNCTION()
 	void OnTriggerEnter
 	(
@@ -28,8 +40,7 @@ public:
 		AActor* OtherActor, UPrimitiveComponent* OtherComp,
 		int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult
 	);
-
-
+	
 	UFUNCTION()
 	void OnTriggerExited
 	(
@@ -65,4 +76,8 @@ protected:
 	
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<AActor> InteractionInstigator;
+	
+private:
+	
+	bool bIsInteractable = true;
 };
