@@ -15,8 +15,11 @@ void URFInteractionComponent::BeginPlay()
 	InteractionTrigger = Cast<USphereComponent>(OwningActor->FindComponentByTag(USphereComponent::StaticClass(), TriggerComponentTag.GetTagName()));
 	InteractionWidget = Cast<UWidgetComponent>(OwningActor->FindComponentByTag(UWidgetComponent::StaticClass(), WidgetComponentTag.GetTagName()));
 	
-	InteractionTrigger->OnComponentBeginOverlap.AddUniqueDynamic(this, &URFInteractionComponent::OnTriggerEnter);
-	InteractionTrigger->OnComponentEndOverlap.AddUniqueDynamic(this, &URFInteractionComponent::OnTriggerExited);
+	if (InteractionTrigger)
+	{
+		InteractionTrigger->OnComponentBeginOverlap.AddUniqueDynamic(this, &URFInteractionComponent::OnTriggerEnter);
+		InteractionTrigger->OnComponentEndOverlap.AddUniqueDynamic(this, &URFInteractionComponent::OnTriggerExited);
+	}
 	
 	SetShowInteractionWidget(false);
 }
@@ -61,5 +64,8 @@ void URFInteractionComponent::OnTriggerExited(UPrimitiveComponent* OverlappedCom
 
 void URFInteractionComponent::SetShowInteractionWidget(const bool bNewVisibility)
 {
-	InteractionWidget->SetVisibility(bNewVisibility);
+	if (InteractionWidget)
+	{
+		InteractionWidget->SetVisibility(bNewVisibility);
+	}
 }
