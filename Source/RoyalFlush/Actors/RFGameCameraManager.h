@@ -22,6 +22,9 @@ public:
 
 	virtual void Tick(float DeltaSeconds) override;
 	
+	UFUNCTION(BlueprintCallable)
+	void SwitchToFPS();
+	
 private:
 
 	void CheckCameras(float DeltaSeconds);
@@ -29,13 +32,16 @@ private:
 	float GetCosineScore(UCameraComponent* CameraComponent, const AActor* Pawn);
 	
 	void SwitchToCamera(ARFCamera* TargetCameraActor);
-	bool IsPlayerInFrustum(UCameraComponent* CameraComponent);
+	
 
 private:
 	
 	// Time to blend between cameras.
 	UPROPERTY(EditAnywhere)
 	float BlendTime;
+	
+	UPROPERTY(EditAnywhere)
+	TObjectPtr<ACameraActor> PokerCameraActor;
 	
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<APlayerController> PlayerController;
