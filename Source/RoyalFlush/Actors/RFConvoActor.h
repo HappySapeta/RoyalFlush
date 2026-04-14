@@ -8,6 +8,7 @@
 #include "RFConvoActor.generated.h"
 
 class UDlgDialogue;
+class UWidgetComponent;
 class URFInteractionComponent;
 
 UCLASS()
@@ -49,11 +50,14 @@ private:
 	
 	UFUNCTION()
 	void BroadcastDialogueAndProgress();
+	
+	UFUNCTION()
+	void StopConversation();
 
 public:
 	
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnDialogueUpdated(const FText& DialogueText);
+	void OnDialogueUpdated(const FText& DialogueText, const FName ParticipantName);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnDialogueEnded();
@@ -63,6 +67,14 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<URFInteractionComponent> InteractionComponent;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TObjectPtr<UWidgetComponent> FirstWidgetComponent;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TObjectPtr<UWidgetComponent> SecondWidgetComponent;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float AudibleDistance = 300.0f;
 	
 private:
 	

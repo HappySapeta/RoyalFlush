@@ -52,11 +52,6 @@ void URFInteractionComponent::OnTriggerExited(UPrimitiveComponent* OverlappedCom
 	AActor* PlayerActor = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
 	if (PlayerActor == OtherActor)
 	{
-		if (!bIsInteractable)
-		{
-			return;
-		}
-		
 		SetShowInteractionWidget(false);
 		OnInteractionStopped.Broadcast(PlayerActor);
 	}
@@ -64,7 +59,7 @@ void URFInteractionComponent::OnTriggerExited(UPrimitiveComponent* OverlappedCom
 
 void URFInteractionComponent::SetShowInteractionWidget(const bool bNewVisibility)
 {
-	if (InteractionWidget)
+	if (InteractionWidget && bIsInteractable)
 	{
 		InteractionWidget->SetVisibility(bNewVisibility);
 	}

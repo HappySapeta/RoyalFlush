@@ -51,8 +51,13 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetShowInteractionWidget(const bool bNewVisibility);
+
+	USphereComponent* GetTriggerComponent()
+	{
+		return InteractionTrigger;
+	}
 	
-protected:
+public:
 	
 	UPROPERTY(BlueprintAssignable)
 	FOnInteractionDelegate OnInteractionStarted;

@@ -2,6 +2,8 @@
 
 #include "RFConvoActor.h"
 
+#include "Components/SphereComponent.h"
+#include "Components/WidgetComponent.h"
 #include "DlgSystem/DlgContext.h"
 #include "DlgSystem/DlgManager.h"
 #include "RoyalFlush/Components/RFInteractionComponent.h"
@@ -18,11 +20,21 @@ ARFConvoActor::ARFConvoActor()
 	FirstCharMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("FirstSkeletalMeshComponent"));
 	FirstCharMesh->SetupAttachment(GetRootComponent());
 	
+	FirstWidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("FirstWidgetComponent"));
+	FirstWidgetComponent->SetupAttachment(FirstCharMesh);
+	
 	SecondCharMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SecondSkeletalMeshComponent"));
 	SecondCharMesh->SetupAttachment(GetRootComponent());
 	
+	SecondWidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("SecondWidgetComponent"));
+	SecondWidgetComponent->SetupAttachment(SecondCharMesh);
+	
 	InteractionComponent = CreateDefaultSubobject<URFInteractionComponent>(TEXT("RFInteraction"));
 	InteractionComponent->SetupAttachment(GetRootComponent());
+	
+	FScriptDelegate Delegate;
+	Delegate.BindUFunction(this, TEXT("StopConversation"));
+	InteractionComponent->OnInteractionStopped.AddUnique(Delegate);
 }
 
 void ARFConvoActor::BeginPlay()
@@ -39,6 +51,7 @@ void ARFConvoActor::StartConversation()
 {
 	check(DialogueAsset);
 	
+	InteractionComponent->GetTriggerComponent()->SetSphereRadius(AudibleDistance);
 	InteractionComponent->SetInteractable(false);
 	
 	DialogueContext = UDlgManager::StartDialogue2(DialogueAsset, Participant1, Participant2);
@@ -63,6 +76,13 @@ void ARFConvoActor::BroadcastDialogueAndProgress()
 		return;
 	}
 	
-	OnDialogueUpdated(DialogueContext->GetActiveNodeText());
+	OnDialogueUpdated(DialogueContext->GetActiveNodeText(), DialogueContext->GetActiveNodeParticipantName());
 	DialogueContext->ChooseOption(0);
+}
+
+void ARFConvoActor::StopConversation()
+{
+	GetWorld()->GetTimerManager().ClearTimer(DialogueTimerHandle);
+	FirstWidgetComponent->SetVisibility(false);
+	SecondWidgetComponent->SetVisibility(false);
 }
