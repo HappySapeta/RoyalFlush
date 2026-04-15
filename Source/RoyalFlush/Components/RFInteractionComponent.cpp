@@ -15,8 +15,13 @@ void URFInteractionComponent::BeginPlay()
 	InteractionTrigger = Cast<USphereComponent>(OwningActor->FindComponentByTag(USphereComponent::StaticClass(), TriggerComponentTag.GetTagName()));
 	InteractionWidget = Cast<UWidgetComponent>(OwningActor->FindComponentByTag(UWidgetComponent::StaticClass(), WidgetComponentTag.GetTagName()));
 	
-	InteractionTrigger->OnComponentBeginOverlap.AddUniqueDynamic(this, &URFInteractionComponent::OnTriggerEnter);
-	InteractionTrigger->OnComponentEndOverlap.AddUniqueDynamic(this, &URFInteractionComponent::OnTriggerExited);
+	if (InteractionTrigger)
+	{
+		InteractionTrigger->OnComponentBeginOverlap.AddUniqueDynamic(this, &URFInteractionComponent::OnTriggerEnter);
+		InteractionTrigger->OnComponentEndOverlap.AddUniqueDynamic(this, &URFInteractionComponent::OnTriggerExited);
+	}
+	
+	SetShowInteractionWidget(false);
 }
 
 void URFInteractionComponent::OnTriggerEnter
@@ -29,7 +34,12 @@ void URFInteractionComponent::OnTriggerEnter
 	const AActor* PlayerActor = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
 	if (PlayerActor == OtherActor)
 	{
-		InteractionWidget->SetVisibility(true);
+		if (!bIsInteractable)
+		{
+			return;
+		}
+		
+		SetShowInteractionWidget(true);
 		InteractionInstigator = OtherActor;
 		
 		OnInteractionStarted.Broadcast(InteractionInstigator);
@@ -42,13 +52,15 @@ void URFInteractionComponent::OnTriggerExited(UPrimitiveComponent* OverlappedCom
 	AActor* PlayerActor = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
 	if (PlayerActor == OtherActor)
 	{
-		InteractionWidget->SetVisibility(false);
-		
+		SetShowInteractionWidget(false);
 		OnInteractionStopped.Broadcast(PlayerActor);
 	}
 }
 
 void URFInteractionComponent::SetShowInteractionWidget(const bool bNewVisibility)
 {
-	InteractionWidget->SetVisibility(bNewVisibility);
+	if (InteractionWidget && bIsInteractable)
+	{
+		InteractionWidget->SetVisibility(bNewVisibility);
+	}
 }
