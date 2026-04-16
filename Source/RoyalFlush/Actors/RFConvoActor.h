@@ -73,21 +73,21 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<UWidgetComponent> SecondWidgetComponent;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Clues")
 	float AudibleDistance = 300.0f;
 	
 private:
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Clues")
 	TObjectPtr<UDlgDialogue> DialogueAsset;
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Clues")
 	float DialogueDelay = 2.0f;
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Clues")
 	FName FirstParticipantName = TEXT("Participant1");
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Clues")
 	FName SecondParticipantName = TEXT("Participant2");
 	
 	UPROPERTY(VisibleAnywhere)
