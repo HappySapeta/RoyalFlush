@@ -74,89 +74,128 @@ void URFPokerDiscardingState::OnActivate()
 	BP_ShowPassDiscardUI(); 
 }
 
+void URFBettingState::SetTurn(EPokerPlayer Player)
+{
+	CurrentPlayer = Player;
+	BP_OnTurnChanged(Player);
+}
+
 void URFBettingState::OnActivate()
 {
 	Super::OnActivate();
-	
-	int PoolMoney = GetBlackboard()->GetValuesAsInt(PoolMoneyKey);
-	int ScoreMultiplier = GetBlackboard()->GetValuesAsInt(ScoreMultiplierKey);
+	 
+	int PoolMoney = Blackboard->GetValuesAsInt(PoolMoneyKey);
+	int ScoreMultiplier = Blackboard->GetValuesAsInt(ScoreMultiplierKey);
 	int TransferAmount = 2 * ScoreMultiplier;
 	PoolMoney -= TransferAmount;
-	GetBlackboard()->SetValuesAsInt(PoolMoneyKey, PoolMoney);
+	Blackboard->SetValuesAsInt(PoolMoneyKey, PoolMoney);
 	
-	int PotMoney = GetBlackboard()->GetValuesAsInt(PotMoneyKey);
+	int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
 	PotMoney += TransferAmount;
-	GetBlackboard()->SetValuesAsInt(PotMoneyKey, PotMoney);
+	Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
+	
+	CurrentPlayer = EPokerPlayer::NPC;
+	SetTurn(EPokerPlayer::NPC);
+	Blackboard->OnValueChanged(PassStatusKey).AddUObject(this, &URFBettingState::OnPlayerPassed);
+	Blackboard->OnValueChanged(FoldStatusKey).AddUObject(this, &URFBettingState::OnPlayerFolded);
+	Blackboard->OnValueChanged(DoubleDownStatusKey).AddUObject(this, &URFBettingState::OnPlayerDoubleDowned);
 }
 
-void URFBettingState::StateUpdate_Implementation(const float DeltaTime)
+void URFBettingState::EndTurn()
 {
-	Super::StateUpdate_Implementation(DeltaTime);
-	
-	auto PlaySubprocess = [this](const EPokerPlayer CurrentPlayer)
+	if (CurrentPlayer == EPokerPlayer::Human) // Last turn
 	{
-		bool bDidPlayerPass = GetBlackboard()->GetValuesAsBool(PassStatusKey);
-		bool bDidPlayerFold = GetBlackboard()->GetValuesAsBool(FoldStatusKey);
-		bool bDidPlayerDoubleDown = GetBlackboard()->GetValuesAsBool(DoubleDownStatusKey);
-		
-		if (bDidPlayerPass)
+		SetFinished(true);
+	}
+	else
+	{
+		SetTurn(EPokerPlayer::Human);
+		BP_OnHumanPlayerTurn();
+	}
+}
+
+void URFBettingState::OnPlayerPassed(const FGameplayTag& Key)
+{
+	const bool bDidPlayerPass = Blackboard->GetValuesAsBool(Key);
+	if (bDidPlayerPass)
+	{
+		if (CurrentPlayer == EPokerPlayer::NPC)
 		{
-			if (CurrentPlayer == EPokerPlayer::Player)
-			{
-				BP_OnPlayerPass();
-			}
-			else if (CurrentPlayer == EPokerPlayer::NPC)
-			{
-				BP_OnNPCPass();
-			}
+			BP_OnNPCPass();
 		}
-		else if (bDidPlayerFold)
+		else if (CurrentPlayer == Human)
 		{
-			GetBlackboard()->SetValuesAsBool(RoundEndKey, true);
-			const FGameplayTag CurrentPlayerMoneyKey = CurrentPlayer == Player ? PlayerMoneyKey : NPCMoneyKey;
+			BP_OnHumanPass();
 		}
-		else if (bDidPlayerDoubleDown)
-		{
-			int PoolMoney = GetBlackboard()->GetValuesAsInt(PoolMoneyKey);
-			int PotMoney = GetBlackboard()->GetValuesAsInt(PotMoneyKey);
 		
+		EndTurn();
+	}
+}
+
+void URFBettingState::OnPlayerFolded(const FGameplayTag& Key)
+{
+	const bool bDidPlayerFold = Blackboard->GetValuesAsBool(Key);
+	
+	if (bDidPlayerFold)
+	{
+		if (CurrentPlayer == EPokerPlayer::NPC)
+		{
+			BP_OnNPCFold();
+		}
+		else if (CurrentPlayer == Human)
+		{
+			BP_OnHumanFold();
+		}
+		
+		const FGameplayTag OtherPlayerMoneyKey = CurrentPlayer == Human ? NPCMoneyKey : HumanMoneyKey;
+		
+		int OtherPlayerMoney = Blackboard->GetValuesAsInt(OtherPlayerMoneyKey);
+		int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
+		
+		OtherPlayerMoney += PotMoney;
+		PotMoney = 0;
+		
+		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
+		Blackboard->SetValuesAsInt(OtherPlayerMoneyKey, OtherPlayerMoney);
+		Blackboard->SetValuesAsBool(RoundEndKey, true);
+		
+		EndTurn();
+	}
+}
+
+void URFBettingState::OnPlayerDoubleDowned(const FGameplayTag& Key)
+{
+	const bool bDidPlayerDoubleDown = Blackboard->GetValuesAsBool(Key);
+	if (bDidPlayerDoubleDown)
+	{
+		int PoolMoney = Blackboard->GetValuesAsInt(PoolMoneyKey);
+		int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
+		
+		if (PoolMoney >= PotMoney)
+		{
 			PoolMoney -= PotMoney;
 			PotMoney += PotMoney;
-		
-			GetBlackboard()->SetValuesAsInt(PoolMoneyKey, PoolMoney);
-			GetBlackboard()->SetValuesAsInt(PotMoneyKey, PotMoney);
-		
-			if (CurrentPlayer == EPokerPlayer::Player)
-			{
-				BP_OnPlayerPass();
-			}
-			else if (CurrentPlayer == EPokerPlayer::NPC)
-			{
-				BP_OnNPCPass();
-			}
 		}
-	};
-	
-	if (CurrentPlayer == EPokerPlayer::NPC)
-	{
-		static bool bHasNPCTurnUpdated = false;
-		if (!bHasNPCTurnUpdated)
+		else
 		{
-			GetBlackboard()->SetValuesAsInt(CurrentTurnKey, EPokerPlayer::NPC);
-			bHasNPCTurnUpdated = true;
+			const int Available = PotMoney - PoolMoney;
+			PoolMoney -= Available;
+			PotMoney += Available;
 		}
-		PlaySubprocess(EPokerPlayer::NPC);
-	}
-	
-	if (CurrentPlayer == EPokerPlayer::Player)
-	{
-		static bool bHasNPCTurnUpdated = false;
-		if (!bHasNPCTurnUpdated)
+		
+		Blackboard->SetValuesAsInt(PoolMoneyKey, PoolMoney);
+		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
+		
+		if (CurrentPlayer == EPokerPlayer::NPC)
 		{
-			GetBlackboard()->SetValuesAsInt(CurrentTurnKey, EPokerPlayer::NPC);
-			bHasNPCTurnUpdated = true;
+			BP_OnNPCPass();
 		}
-		PlaySubprocess(EPokerPlayer::NPC);
+		else if (CurrentPlayer == EPokerPlayer::NPC)
+		{
+			BP_OnHumanPass();
+		}
+		
+		EndTurn();
 	}
 }
 
