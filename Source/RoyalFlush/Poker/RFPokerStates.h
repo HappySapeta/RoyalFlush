@@ -11,7 +11,7 @@ UENUM(BlueprintType)
 enum EPokerPlayer : uint8
 {
 	NPC,
-	Player
+	Human
 };
 
 /**
@@ -91,11 +91,9 @@ class ROYALFLUSH_API URFPokerDiscardingState : public URFPokerState
 {
 	GENERATED_BODY()
 
-public:
+protected:
 	
 	virtual void OnActivate() override;
-
-protected:
 	
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_ShowPassDiscardUI();
@@ -120,17 +118,35 @@ class ROYALFLUSH_API URFBettingState : public URFPokerState
 {
 	GENERATED_BODY()
 
-public:
+protected:
 	
 	virtual void OnActivate() override;
-
-	virtual void StateUpdate_Implementation(const float DeltaTime) override;
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnTurnChanged(EPokerPlayer Player);
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnHumanFold();
 	
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_OnNPCPass();
 	
 	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnPlayerPass();
+	void BP_OnHumanPass();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnNPCFold();
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnHumanPlayerTurn();
+	
+private:
+	
+	void EndTurn();
+	void SetTurn(EPokerPlayer Player);
+	void OnPlayerPassed(const FGameplayTag& Key);
+	void OnPlayerFolded(const FGameplayTag& Key);
+	void OnPlayerDoubleDowned(const FGameplayTag& Key);
 
 private:
 	
@@ -147,7 +163,7 @@ private:
 	FGameplayTag CurrentTurnKey;
 
 	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PlayerMoneyKey;
+	FGameplayTag HumanMoneyKey;
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag PassStatusKey;
