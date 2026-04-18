@@ -133,8 +133,14 @@ private:
 	
 	void EndTurn();
 	void SetTurn(EPokerPlayer Player);
+	
+	UFUNCTION()
 	void OnPlayerPassed(const FGameplayTag& Key);
+	
+	UFUNCTION()
 	void OnPlayerFolded(const FGameplayTag& Key);
+	
+	UFUNCTION()
 	void OnPlayerDoubleDowned(const FGameplayTag& Key);
 
 private:
@@ -275,7 +281,7 @@ public:
 	
 protected:
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	TArray<int> Cards;
 	
 };

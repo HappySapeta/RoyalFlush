@@ -98,9 +98,9 @@ void URFBettingState::OnActivate()
 	
 	CurrentPlayer = EPokerPlayer::NPC;
 	SetTurn(EPokerPlayer::NPC);
-	Blackboard->OnValueChanged(PassStatusKey).AddUObject(this, &URFBettingState::OnPlayerPassed);
-	Blackboard->OnValueChanged(FoldStatusKey).AddUObject(this, &URFBettingState::OnPlayerFolded);
-	Blackboard->OnValueChanged(DoubleDownStatusKey).AddUObject(this, &URFBettingState::OnPlayerDoubleDowned);
+	Blackboard->GetValueChangeCallback(PassStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerPassed);
+	Blackboard->GetValueChangeCallback(FoldStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerFolded);
+	Blackboard->GetValueChangeCallback(DoubleDownStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerDoubleDowned);
 }
 
 void URFBettingState::EndTurn()
