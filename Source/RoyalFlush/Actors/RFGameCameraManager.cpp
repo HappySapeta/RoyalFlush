@@ -47,9 +47,9 @@ void ARFGameCameraManager::Tick(float DeltaSeconds)
 	CheckCameras(DeltaSeconds);
 }
 
-void ARFGameCameraManager::SwitchToFPS()
+void ARFGameCameraManager::SwitchToFPS(const float Duration)
 {
-	PlayerController->SetViewTargetWithBlend(PokerCameraActor, BlendTime);
+	PlayerController->SetViewTargetWithBlend(PokerCameraActor, Duration);
 }
 
 void ARFGameCameraManager::CheckCameras(float DeltaSeconds)

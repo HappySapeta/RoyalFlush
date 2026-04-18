@@ -35,14 +35,11 @@ class ROYALFLUSH_API URFPokerBeginState : public URFPokerState
 	GENERATED_BODY()
 	
 protected:
-	
+
 	virtual void OnActivate() override;
 	
 	UFUNCTION(BlueprintImplementableEvent)
-	void BP_SwitchToPokerCamera();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_EnablePokerUI();
+	void BP_OnBeginPoker();
 	
 private:
 	
