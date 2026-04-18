@@ -23,7 +23,7 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 	
 	UFUNCTION(BlueprintCallable)
-	void SwitchToFPS();
+	void SwitchToFPS(float Duration);
 	
 private:
 

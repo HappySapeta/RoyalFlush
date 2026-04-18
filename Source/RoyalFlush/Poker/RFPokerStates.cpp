@@ -22,8 +22,7 @@ void URFPokerBeginState::OnActivate()
 	Blackboard->SetValuesAsObject(CardsKey, NewObject<URFCards>());
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
 	
-	BP_SwitchToPokerCamera();
-	BP_EnablePokerUI();
+	BP_OnBeginPoker();
 }
 
 void URFPokerDealingState::OnActivate()
