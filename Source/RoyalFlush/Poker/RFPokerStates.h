@@ -86,7 +86,7 @@ private:
 	FGameplayTag CardsKey;
 	
 	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PlayerHandKey;
+	FGameplayTag HumanPlayerHandKey;
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag NPCHandKey;
@@ -103,20 +103,6 @@ protected:
 	
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_ShowPassDiscardUI();
-
-private:
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PlayerDiscardNumKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag NPCDiscardNumKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PlayerPassedKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag NPCPassedKey;
 };
 
 UCLASS(Blueprintable, BlueprintType)
