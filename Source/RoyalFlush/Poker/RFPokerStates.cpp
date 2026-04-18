@@ -13,11 +13,14 @@ void URFPokerBeginState::OnActivate()
 	Super::OnActivate();
 	SetFinished(false);
 	
-	const int ScoreMultiplier = GetBlackboard()->GetValuesAsInt(ScoreMultiplierKey);
-	GetBlackboard()->SetValuesAsInt(PoolMoneyKey, BASE_SCORE_MULTIPLIER * ScoreMultiplier);
-	GetBlackboard()->SetValuesAsInt(RoundNumKey, 1);
-	GetBlackboard()->SetValuesAsInt(CurrentPlayerIndexKey, 0);
-	GetBlackboard()->SetValuesAsObject(CardsKey, NewObject<URFCards>());
+	const int ScoreMultiplier = Blackboard->GetValuesAsInt(ScoreMultiplierKey);
+	int RoundNum = Blackboard->GetValuesAsInt(RoundNumKey);
+	Blackboard->SetValuesAsInt(PoolMoneyKey, BASE_SCORE_MULTIPLIER * ScoreMultiplier);
+	Blackboard->SetValuesAsInt(RoundNumKey, ++RoundNum);
+	Blackboard->SetValuesAsInt(CurrentPlayerIndexKey, 0);
+	Blackboard->SetValuesAsBool(RoundRestartKey, false);
+	Blackboard->SetValuesAsObject(CardsKey, NewObject<URFCards>());
+	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
 	
 	BP_SwitchToPokerCamera();
 	BP_EnablePokerUI();
@@ -123,7 +126,7 @@ void URFBettingState::OnPlayerPassed(const FGameplayTag& Key)
 		{
 			BP_OnNPCPass();
 		}
-		else if (CurrentPlayer == Human)
+		else if (CurrentPlayer == EPokerPlayer::Human)
 		{
 			BP_OnHumanPass();
 		}
@@ -142,12 +145,12 @@ void URFBettingState::OnPlayerFolded(const FGameplayTag& Key)
 		{
 			BP_OnNPCFold();
 		}
-		else if (CurrentPlayer == Human)
+		else if (CurrentPlayer == EPokerPlayer::Human)
 		{
 			BP_OnHumanFold();
 		}
 		
-		const FGameplayTag OtherPlayerMoneyKey = CurrentPlayer == Human ? NPCMoneyKey : HumanMoneyKey;
+		const FGameplayTag OtherPlayerMoneyKey = CurrentPlayer == EPokerPlayer::Human ? NPCMoneyKey : HumanMoneyKey;
 		
 		int OtherPlayerMoney = Blackboard->GetValuesAsInt(OtherPlayerMoneyKey);
 		int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
@@ -199,6 +202,79 @@ void URFBettingState::OnPlayerDoubleDowned(const FGameplayTag& Key)
 	}
 }
 
+void URFRevealState::OnActivate()
+{
+	Super::OnActivate();
+	
+	BP_OnRevealHands();
+	
+	URFHand* HumanPlayerCards = Cast<URFHand>(Blackboard->GetValuesAsObject(HumanPlayerHandKey));
+	URFHand* NPCCards = Cast<URFHand>(Blackboard->GetValuesAsObject(NPCHandKey));
+	URFRankedHands* RankedHands = Cast<URFRankedHands>(Blackboard->GetValuesAsObject(RankedHandsKey));
+	
+	auto MoveMoneyToPlayer = [this](const FGameplayTag& PlayerKey)
+	{
+		int PlayerMoney = Blackboard->GetValuesAsInt(PlayerKey);
+		int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
+		
+		PlayerMoney += PotMoney;
+		PotMoney = 0;
+		
+		Blackboard->SetValuesAsInt(PlayerKey, PlayerMoney);
+		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
+	};
+	
+	if (RankedHands->IsFirstHigherThanSecond(HumanPlayerCards, NPCCards))
+	{
+		MoveMoneyToPlayer(HumanMoneyKey);
+	}
+	else if (RankedHands->IsFirstHigherThanSecond(NPCCards, HumanPlayerCards))
+	{
+		MoveMoneyToPlayer(NPCMoneyKey);
+	}
+	else
+	{
+		// TODO: handle draws.
+		int HumanPlayerMoney = Blackboard->GetValuesAsInt(HumanMoneyKey);
+		int NPCMoney = Blackboard->GetValuesAsInt(NPCMoneyKey);
+		int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
+		
+		HumanPlayerMoney += PotMoney / 2;
+		NPCMoney += PotMoney / 2;
+		PotMoney = 0;
+		
+		Blackboard->SetValuesAsInt(HumanMoneyKey, HumanPlayerMoney);
+		Blackboard->SetValuesAsInt(NPCMoneyKey, NPCMoney);
+		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
+	}
+}
+
+void URFEndOfRoundState::OnActivate()
+{
+	Super::OnActivate();
+	
+	int HumanPlayerMoney = Blackboard->GetValuesAsInt(HumanMoneyKey);
+	int NPCMoney = Blackboard->GetValuesAsInt(NPCMoneyKey);
+	
+	int PoolMoney = Blackboard->GetValuesAsInt(PoolMoneyKey);
+	
+	int HalfPoolMoney = FMath::RoundToInt(PoolMoney / 2.0f);
+	if (HumanPlayerMoney >= HalfPoolMoney || NPCMoney >= HalfPoolMoney)
+	{
+		const EPokerPlayer WinningPlayer = HumanPlayerMoney > NPCMoney ? EPokerPlayer::Human : EPokerPlayer::NPC;
+		Blackboard->SetValuesAsInt(WinningPlayerKey, static_cast<int>(WinningPlayer));
+		Blackboard->SetValuesAsBool(GameEndStatusKey, true);
+	}
+	else
+	{
+		int RoundNum = Blackboard->GetValuesAsInt(RoundNumKey);
+		if (RoundNum < 5)
+		{
+			Blackboard->SetValuesAsBool(RoundRestartKey, true);
+		}
+	}
+}
+
 URFCards::URFCards()
 {
 	for (int Index = 0; Index < NUM_PLAYING_CARDS; ++Index)
@@ -215,7 +291,7 @@ void URFCards::Shuffle()
 TArray<int> URFCards::NewHand()
 {
 	int NextHandStartIndex = LastHandEndIndex + 1;
-	if (!ensure(Cards.IsValidIndex(NextHandStartIndex) && Cards.IsValidIndex(NextHandStartIndex + (HAND_SIZE - 1))))
+	if (!ensureAlways(Cards.IsValidIndex(NextHandStartIndex) && Cards.IsValidIndex(NextHandStartIndex + (HAND_SIZE - 1))))
 	{
 		return {};
 	}
@@ -234,4 +310,39 @@ void URFHand::SetHand(const TArray<int>& NewHand)
 {
 	ensure(NewHand.Num() == HAND_SIZE);
 	Cards = NewHand;
+}
+
+bool URFHand::Equals(const URFHand* Other) const
+{
+	for (int Index = 0; Index < HAND_SIZE; ++Index)
+	{
+		if (Cards[Index] != Other->Cards[Index])
+		{
+			return false;
+		}
+	}
+	
+	return true;
+}
+
+int URFRankedHands::GetRank(URFHand* Hand)
+{
+	int RankIndex = RankedHands.Num();
+	for (int Index = 0; Index < RankedHands.Num(); ++Index)
+	{
+		if (Hand->Equals(RankedHands[Index]))
+		{
+			RankIndex = Index;
+			break;
+		}
+	}
+	
+	return RankIndex;
+}
+
+bool URFRankedHands::IsFirstHigherThanSecond(URFHand* First, URFHand* Second)
+{
+	int FirstRank = GetRank(First);
+	int SecondRank = GetRank(Second);
+	return FirstRank < SecondRank;
 }

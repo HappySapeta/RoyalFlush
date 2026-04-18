@@ -8,7 +8,7 @@
 #include "RFPokerStates.generated.h"
 
 UENUM(BlueprintType)
-enum EPokerPlayer : uint8
+enum class EPokerPlayer : uint8
 {
 	NPC,
 	Human
@@ -60,6 +60,12 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag CardsKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag RoundRestartKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag GameEndStatusKey;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -185,6 +191,70 @@ private:
 	EPokerPlayer CurrentPlayer;
 };
 
+UCLASS()
+class ROYALFLUSH_API URFRevealState : public URFPokerState
+{
+	GENERATED_BODY()
+
+protected:
+
+	virtual void OnActivate() override;
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnRevealHands();
+	
+private:
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag HumanPlayerHandKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag NPCHandKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag RankedHandsKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PotMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag HumanMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag NPCMoneyKey;
+};
+
+UCLASS()
+class ROYALFLUSH_API URFEndOfRoundState : public URFPokerState
+{
+	GENERATED_BODY()
+
+protected:
+
+	virtual void OnActivate() override;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag HumanMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag NPCMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PoolMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag WinningPlayerKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag RoundNumKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag RoundRestartKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag GameEndStatusKey;
+};
+
 UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFCards : public UObject
 {
@@ -209,7 +279,7 @@ private:
 	int LastHandEndIndex = -1;
 };
 
-UCLASS(NotBlueprintable, NotBlueprintType)
+UCLASS(BlueprintType)
 class ROYALFLUSH_API URFHand : public UObject
 {
 	GENERATED_BODY()
@@ -218,8 +288,27 @@ public:
 	
 	void SetHand(const TArray<int>& NewHand);
 
-private:
+	bool Equals(const URFHand* Other) const;
 	
+protected:
+	
+	UPROPERTY(EditDefaultsOnly)
 	TArray<int> Cards;
 	
+};
+
+UCLASS(Blueprintable, BlueprintType)
+class URFRankedHands : public UObject
+{
+	GENERATED_BODY()
+
+public:
+
+	int GetRank(URFHand* Hand);
+	bool IsFirstHigherThanSecond(URFHand* First, URFHand* Second);
+	
+protected:
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TArray<URFHand*> RankedHands;
 };
