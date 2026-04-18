@@ -38,11 +38,11 @@ void URFPokerDealingState::OnActivate()
 		CardsObject->Shuffle();
 		
 		// Initialize hands
-		UObject* HandObject = GetBlackboard()->GetValuesAsObject(PlayerHandKey);
+		UObject* HandObject = GetBlackboard()->GetValuesAsObject(HumanPlayerHandKey);
 		{
 			if (!HandObject)
 			{
-				GetBlackboard()->SetValuesAsObject(PlayerHandKey, NewObject<URFHand>());
+				GetBlackboard()->SetValuesAsObject(HumanPlayerHandKey, NewObject<URFHand>());
 			}
 		
 			HandObject = GetBlackboard()->GetValuesAsObject(NPCHandKey);
@@ -53,7 +53,7 @@ void URFPokerDealingState::OnActivate()
 		}
 		
 		// Player draw hand
-		HandObject = GetBlackboard()->GetValuesAsObject(PlayerHandKey);
+		HandObject = GetBlackboard()->GetValuesAsObject(HumanPlayerHandKey);
 		if (URFHand* PlayerHand = Cast<URFHand>(HandObject))
 		{
 			PlayerHand->SetHand(CardsObject->NewHand());
