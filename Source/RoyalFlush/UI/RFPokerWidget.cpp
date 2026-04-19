@@ -5,4 +5,5 @@
 void URFPokerWidget::SetBlackboard(const URpStateMachineBlackboardBase* NewBlackboard)
 {
 	Blackboard = NewBlackboard;
+	OnBlackboardSet();
 }
