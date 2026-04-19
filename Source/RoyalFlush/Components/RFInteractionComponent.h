@@ -21,6 +21,18 @@ public:
 	
 	virtual void BeginPlay() override;
 	
+	UFUNCTION(BlueprintCallable)
+	void SetInteractable(const bool bValue)
+	{
+		bIsInteractable = bValue;
+	}
+	
+	UFUNCTION(BlueprintCallable)
+	bool GetIsInteractable()
+	{
+		return bIsInteractable;
+	}
+	
 	UFUNCTION()
 	void OnTriggerEnter
 	(
@@ -28,8 +40,7 @@ public:
 		AActor* OtherActor, UPrimitiveComponent* OtherComp,
 		int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult
 	);
-
-
+	
 	UFUNCTION()
 	void OnTriggerExited
 	(
@@ -40,8 +51,13 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetShowInteractionWidget(const bool bNewVisibility);
+
+	USphereComponent* GetTriggerComponent()
+	{
+		return InteractionTrigger;
+	}
 	
-protected:
+public:
 	
 	UPROPERTY(BlueprintAssignable)
 	FOnInteractionDelegate OnInteractionStarted;
@@ -65,4 +81,8 @@ protected:
 	
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<AActor> InteractionInstigator;
+	
+private:
+	
+	bool bIsInteractable = true;
 };
