@@ -2,6 +2,7 @@
 
 #include "RFPokerStates.h"
 #include "Algo/RandomShuffle.h"
+#include "Kismet/KismetMathLibrary.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
 
 constexpr int BASE_SCORE_MULTIPLIER = 19;
@@ -82,7 +83,34 @@ void URFBettingState::OnActivate()
 	Blackboard->GetValueChangeCallback(FoldStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerFolded);
 	Blackboard->GetValueChangeCallback(DoubleDownStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerDoubleDowned);
 	
+	//PlayNPCTurn();
+	
 	Super::OnActivate();
+}
+
+void URFBettingState::PlayNPCTurn()
+{
+	int RandomChoice = UKismetMathLibrary::RandomIntegerInRange(0,2);
+	switch (RandomChoice)
+	{
+		case 0:
+		{
+			Blackboard->SetValuesAsBool(PassStatusKey, true);
+			break;
+		}
+		case 1:
+		{
+			Blackboard->SetValuesAsBool(FoldStatusKey, true);
+			break;
+		}
+		case 2:
+		{
+			Blackboard->SetValuesAsBool(DoubleDownStatusKey, true);
+			break;
+		}
+		default:
+			break;
+	}
 }
 
 void URFBettingState::SetTurn(EPokerPlayer Player)

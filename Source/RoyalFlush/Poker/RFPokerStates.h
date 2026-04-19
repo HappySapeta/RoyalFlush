@@ -99,6 +99,7 @@ class ROYALFLUSH_API URFBettingState : public URFPokerState
 
 protected:
 
+	void PlayNPCTurn();
 	virtual void OnActivate() override;
 	
 	UFUNCTION(BlueprintImplementableEvent)
