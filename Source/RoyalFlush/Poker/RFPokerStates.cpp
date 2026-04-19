@@ -52,21 +52,22 @@ void URFPokerDealingState::OnActivate()
 		}
 		
 		// Player draw hand
-		HandObject = GetBlackboard()->GetValuesAsObject(HumanPlayerHandKey);
+		HandObject = Blackboard->GetValuesAsObject(HumanPlayerHandKey);
 		if (URFHand* PlayerHand = Cast<URFHand>(HandObject))
 		{
 			PlayerHand->SetHand(CardsObject->NewHand());
+			Blackboard->SetValuesAsObject(HumanPlayerHandKey, PlayerHand);
 		}
-		
 		// NPC draw hand
-		HandObject = GetBlackboard()->GetValuesAsObject(NPCHandKey);
+		HandObject = Blackboard->GetValuesAsObject(NPCHandKey);
 		if (URFHand* NPCHand = Cast<URFHand>(HandObject))
 		{
 			NPCHand->SetHand(CardsObject->NewHand());
+			Blackboard->SetValuesAsObject(NPCHandKey, NPCHand);
 		}
 	}
 	
-	OnUpdateUI();
+	BP_OnDealPoker();
 }
 
 void URFPokerDiscardingState::OnActivate()

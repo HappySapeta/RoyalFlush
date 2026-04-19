@@ -71,9 +71,12 @@ class ROYALFLUSH_API URFPokerDealingState : public URFPokerState
 	GENERATED_BODY()
 	
 protected:
-	
+
 	virtual void OnActivate() override;
 	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnDealPoker();
+
 private:
 
 	UPROPERTY(EditDefaultsOnly)
