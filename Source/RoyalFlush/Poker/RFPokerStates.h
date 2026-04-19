@@ -21,12 +21,6 @@ UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFPokerState : public URpState
 {
 	GENERATED_BODY()
-	
-protected:
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void OnUpdateUI();
-	
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -96,13 +90,6 @@ UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFPokerDiscardingState : public URFPokerState
 {
 	GENERATED_BODY()
-
-protected:
-	
-	virtual void OnActivate() override;
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_ShowPassDiscardUI();
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -111,9 +98,12 @@ class ROYALFLUSH_API URFBettingState : public URFPokerState
 	GENERATED_BODY()
 
 protected:
-	
+
 	virtual void OnActivate() override;
 	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnBettingStarted();
+
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_OnTurnChanged(EPokerPlayer Player);
 	

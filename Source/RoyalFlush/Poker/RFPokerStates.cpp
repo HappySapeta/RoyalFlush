@@ -10,9 +10,6 @@ constexpr int HAND_SIZE = 5;
 
 void URFPokerBeginState::OnActivate()
 {
-	Super::OnActivate();
-	SetFinished(false);
-	
 	const int ScoreMultiplier = Blackboard->GetValuesAsInt(ScoreMultiplierKey);
 	int RoundNum = Blackboard->GetValuesAsInt(RoundNumKey);
 	Blackboard->SetValuesAsInt(PoolMoneyKey, BASE_SCORE_MULTIPLIER * ScoreMultiplier);
@@ -22,14 +19,11 @@ void URFPokerBeginState::OnActivate()
 	Blackboard->SetValuesAsObject(CardsKey, NewObject<URFCards>());
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
 	
-	BP_OnBeginPoker();
+	Super::OnActivate();
 }
 
 void URFPokerDealingState::OnActivate()
 {
-	Super::OnActivate();
-	SetFinished(false);
-	
 	GetBlackboard()->SetValuesAsInt(PotMoneyKey, 0);
 	URFCards* CardsObject = Cast<URFCards>(GetBlackboard()->GetValuesAsObject(CardsKey));
 	if (ensure(CardsObject))
@@ -67,26 +61,11 @@ void URFPokerDealingState::OnActivate()
 		}
 	}
 	
-	BP_OnDealPoker();
-}
-
-void URFPokerDiscardingState::OnActivate()
-{
 	Super::OnActivate();
-	SetFinished(false);
-	BP_ShowPassDiscardUI(); 
-}
-
-void URFBettingState::SetTurn(EPokerPlayer Player)
-{
-	CurrentPlayer = Player;
-	BP_OnTurnChanged(Player);
 }
 
 void URFBettingState::OnActivate()
 {
-	Super::OnActivate();
-	 
 	int PoolMoney = Blackboard->GetValuesAsInt(PoolMoneyKey);
 	int ScoreMultiplier = Blackboard->GetValuesAsInt(ScoreMultiplierKey);
 	int TransferAmount = 2 * ScoreMultiplier;
@@ -102,13 +81,21 @@ void URFBettingState::OnActivate()
 	Blackboard->GetValueChangeCallback(PassStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerPassed);
 	Blackboard->GetValueChangeCallback(FoldStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerFolded);
 	Blackboard->GetValueChangeCallback(DoubleDownStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerDoubleDowned);
+	
+	Super::OnActivate();
+}
+
+void URFBettingState::SetTurn(EPokerPlayer Player)
+{
+	CurrentPlayer = Player;
+	BP_OnTurnChanged(Player);
 }
 
 void URFBettingState::EndTurn()
 {
 	if (CurrentPlayer == EPokerPlayer::Human) // Last turn
 	{
-		SetFinished(true);
+		EndState();
 	}
 	else
 	{
@@ -204,10 +191,6 @@ void URFBettingState::OnPlayerDoubleDowned(const FGameplayTag& Key)
 
 void URFRevealState::OnActivate()
 {
-	Super::OnActivate();
-	
-	BP_OnRevealHands();
-	
 	URFHand* HumanPlayerCards = Cast<URFHand>(Blackboard->GetValuesAsObject(HumanPlayerHandKey));
 	URFHand* NPCCards = Cast<URFHand>(Blackboard->GetValuesAsObject(NPCHandKey));
 	URFRankedHands* RankedHands = Cast<URFRankedHands>(Blackboard->GetValuesAsObject(RankedHandsKey));
@@ -247,12 +230,12 @@ void URFRevealState::OnActivate()
 		Blackboard->SetValuesAsInt(NPCMoneyKey, NPCMoney);
 		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
 	}
+	
+	Super::OnActivate();
 }
 
 void URFEndOfRoundState::OnActivate()
 {
-	Super::OnActivate();
-	
 	int HumanPlayerMoney = Blackboard->GetValuesAsInt(HumanMoneyKey);
 	int NPCMoney = Blackboard->GetValuesAsInt(NPCMoneyKey);
 	
@@ -273,6 +256,8 @@ void URFEndOfRoundState::OnActivate()
 			Blackboard->SetValuesAsBool(RoundRestartKey, true);
 		}
 	}
+	
+	Super::OnActivate();
 }
 
 URFCards::URFCards()
