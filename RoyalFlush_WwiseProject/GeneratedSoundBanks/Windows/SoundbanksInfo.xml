@@ -477,6 +477,31 @@
 				</Event>
 			</Events>
 		</SoundBank>
+		<SoundBank Id="1812305438" Type="Event" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" Language="SFX" Hash="{5DB0CF4B-41CC-A5EC-6F15-B2AD5159CE11}">
+			<ObjectPath>BGM_Intro</ObjectPath>
+			<ShortName>BGM_Intro</ShortName>
+			<Path>Event/BGM_Intro.bnk</Path>
+			<Media>
+				<File Id="614982471" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Opening_Loop_148.wav</ShortName>
+					<Path>Media/614982471.wem</Path>
+					<CachePath>05/{05240E16-C17C-0B58-92F2-BE554FB4A3E7}.wem</CachePath>
+				</File>
+				<File Id="857770747" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>BGM_Opening_Intro_148.wav</ShortName>
+					<Path>Media/857770747.wem</Path>
+					<CachePath>ED/{EDD789CF-8233-2FA5-A1EF-610400CFB69F}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1812305438" Name="BGM_Intro" ObjectPath="\Events\Default Work Unit\Music\BGM_Intro" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="614982471"/>
+						<MediaRef Id="857770747"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="1877487096" Type="Event" GUID="{E0FB9962-0F04-4A81-96C2-997A97C84DBB}" Language="SFX" Hash="{3A797B07-7930-D733-69B2-0FF905C40E5A}">
 			<ObjectPath>UI_Click_Start_Game</ObjectPath>
 			<ShortName>UI_Click_Start_Game</ShortName>
@@ -1126,6 +1151,25 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
+		<SoundBank Id="3264197842" Type="Event" GUID="{A6928E1A-A1DD-469A-A438-B587051E1E2A}" Language="SFX" Hash="{64799F05-E487-D5EA-10F9-7EA57B002E57}">
+			<ObjectPath>CutScene_Intro</ObjectPath>
+			<ShortName>CutScene_Intro</ShortName>
+			<Path>Event/CutScene_Intro.bnk</Path>
+			<Media>
+				<File Id="509721093" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Intro_SFXs.wav</ShortName>
+					<Path>Media/509721093.wem</Path>
+					<CachePath>62/{62AF823F-72F9-FD54-3411-2FA24081CACB}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3264197842" Name="CutScene_Intro" ObjectPath="\Events\Default Work Unit\UI\CutScene_Intro" GUID="{A6928E1A-A1DD-469A-A438-B587051E1E2A}" DurationType="OneShot" DurationMin="14.5945835" DurationMax="14.5945835">
+					<MediaRefs>
+						<MediaRef Id="509721093"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="3331313354" Type="User" GUID="{D9E95AA2-D16F-48AC-B33C-DF494DC30C9C}" Language="SFX" Hash="{9A34C843-92D3-79F3-D359-990DD2F37B26}">
 			<ObjectPath>\SoundBanks\Default Work Unit\TestSB</ObjectPath>
 			<ShortName>TestSB</ShortName>
@@ -1465,5 +1509,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4293744F-5B14-B6DB-D60F-0DD49F60A7BF}</FileHash>
+	<FileHash>{5C408054-9AA0-76F4-44B8-5ACC465C54E4}</FileHash>
 </SoundBanksInfo>

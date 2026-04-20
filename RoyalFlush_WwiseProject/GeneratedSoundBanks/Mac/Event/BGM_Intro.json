@@ -1,0 +1,58 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1812305438",
+    "Type": "Event",
+    "GUID": "{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}",
+    "Language": "SFX",
+    "Hash": "{5DB0CF4B-41CC-A5EC-6F15-B2AD5159CE11}",
+    "ObjectPath": "BGM_Intro",
+    "ShortName": "BGM_Intro",
+    "Path": "Event/BGM_Intro.bnk",
+    "Media": [
+     {
+      "Id": "614982471",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "BGM_Opening_Loop_148.wav",
+      "Path": "Media/614982471.wem",
+      "CachePath": "05/{05240E16-C17C-0B58-92F2-BE554FB4A3E7}.wem"
+     },
+     {
+      "Id": "857770747",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "BGM_Opening_Intro_148.wav",
+      "Path": "Media/857770747.wem",
+      "CachePath": "ED/{EDD789CF-8233-2FA5-A1EF-610400CFB69F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1812305438",
+      "Name": "BGM_Intro",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\BGM_Intro",
+      "GUID": "{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "614982471"
+       },
+       {
+        "Id": "857770747"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{879A650D-3D96-065E-EB38-073A2765F5DC}"
+ }
+}

@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1812305438	BGM_Intro			\Default Work Unit\Music\BGM_Intro	
+
