@@ -90,6 +90,32 @@ UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFPokerDiscardingState : public URFPokerState
 {
 	GENERATED_BODY()
+	
+protected:
+	
+	virtual void OnActivate() override;
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnTurnChanged(EPokerPlayer Player);
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnNPCPlayed();
+	
+private:
+
+	void SetTurn(EPokerPlayer Player);
+	void NPCDiscard();
+	void PlayNPCTurn();
+	
+private:
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag DiscardStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PassStatusKey;
+	
+	EPokerPlayer CurrentPlayer;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -98,8 +124,7 @@ class ROYALFLUSH_API URFBettingState : public URFPokerState
 	GENERATED_BODY()
 
 protected:
-
-	void PlayNPCTurn();
+	
 	virtual void OnActivate() override;
 	
 	UFUNCTION(BlueprintImplementableEvent)
@@ -127,6 +152,7 @@ private:
 	
 	void EndTurn();
 	void SetTurn(EPokerPlayer Player);
+	void PlayNPCTurn();
 	
 	UFUNCTION()
 	void OnPlayerPassed(const FGameplayTag& Key);

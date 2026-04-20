@@ -65,6 +65,50 @@ void URFPokerDealingState::OnActivate()
 	Super::OnActivate();
 }
 
+void URFPokerDiscardingState::OnActivate()
+{
+	SetTurn(EPokerPlayer::NPC);
+	PlayNPCTurn();
+	
+	SetTurn(EPokerPlayer::Human);
+	
+	Super::OnActivate();
+}
+
+void URFPokerDiscardingState::SetTurn(EPokerPlayer Player)
+{
+	CurrentPlayer = Player;
+	BP_OnTurnChanged(Player);
+}
+
+void URFPokerDiscardingState::NPCDiscard()
+{
+	
+}
+
+void URFPokerDiscardingState::PlayNPCTurn()
+{
+	int RandomChoice = UKismetMathLibrary::RandomIntegerInRange(0,1);
+	switch (RandomChoice)
+	{
+		case 0:
+		{
+			NPCDiscard();
+			Blackboard->SetValuesAsBool(DiscardStatusKey, true);
+			break;
+		}
+		case 1:
+		{
+			Blackboard->SetValuesAsBool(PassStatusKey, true);
+			break;
+		}
+		default:
+			break;
+	}
+	
+	BP_OnNPCPlayed();
+}
+
 void URFBettingState::OnActivate()
 {
 	int PoolMoney = Blackboard->GetValuesAsInt(PoolMoneyKey);
