@@ -6,47 +6,66 @@ URFJournalComponent::URFJournalComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-int URFJournalComponent::AddClue(const URFClueDataAsset* ClueObject)
+void URFJournalComponent::AddClue(FRFClue ClueData)
 {
-	const FRFClue& ClueData = ClueObject->GetData();
 	if (!Clues.Contains(ClueData))
 	{
 		Clues.Add(ClueData);
-		return Clues.Num() - 1;
+		return;
 	}
 	
 	UE_LOG(LogTemp, Warning, TEXT("Attempted to add existing clue."));
-	return -1;
 }
 
-void URFJournalComponent::StageClue(const int ClueIndex)
+void URFJournalComponent::StageClue(FRFClue ClueData)
 {
-	if (Clues.IsValidIndex(ClueIndex))
+	const int Index = Clues.Find(ClueData);
+	if (Clues.IsValidIndex(Index))
 	{
-		StagedClues.Push(Clues[ClueIndex]);
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Attempted to stage invalid clue index."));
+		Clues[Index].IsStaged = true;
+		OnClueStagedEvent.Broadcast(Clues[Index]);
 	}
 }
 
-const TArray<FRFClue>& URFJournalComponent::GetAllClues() const
+void URFJournalComponent::UnStageClue(FRFClue ClueData)
 {
-	return Clues;
+	const int Index = Clues.Find(ClueData);
+	if (Clues.IsValidIndex(Index))
+	{
+		Clues[Index].IsStaged = false;
+		OnClueUnStagedEvent.Broadcast(Clues[Index]);
+	}
 }
 
-void URFJournalComponent::GetStagedClues(TArray<FRFClue>& Out_StagedClues)
+TArray<FRFClue> URFJournalComponent::GetUnstagedClues() const
 {
-	Out_StagedClues = StagedClues;
+	TArray<FRFClue> UnStagedClues;
+	for (const FRFClue& Clue : Clues)
+	{
+		if (!Clue.IsStaged)
+		{
+			UnStagedClues.Push(Clue);
+		}
+	}
+	
+	return UnStagedClues;
+}
+
+TArray<FRFClue> URFJournalComponent::GetStagedClues()
+{
+	TArray<FRFClue> StagedClues;
+	for (const FRFClue& Clue : Clues)
+	{
+		if (Clue.IsStaged)
+		{
+			StagedClues.Push(Clue);
+		}
+	}
+	
+	return StagedClues;
 }
 
 void URFJournalComponent::Accept()
 {
 	OnCluesSubmittedEvent.Broadcast();
-}
-
-void URFJournalComponent::BindOnCluesSubmitted(FOnCluesSubmittedDelegate Callback)
-{
-	OnCluesSubmittedEvent = Callback;
 }

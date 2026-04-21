@@ -17,6 +17,12 @@ struct FRFClue
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TObjectPtr<UTexture2D> Image;
 	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	bool IsStaged = false;
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	bool IsReal = false;
+
 	bool operator==(const FRFClue& Other) const
 	{
 		return Description.EqualTo(Other.Description);
