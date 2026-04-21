@@ -10,13 +10,23 @@
 void URFJournalPageWidget::AddClue(const FRFClue& ClueItem)
 {
 	URFJournalClueWidget* ClueWidget = Cast<URFJournalClueWidget>(CreateWidget(this, ClueWidgetClass));
-	ClueWidget->SetDescription(ClueItem.Description);
-	ClueWidget->SetImage(ClueItem.Image);
+	ClueWidget->SetData(ClueItem);
 	
-	int NumChildren = UniformGridPanel->GetChildrenCount();
-	
-	int NewRow = (NumChildren) / NumColumns;
-	int NewCol = (NumChildren) % NumColumns;
+	int NewRow;
+	int NewCol;
+	const FString DescriptionString = ClueItem.Description.ToString();
+	if (ClueLocations.Contains(DescriptionString))
+	{
+		NewRow = ClueLocations[DescriptionString].Get<0>();
+		NewCol = ClueLocations[DescriptionString].Get<1>();
+	}
+	else
+	{
+		int NumChildren = UniformGridPanel->GetChildrenCount();
+		NewRow = (NumChildren) / NumColumns;
+		NewCol = (NumChildren) % NumColumns;
+		ClueLocations.Add(ClueItem.Description.ToString(), {NewRow, NewCol});
+	}
 	
 	UUniformGridSlot* GridSlot = UniformGridPanel->AddChildToUniformGrid(ClueWidget, NewRow, NewCol);
 	GridSlot->GetContent()->SetRenderTranslation
@@ -33,4 +43,19 @@ void URFJournalPageWidget::AddClue(const FRFClue& ClueItem)
 bool URFJournalPageWidget::CanContainMoreClues()
 {
 	return UniformGridPanel->GetChildrenCount() < ClueCapacity;
+}
+
+void URFJournalPageWidget::RemoveClue(const FRFClue& TargetClue)
+{
+	for (UWidget* Child : UniformGridPanel->GetAllChildren())
+	{
+		if (URFJournalClueWidget* ClueWidget = Cast<URFJournalClueWidget>(Child))
+		{
+			if (ClueWidget->GetData() == TargetClue)
+			{
+				UniformGridPanel->RemoveChild(ClueWidget);
+				return;
+			}
+		}
+	}
 }
