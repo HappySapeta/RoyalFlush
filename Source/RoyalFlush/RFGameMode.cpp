@@ -19,6 +19,28 @@ void ARFGameMode::BeginPlay()
 	Super::BeginPlay();
 	
 	PokerStateMachine->Initialize();
+	JournalComponent->OnCluesSubmittedEvent.AddUniqueDynamic(this, &ARFGameMode::HandleCluesSubmitted);
+}
+
+void ARFGameMode::HandleCluesSubmitted()
+{
+	const TArray<FRFClue>& StagedClues = JournalComponent->GetStagedClues();
+	if (StagedClues.IsEmpty())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Game lost!"));
+		return;
+	}
+	
+	for (const FRFClue& Clue : StagedClues)
+	{
+		if (!Clue.IsReal)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Game lost!"));
+			return;
+		}
+	}
+	
+	UE_LOG(LogTemp, Warning, TEXT("Game won!!"));
 }
 
 void ARFGameMode::StartPokerGame()
