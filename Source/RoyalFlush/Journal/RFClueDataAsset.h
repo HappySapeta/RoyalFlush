@@ -17,7 +17,7 @@ struct FRFClue
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TObjectPtr<UTexture2D> Image;
 	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly)
 	bool IsStaged = false;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
