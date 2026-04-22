@@ -7,6 +7,10 @@
 #include "StateMachine/RpState.h"
 #include "RFPokerStates.generated.h"
 
+constexpr int BASE_SCORE_MULTIPLIER = 19;
+constexpr int NUM_PLAYING_CARDS = 52;
+constexpr int HAND_SIZE = 5;
+
 UENUM(BlueprintType)
 enum class EPokerPlayer : uint8
 {
@@ -92,8 +96,11 @@ class ROYALFLUSH_API URFPokerDiscardingState : public URFPokerState
 	GENERATED_BODY()
 	
 protected:
-	
+
 	virtual void OnActivate() override;
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnHumanTurn();
 	
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_OnTurnChanged(EPokerPlayer Player);
@@ -101,11 +108,20 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_OnNPCPlayed();
 	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnNPCDiscard();
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void BP_OnNPCPass();
+	
 private:
 
 	void SetTurn(EPokerPlayer Player);
-	void NPCDiscard();
 	void PlayNPCTurn();
+	void NPCDiscard();
+	
+	UFUNCTION()
+	void HandleDiscardRequested(const FGameplayTag& Key);
 	
 private:
 	
@@ -114,8 +130,23 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag PassStatusKey;
+
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag DiscardedHandKey;
+
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag CardsKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag NPCHandKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag HumanHandKey;
 	
 	EPokerPlayer CurrentPlayer;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag DiscardNumKey;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -282,6 +313,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Reset();
 
+	int SwapCard(int Card);
+	
+	UFUNCTION(BlueprintCallable)
+	void ReplaceDiscardedCards(TArray<int> CardIndicesToBeDiscarded, TArray<int>& TargetHand);
+
 private:
 	
 	TArray<int> Cards;
@@ -295,7 +331,9 @@ class ROYALFLUSH_API URFHand : public UObject
 
 public:
 	
-	void SetHand(const TArray<int>& NewHand);
+	TArray<int> GetCards() const;
+	
+	void SetCards(const TArray<int>& NewCards);
 
 	bool Equals(const URFHand* Other) const;
 	

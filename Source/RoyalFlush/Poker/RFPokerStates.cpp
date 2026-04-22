@@ -5,10 +5,6 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
 
-constexpr int BASE_SCORE_MULTIPLIER = 19;
-constexpr int NUM_PLAYING_CARDS = 52;
-constexpr int HAND_SIZE = 5;
-
 void URFPokerBeginState::OnActivate()
 {
 	const int ScoreMultiplier = Blackboard->GetValuesAsInt(ScoreMultiplierKey);
@@ -26,7 +22,7 @@ void URFPokerBeginState::OnActivate()
 void URFPokerDealingState::OnActivate()
 {
 	GetBlackboard()->SetValuesAsInt(PotMoneyKey, 0);
-	URFCards* CardsObject = Cast<URFCards>(GetBlackboard()->GetValuesAsObject(CardsKey));
+	URFCards* CardsObject = Cast<URFCards>(Blackboard->GetValuesAsObject(CardsKey));
 	if (ensure(CardsObject))
 	{
 		CardsObject->Shuffle();
@@ -50,14 +46,14 @@ void URFPokerDealingState::OnActivate()
 		HandObject = Blackboard->GetValuesAsObject(HumanPlayerHandKey);
 		if (URFHand* PlayerHand = Cast<URFHand>(HandObject))
 		{
-			PlayerHand->SetHand(CardsObject->NewHand());
+			PlayerHand->SetCards(CardsObject->NewHand());
 			Blackboard->SetValuesAsObject(HumanPlayerHandKey, PlayerHand);
 		}
 		// NPC draw hand
 		HandObject = Blackboard->GetValuesAsObject(NPCHandKey);
 		if (URFHand* NPCHand = Cast<URFHand>(HandObject))
 		{
-			NPCHand->SetHand(CardsObject->NewHand());
+			NPCHand->SetCards(CardsObject->NewHand());
 			Blackboard->SetValuesAsObject(NPCHandKey, NPCHand);
 		}
 	}
@@ -67,39 +63,49 @@ void URFPokerDealingState::OnActivate()
 
 void URFPokerDiscardingState::OnActivate()
 {
+	Blackboard->GetValueChangeCallback(DiscardedHandKey).AddUniqueDynamic(this, &URFPokerDiscardingState::HandleDiscardRequested);
+	
 	SetTurn(EPokerPlayer::NPC);
 	PlayNPCTurn();
 	
-	SetTurn(EPokerPlayer::Human);
+	Blackboard->SetValuesAsBool(PassStatusKey, false);
+	Blackboard->SetValuesAsBool(DiscardStatusKey, false);
 	
+	SetTurn(EPokerPlayer::Human);
+	BP_OnHumanTurn();
 	Super::OnActivate();
 }
 
 void URFPokerDiscardingState::SetTurn(EPokerPlayer Player)
 {
+	const FString PlayerName = Player == EPokerPlayer::Human ? TEXT("Human") : TEXT("NPC");
+	UE_LOG(LogTemp, Warning, TEXT("Turn changed : %s"), *PlayerName);
 	CurrentPlayer = Player;
 	BP_OnTurnChanged(Player);
 }
 
 void URFPokerDiscardingState::NPCDiscard()
 {
-	
+	// TODO: NPC Discard implementation.
 }
 
 void URFPokerDiscardingState::PlayNPCTurn()
 {
-	int RandomChoice = UKismetMathLibrary::RandomIntegerInRange(0,1);
+	UE_LOG(LogTemp, Warning, TEXT("NPC choosing to discard or pass"));
+	int RandomChoice = 1;//UKismetMathLibrary::RandomIntegerInRange(0,1);
 	switch (RandomChoice)
 	{
 		case 0:
 		{
+			UE_LOG(LogTemp, Warning, TEXT("NPC chose to Discard"));
 			NPCDiscard();
-			Blackboard->SetValuesAsBool(DiscardStatusKey, true);
+			BP_OnNPCDiscard();
 			break;
 		}
 		case 1:
 		{
-			Blackboard->SetValuesAsBool(PassStatusKey, true);
+			UE_LOG(LogTemp, Warning, TEXT("NPC chose to Pass"));
+			BP_OnNPCPass();
 			break;
 		}
 		default:
@@ -107,6 +113,37 @@ void URFPokerDiscardingState::PlayNPCTurn()
 	}
 	
 	BP_OnNPCPlayed();
+}
+
+void URFPokerDiscardingState::HandleDiscardRequested(const FGameplayTag& Key)
+{
+	UObject* DiscardedHandObject = Blackboard->GetValuesAsObject(DiscardedHandKey);
+	URFHand* DiscardedHand = Cast<URFHand>(DiscardedHandObject);
+	URFCards* CardsObject = Cast<URFCards>(Blackboard->GetValuesAsObject(CardsKey));
+	
+	if (CurrentPlayer == EPokerPlayer::NPC)
+	{
+		URFHand* Hand = Cast<URFHand>(Blackboard->GetValuesAsObject(NPCHandKey));
+		TArray<int> Cards = Hand->GetCards();
+		
+		CardsObject->ReplaceDiscardedCards(DiscardedHand->GetCards(), Cards);
+		Hand->SetCards(Cards);
+		
+		Blackboard->SetValuesAsObject(NPCHandKey, Hand);
+	}
+	else if (CurrentPlayer == EPokerPlayer::Human)
+	{
+		URFHand* Hand = Cast<URFHand>(Blackboard->GetValuesAsObject(HumanHandKey));
+		TArray<int> Cards = Hand->GetCards();
+		
+		CardsObject->ReplaceDiscardedCards(DiscardedHand->GetCards(), Cards);
+		Hand->SetCards(Cards);
+		
+		int NumDiscards = Blackboard->GetValuesAsInt(DiscardNumKey);
+		Blackboard->SetValuesAsInt(DiscardNumKey, NumDiscards + 1);
+		Blackboard->SetValuesAsBool(DiscardStatusKey, true);
+		Blackboard->SetValuesAsObject(HumanHandKey, Hand);
+	}
 }
 
 void URFBettingState::OnActivate()
@@ -355,18 +392,60 @@ TArray<int> URFCards::NewHand()
 	
 	int* Start = &Cards[NextHandStartIndex];
 	LastHandEndIndex = NextHandStartIndex + (HAND_SIZE - 1);
-	return TArray<int>{Start, HAND_SIZE};
+	
+	TArray<int>NewHand{Start, HAND_SIZE};
+	
+	for (int Index = NextHandStartIndex; Index <= LastHandEndIndex; ++Index)
+	{
+		Cards.RemoveAtSwap(Index, 1, EAllowShrinking::No);
+	}
+	
+	Cards.Shrink();
+	
+	return NewHand;
 }
 
 void URFCards::Reset()
 {
 	LastHandEndIndex = -1;
+	for (int Index = 0; Index < NUM_PLAYING_CARDS; ++Index)
+	{
+		Cards.Push(Index);
+	}
 }
 
-void URFHand::SetHand(const TArray<int>& NewHand)
+int URFCards::SwapCard(int Card)
 {
-	ensure(NewHand.Num() == HAND_SIZE);
-	Cards = NewHand;
+	int NewCard = Cards[0];
+	Cards.RemoveAtSwap(0);
+	Cards.Push(Card);
+	return NewCard;
+}
+
+void URFCards::ReplaceDiscardedCards(const TArray<int> CardIndicesToBeDiscarded, TArray<int>& TargetHand)
+{
+	for (int CardIndex : CardIndicesToBeDiscarded)
+	{
+		if (CardIndex == -1)
+		{
+			continue;
+		}
+		
+		TargetHand[CardIndex] = SwapCard(TargetHand[CardIndex]); 
+	}
+	
+	Cards.Shrink();
+}
+
+TArray<int> URFHand::GetCards() const
+{
+	return Cards;
+}
+
+void URFHand::SetCards(const TArray<int>& NewCards)
+{
+	ensure(NewCards.Num() == HAND_SIZE);
+	Cards = NewCards;
 }
 
 bool URFHand::Equals(const URFHand* Other) const
