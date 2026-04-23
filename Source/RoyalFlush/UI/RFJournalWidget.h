@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "Components/Button.h"
 #include "Components/ScrollBox.h"
 #include "RoyalFlush/Journal/RFJournalComponent.h"
 #include "RFJournalWidget.generated.h"
@@ -18,13 +19,18 @@ class ROYALFLUSH_API URFJournalWidget : public UUserWidget
 	GENERATED_BODY()
 
 protected:
-	
-	virtual void NativeConstruct() override;
 
+	virtual void NativeConstruct() override;
+	
+private:
+	
+	void PopulateClueWidgets();
+	
+	UFUNCTION()
+	void HandleAcceptButtonClicked();
+	
 	UFUNCTION()
 	void HandleOnVisibilityChanged(ESlateVisibility InVisibility);
-
-	void PopulateClueWidgets();
 	
 private:
 	
@@ -32,14 +38,29 @@ private:
 	
 	URFJournalPageWidget* CreateNewPage();
 	
+	UFUNCTION()
+	void HandleClueStaged(FRFClue ClueData);
+	
+	UFUNCTION()
+	void HandleClueUnStaged(FRFClue Clue);
+	
 protected:
 	
 	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<UScrollBox> ScrollBox;
+	TObjectPtr<UScrollBox> PageScroller;
+	
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UScrollBox> CluesContainer;
+	
+	UPROPERTY(meta = (BindWidget))
+	TObjectPtr<UButton> AcceptButton;
 	
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<URFJournalPageWidget> JournalPageWidgetClass;
-
+	
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UUserWidget> ClueWidgetClass;
+	
 private:
 	
 	TArray<FRFClue> CurrentClues;
