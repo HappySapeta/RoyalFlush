@@ -1,9 +1,11 @@
 ﻿// Copyright (c) 2026 VINNIE BRIGHTEY, FELICITY ZABAVA, ARTHUR NORTH, JOSH BENNETTS, LEWIS TAIT, KYLE MURRAY, HOLLY ALBERT, ANUPAM SAHU, ARAMINTA MCDIARMID. All rights reserved.
 
 #include "RFPokerStates.h"
-#include "RFPokerHands.h"
+#include "RFPokerTypes.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
+
+constexpr int BASE_SCORE_MULTIPLIER = 19;
 
 void URFPokerState::OnActivate()
 {

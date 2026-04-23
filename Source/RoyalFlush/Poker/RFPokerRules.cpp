@@ -1,8 +1,7 @@
-﻿#include "RFPokerHands.h"
+﻿// Copyright (c) 2026 VINNIE BRIGHTEY, FELICITY ZABAVA, ARTHUR NORTH, JOSH BENNETTS, LEWIS TAIT, KYLE MURRAY, HOLLY ALBERT, ANUPAM SAHU, ARAMINTA MCDIARMID. All rights reserved.
 
-#include "RFStandingCards.h"
-#include "Algo/RandomShuffle.h"
-#include "Chaos/ConvexFlattenedArrayStructureData.h"
+#include "RFPokerRules.h"
+#include "RFPokerDeck.h"
 
 constexpr int GET_RANK(const int Card)
 {
@@ -14,123 +13,8 @@ constexpr int GET_SUIT(const int Card)
 	return Card / 13;
 }
 
-URFCards::URFCards()
+bool RoyalFlushRule::Test(const TArray<int>& Cards)
 {
-	for (int Index = 0; Index < NUM_PLAYING_CARDS; ++Index)
-	{
-		Cards.Push(Index);
-	}
-}
-
-void URFCards::Shuffle()
-{
-	Algo::RandomShuffle(Cards);
-}
-
-TArray<int> URFCards::NewHand()
-{
-	int NextHandStartIndex = LastHandEndIndex + 1;
-	if (!ensureAlways(Cards.IsValidIndex(NextHandStartIndex) && Cards.IsValidIndex(NextHandStartIndex + (HAND_SIZE - 1))))
-	{
-		return {};
-	}
-	
-	int* Start = &Cards[NextHandStartIndex];
-	LastHandEndIndex = NextHandStartIndex + (HAND_SIZE - 1);
-	
-	TArray<int>NewHand{Start, HAND_SIZE};
-	
-	for (int Index = NextHandStartIndex; Index <= LastHandEndIndex; ++Index)
-	{
-		Cards.RemoveAtSwap(Index, 1, EAllowShrinking::No);
-	}
-	
-	Cards.Shrink();
-	
-	return NewHand;
-}
-
-void URFCards::Reset()
-{
-	LastHandEndIndex = -1;
-	for (int Index = 0; Index < NUM_PLAYING_CARDS; ++Index)
-	{
-		Cards.Push(Index);
-	}
-}
-
-int URFCards::SwapCard(int Card)
-{
-	int NewCard = Cards[0];
-	Cards.RemoveAtSwap(0);
-	Cards.Push(Card);
-	return NewCard;
-}
-
-void URFCards::ReplaceDiscardedCards(const TArray<int> CardIndicesToBeDiscarded, TArray<int>& TargetHand)
-{
-	for (int CardIndex : CardIndicesToBeDiscarded)
-	{
-		if (CardIndex == -1)
-		{
-			continue;
-		}
-		
-		TargetHand[CardIndex] = SwapCard(TargetHand[CardIndex]); 
-	}
-	
-	Cards.Shrink();
-}
-
-const TArray<int>& URFHand::GetCards() const
-{
-	return Cards;
-}
-
-void URFHand::SetCards(const TArray<int>& NewCards)
-{
-	ensure(NewCards.Num() == HAND_SIZE);
-	Cards = NewCards;
-}
-
-bool URFHand::Equals(const URFHand* Other) const
-{
-	for (int Index = 0; Index < HAND_SIZE; ++Index)
-	{
-		if (Cards[Index] != Other->Cards[Index])
-		{
-			return false;
-		}
-	}
-	
-	return true;
-}
-
-int URFRankedHands::GetRank(URFHand* Hand)
-{
-	int RankIndex = RankedHands.Num();
-	for (int Index = 0; Index < RankedHands.Num(); ++Index)
-	{
-		if (Hand->Equals(RankedHands[Index]))
-		{
-			RankIndex = Index;
-			break;
-		}
-	}
-	
-	return RankIndex;
-}
-
-bool URFRankedHands::IsFirstHigherThanSecond(URFHand* First, URFHand* Second)
-{
-	int FirstRank = GetRank(First);
-	int SecondRank = GetRank(Second);
-	return FirstRank < SecondRank;
-}
-
-bool RoyalFlushRule::Test(const URFHand* Hand)
-{
-	const TArray<int> Cards = Hand->GetCards();
 	bool bHasAce = false;
 	bool bHasKing = false;
 	bool bHasQueen = false;
@@ -155,14 +39,13 @@ bool RoyalFlushRule::Test(const URFHand* Hand)
 	return bHasAce && bHasKing && bHasQueen && bHasJack && bHasTen;
 }
 
-int RoyalFlushRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int RoyalFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
 	return 0;
 }
 
-bool StraightFlushRule::Test(const URFHand* Hand)
+bool StraightFlushRule::Test(const TArray<int>& Cards)
 {
-	const TArray<int> Cards = Hand->GetCards();
 	int CurrentSuit = GET_SUIT(Cards[0]);
 	for (int Card : Cards)
 	{
@@ -181,19 +64,19 @@ bool StraightFlushRule::Test(const URFHand* Hand)
 	return bHasSecond && bHasThird && bHasFourth && bHasFifth;
 }
 
-int StraightFlushRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int StraightFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
 	auto SumOperation = [](const int A, const int B){ return A + B; };
-	int FirstSum = Algo::Accumulate(FirstHand->GetCards(), 0, SumOperation);
-	int SecondSum = Algo::Accumulate(FirstHand->GetCards(), 0, SumOperation);
+	int FirstSum = Algo::Accumulate(FirstHand, 0, SumOperation);
+	int SecondSum = Algo::Accumulate(SecondHand, 0, SumOperation);
 	
 	return FirstSum > SecondSum;
 }
 
-bool FourOfAKindRule::Test(const URFHand* Hand)
+bool FourOfAKindRule::Test(const TArray<int>& Cards)
 {
 	TMap<int, int> KindCountMap;
-	for (int Card : Hand->GetCards())
+	for (int Card : Cards)
 	{
 		int Kind = GET_RANK(Card);
 		if (KindCountMap.Contains(Kind))
@@ -217,10 +100,10 @@ bool FourOfAKindRule::Test(const URFHand* Hand)
 	return false;
 }
 
-int FourOfAKindRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int FourOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
-	TArray<int> FirstCards = FirstHand->GetCards();
-	TArray<int> SecondCards = SecondHand->GetCards();
+	TArray<int> FirstCards = FirstHand;
+	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
@@ -249,10 +132,10 @@ int FourOfAKindRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand
 	return 0;
 }
 
-bool FullHouseRule::Test(const URFHand* Hand)
+bool FullHouseRule::Test(const TArray<int>& Cards)
 {
 	TMap<int, int> KindCountMap;
-	for (int Card : Hand->GetCards())
+	for (int Card : Cards)
 	{
 		int Kind = GET_RANK(Card);
 		if (KindCountMap.Contains(Kind))
@@ -282,10 +165,10 @@ bool FullHouseRule::Test(const URFHand* Hand)
 	return HasThreeOfAKind && HasTwoOfAKind;
 }
 
-int FullHouseRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int FullHouseRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
-	TArray<int> FirstCards = FirstHand->GetCards();
-	TArray<int> SecondCards = SecondHand->GetCards();
+	TArray<int> FirstCards = FirstHand;
+	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
@@ -314,10 +197,10 @@ int FullHouseRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
 	return 0;
 }
 
-bool FlushRule::Test(const URFHand* Hand)
+bool FlushRule::Test(const TArray<int>& Cards)
 {
-	int CurrentSuit = GET_SUIT(Hand->GetCards()[0]);
-	for (int Card : Hand->GetCards())
+	int CurrentSuit = GET_SUIT(Cards[0]);
+	for (int Card : Cards)
 	{
 		int Suit = GET_SUIT(Card);
 		if (Suit != CurrentSuit)
@@ -329,10 +212,10 @@ bool FlushRule::Test(const URFHand* Hand)
 	return true;
 }
 
-int FlushRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int FlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
-	const TArray<int>& FirstCards = FirstHand->GetCards();
-	const TArray<int>& SecondCards = SecondHand->GetCards();
+	const TArray<int>& FirstCards = FirstHand;
+	const TArray<int>& SecondCards = SecondHand;
 	
 	for (int Index = 0; Index < FirstCards.Num(); ++Index)
 	{
@@ -351,9 +234,9 @@ int FlushRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
 	return 0;
 }
 
-bool StraightRule::Test(const URFHand* Hand)
+bool StraightRule::Test(const TArray<int>& Hand)
 {
-	TArray<int> Cards = Hand->GetCards();
+	TArray<int> Cards = Hand;
 	Algo::Sort(Cards);
 	for (int Index = 0; Index < Cards.Num() - 1; ++Index)
 	{
@@ -368,10 +251,10 @@ bool StraightRule::Test(const URFHand* Hand)
 	return true;
 }
 
-int StraightRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int StraightRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
-	int FirstHighestRank = GET_RANK(*Algo::MaxElement(FirstHand->GetCards()));
-	int SecondHighestRank = GET_RANK(*Algo::MaxElement(SecondHand->GetCards()));
+	int FirstHighestRank = GET_RANK(*Algo::MaxElement(FirstHand));
+	int SecondHighestRank = GET_RANK(*Algo::MaxElement(SecondHand));
 	
 	if (FirstHighestRank > SecondHighestRank)
 	{
@@ -385,10 +268,10 @@ int StraightRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
 	return 0;
 }
 
-bool ThreeOfAKindRule::Test(const URFHand* Hand)
+bool ThreeOfAKindRule::Test(const TArray<int>& Cards)
 {
 	TMap<int, int> KindCountMap;
-	for (int Card : Hand->GetCards())
+	for (int Card : Cards)
 	{
 		int Kind = GET_RANK(Card);
 		if (KindCountMap.Contains(Kind))
@@ -412,10 +295,10 @@ bool ThreeOfAKindRule::Test(const URFHand* Hand)
 	return false;
 }
 
-int ThreeOfAKindRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int ThreeOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
-	TArray<int> FirstCards = FirstHand->GetCards();
-	TArray<int> SecondCards = SecondHand->GetCards();
+	TArray<int> FirstCards = FirstHand;
+	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
@@ -443,10 +326,10 @@ int ThreeOfAKindRule::Compare(const URFHand* FirstHand, const URFHand* SecondHan
 	return 0;
 }
 
-bool TwoPairRule::Test(const URFHand* Hand)
+bool TwoPairRule::Test(const TArray<int>& Cards)
 {
 	TMap<int, int> KindCountMap;
-	for (int Card : Hand->GetCards())
+	for (int Card : Cards)
 	{
 		int Kind = GET_RANK(Card);
 		if (KindCountMap.Contains(Kind))
@@ -472,10 +355,10 @@ bool TwoPairRule::Test(const URFHand* Hand)
 	return NumPairs == 2;
 }
 
-int TwoPairRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int TwoPairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
-	TArray<int> FirstCards = FirstHand->GetCards();
-	TArray<int> SecondCards = SecondHand->GetCards();
+	TArray<int> FirstCards = FirstHand;
+	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
@@ -503,10 +386,10 @@ int TwoPairRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
 	return 0;
 }
 
-bool OnePairRule::Test(const URFHand* Hand)
+bool OnePairRule::Test(const TArray<int>& Cards)
 {
 	TMap<int, int> KindCountMap;
-	for (int Card : Hand->GetCards())
+	for (int Card : Cards)
 	{
 		int Kind = GET_RANK(Card);
 		if (KindCountMap.Contains(Kind))
@@ -530,10 +413,10 @@ bool OnePairRule::Test(const URFHand* Hand)
 	return false;
 }
 
-int OnePairRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int OnePairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
-	TArray<int> FirstCards = FirstHand->GetCards();
-	TArray<int> SecondCards = SecondHand->GetCards();
+	TArray<int> FirstCards = FirstHand;
+	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
@@ -561,15 +444,15 @@ int OnePairRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
 	return 0;
 }
 
-bool HighCardRule::Test(const URFHand* Hand)
+bool HighCardRule::Test(const TArray<int>& Hand)
 {
 	return true;
 }
 
-int HighCardRule::Compare(const URFHand* FirstHand, const URFHand* SecondHand)
+int HighCardRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
 {
-	TArray<int> FirstCards = FirstHand->GetCards();
-	TArray<int> SecondCards = SecondHand->GetCards();
+	TArray<int> FirstCards = FirstHand;
+	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{

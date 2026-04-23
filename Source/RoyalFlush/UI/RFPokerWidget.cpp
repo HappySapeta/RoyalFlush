@@ -2,7 +2,8 @@
 
 #include "RFPokerWidget.h"
 #include "Components/Button.h"
-#include "RoyalFlush/Poker/RFPokerHands.h"
+#include "RoyalFlush/Poker/RFPokerDeck.h"
+#include "RoyalFlush/Poker/RFPokerTypes.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
 
 void URFPokerWidget::SetBlackboard(URpStateMachineBlackboardBase* NewBlackboard)
