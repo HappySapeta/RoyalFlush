@@ -7,16 +7,16 @@
 #include "StateMachine/RpState.h"
 #include "RFPokerStates.generated.h"
 
-constexpr int BASE_SCORE_MULTIPLIER = 19;
-constexpr int NUM_PLAYING_CARDS = 52;
-constexpr int HAND_SIZE = 5;
-
 UENUM(BlueprintType)
 enum class EPokerPlayer : uint8
 {
 	NPC,
 	Human
 };
+
+class URFHand;
+class URFCards;
+class URFRankedHands;
 
 /**
  * 
@@ -293,69 +293,4 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag GameEndStatusKey;
-};
-
-UCLASS(Blueprintable, BlueprintType)
-class ROYALFLUSH_API URFCards : public UObject
-{
-	GENERATED_BODY()
-
-public:
-	
-	URFCards();
-	
-	UFUNCTION(BlueprintCallable)
-	void Shuffle();
-	
-	UFUNCTION(BlueprintCallable)
-	TArray<int> NewHand();
-	
-	UFUNCTION(BlueprintCallable)
-	void Reset();
-
-	int SwapCard(int Card);
-	
-	UFUNCTION(BlueprintCallable)
-	void ReplaceDiscardedCards(TArray<int> CardIndicesToBeDiscarded, TArray<int>& TargetHand);
-
-private:
-	
-	TArray<int> Cards;
-	int LastHandEndIndex = -1;
-};
-
-UCLASS(BlueprintType)
-class ROYALFLUSH_API URFHand : public UObject
-{
-	GENERATED_BODY()
-
-public:
-	
-	TArray<int> GetCards() const;
-	
-	void SetCards(const TArray<int>& NewCards);
-
-	bool Equals(const URFHand* Other) const;
-	
-protected:
-	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	TArray<int> Cards;
-	
-};
-
-UCLASS(Blueprintable, BlueprintType)
-class URFRankedHands : public UObject
-{
-	GENERATED_BODY()
-
-public:
-
-	int GetRank(URFHand* Hand);
-	bool IsFirstHigherThanSecond(URFHand* First, URFHand* Second);
-	
-protected:
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	TArray<URFHand*> RankedHands;
 };
