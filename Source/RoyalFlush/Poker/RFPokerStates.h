@@ -14,6 +14,17 @@ enum class EPokerPlayer : uint8
 	Human
 };
 
+UENUM(BlueprintType)
+enum class EPokerState : uint8
+{
+	Begin,
+	Dealing,
+	Discarding,
+	Betting,
+	Reveal,
+	EndOfRound
+};
+
 class URFHand;
 class URFCards;
 class URFRankedHands;
@@ -25,6 +36,26 @@ UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFPokerState : public URpState
 {
 	GENERATED_BODY()
+	
+protected:
+	
+	virtual void OnActivate() override;
+	
+	void ExecuteWithDelay(FTimerDelegate Callback, const float Delay);
+	
+protected:
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag OwningActorKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag CurrentStateKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	EPokerState CurrentState;
+	
+	FTimerHandle DelayTimerHandle;
+	
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -46,9 +77,6 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag RoundNumKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag CurrentPlayerIndexKey;
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag ScoreMultiplierKey;
@@ -98,55 +126,40 @@ class ROYALFLUSH_API URFPokerDiscardingState : public URFPokerState
 protected:
 
 	virtual void OnActivate() override;
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnHumanTurn();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnTurnChanged(EPokerPlayer Player);
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnNPCPlayed();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnNPCDiscard();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnNPCPass();
-	
+
+	UFUNCTION()
+	void HandleDiscardRequested(const FGameplayTag& Key);
+
 private:
 
 	void SetTurn(EPokerPlayer Player);
+
 	void PlayNPCTurn();
-	void NPCDiscard();
-	
-	UFUNCTION()
-	void HandleDiscardRequested(const FGameplayTag& Key);
 	
 private:
+
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PassStatusKey;
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag DiscardStatusKey;
 	
 	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PassStatusKey;
-
-	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag DiscardedHandKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag CurrentTurnKey;
 
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag CardsKey;
-	
+
 	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag NPCHandKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag HumanHandKey;
-	
-	EPokerPlayer CurrentPlayer;
+	FGameplayTag HumanPlayerHandKey;
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag DiscardNumKey;
+	
+	EPokerPlayer CurrentTurn;
 };
 
 UCLASS(Blueprintable, BlueprintType)

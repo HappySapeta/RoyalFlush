@@ -5,13 +5,26 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
 
+void URFPokerState::OnActivate()
+{
+	Super::OnActivate();
+	Blackboard->SetValuesAsInt(CurrentStateKey, static_cast<int>(CurrentState));
+}
+
+void URFPokerState::ExecuteWithDelay(FTimerDelegate Callback, const float Delay)
+{
+	const AActor* OwningActor = Cast<AActor>(Blackboard->GetValuesAsObject(OwningActorKey));
+	FTimerManager& TimerManager = OwningActor->GetWorld()->GetTimerManager();
+	TimerManager.ClearTimer(DelayTimerHandle);
+	TimerManager.SetTimer(DelayTimerHandle, Callback, Delay, false);
+}
+
 void URFPokerBeginState::OnActivate()
 {
 	const int ScoreMultiplier = Blackboard->GetValuesAsInt(ScoreMultiplierKey);
 	int RoundNum = Blackboard->GetValuesAsInt(RoundNumKey);
 	Blackboard->SetValuesAsInt(PoolMoneyKey, BASE_SCORE_MULTIPLIER * ScoreMultiplier);
 	Blackboard->SetValuesAsInt(RoundNumKey, ++RoundNum);
-	Blackboard->SetValuesAsInt(CurrentPlayerIndexKey, 0);
 	Blackboard->SetValuesAsBool(RoundRestartKey, false);
 	Blackboard->SetValuesAsObject(CardsKey, NewObject<URFCards>());
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
@@ -63,56 +76,48 @@ void URFPokerDealingState::OnActivate()
 
 void URFPokerDiscardingState::OnActivate()
 {
-	Blackboard->GetValueChangeCallback(DiscardedHandKey).AddUniqueDynamic(this, &URFPokerDiscardingState::HandleDiscardRequested);
-	
-	SetTurn(EPokerPlayer::NPC);
-	PlayNPCTurn();
-	
+	Super::OnActivate();
 	Blackboard->SetValuesAsBool(PassStatusKey, false);
 	Blackboard->SetValuesAsBool(DiscardStatusKey, false);
 	
-	SetTurn(EPokerPlayer::Human);
-	BP_OnHumanTurn();
-	Super::OnActivate();
+	SetTurn(EPokerPlayer::NPC);
+	ExecuteWithDelay(FTimerDelegate::CreateUObject(this, &URFPokerDiscardingState::PlayNPCTurn), 1.0f);
+	
+	FTimerDelegate HumanTurnCallback = FTimerDelegate::CreateLambda([this]()
+	{
+		Blackboard->GetValueChangeCallback(DiscardedHandKey).AddUniqueDynamic(this, &URFPokerDiscardingState::HandleDiscardRequested);
+		SetTurn(EPokerPlayer::Human);
+	});
+	ExecuteWithDelay(HumanTurnCallback, 1.0f);
 }
 
 void URFPokerDiscardingState::SetTurn(EPokerPlayer Player)
 {
-	const FString PlayerName = Player == EPokerPlayer::Human ? TEXT("Human") : TEXT("NPC");
-	UE_LOG(LogTemp, Warning, TEXT("Turn changed : %s"), *PlayerName);
-	CurrentPlayer = Player;
-	BP_OnTurnChanged(Player);
-}
-
-void URFPokerDiscardingState::NPCDiscard()
-{
-	// TODO: NPC Discard implementation.
+	CurrentTurn = Player;
+	Blackboard->SetValuesAsInt(CurrentTurnKey, static_cast<int>(CurrentTurn));
 }
 
 void URFPokerDiscardingState::PlayNPCTurn()
 {
 	UE_LOG(LogTemp, Warning, TEXT("NPC choosing to discard or pass"));
-	int RandomChoice = 1;//UKismetMathLibrary::RandomIntegerInRange(0,1);
+	int RandomChoice = UKismetMathLibrary::RandomIntegerInRange(0,1);
 	switch (RandomChoice)
 	{
 		case 0:
 		{
 			UE_LOG(LogTemp, Warning, TEXT("NPC chose to Discard"));
-			NPCDiscard();
-			BP_OnNPCDiscard();
+			Blackboard->SetValuesAsBool(DiscardStatusKey, true);
 			break;
 		}
 		case 1:
 		{
 			UE_LOG(LogTemp, Warning, TEXT("NPC chose to Pass"));
-			BP_OnNPCPass();
+			Blackboard->SetValuesAsBool(PassStatusKey, true);
 			break;
 		}
 		default:
 			break;
 	}
-	
-	BP_OnNPCPlayed();
 }
 
 void URFPokerDiscardingState::HandleDiscardRequested(const FGameplayTag& Key)
@@ -121,30 +126,16 @@ void URFPokerDiscardingState::HandleDiscardRequested(const FGameplayTag& Key)
 	URFHand* DiscardedHand = Cast<URFHand>(DiscardedHandObject);
 	URFCards* CardsObject = Cast<URFCards>(Blackboard->GetValuesAsObject(CardsKey));
 	
-	if (CurrentPlayer == EPokerPlayer::NPC)
-	{
-		URFHand* Hand = Cast<URFHand>(Blackboard->GetValuesAsObject(NPCHandKey));
-		TArray<int> Cards = Hand->GetCards();
+	URFHand* Hand = Cast<URFHand>(Blackboard->GetValuesAsObject(HumanPlayerHandKey));
+	TArray<int> Cards = Hand->GetCards();
 		
-		CardsObject->Shuffle();
-		CardsObject->ReplaceDiscardedCards(DiscardedHand->GetCards(), Cards);
-		Hand->SetCards(Cards);
+	CardsObject->ReplaceDiscardedCards(DiscardedHand->GetCards(), Cards);
+	Hand->SetCards(Cards);
 		
-		Blackboard->SetValuesAsObject(NPCHandKey, Hand);
-	}
-	else if (CurrentPlayer == EPokerPlayer::Human)
-	{
-		URFHand* Hand = Cast<URFHand>(Blackboard->GetValuesAsObject(HumanHandKey));
-		TArray<int> Cards = Hand->GetCards();
-		
-		CardsObject->ReplaceDiscardedCards(DiscardedHand->GetCards(), Cards);
-		Hand->SetCards(Cards);
-		
-		int NumDiscards = Blackboard->GetValuesAsInt(DiscardNumKey);
-		Blackboard->SetValuesAsInt(DiscardNumKey, NumDiscards + 1);
-		Blackboard->SetValuesAsBool(DiscardStatusKey, true);
-		Blackboard->SetValuesAsObject(HumanHandKey, Hand);
-	}
+	int NumDiscards = Blackboard->GetValuesAsInt(DiscardNumKey);
+	Blackboard->SetValuesAsInt(DiscardNumKey, NumDiscards + 1);
+	Blackboard->SetValuesAsBool(DiscardStatusKey, true);
+	Blackboard->SetValuesAsObject(HumanPlayerHandKey, Hand);
 }
 
 void URFBettingState::OnActivate()

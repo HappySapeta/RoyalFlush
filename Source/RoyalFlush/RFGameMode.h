@@ -45,7 +45,7 @@ private:
 	URpStateMachineComponent* PokerStateMachine;
 	
 	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PokerPlayerTag;
+	FGameplayTag OwningActorKey;
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag PokerScoreTag;
