@@ -19,14 +19,14 @@ public:
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType)
 class ROYALFLUSH_API URFCardTextureDataAsset : public UDataAsset
 {
 	GENERATED_BODY()
 	
 public:
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	TMap<int, FRFCardImageStruct> Textures;
 	
 };
