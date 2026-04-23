@@ -1,7 +1,7 @@
 ﻿// Copyright (c) 2026 VINNIE BRIGHTEY, FELICITY ZABAVA, ARTHUR NORTH, JOSH BENNETTS, LEWIS TAIT, KYLE MURRAY, HOLLY ALBERT, ANUPAM SAHU, ARAMINTA MCDIARMID. All rights reserved.
 
 #include "RFPokerWidget.h"
-#include "Components/Button.h"
+#include "RFPokerHandWidget.h"
 #include "RoyalFlush/Poker/RFPokerDeck.h"
 #include "RoyalFlush/Poker/RFPokerTypes.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
@@ -9,17 +9,28 @@
 void URFPokerWidget::SetBlackboard(URpStateMachineBlackboardBase* NewBlackboard)
 {
 	Blackboard = NewBlackboard;
+	
+	// Blackboard events.
+	{
+		Blackboard->GetValueChangeCallback(HumanPlayerHandKey).AddUniqueDynamic(this, &URFPokerWidget::OnHandUpdate);
+		Blackboard->GetValueChangeCallback(CurrentTurnKey).AddUniqueDynamic(this, &URFPokerWidget::OnTurnChanged);
+		Blackboard->GetValueChangeCallback(CurrentStateKey).AddUniqueDynamic(this, &URFPokerWidget::OnStateChanged);
+	}
+	
 	OnBlackboardSet();
 }
 
 void URFPokerWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
-	
 	DiscardedHand = NewObject<URFHand>(this);
-	//BettingState_PassButton->OnClicked.AddUniqueDynamic(this, &URFPokerWidget::HandleBettingStatePassButton);
-	//BettingState_FoldButton->OnClicked.AddUniqueDynamic(this, &URFPokerWidget::HandleBettingStateFoldButton);
-	//BettingState_DoubleDownButton->OnClicked.AddUniqueDynamic(this, &URFPokerWidget::HandleBettingStateDoubleDownButton);
+	
+	PokerHandWidget->OnCardSelectedEvent.AddUniqueDynamic(this, &URFPokerWidget::HandlePlayerSelectedCard);
+}
+
+void URFPokerWidget::HandlePlayerSelectedCard(int Index)
+{
+	DiscardedCardIndices.Add(Index);
 }
 
 void URFPokerWidget::HandlePlayerPressedDiscard()

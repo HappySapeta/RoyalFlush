@@ -5,8 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
 #include "Blueprint/UserWidget.h"
+#include "RoyalFlush/Poker/RFPokerTypes.h"
 #include "RFPokerWidget.generated.h"
 
+class UOverlay;
+class URFPokerHandWidget;
 class UButton;
 class URFHand;
 class URpStateMachineBlackboardBase;
@@ -19,15 +22,26 @@ class ROYALFLUSH_API URFPokerWidget : public UUserWidget
 	GENERATED_BODY()
 
 public:
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnHandUpdate(const FGameplayTag& Key);
 	
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnTurnChanged(const FGameplayTag& Key);
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnStateChanged(const FGameplayTag& Key);
 	
 	UFUNCTION(BlueprintCallable)
 	void SetBlackboard(URpStateMachineBlackboardBase* NewBlackboard);
 	
 protected:
-	
+
 	virtual void NativeConstruct() override;
 	
+	UFUNCTION()
+	void HandlePlayerSelectedCard(int Index);
+
 	UFUNCTION(BlueprintCallable)
 	void HandlePlayerPressedDiscard();
 	
@@ -39,41 +53,28 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	URpStateMachineBlackboardBase* Blackboard;
 	
+	UPROPERTY(BlueprintReadWrite)
+	TSet<int> DiscardedCardIndices;
+	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag HumanPlayerHandKey;
 	
 	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag CardsKey;
-	
-	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag DiscardedHandKey;
 	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag DiscardNumKey;
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	TObjectPtr<URFPokerHandWidget> PokerHandWidget;
 	
 	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag DiscardStatusKey;
+	FGameplayTag CurrentTurnKey;
 	
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	TObjectPtr<UButton> DiscardingState_DiscardButton;
-	
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	TObjectPtr<UButton> DiscardingState_PassButton;
-	
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	TObjectPtr<UButton> BettingState_PassButton;
-	
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	TObjectPtr<UButton> BettingState_DoubleDownButton;
-	
-	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	TObjectPtr<UButton> BettingState_FoldButton;
-	
-	UPROPERTY(BlueprintReadWrite)
-	TSet<int> DiscardedCardIndices;
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag CurrentStateKey;
 
 private:
 	
 	UPROPERTY()
 	URFHand* DiscardedHand;
+	
+	EPokerState CurrentState;
 };

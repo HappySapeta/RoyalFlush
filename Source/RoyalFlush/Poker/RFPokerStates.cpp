@@ -1,7 +1,6 @@
 ﻿// Copyright (c) 2026 VINNIE BRIGHTEY, FELICITY ZABAVA, ARTHUR NORTH, JOSH BENNETTS, LEWIS TAIT, KYLE MURRAY, HOLLY ALBERT, ANUPAM SAHU, ARAMINTA MCDIARMID. All rights reserved.
 
 #include "RFPokerStates.h"
-#include "RFPokerTypes.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
 
@@ -17,8 +16,8 @@ void URFPokerState::ExecuteWithDelay(FTimerDelegate Callback, const float Delay)
 {
 	const AActor* OwningActor = Cast<AActor>(Blackboard->GetValuesAsObject(OwningActorKey));
 	FTimerManager& TimerManager = OwningActor->GetWorld()->GetTimerManager();
-	TimerManager.ClearTimer(DelayTimerHandle);
-	TimerManager.SetTimer(DelayTimerHandle, Callback, Delay, false);
+	FTimerHandle TimerHandle;
+	TimerManager.SetTimer(TimerHandle, Callback, Delay, false);
 }
 
 void URFPokerBeginState::OnActivate()
@@ -79,18 +78,31 @@ void URFPokerDealingState::OnActivate()
 void URFPokerDiscardingState::OnActivate()
 {
 	Super::OnActivate();
-	Blackboard->SetValuesAsBool(PassStatusKey, false);
-	Blackboard->SetValuesAsBool(DiscardStatusKey, false);
-	
-	SetTurn(EPokerPlayer::NPC);
-	ExecuteWithDelay(FTimerDelegate::CreateUObject(this, &URFPokerDiscardingState::PlayNPCTurn), 1.0f);
-	
-	FTimerDelegate HumanTurnCallback = FTimerDelegate::CreateLambda([this]()
+
+	// First action
 	{
-		Blackboard->GetValueChangeCallback(DiscardedHandKey).AddUniqueDynamic(this, &URFPokerDiscardingState::HandleDiscardRequested);
-		SetTurn(EPokerPlayer::Human);
-	});
-	ExecuteWithDelay(HumanTurnCallback, 1.0f);
+		FTimerDelegate NPCTurnCallback = FTimerDelegate::CreateLambda([this]()
+		{
+			Blackboard->SetValuesAsBool(PassStatusKey, false);
+			Blackboard->SetValuesAsBool(DiscardStatusKey, false);
+			SetTurn(EPokerPlayer::NPC);
+			PlayNPCTurn();
+		});
+		ExecuteWithDelay(NPCTurnCallback, NPCTurnDelay);
+	}
+	
+	// Second action
+	{
+		FTimerDelegate HumanTurnCallback = FTimerDelegate::CreateLambda([this]()
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Human player's turn."));
+			Blackboard->SetValuesAsBool(PassStatusKey, false);
+			Blackboard->SetValuesAsBool(DiscardStatusKey, false);
+			SetTurn(EPokerPlayer::Human);
+			Blackboard->GetValueChangeCallback(DiscardedHandKey).AddUniqueDynamic(this, &URFPokerDiscardingState::HandleDiscardRequested);
+		});
+		ExecuteWithDelay(HumanTurnCallback, HumanTurnDelay);
+	}
 }
 
 void URFPokerDiscardingState::SetTurn(EPokerPlayer Player)

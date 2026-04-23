@@ -5,6 +5,25 @@
 #include "CoreMinimal.h"
 #include "RFPokerTypes.generated.h"
 
+UENUM(BlueprintType)
+enum class EPokerPlayer : uint8
+{
+	NPC,
+	Human
+};
+
+UENUM(BlueprintType)
+enum class EPokerState : uint8
+{
+	Begin,
+	Dealing,
+	Discarding,
+	Betting,
+	Reveal,
+	EndOfRound
+};
+
+
 UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFCards : public UObject
 {

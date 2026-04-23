@@ -5,25 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
 #include "StateMachine/RpState.h"
+#include "RFPokerTypes.h"
 #include "RFPokerStates.generated.h"
-
-UENUM(BlueprintType)
-enum class EPokerPlayer : uint8
-{
-	NPC,
-	Human
-};
-
-UENUM(BlueprintType)
-enum class EPokerState : uint8
-{
-	Begin,
-	Dealing,
-	Discarding,
-	Betting,
-	Reveal,
-	EndOfRound
-};
 
 class URFHand;
 class URFCards;
@@ -53,9 +36,6 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly)
 	EPokerState CurrentState;
-	
-	FTimerHandle DelayTimerHandle;
-	
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -139,24 +119,30 @@ private:
 private:
 
 	UPROPERTY(EditDefaultsOnly)
+	float NPCTurnDelay;
+	
+	UPROPERTY(EditDefaultsOnly)
+	float HumanTurnDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PassStatusKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag DiscardStatusKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag DiscardedHandKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CurrentTurnKey;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CardsKey;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag HumanPlayerHandKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag DiscardNumKey;
 	
 	EPokerPlayer CurrentTurn;
