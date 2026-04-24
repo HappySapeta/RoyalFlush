@@ -37,6 +37,9 @@ public:
 	
 protected:
 
+	UFUNCTION()
+	void HandlePlayerUnSelectedCard(int Index);
+	
 	virtual void NativeConstruct() override;
 	
 	UFUNCTION()

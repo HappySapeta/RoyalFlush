@@ -6,6 +6,15 @@
 void URFPokerHandWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
+	
+	bIsSelected.Init(false, 5);
+	
+	Buttons.Add(FirstCardButton);
+	Buttons.Add(SecondCardButton);
+	Buttons.Add(ThirdCardButton);
+	Buttons.Add(FourthCardButton);
+	Buttons.Add(FifthCardButton);
+	
 	FirstCardButton->OnClicked.AddUniqueDynamic(this, &URFPokerHandWidget::OnFirstCardSelected);
 	SecondCardButton->OnClicked.AddUniqueDynamic(this, &URFPokerHandWidget::OnSecondCardSelected);
 	ThirdCardButton->OnClicked.AddUniqueDynamic(this, &URFPokerHandWidget::OnThirdCardSelected);
@@ -13,27 +22,60 @@ void URFPokerHandWidget::NativeConstruct()
 	FifthCardButton->OnClicked.AddUniqueDynamic(this, &URFPokerHandWidget::OnFifthCardSelected);
 }
 
+void URFPokerHandWidget::SetAllowSelection(const bool bValue)
+{
+	bSelectionAllowed = bValue;
+}
+
+void URFPokerHandWidget::UnSelectAll()
+{
+	for (bool& bValue : bIsSelected)
+	{
+		bValue = false;
+	}
+}
+
+void URFPokerHandWidget::ToggleCardSelection(const int Index)
+{
+	if (!bSelectionAllowed)
+	{
+		return;
+	}
+	
+	ensureAlways(bIsSelected.IsValidIndex(Index) && Buttons.IsValidIndex(Index));
+	if (bIsSelected[Index])
+	{
+		bIsSelected[Index] = false;
+		OnCardUnSelectedEvent.Broadcast(Index);
+	}
+	else
+	{
+		bIsSelected[Index] = true;
+		OnCardSelectedEvent.Broadcast(Index);
+	}
+}
+
 void URFPokerHandWidget::OnFirstCardSelected()
 {
-	OnCardSelectedEvent.Broadcast(0);
+	ToggleCardSelection(0);
 }
 
 void URFPokerHandWidget::OnSecondCardSelected()
 {
-	OnCardSelectedEvent.Broadcast(1);
+	ToggleCardSelection(1);
 }
 
 void URFPokerHandWidget::OnThirdCardSelected()
 {
-	OnCardSelectedEvent.Broadcast(2);
+	ToggleCardSelection(2);
 }
 
 void URFPokerHandWidget::OnFourthCardSelected()
 {
-	OnCardSelectedEvent.Broadcast(3);
+	ToggleCardSelection(3);
 }
 
 void URFPokerHandWidget::OnFifthCardSelected()
 {
-	OnCardSelectedEvent.Broadcast(4);
+	ToggleCardSelection(4);
 }

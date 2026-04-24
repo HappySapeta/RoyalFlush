@@ -6,6 +6,15 @@
 #include "RoyalFlush/Poker/RFPokerTypes.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
 
+void URFPokerWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
+	DiscardedHand = NewObject<URFHand>(this);
+	
+	PokerHandWidget->OnCardSelectedEvent.AddUniqueDynamic(this, &URFPokerWidget::HandlePlayerSelectedCard);
+	PokerHandWidget->OnCardUnSelectedEvent.AddUniqueDynamic(this, &URFPokerWidget::HandlePlayerUnSelectedCard);
+}
+
 void URFPokerWidget::SetBlackboard(URpStateMachineBlackboardBase* NewBlackboard)
 {
 	Blackboard = NewBlackboard;
@@ -20,12 +29,9 @@ void URFPokerWidget::SetBlackboard(URpStateMachineBlackboardBase* NewBlackboard)
 	OnBlackboardSet();
 }
 
-void URFPokerWidget::NativeConstruct()
+void URFPokerWidget::HandlePlayerUnSelectedCard(int Index)
 {
-	Super::NativeConstruct();
-	DiscardedHand = NewObject<URFHand>(this);
-	
-	PokerHandWidget->OnCardSelectedEvent.AddUniqueDynamic(this, &URFPokerWidget::HandlePlayerSelectedCard);
+	DiscardedCardIndices.Remove(Index);
 }
 
 void URFPokerWidget::HandlePlayerSelectedCard(int Index)
@@ -35,10 +41,15 @@ void URFPokerWidget::HandlePlayerSelectedCard(int Index)
 
 void URFPokerWidget::HandlePlayerPressedDiscard()
 {
+	if (DiscardedCardIndices.IsEmpty())
+	{
+		return;
+	}
+	
 	URFHand* PlayerHand = Cast<URFHand>(Blackboard->GetValuesAsObject(HumanPlayerHandKey));
 	TArray<int> PlayerCards = PlayerHand->GetCards();
-	
 	TArray<int> CardsToBeReplaced;
+	
 	for (int DiscardedIndex : DiscardedCardIndices)
 	{
 		CardsToBeReplaced.Push(DiscardedIndex);
@@ -52,4 +63,5 @@ void URFPokerWidget::HandlePlayerPressedDiscard()
 	
 	Blackboard->SetValuesAsObject(DiscardedHandKey, DiscardedHand);
 	DiscardedCardIndices.Empty();
+	PokerHandWidget->UnSelectAll();
 }

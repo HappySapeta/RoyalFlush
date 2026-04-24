@@ -21,10 +21,22 @@ class ROYALFLUSH_API URFPokerHandWidget : public UUserWidget
 
 public:
 
+	UFUNCTION(BlueprintCallable)
+	void SetAllowSelection(const bool bValue);
+	
+	UFUNCTION(BlueprintCallable)
+	void UnSelectAll();
+
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void UpdateHand(URFHand* NewHand);
 	
 protected:
+	
+	virtual void NativeConstruct() override;
+	
+private:
+	
+	void ToggleCardSelection(int Index);
 
 	UFUNCTION()
 	void OnFirstCardSelected();
@@ -41,13 +53,14 @@ protected:
 	UFUNCTION()
 	void OnFifthCardSelected();
 	
-	virtual void NativeConstruct() override;
-
 public:
 	
 	UPROPERTY(BlueprintAssignable)
 	FOnCardSelectedDelegate OnCardSelectedEvent;
 	
+	UPROPERTY(BlueprintAssignable)
+	FOnCardSelectedDelegate OnCardUnSelectedEvent;
+
 protected:
 	
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
@@ -64,4 +77,14 @@ protected:
 	
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	TObjectPtr<UButton> FifthCardButton;
+	
+	UPROPERTY(BlueprintReadOnly, DisplayName = "IsSelected")
+	TArray<bool> bIsSelected;
+	
+private:
+	
+	UPROPERTY()
+	TArray<UButton*> Buttons;
+	
+	bool bSelectionAllowed;
 };
