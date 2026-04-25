@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}",
     "Language": "SFX",
-    "Hash": "{72AF4046-93B4-25F7-D084-A150246EE748}",
+    "Hash": "{31C9D37F-F852-EFB0-7A7F-CE4F9E9B448F}",
     "ObjectPath": "Character_Speech_Jack",
     "ShortName": "Character_Speech_Jack",
     "Path": "Event/Character_Speech_Jack.bnk",
@@ -104,8 +104,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Character\\Speech\\Character_Speech_Jack",
       "GUID": "{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}",
       "DurationType": "OneShot",
-      "DurationMin": "0.097716",
-      "DurationMax": "0.112919964",
+      "DurationMin": "0.87946427",
+      "DurationMax": "1.0160916",
       "MediaRefs": [
        {
         "Id": "56859308"
@@ -139,6 +139,6 @@
     ]
    }
   ],
-  "FileHash": "{8882BAC2-26C8-1D5B-7E28-7905BD40B741}"
+  "FileHash": "{236B15D6-76FD-2821-F4BB-47B189B4BECB}"
  }
 }

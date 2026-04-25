@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{919DC7C9-B6D7-46B1-B87D-EDA7CAEB9342}",
     "Language": "SFX",
-    "Hash": "{F02E4FD8-F3E5-1709-61FB-6F1619A57812}",
+    "Hash": "{2A1EC9AF-5753-9DD4-B118-6E40D92B6C0B}",
     "ObjectPath": "Amb_Level_Switch",
     "ShortName": "Amb_Level_Switch",
     "Path": "Event/Amb_Level_Switch.bnk",
@@ -23,6 +23,15 @@
       "ShortName": "Amb_FirstLevel_Loop.wav",
       "Path": "Media/639620273.wem",
       "CachePath": "13/{13211B98-E68A-ADA0-9007-9E7B23F2888D}.wem"
+     },
+     {
+      "Id": "880462688",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Amb_ThirdLevel_Loop.wav",
+      "Path": "Media/880462688.wem",
+      "CachePath": "50/{504AEDEE-D6C5-1DE2-BDA3-1D9D38B2497D}.wem"
      }
     ],
     "Events": [
@@ -35,12 +44,15 @@
       "MediaRefs": [
        {
         "Id": "639620273"
+       },
+       {
+        "Id": "880462688"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{CE5C990A-1489-C477-44B0-A6E877741BBA}"
+  "FileHash": "{DD6D8DD3-8537-4A2E-A7D5-5573891F7BF6}"
  }
 }
