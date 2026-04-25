@@ -1,0 +1,96 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1886097022",
+    "Type": "Event",
+    "GUID": "{88D32B78-B244-4A47-BA8E-55D154003504}",
+    "Language": "SFX",
+    "Hash": "{7A966E03-C5A3-708A-BA2A-CBB9B914977F}",
+    "ObjectPath": "Leaf_Collide",
+    "ShortName": "Leaf_Collide",
+    "Path": "Event/Leaf_Collide.bnk",
+    "Media": [
+     {
+      "Id": "53629507",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide_3.wav",
+      "Path": "Media/53629507.wem",
+      "CachePath": "4E/{4E96B4A0-FC51-7946-89C8-75EEB9B58052}.wem"
+     },
+     {
+      "Id": "153051028",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide_4.wav",
+      "Path": "Media/153051028.wem",
+      "CachePath": "43/{4325DCB1-3897-C6A2-DED5-150C62DEE9BD}.wem"
+     },
+     {
+      "Id": "179816074",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide_2.wav",
+      "Path": "Media/179816074.wem",
+      "CachePath": "05/{05F37D2F-EA5F-914C-4541-3854D9ACE1C8}.wem"
+     },
+     {
+      "Id": "305587391",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide.wav",
+      "Path": "Media/305587391.wem",
+      "CachePath": "C5/{C53616EE-B629-F24D-711B-9BE00E681A0D}.wem"
+     },
+     {
+      "Id": "444905758",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide_1.wav",
+      "Path": "Media/444905758.wem",
+      "CachePath": "BD/{BD150C54-BCF3-58C3-41C8-F82CDBA4EA4F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1886097022",
+      "Name": "Leaf_Collide",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enviroment\\Leaf_Collide",
+      "GUID": "{88D32B78-B244-4A47-BA8E-55D154003504}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7937005",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "53629507"
+       },
+       {
+        "Id": "153051028"
+       },
+       {
+        "Id": "179816074"
+       },
+       {
+        "Id": "305587391"
+       },
+       {
+        "Id": "444905758"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{3135D574-95AD-519F-2BD0-31DEF0DCA015}"
+ }
+}

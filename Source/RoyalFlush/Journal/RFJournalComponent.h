@@ -4,6 +4,7 @@
 #include "CoreMinimal.h"
 #include "RFClueDataAsset.h"
 #include "Components/ActorComponent.h"
+#include "RoyalFlush/UI/RFJournalWidget.h"
 #include "RFJournalComponent.generated.h"
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
@@ -12,6 +13,7 @@ class ROYALFLUSH_API URFJournalComponent : public UActorComponent
 	GENERATED_BODY()
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCluesSubmittedDelegate);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnClueStagedUnstageDelegate, FRFClue, Clue);
 	
 public:
 
@@ -19,33 +21,39 @@ public:
 	URFJournalComponent();
 	
 	UFUNCTION(BlueprintCallable)
-	int AddClue(const URFClueDataAsset* ClueObject);
+	void AddClue(FRFClue ClueData);
 	
 	UFUNCTION(BlueprintCallable)
-	void StageClue(const int ClueIndex);
+	void StageClue(FRFClue ClueData);
 	
 	UFUNCTION(BlueprintCallable)
-	const TArray<FRFClue>& GetAllClues() const;
+	void UnStageClue(FRFClue ClueData);
 	
 	UFUNCTION(BlueprintCallable)
-	void GetStagedClues(TArray<FRFClue>& Out_StagedClues);
+	TArray<FRFClue> GetUnstagedClues() const;
+	
+	UFUNCTION(BlueprintCallable)
+	TArray<FRFClue> GetStagedClues();
 	
 	UFUNCTION(BlueprintCallable)
 	void Accept();
 	
 	void BindOnCluesSubmitted(FOnCluesSubmittedDelegate Callback);
+
+public:
 	
-protected:
+	UPROPERTY(BlueprintAssignable)
+	FOnClueStagedUnstageDelegate OnClueStagedEvent;
+	
+	UPROPERTY(BlueprintAssignable)
+	FOnClueStagedUnstageDelegate OnClueUnStagedEvent;
 	
 	UPROPERTY(BlueprintAssignable)
 	FOnCluesSubmittedDelegate OnCluesSubmittedEvent;
-	
+
 private:
 	
 	UPROPERTY(VisibleAnywhere)
 	TArray<FRFClue> Clues;
-	
-	UPROPERTY(VisibleAnywhere)
-	TArray<FRFClue> StagedClues;
 	
 };
