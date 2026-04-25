@@ -31,6 +31,15 @@ public:
 	
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnStateChanged(const FGameplayTag& Key);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnTurnPassed(const FGameplayTag& Key);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnDoubleDowned(const FGameplayTag& Key);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnTurnFolded(const FGameplayTag& Key);
 	
 	UFUNCTION(BlueprintCallable)
 	void SetBlackboard(URpStateMachineBlackboardBase* NewBlackboard);
@@ -73,6 +82,15 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag CurrentStateKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag PassStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag DoubleDownStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag FoldStatusKey;
 
 private:
 	

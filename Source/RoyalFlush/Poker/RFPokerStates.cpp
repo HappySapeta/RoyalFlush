@@ -105,6 +105,12 @@ void URFPokerDiscardingState::OnActivate()
 	}
 }
 
+void URFPokerDiscardingState::OnDeactivate()
+{
+	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
+	Super::OnDeactivate();
+}
+
 void URFPokerDiscardingState::SetTurn(EPokerPlayer Player)
 {
 	CurrentTurn = Player;
@@ -154,25 +160,51 @@ void URFPokerDiscardingState::HandleDiscardRequested(const FGameplayTag& Key)
 
 void URFBettingState::OnActivate()
 {
-	int PoolMoney = Blackboard->GetValuesAsInt(PoolMoneyKey);
-	int ScoreMultiplier = Blackboard->GetValuesAsInt(ScoreMultiplierKey);
-	int TransferAmount = 2 * ScoreMultiplier;
-	PoolMoney -= TransferAmount;
-	Blackboard->SetValuesAsInt(PoolMoneyKey, PoolMoney);
+	// set blackboard values
+	{
+		int PoolMoney = Blackboard->GetValuesAsInt(PoolMoneyKey);
+		int ScoreMultiplier = Blackboard->GetValuesAsInt(ScoreMultiplierKey);
+		int TransferAmount = 2 * ScoreMultiplier;
+		PoolMoney -= TransferAmount;
+		Blackboard->SetValuesAsInt(PoolMoneyKey, PoolMoney);
 	
-	int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
-	PotMoney += TransferAmount;
-	Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
+		int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
+		PotMoney += TransferAmount;
+		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
+	}
 	
-	CurrentPlayer = EPokerPlayer::NPC;
-	SetTurn(EPokerPlayer::NPC);
 	Blackboard->GetValueChangeCallback(PassStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerPassed);
 	Blackboard->GetValueChangeCallback(FoldStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerFolded);
 	Blackboard->GetValueChangeCallback(DoubleDownStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerDoubleDowned);
 	
-	//PlayNPCTurn();
+	FTimerDelegate NPCTurnCallback = FTimerDelegate::CreateLambda([this]()
+	{
+		UE_LOG(LogTemp, Warning, TEXT("NPC's Turn"));
+		Blackboard->SetValuesAsBool(PassStatusKey, false);
+		Blackboard->SetValuesAsBool(FoldStatusKey, false);
+		Blackboard->SetValuesAsBool(DoubleDownStatusKey, false);
+		SetTurn(EPokerPlayer::NPC);
+		PlayNPCTurn();
+	});
+	ExecuteWithDelay(NPCTurnCallback, NPCTurnDelay);
+	
+	FTimerDelegate HumanTurnCallback = FTimerDelegate::CreateLambda([this]()
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Human Player's Turn"));
+		Blackboard->SetValuesAsBool(PassStatusKey, false);
+		Blackboard->SetValuesAsBool(FoldStatusKey, false);
+		Blackboard->SetValuesAsBool(DoubleDownStatusKey, false);
+		SetTurn(EPokerPlayer::Human);
+	});
+	ExecuteWithDelay(HumanTurnCallback, HumanTurnDelay);
 	
 	Super::OnActivate();
+}
+
+void URFBettingState::OnDeactivate()
+{
+	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
+	Super::OnDeactivate();
 }
 
 void URFBettingState::PlayNPCTurn()
@@ -203,20 +235,7 @@ void URFBettingState::PlayNPCTurn()
 void URFBettingState::SetTurn(EPokerPlayer Player)
 {
 	CurrentPlayer = Player;
-	BP_OnTurnChanged(Player);
-}
-
-void URFBettingState::EndTurn()
-{
-	if (CurrentPlayer == EPokerPlayer::Human) // Last turn
-	{
-		EndState();
-	}
-	else
-	{
-		SetTurn(EPokerPlayer::Human);
-		BP_OnHumanPlayerTurn();
-	}
+	Blackboard->SetValuesAsInt(CurrentTurnKey, static_cast<int>(CurrentPlayer));
 }
 
 void URFBettingState::OnPlayerPassed(const FGameplayTag& Key)
@@ -226,14 +245,12 @@ void URFBettingState::OnPlayerPassed(const FGameplayTag& Key)
 	{
 		if (CurrentPlayer == EPokerPlayer::NPC)
 		{
-			BP_OnNPCPass();
+			UE_LOG(LogTemp, Warning, TEXT("NPC Passed."));
 		}
 		else if (CurrentPlayer == EPokerPlayer::Human)
 		{
-			BP_OnHumanPass();
+			UE_LOG(LogTemp, Warning, TEXT("Human Passed."));
 		}
-		
-		EndTurn();
 	}
 }
 
@@ -245,11 +262,11 @@ void URFBettingState::OnPlayerFolded(const FGameplayTag& Key)
 	{
 		if (CurrentPlayer == EPokerPlayer::NPC)
 		{
-			BP_OnNPCFold();
+			UE_LOG(LogTemp, Warning, TEXT("NPC folded."));
 		}
 		else if (CurrentPlayer == EPokerPlayer::Human)
 		{
-			BP_OnHumanFold();
+			UE_LOG(LogTemp, Warning, TEXT("Human folded."));
 		}
 		
 		const FGameplayTag OtherPlayerMoneyKey = CurrentPlayer == EPokerPlayer::Human ? NPCMoneyKey : HumanMoneyKey;
@@ -263,8 +280,6 @@ void URFBettingState::OnPlayerFolded(const FGameplayTag& Key)
 		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
 		Blackboard->SetValuesAsInt(OtherPlayerMoneyKey, OtherPlayerMoney);
 		Blackboard->SetValuesAsBool(RoundEndKey, true);
-		
-		EndTurn();
 	}
 }
 
@@ -293,14 +308,12 @@ void URFBettingState::OnPlayerDoubleDowned(const FGameplayTag& Key)
 		
 		if (CurrentPlayer == EPokerPlayer::NPC)
 		{
-			BP_OnNPCPass();
+			UE_LOG(LogTemp, Warning, TEXT("NPC double down."));
 		}
-		else if (CurrentPlayer == EPokerPlayer::NPC)
+		else if (CurrentPlayer == EPokerPlayer::Human)
 		{
-			BP_OnHumanPass();
+			UE_LOG(LogTemp, Warning, TEXT("Human double down."));
 		}
-		
-		EndTurn();
 	}
 }
 

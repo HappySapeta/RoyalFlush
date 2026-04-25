@@ -106,6 +106,8 @@ class ROYALFLUSH_API URFPokerDiscardingState : public URFPokerState
 protected:
 
 	virtual void OnActivate() override;
+	
+	virtual void OnDeactivate() override;
 
 	UFUNCTION()
 	void HandleDiscardRequested(const FGameplayTag& Key);
@@ -157,30 +159,10 @@ protected:
 	
 	virtual void OnActivate() override;
 	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnBettingStarted();
-
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnTurnChanged(EPokerPlayer Player);
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnHumanFold();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnNPCPass();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnHumanPass();
-
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnNPCFold();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnHumanPlayerTurn();
+	virtual void OnDeactivate() override;
 	
 private:
 	
-	void EndTurn();
 	void SetTurn(EPokerPlayer Player);
 	void PlayNPCTurn();
 	
@@ -224,6 +206,12 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag RoundEndKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	float NPCTurnDelay;
+	
+	UPROPERTY(EditDefaultsOnly)
+	float HumanTurnDelay;
 	
 private:
 	
