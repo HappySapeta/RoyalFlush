@@ -25,6 +25,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool CanContainMoreClues();
 	
+	UFUNCTION(BlueprintCallable)
+	void RemoveClue(const FRFClue& TargetClue);
+
 protected:
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -44,4 +47,8 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly)
 	float MaxRandomAngle;
+	
+private:
+	
+	TMap<FString, TPair<int, int>> ClueLocations;
 };

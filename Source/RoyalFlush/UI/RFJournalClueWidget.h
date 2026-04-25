@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/TextBlock.h"
+#include "RoyalFlush/Journal/RFClueDataAsset.h"
 #include "RFJournalClueWidget.generated.h"
 
 class UImage;
@@ -19,10 +20,10 @@ class ROYALFLUSH_API URFJournalClueWidget : public UUserWidget
 public:
 	
 	UFUNCTION(BlueprintCallable)
-	void SetDescription(const FText Description);
+	void SetData(FRFClue ClueData);
 	
 	UFUNCTION(BlueprintCallable)
-	void SetImage(UTexture2D* Image);
+	const FRFClue& GetData();
 	
 protected:
 	
@@ -31,4 +32,7 @@ protected:
 	
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<UTextBlock> ClueDescriptionText;
+	
+	UPROPERTY(BlueprintReadOnly)
+	FRFClue ClueData;
 };
