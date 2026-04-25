@@ -13,7 +13,7 @@ constexpr int GET_SUIT(const int Card)
 	return Card / 13;
 }
 
-bool RoyalFlushRule::Test(const TArray<int>& Cards)
+bool URFRoyalFlushRule::Test(const TArray<int>& Cards) const 
 {
 	bool bHasAce = false;
 	bool bHasKing = false;
@@ -39,12 +39,12 @@ bool RoyalFlushRule::Test(const TArray<int>& Cards)
 	return bHasAce && bHasKing && bHasQueen && bHasJack && bHasTen;
 }
 
-int RoyalFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFRoyalFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	return 0;
 }
 
-bool StraightFlushRule::Test(const TArray<int>& Cards)
+bool URFStraightFlushRule::Test(const TArray<int>& Cards) const 
 {
 	int CurrentSuit = GET_SUIT(Cards[0]);
 	for (int Card : Cards)
@@ -64,7 +64,7 @@ bool StraightFlushRule::Test(const TArray<int>& Cards)
 	return bHasSecond && bHasThird && bHasFourth && bHasFifth;
 }
 
-int StraightFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFStraightFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	auto SumOperation = [](const int A, const int B){ return A + B; };
 	int FirstSum = Algo::Accumulate(FirstHand, 0, SumOperation);
@@ -73,7 +73,7 @@ int StraightFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& 
 	return FirstSum > SecondSum;
 }
 
-bool FourOfAKindRule::Test(const TArray<int>& Cards)
+bool URFFourOfAKindRule::Test(const TArray<int>& Cards) const 
 {
 	TMap<int, int> KindCountMap;
 	for (int Card : Cards)
@@ -100,7 +100,7 @@ bool FourOfAKindRule::Test(const TArray<int>& Cards)
 	return false;
 }
 
-int FourOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFFourOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
@@ -132,7 +132,7 @@ int FourOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& Se
 	return 0;
 }
 
-bool FullHouseRule::Test(const TArray<int>& Cards)
+bool URFFullHouseRule::Test(const TArray<int>& Cards) const 
 {
 	TMap<int, int> KindCountMap;
 	for (int Card : Cards)
@@ -165,7 +165,7 @@ bool FullHouseRule::Test(const TArray<int>& Cards)
 	return HasThreeOfAKind && HasTwoOfAKind;
 }
 
-int FullHouseRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFFullHouseRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
@@ -197,7 +197,7 @@ int FullHouseRule::Compare(const TArray<int>& FirstHand, const TArray<int>& Seco
 	return 0;
 }
 
-bool FlushRule::Test(const TArray<int>& Cards)
+bool URFFlushRule::Test(const TArray<int>& Cards) const 
 {
 	int CurrentSuit = GET_SUIT(Cards[0]);
 	for (int Card : Cards)
@@ -212,7 +212,7 @@ bool FlushRule::Test(const TArray<int>& Cards)
 	return true;
 }
 
-int FlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	const TArray<int>& FirstCards = FirstHand;
 	const TArray<int>& SecondCards = SecondHand;
@@ -234,7 +234,7 @@ int FlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHa
 	return 0;
 }
 
-bool StraightRule::Test(const TArray<int>& Hand)
+bool URFStraightRule::Test(const TArray<int>& Hand) const 
 {
 	TArray<int> Cards = Hand;
 	Algo::Sort(Cards);
@@ -251,7 +251,7 @@ bool StraightRule::Test(const TArray<int>& Hand)
 	return true;
 }
 
-int StraightRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFStraightRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	int FirstHighestRank = GET_RANK(*Algo::MaxElement(FirstHand));
 	int SecondHighestRank = GET_RANK(*Algo::MaxElement(SecondHand));
@@ -268,7 +268,7 @@ int StraightRule::Compare(const TArray<int>& FirstHand, const TArray<int>& Secon
 	return 0;
 }
 
-bool ThreeOfAKindRule::Test(const TArray<int>& Cards)
+bool URFThreeOfAKindRule::Test(const TArray<int>& Cards) const 
 {
 	TMap<int, int> KindCountMap;
 	for (int Card : Cards)
@@ -295,7 +295,7 @@ bool ThreeOfAKindRule::Test(const TArray<int>& Cards)
 	return false;
 }
 
-int ThreeOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFThreeOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
@@ -326,7 +326,7 @@ int ThreeOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& S
 	return 0;
 }
 
-bool TwoPairRule::Test(const TArray<int>& Cards)
+bool URFTwoPairRule::Test(const TArray<int>& Cards) const 
 {
 	TMap<int, int> KindCountMap;
 	for (int Card : Cards)
@@ -355,7 +355,7 @@ bool TwoPairRule::Test(const TArray<int>& Cards)
 	return NumPairs == 2;
 }
 
-int TwoPairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFTwoPairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
@@ -386,7 +386,7 @@ int TwoPairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& Second
 	return 0;
 }
 
-bool OnePairRule::Test(const TArray<int>& Cards)
+bool URFOnePairRule::Test(const TArray<int>& Cards) const 
 {
 	TMap<int, int> KindCountMap;
 	for (int Card : Cards)
@@ -413,7 +413,7 @@ bool OnePairRule::Test(const TArray<int>& Cards)
 	return false;
 }
 
-int OnePairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFOnePairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
@@ -444,12 +444,12 @@ int OnePairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& Second
 	return 0;
 }
 
-bool HighCardRule::Test(const TArray<int>& Hand)
+bool URFHighCardRule::Test(const TArray<int>& Hand) const 
 {
 	return true;
 }
 
-int HighCardRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand)
+int URFHighCardRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;

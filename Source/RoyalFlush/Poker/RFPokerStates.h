@@ -223,12 +223,15 @@ class ROYALFLUSH_API URFRevealState : public URFPokerState
 {
 	GENERATED_BODY()
 
+public:
+	
+	URFRevealState();
+	
 protected:
 
 	virtual void OnActivate() override;
 	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnRevealHands();
+	EPokerRankComparision CompareFirstToSecond(URFHand* First, URFHand* Second);
 	
 private:
 	
@@ -249,6 +252,10 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag NPCMoneyKey;
+	
+private:
+	
+	TArray<URFPokerHandRuleBase*> Rules;
 };
 
 UCLASS()

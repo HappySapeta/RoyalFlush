@@ -107,7 +107,8 @@ void URFPokerDiscardingState::OnActivate()
 
 void URFPokerDiscardingState::OnDeactivate()
 {
-	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
+	Blackboard->GetValueChangeCallback(DiscardedHandKey).RemoveAll(this);
+	SetTurn(EPokerPlayer::None);
 	Super::OnDeactivate();
 }
 
@@ -204,6 +205,9 @@ void URFBettingState::OnActivate()
 void URFBettingState::OnDeactivate()
 {
 	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
+	Blackboard->GetValueChangeCallback(FoldStatusKey).RemoveAll(this);
+	Blackboard->GetValueChangeCallback(DoubleDownStatusKey).RemoveAll(this);
+	SetTurn(EPokerPlayer::None);
 	Super::OnDeactivate();
 }
 
@@ -228,7 +232,7 @@ void URFBettingState::PlayNPCTurn()
 			break;
 		}
 		default:
-			break;
+		break;
 	}
 }
 
@@ -317,11 +321,25 @@ void URFBettingState::OnPlayerDoubleDowned(const FGameplayTag& Key)
 	}
 }
 
+URFRevealState::URFRevealState()
+{
+	Rules.Push(NewObject<URFRoyalFlushRule>());
+	Rules.Push(NewObject<URFStraightFlushRule>());
+	Rules.Push(NewObject<URFFourOfAKindRule>());
+	Rules.Push(NewObject<URFFullHouseRule>());
+	Rules.Push(NewObject<URFFlushRule>());
+	Rules.Push(NewObject<URFStraightRule>());
+	Rules.Push(NewObject<URFThreeOfAKindRule>());
+	Rules.Push(NewObject<URFTwoPairRule>());
+	Rules.Push(NewObject<URFOnePairRule>());
+	Rules.Push(NewObject<URFHighCardRule>());
+}
+
 void URFRevealState::OnActivate()
 {
 	URFHand* HumanPlayerCards = Cast<URFHand>(Blackboard->GetValuesAsObject(HumanPlayerHandKey));
 	URFHand* NPCCards = Cast<URFHand>(Blackboard->GetValuesAsObject(NPCHandKey));
-	URFRankedHands* RankedHands = Cast<URFRankedHands>(Blackboard->GetValuesAsObject(RankedHandsKey));
+	URFRevealState* RankedHands = Cast<URFRevealState>(Blackboard->GetValuesAsObject(RankedHandsKey));
 	
 	auto MoveMoneyToPlayer = [this](const FGameplayTag& PlayerKey)
 	{
@@ -335,31 +353,63 @@ void URFRevealState::OnActivate()
 		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
 	};
 	
-	if (RankedHands->IsFirstHigherThanSecond(HumanPlayerCards, NPCCards))
+	EPokerRankComparision Comparision = RankedHands->CompareFirstToSecond(HumanPlayerCards, NPCCards);
+
+	switch (Comparision)
 	{
-		MoveMoneyToPlayer(HumanMoneyKey);
-	}
-	else if (RankedHands->IsFirstHigherThanSecond(NPCCards, HumanPlayerCards))
-	{
-		MoveMoneyToPlayer(NPCMoneyKey);
-	}
-	else
-	{
-		// TODO: handle draws.
-		int HumanPlayerMoney = Blackboard->GetValuesAsInt(HumanMoneyKey);
-		int NPCMoney = Blackboard->GetValuesAsInt(NPCMoneyKey);
-		int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
+		case EPokerRankComparision::HIGHER:
+		{
+			MoveMoneyToPlayer(HumanMoneyKey);
+			break;
+		}
+		case EPokerRankComparision::LOWER:
+		{
+			MoveMoneyToPlayer(NPCMoneyKey);
+			break;
+		}
+		case EPokerRankComparision::SAME:
+		{
+			// TODO: handle draws.
+			int HumanPlayerMoney = Blackboard->GetValuesAsInt(HumanMoneyKey);
+			int NPCMoney = Blackboard->GetValuesAsInt(NPCMoneyKey);
+			int PotMoney = Blackboard->GetValuesAsInt(PotMoneyKey);
 		
-		HumanPlayerMoney += PotMoney / 2;
-		NPCMoney += PotMoney / 2;
-		PotMoney = 0;
+			HumanPlayerMoney += PotMoney / 2;
+			NPCMoney += PotMoney / 2;
+			PotMoney = 0;
 		
-		Blackboard->SetValuesAsInt(HumanMoneyKey, HumanPlayerMoney);
-		Blackboard->SetValuesAsInt(NPCMoneyKey, NPCMoney);
-		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
+			Blackboard->SetValuesAsInt(HumanMoneyKey, HumanPlayerMoney);
+			Blackboard->SetValuesAsInt(NPCMoneyKey, NPCMoney);
+			Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
+			break;
+		}
 	}
 	
 	Super::OnActivate();
+}
+
+EPokerRankComparision URFRevealState::CompareFirstToSecond(URFHand* First, URFHand* Second)
+{
+	for (const URFPokerHandRuleBase* Rule : Rules)
+	{
+		bool bFirstSatisfiesRule = Rule->Test(First->GetCards());
+		bool bSecondSatisfiesRule = Rule->Test(Second->GetCards());
+		
+		if (bFirstSatisfiesRule && bSecondSatisfiesRule)
+		{
+			return static_cast<EPokerRankComparision>(Rule->Compare(First->GetCards(), Second->GetCards()));
+		}
+		if (bFirstSatisfiesRule)
+		{
+			return EPokerRankComparision::HIGHER;
+		}
+		else if (bSecondSatisfiesRule)
+		{
+			return EPokerRankComparision::LOWER;
+		}
+	}
+	
+	return EPokerRankComparision::SAME;
 }
 
 void URFEndOfRoundState::OnActivate()

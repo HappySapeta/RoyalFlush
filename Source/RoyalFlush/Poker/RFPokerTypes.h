@@ -3,13 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "RFPokerRules.h"
 #include "RFPokerTypes.generated.h"
 
 UENUM(BlueprintType)
 enum class EPokerPlayer : uint8
 {
 	NPC,
-	Human
+	Human,
+	None
 };
 
 UENUM(BlueprintType)
@@ -23,6 +25,13 @@ enum class EPokerState : uint8
 	EndOfRound
 };
 
+UENUM()
+enum class EPokerRankComparision : uint8
+{
+	LOWER,
+	SAME,
+	HIGHER
+};
 
 UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFCards : public UObject
@@ -71,22 +80,4 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	TArray<int> Cards;
 
-};
-
-class URFPokerHandRule;
-
-UCLASS(Blueprintable, BlueprintType)
-class URFRankedHands : public UObject
-{
-	GENERATED_BODY()
-
-public:
-
-	int GetRank(URFHand* Hand);
-	bool IsFirstHigherThanSecond(URFHand* First, URFHand* Second);
-
-protected:
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	TArray<URFHand*> RankedHands;
 };

@@ -1,82 +1,104 @@
 ﻿// Copyright (c) 2026 VINNIE BRIGHTEY, FELICITY ZABAVA, ARTHUR NORTH, JOSH BENNETTS, LEWIS TAIT, KYLE MURRAY, HOLLY ALBERT, ANUPAM SAHU, ARAMINTA MCDIARMID. All rights reserved.
 
 #pragma once
+#include "RFPokerRules.generated.h"
 
-struct PokerHandRuleBase
+UCLASS()
+class ROYALFLUSH_API URFPokerHandRuleBase : public UObject
 {
+	GENERATED_BODY()
 public:
 	
-	virtual ~PokerHandRuleBase() = default;
-	virtual bool Test(const TArray<int>& Hand) = 0;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) = 0;
+	virtual ~URFPokerHandRuleBase() = default;
+	virtual bool Test(const TArray<int>& Hand) const PURE_VIRTUAL (URFPokerHandRuleBase::Test, return false; );
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const PURE_VIRTUAL (URFPokerHandRuleBase::Compare, return 0; );
 };
 
-struct RoyalFlushRule : public PokerHandRuleBase 
+UCLASS()
+class ROYALFLUSH_API URFRoyalFlushRule : public URFPokerHandRuleBase 
 {
+	GENERATED_BODY()
 public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
 };
 
-struct StraightFlushRule : public PokerHandRuleBase 
+UCLASS()
+class ROYALFLUSH_API URFStraightFlushRule : public URFPokerHandRuleBase 
 {
+	GENERATED_BODY()
 public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
 };
 
-struct FourOfAKindRule : public PokerHandRuleBase 
+UCLASS()
+class ROYALFLUSH_API URFFourOfAKindRule : public URFPokerHandRuleBase 
 {
+	GENERATED_BODY()
 public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
 };
 
-struct FullHouseRule : public PokerHandRuleBase 
+UCLASS()
+class ROYALFLUSH_API URFFullHouseRule : public URFPokerHandRuleBase 
 {
+	GENERATED_BODY()
 public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
 };
 
-struct FlushRule : public PokerHandRuleBase 
+UCLASS()
+class ROYALFLUSH_API URFFlushRule : public URFPokerHandRuleBase 
 {
+	GENERATED_BODY()
 public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
 };
 
-struct StraightRule : public PokerHandRuleBase 
+UCLASS()
+class ROYALFLUSH_API URFStraightRule : public URFPokerHandRuleBase 
 {
+	GENERATED_BODY()
 public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
+};
+UCLASS()
+class ROYALFLUSH_API URFThreeOfAKindRule : public URFPokerHandRuleBase 
+{
+	GENERATED_BODY()
+public:
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
 };
 
-struct ThreeOfAKindRule : public PokerHandRuleBase 
+UCLASS()
+class ROYALFLUSH_API URFTwoPairRule : public URFPokerHandRuleBase 
 {
+	GENERATED_BODY()
 public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
 };
 
-struct TwoPairRule : public PokerHandRuleBase 
+UCLASS()
+class ROYALFLUSH_API URFOnePairRule : public URFPokerHandRuleBase 
 {
+	GENERATED_BODY()
 public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
 };
 
-struct OnePairRule : public PokerHandRuleBase 
+UCLASS()
+class ROYALFLUSH_API URFHighCardRule : public URFPokerHandRuleBase 
 {
+	GENERATED_BODY()
 public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
-};
-
-struct HighCardRule : public PokerHandRuleBase 
-{
-public:
-	virtual bool Test(const TArray<int>& Hand) override;
-	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) override;
+	virtual bool Test(const TArray<int>& Hand) const override;
+	virtual int Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const override;
 };

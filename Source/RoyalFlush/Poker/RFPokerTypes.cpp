@@ -93,25 +93,3 @@ bool URFHand::Equals(const URFHand* Other) const
 	
 	return true;
 }
-
-int URFRankedHands::GetRank(URFHand* Hand)
-{
-	int RankIndex = RankedHands.Num();
-	for (int Index = 0; Index < RankedHands.Num(); ++Index)
-	{
-		if (Hand->Equals(RankedHands[Index]))
-		{
-			RankIndex = Index;
-			break;
-		}
-	}
-	
-	return RankIndex;
-}
-
-bool URFRankedHands::IsFirstHigherThanSecond(URFHand* First, URFHand* Second)
-{
-	int FirstRank = GetRank(First);
-	int SecondRank = GetRank(Second);
-	return FirstRank < SecondRank;
-}
