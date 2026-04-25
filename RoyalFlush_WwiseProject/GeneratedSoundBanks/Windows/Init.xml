@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{EA9B1D9E-C3EF-258E-A10A-B09198954A49}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{56866823-0EC6-138E-A4F1-86C286DC37EF}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -28,24 +28,39 @@
 						<State Id="3062523257" Name="Misc" ObjectPath="\States\Default Work Unit\Ambience\Misc" GUID="{994F7DCD-FCF2-4761-9167-AE63EC3A6807}"/>
 					</States>
 				</StateGroup>
-				<StateGroup Id="649345180" Name="BGM_Level2" ObjectPath="\States\Default Work Unit\BGM_Level2" GUID="{197F90A4-3E9B-4E43-AD6E-9B2FAA27A1FC}">
+				<StateGroup Id="649345180" Name="BGM_Level2" ObjectPath="\States\Default Work Unit\Music\BGM_Level2" GUID="{197F90A4-3E9B-4E43-AD6E-9B2FAA27A1FC}">
 					<States>
-						<State Id="633613142" Name="Lvl2_Joker_Loop" ObjectPath="\States\Default Work Unit\BGM_Level2\Lvl2_Joker_Loop" GUID="{6586F4AC-33A0-47F6-AB10-3D166E32BE87}"/>
-						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\BGM_Level2\None" GUID="{A85EEFD6-C50E-4DBF-8F26-6EE633A87D89}"/>
-						<State Id="878686745" Name="Lvl2_Main_Loop_Transistion" ObjectPath="\States\Default Work Unit\BGM_Level2\Lvl2_Main_Loop_Transistion" GUID="{F2BD589B-042A-424E-A826-D0BD91DC91B0}"/>
-						<State Id="2391201298" Name="Lvl2_Intro" ObjectPath="\States\Default Work Unit\BGM_Level2\Lvl2_Intro" GUID="{5CEFAEB9-E0CB-4E2C-87D9-9FA622573C9B}"/>
-						<State Id="3360398578" Name="Lvl2_Jack_Loop" ObjectPath="\States\Default Work Unit\BGM_Level2\Lvl2_Jack_Loop" GUID="{54D36442-E3C3-4394-80BE-41A6D8F0BDEC}"/>
+						<State Id="633613142" Name="Lvl2_Joker_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level2\Lvl2_Joker_Loop" GUID="{6586F4AC-33A0-47F6-AB10-3D166E32BE87}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Music\BGM_Level2\None" GUID="{A85EEFD6-C50E-4DBF-8F26-6EE633A87D89}"/>
+						<State Id="878686745" Name="Lvl2_Main_Loop_Transistion" ObjectPath="\States\Default Work Unit\Music\BGM_Level2\Lvl2_Main_Loop_Transistion" GUID="{F2BD589B-042A-424E-A826-D0BD91DC91B0}"/>
+						<State Id="2391201298" Name="Lvl2_Intro" ObjectPath="\States\Default Work Unit\Music\BGM_Level2\Lvl2_Intro" GUID="{5CEFAEB9-E0CB-4E2C-87D9-9FA622573C9B}"/>
+						<State Id="3360398578" Name="Lvl2_Jack_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level2\Lvl2_Jack_Loop" GUID="{54D36442-E3C3-4394-80BE-41A6D8F0BDEC}"/>
 					</States>
 				</StateGroup>
-				<StateGroup Id="649345183" Name="BGM_Level1" ObjectPath="\States\Default Work Unit\BGM_Level1" GUID="{95FD7CC8-A2D1-4247-B671-5F304DD70335}">
+				<StateGroup Id="649345181" Name="BGM_Level3" ObjectPath="\States\Default Work Unit\Music\BGM_Level3" GUID="{80EF0AB2-3051-49B9-84E0-F3F3697858E2}">
 					<States>
-						<State Id="362564855" Name="Dealer_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Dealer_Loop" GUID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
-						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\BGM_Level1\None" GUID="{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"/>
-						<State Id="1125500713" Name="Intro" ObjectPath="\States\Default Work Unit\BGM_Level1\Intro" GUID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
-						<State Id="2858725581" Name="Transition_Out" ObjectPath="\States\Default Work Unit\BGM_Level1\Transition_Out" GUID="{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"/>
-						<State Id="3813340491" Name="Main_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Main_Loop" GUID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
-						<State Id="3919849458" Name="Transition_In" ObjectPath="\States\Default Work Unit\BGM_Level1\Transition_In" GUID="{B792CAAF-BC28-49FA-9003-5060C201FC18}"/>
-						<State Id="3992321431" Name="Ace_Loop" ObjectPath="\States\Default Work Unit\BGM_Level1\Ace_Loop" GUID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Music\BGM_Level3\None" GUID="{47DE6C35-E914-4775-B943-04769A72BA05}"/>
+						<State Id="1126127331" Name="Lvl3_Intro" ObjectPath="\States\Default Work Unit\Music\BGM_Level3\Lvl3_Intro" GUID="{1D25282E-ED64-49D6-9527-2CDEBFEB5197}"/>
+						<State Id="1182729832" Name="Lvl3_Queen_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level3\Lvl3_Queen_Loop" GUID="{74472366-9B34-4823-BB44-4403B0A38B88}"/>
+						<State Id="2279362796" Name="Lvl3_Main_Loop_Transistion" ObjectPath="\States\Default Work Unit\Music\BGM_Level3\Lvl3_Main_Loop_Transistion" GUID="{9950AF07-6E31-4A4D-B19C-5A2DC6CD59B1}"/>
+						<State Id="2444840427" Name="Lvl3_King_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level3\Lvl3_King_Loop" GUID="{FA1EE170-C184-42AB-A5CC-D1120BFBA291}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="649345183" Name="BGM_Level1" ObjectPath="\States\Default Work Unit\Music\BGM_Level1" GUID="{95FD7CC8-A2D1-4247-B671-5F304DD70335}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\None" GUID="{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"/>
+						<State Id="816946595" Name="Lvl1_Dealer_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\Lvl1_Dealer_Loop" GUID="{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"/>
+						<State Id="910418227" Name="Lvl1_Ace_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\Lvl1_Ace_Loop" GUID="{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"/>
+						<State Id="1818238519" Name="Lvl1_Main_Loop" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\Lvl1_Main_Loop" GUID="{2769F038-2E47-4697-B278-B53F50D11695}"/>
+						<State Id="3297021469" Name="Lvl1_Intro" ObjectPath="\States\Default Work Unit\Music\BGM_Level1\Lvl1_Intro" GUID="{30E970A1-DD02-4852-9B51-A86C583528FD}"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="1563625601" Name="BGM_MasterState" ObjectPath="\States\Default Work Unit\Music\BGM_MasterState" GUID="{B25F9D07-B668-407B-9CE1-A005E3860593}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Music\BGM_MasterState\None" GUID="{F97CCC2C-7A2F-46C1-9312-5EA923EF098D}"/>
+						<State Id="970584709" Name="BGM_MasterLvl1" ObjectPath="\States\Default Work Unit\Music\BGM_MasterState\BGM_MasterLvl1" GUID="{8465BA7C-907C-4C31-939B-7676515E95E2}"/>
+						<State Id="970584710" Name="BGM_MasterLvl2" ObjectPath="\States\Default Work Unit\Music\BGM_MasterState\BGM_MasterLvl2" GUID="{8E5EFC03-FBA3-40BA-A11F-B34C80639BD0}"/>
+						<State Id="970584711" Name="BGM_MasterLvl3" ObjectPath="\States\Default Work Unit\Music\BGM_MasterState\BGM_MasterLvl3" GUID="{02F0FC18-739D-440E-BB0E-498922295119}"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
@@ -61,5 +76,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6E40F3DE-C1D4-B8A3-5472-8CFFC528EB43}</FileHash>
+	<FileHash>{0708B0E4-B7E3-ACE9-EB46-51EF99094D83}</FileHash>
 </SoundBanksInfo>

@@ -1,0 +1,33 @@
+Event	ID	Name			Wwise Object Path	Notes
+	4141759354	BGM_Master			\Default Work Unit\Music\BGM_Master	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	649345180	BGM_Level2			\Default Work Unit\Music\BGM_Level2	
+	649345181	BGM_Level3			\Default Work Unit\Music\BGM_Level3	
+	649345183	BGM_Level1			\Default Work Unit\Music\BGM_Level1	
+	1563625601	BGM_MasterState			\Default Work Unit\Music\BGM_MasterState	
+
+State	ID	Name	State Group			Notes
+	633613142	Lvl2_Joker_Loop	BGM_Level2			
+	748895195	None	BGM_Level2			
+	878686745	Lvl2_Main_Loop_Transistion	BGM_Level2			
+	2391201298	Lvl2_Intro	BGM_Level2			
+	3360398578	Lvl2_Jack_Loop	BGM_Level2			
+	748895195	None	BGM_Level3			
+	1126127331	Lvl3_Intro	BGM_Level3			
+	1182729832	Lvl3_Queen_Loop	BGM_Level3			
+	2279362796	Lvl3_Main_Loop_Transistion	BGM_Level3			
+	2444840427	Lvl3_King_Loop	BGM_Level3			
+	748895195	None	BGM_Level1			
+	816946595	Lvl1_Dealer_Loop	BGM_Level1			
+	910418227	Lvl1_Ace_Loop	BGM_Level1			
+	1818238519	Lvl1_Main_Loop	BGM_Level1			
+	3297021469	Lvl1_Intro	BGM_Level1			
+	748895195	None	BGM_MasterState			
+	970584709	BGM_MasterLvl1	BGM_MasterState			
+	970584710	BGM_MasterLvl2	BGM_MasterState			
+	970584711	BGM_MasterLvl3	BGM_MasterState			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3636347407	UI_LowPass			\Default Work Unit\UI_LowPass	
+
