@@ -14,6 +14,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{5DB35827-6AD1-49F3-B0D5-BC2140CFCB54}" ShortID="56185034">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_ThirdLevel_Loop" ID="{251FF0D2-6D1F-4B11-A3CD-85EDFCBE1C8F}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Folder Name="Spot Ambiences" ID="{3DD7EBFC-684C-4C2C-BBA3-6352167B0075}" ShortID="541676629">
