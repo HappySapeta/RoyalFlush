@@ -46,12 +46,23 @@
 				</Folder>
 				<Folder Name="Music" ID="{CDA9924C-88A0-4278-BAA2-6C53E5D3A87E}" ShortID="475310232">
 					<ChildrenList>
-						<Event Name="BGM_Level_1" ID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}">
+						<Event Name="BGM_Master" ID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}">
 							<ChildrenList>
-								<Action Name="" ID="{D88A56CB-C874-4B58-91FF-F1DA5A246736}" ShortID="147826046">
+								<Action Name="" ID="{B7FFFC3C-F629-4930-93E1-346821BEE8C4}" ShortID="19688257">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Level 1 Switch" ID="{1294F058-1441-476C-B9A6-012A7A7FA99A}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
+											<ObjectRef Name="Music Master Switch" ID="{157A674C-E330-4D56-BD03-C42CB447AEB2}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="BGM_Intro" ID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}">
+							<ChildrenList>
+								<Action Name="" ID="{FB58BDF9-B3F9-4386-AE5B-C69FBCD90F68}" ShortID="465980919">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music Menu" ID="{3702171F-BEA0-4BF8-A1F1-2C81C45A1CF9}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -231,6 +242,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="CutScene_Intro" ID="{A6928E1A-A1DD-469A-A438-B587051E1E2A}">
+							<ChildrenList>
+								<Action Name="" ID="{7F9A10E3-DFB7-40FF-92F5-DECE6E6378D7}" ShortID="44180775">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cutsecen_Intro_SFXs" ID="{DEDF0E2E-D5C5-468E-8E86-8EE89B0EB0F9}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Character" ID="{47954856-AEE3-43DD-9AD8-878B2449369D}" ShortID="1003020565">
@@ -305,6 +327,32 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="FootSteps" ID="{98A539C1-2265-4528-9859-71656AE2C20A}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enviroment" ID="{0ACB0441-34AE-4DC0-93EE-BBB7FF93F5C2}" ShortID="491754026">
+					<ChildrenList>
+						<Event Name="Leaf_Collide" ID="{88D32B78-B244-4A47-BA8E-55D154003504}">
+							<ChildrenList>
+								<Action Name="" ID="{F7028AE7-3DB2-4F4D-961C-D7C64268827A}" ShortID="431049470">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Leaf Collide" ID="{302E34A2-FE35-4156-AA36-C6CC41E8FDC4}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Metal_Collide" ID="{41F162D7-B6D6-425C-A562-DFA1D785B6A8}">
+							<ChildrenList>
+								<Action Name="" ID="{D7C0E945-8A5A-4E4A-9328-F75F98ECC7AD}" ShortID="172455500">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Metal Collide" ID="{E29E5993-2CCB-4BBD-B8D4-97816390E724}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

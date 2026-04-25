@@ -25,7 +25,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void StartPokerGame();
 	
-	URFJournalComponent* GetJournalComponent()
+	URFJournalComponent* GetJournalComponent() const
 	{
 		return JournalComponent;
 	}
@@ -33,6 +33,11 @@ public:
 protected:
 	
 	virtual void BeginPlay() override;
+	
+private:
+	
+	UFUNCTION()
+	void HandleCluesSubmitted();
 	
 private:
 	

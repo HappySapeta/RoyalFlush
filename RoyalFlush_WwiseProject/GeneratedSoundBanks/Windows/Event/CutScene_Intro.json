@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3264197842",
+    "Type": "Event",
+    "GUID": "{A6928E1A-A1DD-469A-A438-B587051E1E2A}",
+    "Language": "SFX",
+    "Hash": "{64799F05-E487-D5EA-10F9-7EA57B002E57}",
+    "ObjectPath": "CutScene_Intro",
+    "ShortName": "CutScene_Intro",
+    "Path": "Event/CutScene_Intro.bnk",
+    "Media": [
+     {
+      "Id": "509721093",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Intro_SFXs.wav",
+      "Path": "Media/509721093.wem",
+      "CachePath": "62/{62AF823F-72F9-FD54-3411-2FA24081CACB}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3264197842",
+      "Name": "CutScene_Intro",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\CutScene_Intro",
+      "GUID": "{A6928E1A-A1DD-469A-A438-B587051E1E2A}",
+      "DurationType": "OneShot",
+      "DurationMin": "14.5945835",
+      "DurationMax": "14.5945835",
+      "MediaRefs": [
+       {
+        "Id": "509721093"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{89B550A1-F425-A1C2-1485-791AF543B543}"
+ }
+}

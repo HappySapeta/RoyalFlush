@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="3264197842" Type="Event" GUID="{A6928E1A-A1DD-469A-A438-B587051E1E2A}" Language="SFX" Hash="{64799F05-E487-D5EA-10F9-7EA57B002E57}">
+			<ObjectPath>CutScene_Intro</ObjectPath>
+			<ShortName>CutScene_Intro</ShortName>
+			<Path>Event/CutScene_Intro.bnk</Path>
+			<Media>
+				<File Id="509721093" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Intro_SFXs.wav</ShortName>
+					<Path>Media/509721093.wem</Path>
+					<CachePath>62/{62AF823F-72F9-FD54-3411-2FA24081CACB}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3264197842" Name="CutScene_Intro" ObjectPath="\Events\Default Work Unit\UI\CutScene_Intro" GUID="{A6928E1A-A1DD-469A-A438-B587051E1E2A}" DurationType="OneShot" DurationMin="14.5945835" DurationMax="14.5945835">
+					<MediaRefs>
+						<MediaRef Id="509721093"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{5F13B58F-994D-52B0-25E8-62C17C9F5210}</FileHash>
+</SoundBanksInfo>

@@ -3,12 +3,14 @@
 #include "RFJournalClueWidget.h"
 #include "Components/Image.h"
 
-void URFJournalClueWidget::SetDescription(const FText Description)
+void URFJournalClueWidget::SetData(FRFClue NewClueData)
 {
-	ClueDescriptionText->SetText(Description);
+	ClueData = NewClueData;
+	ClueDescriptionText->SetText(NewClueData.Description);
+	ClueImage->SetBrushFromTexture(NewClueData.Image);
 }
 
-void URFJournalClueWidget::SetImage(UTexture2D* Image)
+const FRFClue& URFJournalClueWidget::GetData()
 {
-	ClueImage->SetBrushFromTexture(Image);
+	return ClueData;
 }
