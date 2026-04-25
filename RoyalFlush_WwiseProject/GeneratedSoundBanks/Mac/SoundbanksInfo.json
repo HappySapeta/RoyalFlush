@@ -394,7 +394,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{BD8621F1-CE3B-4BC6-57C3-7E4DAEAF2DFE}",
+    "Hash": "{7BF26A55-120D-0450-C775-CDFA9AF7E284}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -482,88 +482,146 @@
      {
       "Id": "649345180",
       "Name": "BGM_Level2",
-      "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2",
+      "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2",
       "GUID": "{197F90A4-3E9B-4E43-AD6E-9B2FAA27A1FC}",
       "States": [
        {
         "Id": "633613142",
         "Name": "Lvl2_Joker_Loop",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\Lvl2_Joker_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\Lvl2_Joker_Loop",
         "GUID": "{6586F4AC-33A0-47F6-AB10-3D166E32BE87}"
        },
        {
         "Id": "748895195",
         "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\None",
         "GUID": "{A85EEFD6-C50E-4DBF-8F26-6EE633A87D89}"
        },
        {
         "Id": "878686745",
         "Name": "Lvl2_Main_Loop_Transistion",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\Lvl2_Main_Loop_Transistion",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\Lvl2_Main_Loop_Transistion",
         "GUID": "{F2BD589B-042A-424E-A826-D0BD91DC91B0}"
        },
        {
         "Id": "2391201298",
         "Name": "Lvl2_Intro",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\Lvl2_Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\Lvl2_Intro",
         "GUID": "{5CEFAEB9-E0CB-4E2C-87D9-9FA622573C9B}"
        },
        {
         "Id": "3360398578",
         "Name": "Lvl2_Jack_Loop",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level2\\Lvl2_Jack_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\Lvl2_Jack_Loop",
         "GUID": "{54D36442-E3C3-4394-80BE-41A6D8F0BDEC}"
+       }
+      ]
+     },
+     {
+      "Id": "649345181",
+      "Name": "BGM_Level3",
+      "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3",
+      "GUID": "{80EF0AB2-3051-49B9-84E0-F3F3697858E2}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\None",
+        "GUID": "{47DE6C35-E914-4775-B943-04769A72BA05}"
+       },
+       {
+        "Id": "1126127331",
+        "Name": "Lvl3_Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\Lvl3_Intro",
+        "GUID": "{1D25282E-ED64-49D6-9527-2CDEBFEB5197}"
+       },
+       {
+        "Id": "1182729832",
+        "Name": "Lvl3_Queen_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\Lvl3_Queen_Loop",
+        "GUID": "{74472366-9B34-4823-BB44-4403B0A38B88}"
+       },
+       {
+        "Id": "2279362796",
+        "Name": "Lvl3_Main_Loop_Transistion",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\Lvl3_Main_Loop_Transistion",
+        "GUID": "{9950AF07-6E31-4A4D-B19C-5A2DC6CD59B1}"
+       },
+       {
+        "Id": "2444840427",
+        "Name": "Lvl3_King_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\Lvl3_King_Loop",
+        "GUID": "{FA1EE170-C184-42AB-A5CC-D1120BFBA291}"
        }
       ]
      },
      {
       "Id": "649345183",
       "Name": "BGM_Level1",
-      "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1",
+      "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1",
       "GUID": "{95FD7CC8-A2D1-4247-B671-5F304DD70335}",
       "States": [
        {
-        "Id": "362564855",
-        "Name": "Dealer_Loop",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Dealer_Loop",
-        "GUID": "{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"
-       },
-       {
         "Id": "748895195",
         "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\None",
         "GUID": "{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"
        },
        {
-        "Id": "1125500713",
-        "Name": "Intro",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Intro",
-        "GUID": "{30E970A1-DD02-4852-9B51-A86C583528FD}"
+        "Id": "816946595",
+        "Name": "Lvl1_Dealer_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\Lvl1_Dealer_Loop",
+        "GUID": "{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"
        },
        {
-        "Id": "2858725581",
-        "Name": "Transition_Out",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Transition_Out",
-        "GUID": "{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"
+        "Id": "910418227",
+        "Name": "Lvl1_Ace_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\Lvl1_Ace_Loop",
+        "GUID": "{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"
        },
        {
-        "Id": "3813340491",
-        "Name": "Main_Loop",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Main_Loop",
+        "Id": "1818238519",
+        "Name": "Lvl1_Main_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\Lvl1_Main_Loop",
         "GUID": "{2769F038-2E47-4697-B278-B53F50D11695}"
        },
        {
-        "Id": "3919849458",
-        "Name": "Transition_In",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Transition_In",
-        "GUID": "{B792CAAF-BC28-49FA-9003-5060C201FC18}"
+        "Id": "3297021469",
+        "Name": "Lvl1_Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\Lvl1_Intro",
+        "GUID": "{30E970A1-DD02-4852-9B51-A86C583528FD}"
+       }
+      ]
+     },
+     {
+      "Id": "1563625601",
+      "Name": "BGM_MasterState",
+      "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState",
+      "GUID": "{B25F9D07-B668-407B-9CE1-A005E3860593}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState\\None",
+        "GUID": "{F97CCC2C-7A2F-46C1-9312-5EA923EF098D}"
        },
        {
-        "Id": "3992321431",
-        "Name": "Ace_Loop",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Ace_Loop",
-        "GUID": "{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"
+        "Id": "970584709",
+        "Name": "BGM_MasterLvl1",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState\\BGM_MasterLvl1",
+        "GUID": "{8465BA7C-907C-4C31-939B-7676515E95E2}"
+       },
+       {
+        "Id": "970584710",
+        "Name": "BGM_MasterLvl2",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState\\BGM_MasterLvl2",
+        "GUID": "{8E5EFC03-FBA3-40BA-A11F-B34C80639BD0}"
+       },
+       {
+        "Id": "970584711",
+        "Name": "BGM_MasterLvl3",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState\\BGM_MasterLvl3",
+        "GUID": "{02F0FC18-739D-440E-BB0E-498922295119}"
        }
       ]
      }
@@ -1003,6 +1061,53 @@
     ]
    },
    {
+    "Id": "1812305438",
+    "Type": "Event",
+    "GUID": "{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}",
+    "Language": "SFX",
+    "Hash": "{5DB0CF4B-41CC-A5EC-6F15-B2AD5159CE11}",
+    "ObjectPath": "BGM_Intro",
+    "ShortName": "BGM_Intro",
+    "Path": "Event/BGM_Intro.bnk",
+    "Media": [
+     {
+      "Id": "614982471",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "BGM_Opening_Loop_148.wav",
+      "Path": "Media/614982471.wem",
+      "CachePath": "05/{05240E16-C17C-0B58-92F2-BE554FB4A3E7}.wem"
+     },
+     {
+      "Id": "857770747",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "BGM_Opening_Intro_148.wav",
+      "Path": "Media/857770747.wem",
+      "CachePath": "ED/{EDD789CF-8233-2FA5-A1EF-610400CFB69F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1812305438",
+      "Name": "BGM_Intro",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\BGM_Intro",
+      "GUID": "{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "614982471"
+       },
+       {
+        "Id": "857770747"
+       }
+      ]
+     }
+    ]
+   },
+   {
     "Id": "1877487096",
     "Type": "Event",
     "GUID": "{E0FB9962-0F04-4A81-96C2-997A97C84DBB}",
@@ -1034,6 +1139,91 @@
       "MediaRefs": [
        {
         "Id": "706829535"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "Id": "1886097022",
+    "Type": "Event",
+    "GUID": "{88D32B78-B244-4A47-BA8E-55D154003504}",
+    "Language": "SFX",
+    "Hash": "{7A966E03-C5A3-708A-BA2A-CBB9B914977F}",
+    "ObjectPath": "Leaf_Collide",
+    "ShortName": "Leaf_Collide",
+    "Path": "Event/Leaf_Collide.bnk",
+    "Media": [
+     {
+      "Id": "53629507",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide_3.wav",
+      "Path": "Media/53629507.wem",
+      "CachePath": "4E/{4E96B4A0-FC51-7946-89C8-75EEB9B58052}.wem"
+     },
+     {
+      "Id": "153051028",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide_4.wav",
+      "Path": "Media/153051028.wem",
+      "CachePath": "43/{4325DCB1-3897-C6A2-DED5-150C62DEE9BD}.wem"
+     },
+     {
+      "Id": "179816074",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide_2.wav",
+      "Path": "Media/179816074.wem",
+      "CachePath": "05/{05F37D2F-EA5F-914C-4541-3854D9ACE1C8}.wem"
+     },
+     {
+      "Id": "305587391",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide.wav",
+      "Path": "Media/305587391.wem",
+      "CachePath": "C5/{C53616EE-B629-F24D-711B-9BE00E681A0D}.wem"
+     },
+     {
+      "Id": "444905758",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Enviroment_Leaf_Collide_1.wav",
+      "Path": "Media/444905758.wem",
+      "CachePath": "BD/{BD150C54-BCF3-58C3-41C8-F82CDBA4EA4F}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1886097022",
+      "Name": "Leaf_Collide",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enviroment\\Leaf_Collide",
+      "GUID": "{88D32B78-B244-4A47-BA8E-55D154003504}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7937005",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "53629507"
+       },
+       {
+        "Id": "153051028"
+       },
+       {
+        "Id": "179816074"
+       },
+       {
+        "Id": "305587391"
+       },
+       {
+        "Id": "444905758"
        }
       ]
      }
@@ -1817,7 +2007,7 @@
     "Type": "Event",
     "GUID": "{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}",
     "Language": "SFX",
-    "Hash": "{6DE4D882-48C8-24AF-2E9F-F99F90A867A9}",
+    "Hash": "{30F15A13-86E1-9CAD-A02B-711D3B7989D1}",
     "ObjectPath": "Player_Foot_Step",
     "ShortName": "Player_Foot_Step",
     "Path": "Event/Player_Foot_Step.bnk",
@@ -1832,6 +2022,15 @@
       "CachePath": "D5/{D50F7254-BFA7-8D05-A3A6-801F7B7CA476}.wem"
      },
      {
+      "Id": "24361596",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_6.wav",
+      "Path": "Media/24361596.wem",
+      "CachePath": "F4/{F4CC1890-EE7B-E7EB-4C56-6FCD11A404A9}.wem"
+     },
+     {
       "Id": "29028791",
       "Language": "SFX",
       "Streaming": "false",
@@ -1839,6 +2038,15 @@
       "ShortName": "Player_Footstep_Stone_4.wav",
       "Path": "Media/29028791.wem",
       "CachePath": "3F/{3F7146B4-D342-8880-38A5-D4FFE807B7DB}.wem"
+     },
+     {
+      "Id": "57309619",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_7.wav",
+      "Path": "Media/57309619.wem",
+      "CachePath": "9A/{9A573D68-B20D-183B-F854-55422DEEE0E8}.wem"
      },
      {
       "Id": "64209393",
@@ -1859,6 +2067,15 @@
       "CachePath": "98/{98622BE0-823E-48D1-00D1-738DBB66BC34}.wem"
      },
      {
+      "Id": "300069844",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_2.wav",
+      "Path": "Media/300069844.wem",
+      "CachePath": "38/{38850730-5592-6FE5-B4D6-8E3B39C65E28}.wem"
+     },
+     {
       "Id": "300382410",
       "Language": "SFX",
       "Streaming": "false",
@@ -1877,6 +2094,15 @@
       "CachePath": "45/{4573E771-9C0E-0B82-8A87-2867AA1C4A7B}.wem"
      },
      {
+      "Id": "387590266",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_1.wav",
+      "Path": "Media/387590266.wem",
+      "CachePath": "3D/{3D7E13BA-4BAE-E1B0-3CB6-A4B620686516}.wem"
+     },
+     {
       "Id": "521714472",
       "Language": "SFX",
       "Streaming": "false",
@@ -1886,6 +2112,15 @@
       "CachePath": "5F/{5F04B940-7620-627B-4A54-9D517AF6A76D}.wem"
      },
      {
+      "Id": "573702088",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_3.wav",
+      "Path": "Media/573702088.wem",
+      "CachePath": "D9/{D9CFEF5B-8CC5-BDD6-BE5D-68778482CFB7}.wem"
+     },
+     {
       "Id": "698444392",
       "Language": "SFX",
       "Streaming": "false",
@@ -1893,6 +2128,24 @@
       "ShortName": "Player_Footstep_Carpet_3.wav",
       "Path": "Media/698444392.wem",
       "CachePath": "B3/{B36A6895-CDA5-6AB3-D9E5-58F3C7B66007}.wem"
+     },
+     {
+      "Id": "716283801",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_5.wav",
+      "Path": "Media/716283801.wem",
+      "CachePath": "B1/{B1BF1672-706B-FDA4-61C3-E45951A3F09A}.wem"
+     },
+     {
+      "Id": "730832548",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Footstep_Wood_4.wav",
+      "Path": "Media/730832548.wem",
+      "CachePath": "ED/{EDB098AD-4D40-5928-FBB5-91B8C7232E8B}.wem"
      },
      {
       "Id": "739225321",
@@ -2013,22 +2266,25 @@
         },
         "MediaRefs": [
          {
-          "Id": "64209393"
+          "Id": "24361596"
          },
          {
-          "Id": "264403800"
+          "Id": "57309619"
          },
          {
-          "Id": "344757656"
+          "Id": "300069844"
          },
          {
-          "Id": "739225321"
+          "Id": "387590266"
          },
          {
-          "Id": "813856796"
+          "Id": "573702088"
          },
          {
-          "Id": "988786257"
+          "Id": "716283801"
+         },
+         {
+          "Id": "730832548"
          }
         ]
        },
@@ -2159,6 +2415,43 @@
     ]
    },
    {
+    "Id": "3264197842",
+    "Type": "Event",
+    "GUID": "{A6928E1A-A1DD-469A-A438-B587051E1E2A}",
+    "Language": "SFX",
+    "Hash": "{64799F05-E487-D5EA-10F9-7EA57B002E57}",
+    "ObjectPath": "CutScene_Intro",
+    "ShortName": "CutScene_Intro",
+    "Path": "Event/CutScene_Intro.bnk",
+    "Media": [
+     {
+      "Id": "509721093",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Intro_SFXs.wav",
+      "Path": "Media/509721093.wem",
+      "CachePath": "62/{62AF823F-72F9-FD54-3411-2FA24081CACB}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3264197842",
+      "Name": "CutScene_Intro",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\CutScene_Intro",
+      "GUID": "{A6928E1A-A1DD-469A-A438-B587051E1E2A}",
+      "DurationType": "OneShot",
+      "DurationMin": "14.5945835",
+      "DurationMax": "14.5945835",
+      "MediaRefs": [
+       {
+        "Id": "509721093"
+       }
+      ]
+     }
+    ]
+   },
+   {
     "Id": "3331313354",
     "Type": "User",
     "GUID": "{D9E95AA2-D16F-48AC-B33C-DF494DC30C9C}",
@@ -2243,15 +2536,94 @@
     ]
    },
    {
-    "Id": "3736445778",
+    "Id": "3674931761",
+    "Type": "Event",
+    "GUID": "{41F162D7-B6D6-425C-A562-DFA1D785B6A8}",
+    "Language": "SFX",
+    "Hash": "{66F3D53F-DB9A-6D25-8919-C17A5C10B5DA}",
+    "ObjectPath": "Metal_Collide",
+    "ShortName": "Metal_Collide",
+    "Path": "Event/Metal_Collide.bnk",
+    "Media": [
+     {
+      "Id": "58078063",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MetalHit1.wav",
+      "Path": "Media/58078063.wem",
+      "CachePath": "6E/{6EFCC885-D8D5-362F-1E7E-4E88E4203AA1}.wem"
+     },
+     {
+      "Id": "669944673",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MetalHit2.wav",
+      "Path": "Media/669944673.wem",
+      "CachePath": "51/{51A77AAD-8F3C-1ED8-689A-72817A21B8BC}.wem"
+     },
+     {
+      "Id": "950083327",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MetalHit3.wav",
+      "Path": "Media/950083327.wem",
+      "CachePath": "85/{85CB1C10-EB5B-31F9-C7FC-D4C5DA760029}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3674931761",
+      "Name": "Metal_Collide",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enviroment\\Metal_Collide",
+      "GUID": "{41F162D7-B6D6-425C-A562-DFA1D785B6A8}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.272759",
+      "DurationMax": "0.44519603",
+      "MediaRefs": [
+       {
+        "Id": "58078063"
+       },
+       {
+        "Id": "669944673"
+       },
+       {
+        "Id": "950083327"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "Id": "4141759354",
     "Type": "Event",
     "GUID": "{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}",
     "Language": "SFX",
-    "Hash": "{51D84C06-41BB-FFC0-560B-CA1D61BD221E}",
-    "ObjectPath": "BGM_Level_1",
-    "ShortName": "BGM_Level_1",
-    "Path": "Event/BGM_Level_1.bnk",
+    "Hash": "{1EF312FA-302D-1197-76BE-00B26A48D560}",
+    "ObjectPath": "BGM_Master",
+    "ShortName": "BGM_Master",
+    "Path": "Event/BGM_Master.bnk",
     "Media": [
+     {
+      "Id": "173453754",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Lvl3_82_KingLoop.wav",
+      "Path": "Media/173453754.wem",
+      "CachePath": "A9/{A93C0C52-9829-4D34-27EA-F281772E5C37}.wem"
+     },
+     {
+      "Id": "244904798",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "108_Lvl_2_Intro.wav",
+      "Path": "Media/244904798.wem",
+      "CachePath": "B8/{B8E72808-7573-45FE-240B-3D7551C6BB29}.wem"
+     },
      {
       "Id": "371000174",
       "Language": "SFX",
@@ -2260,6 +2632,15 @@
       "ShortName": "BGM_Level1_TransitionEnd_80bpm4_4_8Bar.wav",
       "Path": "Media/371000174.wem",
       "CachePath": "89/{8991027B-597E-A5A3-2C73-06AF1751D8BC}.wem"
+     },
+     {
+      "Id": "426270609",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "108_Lvl_2_Main.wav",
+      "Path": "Media/426270609.wem",
+      "CachePath": "C2/{C29815CF-407A-5729-7EBD-E984CF5DC80E}.wem"
      },
      {
       "Id": "444367158",
@@ -2271,13 +2652,49 @@
       "CachePath": "33/{33A5CE5A-602F-423C-B875-26AF40C1A89A}.wem"
      },
      {
-      "Id": "685348968",
+      "Id": "479823967",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "BGM_Level1_TransitionIn_80bpm4_4_4Bar_1P_1T.wav",
-      "Path": "Media/685348968.wem",
-      "CachePath": "A2/{A2E06CF8-10B8-0BDF-8A73-07A28525B0D6}.wem"
+      "ShortName": "Lvl3_82_KingLoop2.wav",
+      "Path": "Media/479823967.wem",
+      "CachePath": "20/{20587494-AD81-48BF-182A-463294846439}.wem"
+     },
+     {
+      "Id": "551227422",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Lvl3_82_QueenLoop.wav",
+      "Path": "Media/551227422.wem",
+      "CachePath": "00/{00F2B629-0634-0B8E-2B82-A1FF11B309AD}.wem"
+     },
+     {
+      "Id": "732086495",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "108_Lvl_2_Joker.wav",
+      "Path": "Media/732086495.wem",
+      "CachePath": "47/{47985618-6538-DA12-1C9F-9595EB980C26}.wem"
+     },
+     {
+      "Id": "739399442",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "108_Lvl_2_Trans.wav",
+      "Path": "Media/739399442.wem",
+      "CachePath": "63/{63E67207-7244-87B2-9415-D89A685329B2}.wem"
+     },
+     {
+      "Id": "796748219",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Lvl3_82_QueenIntro.wav",
+      "Path": "Media/796748219.wem",
+      "CachePath": "D9/{D9D39536-5CAF-AC77-33C8-BC69FB03E324}.wem"
      },
      {
       "Id": "812670376",
@@ -2289,6 +2706,24 @@
       "CachePath": "A1/{A1E9C67C-E55B-659A-87BC-922F6CADD44D}.wem"
      },
      {
+      "Id": "899793271",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Lvl3_82_TransOut.wav",
+      "Path": "Media/899793271.wem",
+      "CachePath": "42/{4228FE35-02CA-D9BE-89A1-35C43A06F19E}.wem"
+     },
+     {
+      "Id": "971381454",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "108_Lvl_2_Jack.wav",
+      "Path": "Media/971381454.wem",
+      "CachePath": "66/{66F76305-5FB8-9DEA-403B-162D94C6C26A}.wem"
+     },
+     {
       "Id": "985732951",
       "Language": "SFX",
       "Streaming": "false",
@@ -2296,6 +2731,24 @@
       "ShortName": "BGM_Level1_DealerLoop_80bpm4_4_8Bar_1P_1T.wav",
       "Path": "Media/985732951.wem",
       "CachePath": "66/{6633C26C-CB11-1FDF-D5E1-878F3B570656}.wem"
+     },
+     {
+      "Id": "997126915",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Lvl3_82_MainLoop.wav",
+      "Path": "Media/997126915.wem",
+      "CachePath": "EF/{EF8A9F57-611B-063F-960C-387AACCE850C}.wem"
+     },
+     {
+      "Id": "1016379553",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Lvl3_82_Intro.wav",
+      "Path": "Media/1016379553.wem",
+      "CachePath": "21/{21DFDDCB-722F-B2A1-90DD-290C55641049}.wem"
      },
      {
       "Id": "1027520005",
@@ -2309,93 +2762,219 @@
     ],
     "Events": [
      {
-      "Id": "3736445778",
-      "Name": "BGM_Level_1",
-      "ObjectPath": "\\Events\\Default Work Unit\\Music\\BGM_Level_1",
+      "Id": "4141759354",
+      "Name": "BGM_Master",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\BGM_Master",
       "GUID": "{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}",
       "DurationType": "Infinite",
       "SwitchContainers": [
        {
         "SwitchValue": {
          "GroupType": "State",
-         "GroupId": "649345183",
-         "Id": "3992321431",
-         "GUID": "{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"
+         "GroupId": "1563625601",
+         "Id": "970584709",
+         "GUID": "{8465BA7C-907C-4C31-939B-7676515E95E2}"
         },
-        "MediaRefs": [
+        "Children": [
          {
-          "Id": "444367158"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "649345183",
-         "Id": "362564855",
-         "GUID": "{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "985732951"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "649345183",
-         "Id": "1125500713",
-         "GUID": "{30E970A1-DD02-4852-9B51-A86C583528FD}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "812670376"
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345183",
+           "Id": "910418227",
+           "GUID": "{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "444367158"
+           }
+          ]
          },
          {
-          "Id": "1027520005"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "649345183",
-         "Id": "3813340491",
-         "GUID": "{2769F038-2E47-4697-B278-B53F50D11695}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "371000174"
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345183",
+           "Id": "816946595",
+           "GUID": "{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "985732951"
+           }
+          ]
          },
          {
-          "Id": "1027520005"
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345183",
+           "Id": "3297021469",
+           "GUID": "{30E970A1-DD02-4852-9B51-A86C583528FD}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "812670376"
+           },
+           {
+            "Id": "1027520005"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345183",
+           "Id": "1818238519",
+           "GUID": "{2769F038-2E47-4697-B278-B53F50D11695}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "371000174"
+           },
+           {
+            "Id": "1027520005"
+           }
+          ]
          }
         ]
        },
        {
         "SwitchValue": {
          "GroupType": "State",
-         "GroupId": "649345183",
-         "Id": "3919849458",
-         "GUID": "{B792CAAF-BC28-49FA-9003-5060C201FC18}"
+         "GroupId": "1563625601",
+         "Id": "970584710",
+         "GUID": "{8E5EFC03-FBA3-40BA-A11F-B34C80639BD0}"
         },
-        "MediaRefs": [
+        "Children": [
          {
-          "Id": "685348968"
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345180",
+           "Id": "2391201298",
+           "GUID": "{5CEFAEB9-E0CB-4E2C-87D9-9FA622573C9B}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "244904798"
+           },
+           {
+            "Id": "426270609"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345180",
+           "Id": "3360398578",
+           "GUID": "{54D36442-E3C3-4394-80BE-41A6D8F0BDEC}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "971381454"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345180",
+           "Id": "633613142",
+           "GUID": "{6586F4AC-33A0-47F6-AB10-3D166E32BE87}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "732086495"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345180",
+           "Id": "878686745",
+           "GUID": "{F2BD589B-042A-424E-A826-D0BD91DC91B0}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "426270609"
+           },
+           {
+            "Id": "739399442"
+           }
+          ]
          }
         ]
        },
        {
         "SwitchValue": {
          "GroupType": "State",
-         "GroupId": "649345183",
-         "Id": "2858725581",
-         "GUID": "{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"
+         "GroupId": "1563625601",
+         "Id": "970584711",
+         "GUID": "{02F0FC18-739D-440E-BB0E-498922295119}"
         },
-        "MediaRefs": [
+        "Children": [
          {
-          "Id": "371000174"
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345181",
+           "Id": "1126127331",
+           "GUID": "{1D25282E-ED64-49D6-9527-2CDEBFEB5197}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "997126915"
+           },
+           {
+            "Id": "1016379553"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345181",
+           "Id": "2444840427",
+           "GUID": "{FA1EE170-C184-42AB-A5CC-D1120BFBA291}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "173453754"
+           },
+           {
+            "Id": "479823967"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345181",
+           "Id": "1182729832",
+           "GUID": "{74472366-9B34-4823-BB44-4403B0A38B88}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "551227422"
+           },
+           {
+            "Id": "796748219"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "649345181",
+           "Id": "2279362796",
+           "GUID": "{9950AF07-6E31-4A4D-B19C-5A2DC6CD59B1}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "899793271"
+           },
+           {
+            "Id": "997126915"
+           }
+          ]
          }
         ]
        }
@@ -2412,52 +2991,148 @@
     ],
     "StateGroups": [
      {
-      "Id": "649345183",
-      "Name": "BGM_Level1",
-      "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1",
-      "GUID": "{95FD7CC8-A2D1-4247-B671-5F304DD70335}",
+      "Id": "649345180",
+      "Name": "BGM_Level2",
+      "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2",
+      "GUID": "{197F90A4-3E9B-4E43-AD6E-9B2FAA27A1FC}",
       "States": [
        {
-        "Id": "362564855",
-        "Name": "Dealer_Loop",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Dealer_Loop",
-        "GUID": "{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"
+        "Id": "633613142",
+        "Name": "Lvl2_Joker_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\Lvl2_Joker_Loop",
+        "GUID": "{6586F4AC-33A0-47F6-AB10-3D166E32BE87}"
        },
        {
         "Id": "748895195",
         "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\None",
+        "GUID": "{A85EEFD6-C50E-4DBF-8F26-6EE633A87D89}"
+       },
+       {
+        "Id": "878686745",
+        "Name": "Lvl2_Main_Loop_Transistion",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\Lvl2_Main_Loop_Transistion",
+        "GUID": "{F2BD589B-042A-424E-A826-D0BD91DC91B0}"
+       },
+       {
+        "Id": "2391201298",
+        "Name": "Lvl2_Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\Lvl2_Intro",
+        "GUID": "{5CEFAEB9-E0CB-4E2C-87D9-9FA622573C9B}"
+       },
+       {
+        "Id": "3360398578",
+        "Name": "Lvl2_Jack_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level2\\Lvl2_Jack_Loop",
+        "GUID": "{54D36442-E3C3-4394-80BE-41A6D8F0BDEC}"
+       }
+      ]
+     },
+     {
+      "Id": "649345181",
+      "Name": "BGM_Level3",
+      "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3",
+      "GUID": "{80EF0AB2-3051-49B9-84E0-F3F3697858E2}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\None",
+        "GUID": "{47DE6C35-E914-4775-B943-04769A72BA05}"
+       },
+       {
+        "Id": "1126127331",
+        "Name": "Lvl3_Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\Lvl3_Intro",
+        "GUID": "{1D25282E-ED64-49D6-9527-2CDEBFEB5197}"
+       },
+       {
+        "Id": "1182729832",
+        "Name": "Lvl3_Queen_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\Lvl3_Queen_Loop",
+        "GUID": "{74472366-9B34-4823-BB44-4403B0A38B88}"
+       },
+       {
+        "Id": "2279362796",
+        "Name": "Lvl3_Main_Loop_Transistion",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\Lvl3_Main_Loop_Transistion",
+        "GUID": "{9950AF07-6E31-4A4D-B19C-5A2DC6CD59B1}"
+       },
+       {
+        "Id": "2444840427",
+        "Name": "Lvl3_King_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level3\\Lvl3_King_Loop",
+        "GUID": "{FA1EE170-C184-42AB-A5CC-D1120BFBA291}"
+       }
+      ]
+     },
+     {
+      "Id": "649345183",
+      "Name": "BGM_Level1",
+      "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1",
+      "GUID": "{95FD7CC8-A2D1-4247-B671-5F304DD70335}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\None",
         "GUID": "{26018B33-1ABD-4F1E-BF6B-E6ED538142DA}"
        },
        {
-        "Id": "1125500713",
-        "Name": "Intro",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Intro",
-        "GUID": "{30E970A1-DD02-4852-9B51-A86C583528FD}"
+        "Id": "816946595",
+        "Name": "Lvl1_Dealer_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\Lvl1_Dealer_Loop",
+        "GUID": "{EA9BBF64-F2C9-4E48-91AC-10C234BF4E4D}"
        },
        {
-        "Id": "2858725581",
-        "Name": "Transition_Out",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Transition_Out",
-        "GUID": "{2846D0E9-07FB-4C75-BA6F-B702F8C67B34}"
+        "Id": "910418227",
+        "Name": "Lvl1_Ace_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\Lvl1_Ace_Loop",
+        "GUID": "{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"
        },
        {
-        "Id": "3813340491",
-        "Name": "Main_Loop",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Main_Loop",
+        "Id": "1818238519",
+        "Name": "Lvl1_Main_Loop",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\Lvl1_Main_Loop",
         "GUID": "{2769F038-2E47-4697-B278-B53F50D11695}"
        },
        {
-        "Id": "3919849458",
-        "Name": "Transition_In",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Transition_In",
-        "GUID": "{B792CAAF-BC28-49FA-9003-5060C201FC18}"
+        "Id": "3297021469",
+        "Name": "Lvl1_Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_Level1\\Lvl1_Intro",
+        "GUID": "{30E970A1-DD02-4852-9B51-A86C583528FD}"
+       }
+      ]
+     },
+     {
+      "Id": "1563625601",
+      "Name": "BGM_MasterState",
+      "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState",
+      "GUID": "{B25F9D07-B668-407B-9CE1-A005E3860593}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState\\None",
+        "GUID": "{F97CCC2C-7A2F-46C1-9312-5EA923EF098D}"
        },
        {
-        "Id": "3992321431",
-        "Name": "Ace_Loop",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Level1\\Ace_Loop",
-        "GUID": "{EB52316A-A4D5-444D-92D5-677FFF19AD5E}"
+        "Id": "970584709",
+        "Name": "BGM_MasterLvl1",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState\\BGM_MasterLvl1",
+        "GUID": "{8465BA7C-907C-4C31-939B-7676515E95E2}"
+       },
+       {
+        "Id": "970584710",
+        "Name": "BGM_MasterLvl2",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState\\BGM_MasterLvl2",
+        "GUID": "{8E5EFC03-FBA3-40BA-A11F-B34C80639BD0}"
+       },
+       {
+        "Id": "970584711",
+        "Name": "BGM_MasterLvl3",
+        "ObjectPath": "\\States\\Default Work Unit\\Music\\BGM_MasterState\\BGM_MasterLvl3",
+        "GUID": "{02F0FC18-739D-440E-BB0E-498922295119}"
        }
       ]
      }
@@ -2525,6 +3200,6 @@
     ]
    }
   ],
-  "FileHash": "{EDE338B4-032D-7EB0-C231-2997390AECFA}"
+  "FileHash": "{E39072B6-60DE-CA46-6DBD-6ABBA515A9E5}"
  }
 }
