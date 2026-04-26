@@ -78,6 +78,9 @@ protected:
 	virtual void OnActivate() override;
 
 private:
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float DealingStateDelay;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PotMoneyKey;
@@ -216,7 +219,7 @@ private:
 	EPokerPlayer CurrentPlayer;
 };
 
-UCLASS()
+UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFRevealState : public URFPokerState
 {
 	GENERATED_BODY()
@@ -252,7 +255,7 @@ private:
 	bool bRulesInit = false;
 };
 
-UCLASS()
+UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFEndOfRoundState : public URFPokerState
 {
 	GENERATED_BODY()
@@ -260,6 +263,8 @@ class ROYALFLUSH_API URFEndOfRoundState : public URFPokerState
 protected:
 
 	virtual void OnActivate() override;
+	
+protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag HumanMoneyKey;

@@ -71,6 +71,10 @@ void URFPokerDealingState::OnActivate()
 		Blackboard->SetValuesAsObject(NPCHandKey, NPCHand);
 	}
 	
+	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
+	{
+		EndState();
+	}), DealingStateDelay);
 	Super::OnActivate();
 }
 
