@@ -28,6 +28,9 @@ void URFPokerBeginState::OnActivate()
 	Blackboard->SetValuesAsObject(CardsKey, NewObject<URFCards>());
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
 	
+	StatusObject = NewObject<URFPokerStatus>(); 
+	Blackboard->SetValuesAsObject(StatusObjectKey, StatusObject);
+	
 	Super::OnActivate();
 }
 
@@ -81,6 +84,8 @@ void URFPokerDealingState::OnActivate()
 void URFPokerDiscardingState::OnActivate()
 {
 	Super::OnActivate();
+	
+	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
 
 	// First action
 	{
@@ -98,7 +103,6 @@ void URFPokerDiscardingState::OnActivate()
 	{
 		FTimerDelegate HumanTurnCallback = FTimerDelegate::CreateLambda([this]()
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Human player's turn."));
 			Blackboard->SetValuesAsBool(PassStatusKey, false);
 			Blackboard->SetValuesAsBool(DiscardStatusKey, false);
 			SetTurn(EPokerPlayer::Human);
@@ -119,23 +123,38 @@ void URFPokerDiscardingState::SetTurn(EPokerPlayer Player)
 {
 	CurrentTurn = Player;
 	Blackboard->SetValuesAsInt(CurrentTurnKey, static_cast<int>(CurrentTurn));
+
+	switch (Player)
+	{
+		case EPokerPlayer::NPC:
+		{
+			CurrentStatusObject->SetStatus(TEXT("NPC's turn."));
+			break;
+		}
+		case EPokerPlayer::Human:
+		{
+			CurrentStatusObject->SetStatus(TEXT("Your turn."));
+			break;
+		}
+		default:
+		break;
+	}
 }
 
 void URFPokerDiscardingState::PlayNPCTurn()
 {
-	UE_LOG(LogTemp, Warning, TEXT("NPC choosing to discard or pass"));
 	int RandomChoice = UKismetMathLibrary::RandomIntegerInRange(0,1);
 	switch (RandomChoice)
 	{
 		case 0:
 		{
-			UE_LOG(LogTemp, Warning, TEXT("NPC chose to Discard"));
+			CurrentStatusObject->SetStatus(TEXT("NPC chose to discard."));
 			Blackboard->SetValuesAsBool(DiscardStatusKey, true);
 			break;
 		}
 		case 1:
 		{
-			UE_LOG(LogTemp, Warning, TEXT("NPC chose to Pass"));
+			CurrentStatusObject->SetStatus(TEXT("NPC chose to pass."));
 			Blackboard->SetValuesAsBool(PassStatusKey, true);
 			break;
 		}
@@ -177,24 +196,29 @@ void URFBettingState::OnActivate()
 		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
 	}
 	
+	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
+	
 	Blackboard->GetValueChangeCallback(PassStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerPassed);
 	Blackboard->GetValueChangeCallback(FoldStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerFolded);
 	Blackboard->GetValueChangeCallback(DoubleDownStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerDoubleDowned);
 	
 	FTimerDelegate NPCTurnCallback = FTimerDelegate::CreateLambda([this]()
 	{
-		UE_LOG(LogTemp, Warning, TEXT("NPC's Turn"));
 		Blackboard->SetValuesAsBool(PassStatusKey, false);
 		Blackboard->SetValuesAsBool(FoldStatusKey, false);
 		Blackboard->SetValuesAsBool(DoubleDownStatusKey, false);
 		SetTurn(EPokerPlayer::NPC);
-		PlayNPCTurn();
 	});
 	ExecuteWithDelay(NPCTurnCallback, NPCTurnDelay);
 	
+	FTimerDelegate NPCPlayCallback = FTimerDelegate::CreateLambda([this]()
+	{
+		PlayNPCTurn();
+	});
+	ExecuteWithDelay(NPCPlayCallback, NPCPlayDelay);
+	
 	FTimerDelegate HumanTurnCallback = FTimerDelegate::CreateLambda([this]()
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Human Player's Turn"));
 		Blackboard->SetValuesAsBool(PassStatusKey, false);
 		Blackboard->SetValuesAsBool(FoldStatusKey, false);
 		Blackboard->SetValuesAsBool(DoubleDownStatusKey, false);
@@ -221,16 +245,19 @@ void URFBettingState::PlayNPCTurn()
 	{
 		case 0:
 		{
+			CurrentStatusObject->SetStatus(TEXT("NPC chose to pass."));
 			Blackboard->SetValuesAsBool(PassStatusKey, true);
 			break;
 		}
 		case 1:
 		{
+			CurrentStatusObject->SetStatus(TEXT("NPC chose to fold."));
 			Blackboard->SetValuesAsBool(FoldStatusKey, true);
 			break;
 		}
 		case 2:
 		{
+			CurrentStatusObject->SetStatus(TEXT("NPC chose to double down."));
 			Blackboard->SetValuesAsBool(DoubleDownStatusKey, true);
 			break;
 		}
@@ -243,6 +270,22 @@ void URFBettingState::SetTurn(EPokerPlayer Player)
 {
 	CurrentPlayer = Player;
 	Blackboard->SetValuesAsInt(CurrentTurnKey, static_cast<int>(CurrentPlayer));
+
+	switch (Player)
+	{
+		case EPokerPlayer::NPC:
+		{
+			CurrentStatusObject->SetStatus(TEXT("NPC's turn."));
+			break;
+		}
+		case EPokerPlayer::Human:
+		{
+			CurrentStatusObject->SetStatus(TEXT("Your turn."));
+			break;
+		}
+		default:
+			break;
+	}
 }
 
 void URFBettingState::OnPlayerPassed(const FGameplayTag& Key)

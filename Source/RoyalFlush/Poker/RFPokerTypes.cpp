@@ -94,3 +94,8 @@ bool URFHand::Equals(const URFHand* Other) const
 	
 	return true;
 }
+
+void URFPokerStatus::SetStatus(const FString Text)
+{
+	StatusText = FText::FromString(Text);
+}

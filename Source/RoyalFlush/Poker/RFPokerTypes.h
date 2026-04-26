@@ -73,3 +73,18 @@ protected:
 	TArray<int> Cards;
 
 };
+
+UCLASS(BlueprintType)
+class ROYALFLUSH_API URFPokerStatus : public UObject
+{
+	GENERATED_BODY()
+
+public:
+	
+	void SetStatus(const FString Text);
+
+protected:
+	
+	UPROPERTY(BlueprintReadOnly)
+	FText StatusText;
+};

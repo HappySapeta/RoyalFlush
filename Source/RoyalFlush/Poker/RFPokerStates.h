@@ -66,6 +66,14 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
+	
+private:
+	
+	UPROPERTY()
+	URFPokerStatus* StatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -147,7 +155,13 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag DiscardNumKey;
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
+	
 	EPokerPlayer CurrentTurn;
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;  
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -214,9 +228,18 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag RoundEndKey;
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
+	
 private:
 	
 	EPokerPlayer CurrentPlayer;
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
+	
+	UPROPERTY(EditDefaultsOnly)
+	float NPCPlayDelay;
 };
 
 UCLASS(Blueprintable, BlueprintType)
