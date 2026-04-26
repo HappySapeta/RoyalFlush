@@ -28,13 +28,13 @@ protected:
 	
 protected:
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag OwningActorKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CurrentStateKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	EPokerState CurrentState;
 };
 
@@ -47,27 +47,24 @@ protected:
 
 	virtual void OnActivate() override;
 	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnBeginPoker();
-	
 private:
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PoolMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag RoundNumKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag ScoreMultiplierKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CardsKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag RoundRestartKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
 };
 
@@ -79,25 +76,22 @@ class ROYALFLUSH_API URFPokerDealingState : public URFPokerState
 protected:
 
 	virtual void OnActivate() override;
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnDealPoker();
 
 private:
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PotMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
 	FGameplayTag CardsKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
 	FGameplayTag HumanPlayerHandKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
 	FGameplayTag NPCHandKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
 	FGameplayTag RoundNumKey;
 };
 
@@ -112,21 +106,21 @@ protected:
 	
 	virtual void OnDeactivate() override;
 
-	UFUNCTION()
-	void HandleDiscardRequested(const FGameplayTag& Key);
-
 private:
 
 	void SetTurn(EPokerPlayer Player);
 
 	void PlayNPCTurn();
 	
+	UFUNCTION()
+	void HandleDiscardRequested(const FGameplayTag& Key);
+	
 private:
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float NPCTurnDelay;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float HumanTurnDelay;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
@@ -167,6 +161,7 @@ protected:
 private:
 	
 	void SetTurn(EPokerPlayer Player);
+	
 	void PlayNPCTurn();
 	
 	UFUNCTION()
@@ -180,41 +175,41 @@ private:
 
 private:
 	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PoolMoneyKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PotMoneyKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag ScoreMultiplierKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag CurrentTurnKey;
-
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag HumanMoneyKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PassStatusKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag FoldStatusKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag DoubleDownStatusKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag NPCMoneyKey;
-	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag RoundEndKey;
-	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float NPCTurnDelay;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float HumanTurnDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag PoolMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag PotMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag ScoreMultiplierKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag CurrentTurnKey;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag HumanMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag PassStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag FoldStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag DoubleDownStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag NPCMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag RoundEndKey;
 	
 private:
 	
@@ -234,19 +229,19 @@ protected:
 	
 private:
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag HumanPlayerHandKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag NPCHandKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PotMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag HumanMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag NPCMoneyKey;
 	
 private:
@@ -266,24 +261,24 @@ protected:
 
 	virtual void OnActivate() override;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag HumanMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag NPCMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PoolMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag WinningPlayerKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag RoundNumKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag RoundRestartKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
 };
