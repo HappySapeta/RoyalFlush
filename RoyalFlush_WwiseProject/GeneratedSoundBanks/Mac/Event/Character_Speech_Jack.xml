@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2402462855" Type="Event" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" Language="SFX" Hash="{72AF4046-93B4-25F7-D084-A150246EE748}">
+		<SoundBank Id="2402462855" Type="Event" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" Language="SFX" Hash="{31C9D37F-F852-EFB0-7A7F-CE4F9E9B448F}">
 			<ObjectPath>Character_Speech_Jack</ObjectPath>
 			<ShortName>Character_Speech_Jack</ShortName>
 			<Path>Event/Character_Speech_Jack.bnk</Path>
@@ -53,7 +53,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2402462855" Name="Character_Speech_Jack" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Jack" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" DurationType="OneShot" DurationMin="0.097716" DurationMax="0.112919964">
+				<Event Id="2402462855" Name="Character_Speech_Jack" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Jack" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" DurationType="OneShot" DurationMin="0.87946427" DurationMax="1.0160916">
 					<MediaRefs>
 						<MediaRef Id="56859308"/>
 						<MediaRef Id="216739166"/>
@@ -69,5 +69,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{62B0611E-DAD1-BA4F-3051-3F2FBE98F7D6}</FileHash>
+	<FileHash>{5F535459-ED89-400F-02FB-15C585F05BDD}</FileHash>
 </SoundBanksInfo>

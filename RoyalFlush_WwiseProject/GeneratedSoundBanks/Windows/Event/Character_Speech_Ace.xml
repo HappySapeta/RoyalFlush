@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{5E19E7A6-AA77-82D3-CB40-F2EF65FE4341}">
+		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{9DFEC552-1DD5-0577-F803-5F050B53561C}">
 			<ObjectPath>Character_Speech_Ace</ObjectPath>
 			<ShortName>Character_Speech_Ace</ShortName>
 			<Path>Event/Character_Speech_Ace.bnk</Path>
@@ -33,7 +33,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1200163247" Name="Character_Speech_Ace" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Ace" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" DurationType="OneShot" DurationMin="0.072118044" DurationMax="0.091110125">
+				<Event Id="1200163247" Name="Character_Speech_Ace" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Ace" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" DurationType="OneShot" DurationMin="0.4114568" DurationMax="0.4114568">
 					<MediaRefs>
 						<MediaRef Id="327533658"/>
 						<MediaRef Id="444130920"/>
@@ -45,5 +45,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A89C3253-BCCD-64D9-0950-16BDE332E90E}</FileHash>
+	<FileHash>{67BB4E6D-14C3-C608-F7D2-3757F02282D7}</FileHash>
 </SoundBanksInfo>
