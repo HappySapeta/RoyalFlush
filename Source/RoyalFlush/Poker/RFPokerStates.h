@@ -96,6 +96,9 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag NPCHandKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag RoundNumKey;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -223,10 +226,6 @@ class ROYALFLUSH_API URFRevealState : public URFPokerState
 {
 	GENERATED_BODY()
 
-public:
-	
-	URFRevealState();
-	
 protected:
 
 	virtual void OnActivate() override;
@@ -242,9 +241,6 @@ private:
 	FGameplayTag NPCHandKey;
 	
 	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag RankedHandsKey;
-	
-	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag PotMoneyKey;
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -255,7 +251,10 @@ private:
 	
 private:
 	
+	UPROPERTY()
 	TArray<URFPokerHandRuleBase*> Rules;
+	
+	bool bRulesInit = false;
 };
 
 UCLASS()

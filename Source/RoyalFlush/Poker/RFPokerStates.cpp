@@ -23,9 +23,7 @@ void URFPokerState::ExecuteWithDelay(FTimerDelegate Callback, const float Delay)
 void URFPokerBeginState::OnActivate()
 {
 	const int ScoreMultiplier = Blackboard->GetValuesAsInt(ScoreMultiplierKey);
-	int RoundNum = Blackboard->GetValuesAsInt(RoundNumKey);
 	Blackboard->SetValuesAsInt(PoolMoneyKey, BASE_SCORE_MULTIPLIER * ScoreMultiplier);
-	Blackboard->SetValuesAsInt(RoundNumKey, ++RoundNum);
 	Blackboard->SetValuesAsBool(RoundRestartKey, false);
 	Blackboard->SetValuesAsObject(CardsKey, NewObject<URFCards>());
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
@@ -35,41 +33,42 @@ void URFPokerBeginState::OnActivate()
 
 void URFPokerDealingState::OnActivate()
 {
+	int RoundNum = Blackboard->GetValuesAsInt(RoundNumKey);
+	Blackboard->SetValuesAsInt(RoundNumKey, ++RoundNum);
+	
 	GetBlackboard()->SetValuesAsInt(PotMoneyKey, 0);
 	URFCards* CardsObject = Cast<URFCards>(Blackboard->GetValuesAsObject(CardsKey));
-	if (ensure(CardsObject))
+	CardsObject->Reset();
+	CardsObject->Shuffle();
+		
+	// Initialize hands
+	UObject* HandObject = GetBlackboard()->GetValuesAsObject(HumanPlayerHandKey);
 	{
-		CardsObject->Shuffle();
-		
-		// Initialize hands
-		UObject* HandObject = GetBlackboard()->GetValuesAsObject(HumanPlayerHandKey);
+		if (!HandObject)
 		{
-			if (!HandObject)
-			{
-				GetBlackboard()->SetValuesAsObject(HumanPlayerHandKey, NewObject<URFHand>());
-			}
-		
-			HandObject = GetBlackboard()->GetValuesAsObject(NPCHandKey);
-			if (!HandObject)
-			{
-				GetBlackboard()->SetValuesAsObject(NPCHandKey, NewObject<URFHand>());
-			}
+			GetBlackboard()->SetValuesAsObject(HumanPlayerHandKey, NewObject<URFHand>());
 		}
 		
-		// Player draw hand
-		HandObject = Blackboard->GetValuesAsObject(HumanPlayerHandKey);
-		if (URFHand* PlayerHand = Cast<URFHand>(HandObject))
+		HandObject = GetBlackboard()->GetValuesAsObject(NPCHandKey);
+		if (!HandObject)
 		{
-			PlayerHand->SetCards(CardsObject->NewHand());
-			Blackboard->SetValuesAsObject(HumanPlayerHandKey, PlayerHand);
+			GetBlackboard()->SetValuesAsObject(NPCHandKey, NewObject<URFHand>());
 		}
-		// NPC draw hand
-		HandObject = Blackboard->GetValuesAsObject(NPCHandKey);
-		if (URFHand* NPCHand = Cast<URFHand>(HandObject))
-		{
-			NPCHand->SetCards(CardsObject->NewHand());
-			Blackboard->SetValuesAsObject(NPCHandKey, NPCHand);
-		}
+	}
+		
+	// Player draw hand
+	HandObject = Blackboard->GetValuesAsObject(HumanPlayerHandKey);
+	if (URFHand* PlayerHand = Cast<URFHand>(HandObject))
+	{
+		PlayerHand->SetCards(CardsObject->NewHand());
+		Blackboard->SetValuesAsObject(HumanPlayerHandKey, PlayerHand);
+	}
+	// NPC draw hand
+	HandObject = Blackboard->GetValuesAsObject(NPCHandKey);
+	if (URFHand* NPCHand = Cast<URFHand>(HandObject))
+	{
+		NPCHand->SetCards(CardsObject->NewHand());
+		Blackboard->SetValuesAsObject(NPCHandKey, NPCHand);
 	}
 	
 	Super::OnActivate();
@@ -213,7 +212,7 @@ void URFBettingState::OnDeactivate()
 
 void URFBettingState::PlayNPCTurn()
 {
-	int RandomChoice = UKismetMathLibrary::RandomIntegerInRange(0,2);
+	int RandomChoice = 0; //UKismetMathLibrary::RandomIntegerInRange(0,2);
 	switch (RandomChoice)
 	{
 		case 0:
@@ -321,25 +320,26 @@ void URFBettingState::OnPlayerDoubleDowned(const FGameplayTag& Key)
 	}
 }
 
-URFRevealState::URFRevealState()
-{
-	Rules.Push(NewObject<URFRoyalFlushRule>());
-	Rules.Push(NewObject<URFStraightFlushRule>());
-	Rules.Push(NewObject<URFFourOfAKindRule>());
-	Rules.Push(NewObject<URFFullHouseRule>());
-	Rules.Push(NewObject<URFFlushRule>());
-	Rules.Push(NewObject<URFStraightRule>());
-	Rules.Push(NewObject<URFThreeOfAKindRule>());
-	Rules.Push(NewObject<URFTwoPairRule>());
-	Rules.Push(NewObject<URFOnePairRule>());
-	Rules.Push(NewObject<URFHighCardRule>());
-}
-
 void URFRevealState::OnActivate()
 {
+	if (!bRulesInit)
+	{
+		Rules.Push(NewObject<URFRoyalFlushRule>(this)); 
+		Rules.Push(NewObject<URFStraightFlushRule>(this));
+		Rules.Push(NewObject<URFFourOfAKindRule>(this));
+		Rules.Push(NewObject<URFFullHouseRule>(this));
+		Rules.Push(NewObject<URFFlushRule>(this));
+		Rules.Push(NewObject<URFStraightRule>(this));
+		Rules.Push(NewObject<URFThreeOfAKindRule>(this));
+		Rules.Push(NewObject<URFTwoPairRule>(this));
+		Rules.Push(NewObject<URFOnePairRule>(this));
+		Rules.Push(NewObject<URFHighCardRule>(this));
+		
+		bRulesInit = true;
+	}
+	
 	URFHand* HumanPlayerCards = Cast<URFHand>(Blackboard->GetValuesAsObject(HumanPlayerHandKey));
 	URFHand* NPCCards = Cast<URFHand>(Blackboard->GetValuesAsObject(NPCHandKey));
-	URFRevealState* RankedHands = Cast<URFRevealState>(Blackboard->GetValuesAsObject(RankedHandsKey));
 	
 	auto MoveMoneyToPlayer = [this](const FGameplayTag& PlayerKey)
 	{
@@ -353,22 +353,25 @@ void URFRevealState::OnActivate()
 		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
 	};
 	
-	EPokerRankComparision Comparision = RankedHands->CompareFirstToSecond(HumanPlayerCards, NPCCards);
+	EPokerRankComparision Comparision = CompareFirstToSecond(HumanPlayerCards, NPCCards);
 
 	switch (Comparision)
 	{
 		case EPokerRankComparision::HIGHER:
 		{
+			UE_LOG(LogTemp, Warning, TEXT("Human Won."))
 			MoveMoneyToPlayer(HumanMoneyKey);
 			break;
 		}
 		case EPokerRankComparision::LOWER:
 		{
+			UE_LOG(LogTemp, Warning, TEXT("NPC Won."))
 			MoveMoneyToPlayer(NPCMoneyKey);
 			break;
 		}
 		case EPokerRankComparision::SAME:
 		{
+			UE_LOG(LogTemp, Warning, TEXT("Draw."))
 			// TODO: handle draws.
 			int HumanPlayerMoney = Blackboard->GetValuesAsInt(HumanMoneyKey);
 			int NPCMoney = Blackboard->GetValuesAsInt(NPCMoneyKey);
@@ -382,6 +385,10 @@ void URFRevealState::OnActivate()
 			Blackboard->SetValuesAsInt(NPCMoneyKey, NPCMoney);
 			Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
 			break;
+		}
+		default:
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Unhandled case."));
 		}
 	}
 	
@@ -397,14 +404,17 @@ EPokerRankComparision URFRevealState::CompareFirstToSecond(URFHand* First, URFHa
 		
 		if (bFirstSatisfiesRule && bSecondSatisfiesRule)
 		{
+			UE_LOG(LogTemp, Warning, TEXT("Both satisfied rule : %s"), *Rule->GetName());
 			return static_cast<EPokerRankComparision>(Rule->Compare(First->GetCards(), Second->GetCards()));
 		}
 		if (bFirstSatisfiesRule)
 		{
+			UE_LOG(LogTemp, Warning, TEXT("First won by rule : %s"), *Rule->GetName());
 			return EPokerRankComparision::HIGHER;
 		}
 		else if (bSecondSatisfiesRule)
 		{
+			UE_LOG(LogTemp, Warning, TEXT("Second won by rule : %s"), *Rule->GetName());
 			return EPokerRankComparision::LOWER;
 		}
 	}
@@ -428,11 +438,7 @@ void URFEndOfRoundState::OnActivate()
 	}
 	else
 	{
-		int RoundNum = Blackboard->GetValuesAsInt(RoundNumKey);
-		if (RoundNum < 5)
-		{
-			Blackboard->SetValuesAsBool(RoundRestartKey, true);
-		}
+		Blackboard->SetValuesAsBool(RoundRestartKey, true);
 	}
 	
 	Super::OnActivate();

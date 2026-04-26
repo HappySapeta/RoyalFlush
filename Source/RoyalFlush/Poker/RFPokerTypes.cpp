@@ -41,9 +41,10 @@ TArray<int> URFCards::NewHand()
 void URFCards::Reset()
 {
 	LastHandEndIndex = -1;
+	Cards.Init(0, NUM_PLAYING_CARDS);
 	for (int Index = 0; Index < NUM_PLAYING_CARDS; ++Index)
 	{
-		Cards.Push(Index);
+		Cards[Index] = Index;
 	}
 }
 

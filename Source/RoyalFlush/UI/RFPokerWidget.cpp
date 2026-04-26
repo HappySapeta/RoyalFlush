@@ -22,6 +22,7 @@ void URFPokerWidget::SetBlackboard(URpStateMachineBlackboardBase* NewBlackboard)
 	// Blackboard events.
 	{
 		Blackboard->GetValueChangeCallback(HumanPlayerHandKey).AddUniqueDynamic(this, &URFPokerWidget::OnHandUpdate);
+		Blackboard->GetValueChangeCallback(NPCHandKey).AddUniqueDynamic(this, &URFPokerWidget::OnOpponentHandUpdate);
 		Blackboard->GetValueChangeCallback(CurrentTurnKey).AddUniqueDynamic(this, &URFPokerWidget::OnTurnChanged);
 		Blackboard->GetValueChangeCallback(CurrentStateKey).AddUniqueDynamic(this, &URFPokerWidget::OnStateChanged);
 		

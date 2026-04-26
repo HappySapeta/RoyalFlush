@@ -39,9 +39,9 @@ bool URFRoyalFlushRule::Test(const TArray<int>& Cards) const
 	return bHasAce && bHasKing && bHasQueen && bHasJack && bHasTen;
 }
 
-int URFRoyalFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFRoyalFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
-	return 0;
+	return EPokerRankComparision::SAME;
 }
 
 bool URFStraightFlushRule::Test(const TArray<int>& Cards) const 
@@ -64,13 +64,29 @@ bool URFStraightFlushRule::Test(const TArray<int>& Cards) const
 	return bHasSecond && bHasThird && bHasFourth && bHasFifth;
 }
 
-int URFStraightFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFStraightFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
-	auto SumOperation = [](const int A, const int B){ return A + B; };
-	int FirstSum = Algo::Accumulate(FirstHand, 0, SumOperation);
-	int SecondSum = Algo::Accumulate(SecondHand, 0, SumOperation);
+	TArray<int> FirstCards = FirstHand;
+	TArray<int> SecondCards = SecondHand;
 	
-	return FirstSum > SecondSum;
+	auto Predicate = [](const int A, const int B)
+	{
+		return GET_RANK(A) > GET_RANK(B);
+	};
+	
+	Algo::Sort(FirstCards, Predicate);
+	Algo::Sort(SecondCards, Predicate);
+	
+	if (GET_RANK(FirstCards[0]) > GET_RANK(SecondCards[0]))
+	{
+		return EPokerRankComparision::HIGHER;
+	}
+	else if (GET_RANK(FirstCards[0]) < GET_RANK(SecondCards[0]))
+	{
+		return EPokerRankComparision::LOWER;
+	}
+	
+	return EPokerRankComparision::SAME;
 }
 
 bool URFFourOfAKindRule::Test(const TArray<int>& Cards) const 
@@ -85,7 +101,7 @@ bool URFFourOfAKindRule::Test(const TArray<int>& Cards) const
 		}
 		else
 		{
-			KindCountMap[Kind] = 1;
+			KindCountMap.Add(Kind, 1);
 		}
 	}
 	
@@ -100,14 +116,14 @@ bool URFFourOfAKindRule::Test(const TArray<int>& Cards) const
 	return false;
 }
 
-int URFFourOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFFourOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
-		return A > B;
+		return GET_RANK(A) > GET_RANK(B);
 	};
 	
 	Algo::Sort(FirstCards, Predicate);
@@ -121,15 +137,15 @@ int URFFourOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>&
 		
 		if (FirstRank > SecondRank)
 		{
-			return 1;
+			return EPokerRankComparision::HIGHER;
 		}
 		else if (FirstRank < SecondRank)
 		{
-			return -1;
+			return EPokerRankComparision::LOWER;
 		}
 	}
 	
-	return 0;
+	return EPokerRankComparision::SAME;
 }
 
 bool URFFullHouseRule::Test(const TArray<int>& Cards) const 
@@ -144,7 +160,7 @@ bool URFFullHouseRule::Test(const TArray<int>& Cards) const
 		}
 		else
 		{
-			KindCountMap[Kind] = 1;
+			KindCountMap.Add(Kind, 1);
 		}
 	}
 	
@@ -165,14 +181,14 @@ bool URFFullHouseRule::Test(const TArray<int>& Cards) const
 	return HasThreeOfAKind && HasTwoOfAKind;
 }
 
-int URFFullHouseRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFFullHouseRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
-		return A > B;
+		return GET_RANK(A) > GET_RANK(B);
 	};
 	
 	Algo::Sort(FirstCards, Predicate);
@@ -186,15 +202,15 @@ int URFFullHouseRule::Compare(const TArray<int>& FirstHand, const TArray<int>& S
 		
 		if (FirstRank > SecondRank)
 		{
-			return 1;
+			return EPokerRankComparision::HIGHER;
 		}
 		else if (FirstRank < SecondRank)
 		{
-			return -1;
+			return EPokerRankComparision::LOWER;
 		}
 	}
 	
-	return 0;
+	return EPokerRankComparision::SAME;
 }
 
 bool URFFlushRule::Test(const TArray<int>& Cards) const 
@@ -212,32 +228,47 @@ bool URFFlushRule::Test(const TArray<int>& Cards) const
 	return true;
 }
 
-int URFFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFFlushRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
-	const TArray<int>& FirstCards = FirstHand;
-	const TArray<int>& SecondCards = SecondHand;
+	TArray<int> FirstCards = FirstHand;
+	TArray<int> SecondCards = SecondHand;
+	
+	auto Predicate = [](const int A, const int B)
+	{
+		return GET_RANK(A) > GET_RANK(B);	
+	};
+	
+	Algo::Sort(FirstCards, Predicate);
+	Algo::Sort(SecondCards, Predicate);
 	
 	for (int Index = 0; Index < FirstCards.Num(); ++Index)
 	{
 		int FirstRank = GET_RANK(FirstCards[Index]);
 		int SecondRank = GET_RANK(SecondCards[Index]);
+		
 		if (FirstRank > SecondRank)
 		{
-			return 1;
+			return EPokerRankComparision::HIGHER;
 		}
 		else if (FirstRank < SecondRank)
 		{
-			return -1;
+			return EPokerRankComparision::LOWER;
 		}
 	}
 	
-	return 0;
+	return EPokerRankComparision::SAME;
 }
 
 bool URFStraightRule::Test(const TArray<int>& Hand) const 
 {
 	TArray<int> Cards = Hand;
-	Algo::Sort(Cards);
+	
+	auto Predicate = [](const int A, const int B)
+	{
+		return GET_RANK(A) > GET_RANK(B);	
+	};
+	
+	Algo::Sort(Cards, Predicate);
 	for (int Index = 0; Index < Cards.Num() - 1; ++Index)
 	{
 		int FirstRank = GET_RANK(Cards[Index]);
@@ -251,21 +282,21 @@ bool URFStraightRule::Test(const TArray<int>& Hand) const
 	return true;
 }
 
-int URFStraightRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFStraightRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	int FirstHighestRank = GET_RANK(*Algo::MaxElement(FirstHand));
 	int SecondHighestRank = GET_RANK(*Algo::MaxElement(SecondHand));
 	
 	if (FirstHighestRank > SecondHighestRank)
 	{
-		return 1;
+		return EPokerRankComparision::HIGHER;
 	}
 	else if (FirstHighestRank < SecondHighestRank)
 	{
-		return -1;
+		return EPokerRankComparision::LOWER;
 	}
 	
-	return 0;
+	return EPokerRankComparision::SAME;
 }
 
 bool URFThreeOfAKindRule::Test(const TArray<int>& Cards) const 
@@ -280,7 +311,7 @@ bool URFThreeOfAKindRule::Test(const TArray<int>& Cards) const
 		}
 		else
 		{
-			KindCountMap[Kind] = 1;
+			KindCountMap.Add(Kind, 1);
 		}
 	}
 	
@@ -295,14 +326,14 @@ bool URFThreeOfAKindRule::Test(const TArray<int>& Cards) const
 	return false;
 }
 
-int URFThreeOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFThreeOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
-		return A > B;	
+		return GET_RANK(A) > GET_RANK(B);	
 	};
 	
 	Algo::Sort(FirstCards, Predicate);
@@ -315,15 +346,15 @@ int URFThreeOfAKindRule::Compare(const TArray<int>& FirstHand, const TArray<int>
 		
 		if (FirstRank > SecondRank)
 		{
-			return 1;
+			return EPokerRankComparision::HIGHER;
 		}
 		else if (FirstRank < SecondRank)
 		{
-			return -1;
+			return EPokerRankComparision::LOWER;
 		}
 	}
 	
-	return 0;
+	return EPokerRankComparision::SAME;
 }
 
 bool URFTwoPairRule::Test(const TArray<int>& Cards) const 
@@ -338,7 +369,7 @@ bool URFTwoPairRule::Test(const TArray<int>& Cards) const
 		}
 		else
 		{
-			KindCountMap[Kind] = 1;
+			KindCountMap.Add(Kind, 1);
 		}
 	}
 	
@@ -355,14 +386,14 @@ bool URFTwoPairRule::Test(const TArray<int>& Cards) const
 	return NumPairs == 2;
 }
 
-int URFTwoPairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFTwoPairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
-		return A > B;	
+		return GET_RANK(A) > GET_RANK(B);	
 	};
 	
 	Algo::Sort(FirstCards, Predicate);
@@ -375,15 +406,15 @@ int URFTwoPairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& Sec
 		
 		if (FirstRank > SecondRank)
 		{
-			return 1;
+			return EPokerRankComparision::HIGHER;
 		}
 		else if (FirstRank < SecondRank)
 		{
-			return -1;
+			return EPokerRankComparision::LOWER;
 		}
 	}
 	
-	return 0;
+	return EPokerRankComparision::SAME;
 }
 
 bool URFOnePairRule::Test(const TArray<int>& Cards) const 
@@ -398,7 +429,7 @@ bool URFOnePairRule::Test(const TArray<int>& Cards) const
 		}
 		else
 		{
-			KindCountMap[Kind] = 1;
+			KindCountMap.Add(Kind, 1);
 		}
 	}
 	
@@ -413,14 +444,14 @@ bool URFOnePairRule::Test(const TArray<int>& Cards) const
 	return false;
 }
 
-int URFOnePairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFOnePairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
-		return A > B;	
+		return GET_RANK(A) > GET_RANK(B);
 	};
 	
 	Algo::Sort(FirstCards, Predicate);
@@ -433,15 +464,15 @@ int URFOnePairRule::Compare(const TArray<int>& FirstHand, const TArray<int>& Sec
 		
 		if (FirstRank > SecondRank)
 		{
-			return 1;
+			return EPokerRankComparision::HIGHER;
 		}
 		else if (FirstRank < SecondRank)
 		{
-			return -1;
+			return EPokerRankComparision::LOWER;
 		}
 	}
 	
-	return 0;
+	return EPokerRankComparision::SAME;
 }
 
 bool URFHighCardRule::Test(const TArray<int>& Hand) const 
@@ -449,14 +480,14 @@ bool URFHighCardRule::Test(const TArray<int>& Hand) const
 	return true;
 }
 
-int URFHighCardRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
+EPokerRankComparision URFHighCardRule::Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const 
 {
 	TArray<int> FirstCards = FirstHand;
 	TArray<int> SecondCards = SecondHand;
 	
 	auto Predicate = [](const int A, const int B)
 	{
-		return A > B;	
+		return GET_RANK(A) > GET_RANK(B);	
 	};
 	
 	Algo::Sort(FirstCards, Predicate);
@@ -469,13 +500,13 @@ int URFHighCardRule::Compare(const TArray<int>& FirstHand, const TArray<int>& Se
 		
 		if (FirstRank > SecondRank)
 		{
-			return 1;
+			return EPokerRankComparision::HIGHER;
 		}
 		else if (FirstRank < SecondRank)
 		{
-			return -1;
+			return EPokerRankComparision::LOWER;
 		}
 	}
 	
-	return 0;
+	return EPokerRankComparision::SAME;
 }

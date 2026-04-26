@@ -27,6 +27,9 @@ public:
 	void OnHandUpdate(const FGameplayTag& Key);
 	
 	UFUNCTION(BlueprintImplementableEvent)
+	void OnOpponentHandUpdate(const FGameplayTag& Key);
+	
+	UFUNCTION(BlueprintImplementableEvent)
 	void OnTurnChanged(const FGameplayTag& Key);
 	
 	UFUNCTION(BlueprintImplementableEvent)
@@ -77,6 +80,9 @@ protected:
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	TObjectPtr<URFPokerHandWidget> PokerHandWidget;
 	
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	TObjectPtr<URFPokerHandWidget> OpponentHandWidget;
+	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag CurrentTurnKey;
 	
@@ -91,6 +97,9 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag FoldStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag NPCHandKey;
 
 private:
 	

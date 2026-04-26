@@ -25,14 +25,6 @@ enum class EPokerState : uint8
 	EndOfRound
 };
 
-UENUM()
-enum class EPokerRankComparision : uint8
-{
-	LOWER,
-	SAME,
-	HIGHER
-};
-
 UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFCards : public UObject
 {
