@@ -25,7 +25,11 @@ protected:
 	
 	virtual void OnActivate() override;
 	
+	virtual void OnDeactivate() override;
+	
 	void ExecuteWithDelay(FTimerDelegate Callback, const float Delay);
+	
+	void ClearTimers();
 	
 protected:
 	
@@ -61,9 +65,6 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CardsKey;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag RoundRestartKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
@@ -105,6 +106,14 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
 	FGameplayTag RoundNumKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
+	FGameplayTag StatusObjectKey;
+	
+private:
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -210,7 +219,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float HumanTurnDelay;
 	
-	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	UPROPERTY(EditDefaultsOnly)
 	float EndStateDelay;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
@@ -260,10 +269,16 @@ protected:
 
 	virtual void OnActivate() override;
 	
-	EPokerRankComparision CompareFirstToSecond(URFHand* First, URFHand* Second);
+	TPair<EPokerRankComparision, FString> CompareFirstToSecond(URFHand* First, URFHand* Second);
 	
 private:
+
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float DeclarationDelay;
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float EndStateDelay;
+
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag HumanPlayerHandKey;
 	
@@ -279,7 +294,13 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag NPCMoneyKey;
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
+	
 private:
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
 	
 	UPROPERTY()
 	TArray<URFPokerHandRuleBase*> Rules;
@@ -314,8 +335,16 @@ protected:
 	FGameplayTag RoundNumKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag RoundRestartKey;
+	FGameplayTag GameEndStatusKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag GameEndStatusKey;
+	float EndStateDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
+
+private:
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
 };
