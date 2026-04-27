@@ -3,7 +3,7 @@
 #pragma once
 #include "RFPokerRules.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPokerRankComparision : uint8
 {
 	LOWER = 0,
@@ -11,15 +11,21 @@ enum class EPokerRankComparision : uint8
 	HIGHER = 2
 };
 
-UCLASS()
+UCLASS(BlueprintType)
 class ROYALFLUSH_API URFPokerHandRuleBase : public UObject
 {
 	GENERATED_BODY()
 public:
 	
-	virtual FString GetRuleName() const PURE_VIRTUAL (URFPokerHandRuleBase::GetRuleName, return TEXT(""); ); 
 	virtual ~URFPokerHandRuleBase() = default;
+	
+	UFUNCTION(BlueprintCallable)
+	virtual FString GetRuleName() const PURE_VIRTUAL (URFPokerHandRuleBase::GetRuleName, return TEXT(""); );
+	
+	UFUNCTION(BlueprintCallable)
 	virtual bool Test(const TArray<int>& Hand) const PURE_VIRTUAL (URFPokerHandRuleBase::Test, return false; );
+	
+	UFUNCTION(BlueprintCallable)
 	virtual EPokerRankComparision Compare(const TArray<int>& FirstHand, const TArray<int>& SecondHand) const PURE_VIRTUAL (URFPokerHandRuleBase::Compare, return EPokerRankComparision::SAME; );
 };
 
