@@ -291,7 +291,7 @@ void URFBettingState::OnDeactivate()
 
 void URFBettingState::PlayNPCTurn()
 {
-	int RandomChoice = 0;//UKismetMathLibrary::RandomIntegerInRange(0,2);
+	int RandomChoice = UKismetMathLibrary::RandomIntegerInRange(0,2);
 	switch (RandomChoice)
 	{
 		case 0:
