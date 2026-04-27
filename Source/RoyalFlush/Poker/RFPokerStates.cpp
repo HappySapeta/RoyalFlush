@@ -12,12 +12,25 @@ void URFPokerState::OnActivate()
 	Blackboard->SetValuesAsInt(CurrentStateKey, static_cast<int>(CurrentState));
 }
 
+void URFPokerState::OnDeactivate()
+{
+	ClearTimers();
+	Super::OnDeactivate();
+}
+
 void URFPokerState::ExecuteWithDelay(FTimerDelegate Callback, const float Delay)
 {
 	const AActor* OwningActor = Cast<AActor>(Blackboard->GetValuesAsObject(OwningActorKey));
 	FTimerManager& TimerManager = OwningActor->GetWorld()->GetTimerManager();
 	FTimerHandle TimerHandle;
 	TimerManager.SetTimer(TimerHandle, Callback, Delay, false);
+}
+
+void URFPokerState::ClearTimers()
+{
+	const AActor* OwningActor = Cast<AActor>(Blackboard->GetValuesAsObject(OwningActorKey));
+	FTimerManager& TimerManager = OwningActor->GetWorld()->GetTimerManager();
+	TimerManager.ClearAllTimersForObject(this);
 }
 
 void URFPokerBeginState::OnActivate()
@@ -36,7 +49,7 @@ void URFPokerBeginState::OnActivate()
 void URFPokerDealingState::OnActivate()
 {
 	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
-	CurrentStatusObject->SetStatus(TEXT("Dealing cards."));
+	CurrentStatusObject->SetStatus(TEXT("..Dealing Cards..."));
 	
 	int RoundNum = Blackboard->GetValuesAsInt(RoundNumKey);
 	Blackboard->SetValuesAsInt(RoundNumKey, ++RoundNum);
@@ -91,6 +104,7 @@ void URFPokerDiscardingState::OnActivate()
 
 	// First action
 	{
+		CurrentStatusObject->SetStatus(TEXT("NPC Choosing..."));
 		FTimerDelegate NPCTurnCallback = FTimerDelegate::CreateLambda([this]()
 		{
 			Blackboard->SetValuesAsBool(PassStatusKey, false);
@@ -119,6 +133,8 @@ void URFPokerDiscardingState::OnActivate()
 void URFPokerDiscardingState::OnDeactivate()
 {
 	Blackboard->GetValueChangeCallback(DiscardedHandKey).RemoveAll(this);
+	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
+	Blackboard->GetValueChangeCallback(DiscardStatusKey).RemoveAll(this);
 	SetTurn(EPokerPlayer::None);
 	Super::OnDeactivate();
 }
@@ -185,7 +201,7 @@ void URFPokerDiscardingState::HandleDiscardRequested(const FGameplayTag& Key)
 	
 	if (NumDiscards + 1 == 2)
 	{
-		CurrentStatusObject->SetStatus(TEXT("Turn ended."));
+		CurrentStatusObject->SetStatus(TEXT("Turn Ended"));
 		ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
 		{
 			EndState();
@@ -198,11 +214,11 @@ void URFPokerDiscardingState::HandlePlayerPassed(const FGameplayTag& Key)
 	const bool bPlayerPassed = Blackboard->GetValuesAsBool(Key);
 	if (bPlayerPassed)
 	{
-		CurrentStatusObject->SetStatus(TEXT("Turn Ended."));
+		CurrentStatusObject->SetStatus(TEXT("Turn Ended"));
 		ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
 		{
 			EndState();
-		}), EndStateDelay);	
+		}), EndStateDelay);
 	}
 }
 
@@ -222,6 +238,7 @@ void URFBettingState::OnActivate()
 	}
 	
 	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
+	CurrentStatusObject->SetStatus(TEXT("Betting Phase"));
 	
 	Blackboard->GetValueChangeCallback(PassStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerPassed);
 	Blackboard->GetValueChangeCallback(FoldStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerFolded);
@@ -244,6 +261,12 @@ void URFBettingState::OnActivate()
 	
 	FTimerDelegate HumanTurnCallback = FTimerDelegate::CreateLambda([this]()
 	{
+		if (Blackboard->GetValuesAsBool(FoldStatusKey))
+		{
+			EndState();
+			return;
+		}
+		
 		Blackboard->SetValuesAsBool(PassStatusKey, false);
 		Blackboard->SetValuesAsBool(FoldStatusKey, false);
 		Blackboard->SetValuesAsBool(DoubleDownStatusKey, false);
@@ -259,35 +282,41 @@ void URFBettingState::OnDeactivate()
 	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
 	Blackboard->GetValueChangeCallback(FoldStatusKey).RemoveAll(this);
 	Blackboard->GetValueChangeCallback(DoubleDownStatusKey).RemoveAll(this);
+	Blackboard->SetValuesAsBool(PassStatusKey, false);
+	Blackboard->SetValuesAsBool(FoldStatusKey, false);
+	Blackboard->SetValuesAsBool(DoubleDownStatusKey, false);
 	SetTurn(EPokerPlayer::None);
 	Super::OnDeactivate();
 }
 
 void URFBettingState::PlayNPCTurn()
 {
-	int RandomChoice = UKismetMathLibrary::RandomIntegerInRange(0,2);
+	int RandomChoice = 0;//UKismetMathLibrary::RandomIntegerInRange(0,2);
 	switch (RandomChoice)
 	{
 		case 0:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC chose to pass."));
+			CurrentStatusObject->SetStatus(TEXT("NPC chose to Pass."));
 			Blackboard->SetValuesAsBool(PassStatusKey, true);
 			break;
 		}
 		case 1:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC chose to fold."));
+			CurrentStatusObject->SetStatus(TEXT("NPC chose to Fold."));
 			Blackboard->SetValuesAsBool(FoldStatusKey, true);
 			break;
 		}
 		case 2:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC chose to double down."));
+			CurrentStatusObject->SetStatus(TEXT("NPC chose to Double-Down."));
 			Blackboard->SetValuesAsBool(DoubleDownStatusKey, true);
 			break;
 		}
 		default:
-		break;
+		{
+			CurrentStatusObject->SetStatus(TEXT("NPC failed to chose."));
+			break;
+		}
 	}
 }
 
@@ -462,7 +491,7 @@ void URFRevealState::OnActivate()
 	
 	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
 	{
-		CurrentStatusObject->SetStatus(TEXT("Turn Ended."));
+		CurrentStatusObject->SetStatus(TEXT("Turn Ended"));
 		EndState();
 	}), EndStateDelay);
 	

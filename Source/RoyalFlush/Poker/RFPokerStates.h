@@ -25,7 +25,11 @@ protected:
 	
 	virtual void OnActivate() override;
 	
+	virtual void OnDeactivate() override;
+	
 	void ExecuteWithDelay(FTimerDelegate Callback, const float Delay);
+	
+	void ClearTimers();
 	
 protected:
 	
@@ -215,7 +219,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float HumanTurnDelay;
 	
-	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	UPROPERTY(EditDefaultsOnly)
 	float EndStateDelay;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
