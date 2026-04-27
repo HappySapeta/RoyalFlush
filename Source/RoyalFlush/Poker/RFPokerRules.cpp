@@ -273,7 +273,7 @@ bool URFStraightRule::Test(const TArray<int>& Hand) const
 	{
 		int FirstRank = GET_RANK(Cards[Index]);
 		int SecondRank = GET_RANK(Cards[Index + 1]);
-		if (SecondRank - FirstRank != 1)
+		if (FirstRank - SecondRank != 1)
 		{
 			return false;
 		}
