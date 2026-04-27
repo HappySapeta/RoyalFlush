@@ -17,24 +17,16 @@ void URFCards::Shuffle()
 
 TArray<int> URFCards::NewHand()
 {
-	int NextHandStartIndex = LastHandEndIndex + 1;
-	if (!ensureAlways(Cards.IsValidIndex(NextHandStartIndex) && Cards.IsValidIndex(NextHandStartIndex + (HAND_SIZE - 1))))
+	TArray<int> NewHand;
+	ensureAlways(!Cards.IsEmpty());
+	
+	for (int Index = 0; Index < HAND_SIZE; ++Index)
 	{
-		return {};
-	}
-	
-	int* Start = &Cards[NextHandStartIndex];
-	LastHandEndIndex = NextHandStartIndex + (HAND_SIZE - 1);
-	
-	TArray<int>NewHand{Start, HAND_SIZE};
-	
-	for (int Index = NextHandStartIndex; Index <= LastHandEndIndex; ++Index)
-	{
-		Cards.RemoveAtSwap(Index, 1, EAllowShrinking::No);
+		NewHand.Push(Cards[Index]);
+		Cards.RemoveAtSwap(Index);
 	}
 	
 	Cards.Shrink();
-	
 	return NewHand;
 }
 
@@ -48,14 +40,6 @@ void URFCards::Reset()
 	}
 }
 
-int URFCards::SwapCard(int Card)
-{
-	int NewCard = Cards[0];
-	Cards.RemoveAtSwap(0);
-	Cards.Push(Card);
-	return NewCard;
-}
-
 void URFCards::ReplaceDiscardedCards(const TArray<int> CardIndicesToBeDiscarded, TArray<int>& TargetHand)
 {
 	for (int CardIndex : CardIndicesToBeDiscarded)
@@ -65,7 +49,8 @@ void URFCards::ReplaceDiscardedCards(const TArray<int> CardIndicesToBeDiscarded,
 			continue;
 		}
 		
-		TargetHand[CardIndex] = SwapCard(TargetHand[CardIndex]); 
+		TargetHand[CardIndex] = Cards[0];
+		Cards.RemoveAtSwap(0);
 	}
 	
 	Cards.Shrink();

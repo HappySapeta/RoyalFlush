@@ -2,6 +2,7 @@
 
 #include "RFPokerWidget.h"
 #include "RFPokerHandWidget.h"
+#include "Components/WidgetSwitcher.h"
 #include "RoyalFlush/Poker/RFPokerDeck.h"
 #include "RoyalFlush/Poker/RFPokerTypes.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
@@ -49,6 +50,12 @@ void URFPokerWidget::HandlePlayerPressedDiscard()
 	if (DiscardedCardIndices.IsEmpty())
 	{
 		return;
+	}
+	
+	int NumDiscarded = Blackboard->GetValuesAsInt(DiscardNumKey);
+	if (NumDiscarded >= 1)
+	{
+		OverlaySwitcher->SetVisibility(ESlateVisibility::Hidden);	
 	}
 	
 	URFHand* PlayerHand = Cast<URFHand>(Blackboard->GetValuesAsObject(HumanPlayerHandKey));

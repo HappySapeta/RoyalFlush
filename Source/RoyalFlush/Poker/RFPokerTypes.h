@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "RFPokerRules.h"
 #include "RFPokerTypes.generated.h"
 
 UENUM(BlueprintType)
@@ -42,9 +41,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void Reset();
-
-	int SwapCard(int Card);
-
+	
 	UFUNCTION(BlueprintCallable)
 	void ReplaceDiscardedCards(TArray<int> CardIndicesToBeDiscarded, TArray<int>& TargetHand);
 

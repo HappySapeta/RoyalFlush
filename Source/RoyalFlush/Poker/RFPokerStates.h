@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
 #include "StateMachine/RpState.h"
+#include "RFPokerRules.h"
 #include "RFPokerTypes.h"
 #include "RFPokerStates.generated.h"
 
@@ -126,6 +127,9 @@ private:
 	UFUNCTION()
 	void HandleDiscardRequested(const FGameplayTag& Key);
 	
+	UFUNCTION()
+	void HandlePlayerPassed(const FGameplayTag& Key);
+	
 private:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Default")
@@ -133,6 +137,9 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float HumanTurnDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float EndStateDelay;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PassStatusKey;
@@ -158,10 +165,12 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag StatusObjectKey;
 	
+private:
+	
 	EPokerPlayer CurrentTurn;
 	
 	UPROPERTY()
-	URFPokerStatus* CurrentStatusObject;  
+	URFPokerStatus* CurrentStatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -196,7 +205,13 @@ private:
 	float NPCTurnDelay;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float NPCPlayDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float HumanTurnDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float EndStateDelay;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PoolMoneyKey;
@@ -226,9 +241,6 @@ private:
 	FGameplayTag NPCMoneyKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag RoundEndKey;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag StatusObjectKey;
 	
 private:
@@ -237,9 +249,6 @@ private:
 	
 	UPROPERTY()
 	URFPokerStatus* CurrentStatusObject;
-	
-	UPROPERTY(EditDefaultsOnly)
-	float NPCPlayDelay;
 };
 
 UCLASS(Blueprintable, BlueprintType)

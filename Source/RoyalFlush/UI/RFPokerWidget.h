@@ -8,6 +8,7 @@
 #include "RoyalFlush/Poker/RFPokerTypes.h"
 #include "RFPokerWidget.generated.h"
 
+class UWidgetSwitcher;
 class UOverlay;
 class URFPokerHandWidget;
 class UButton;
@@ -83,6 +84,9 @@ protected:
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	TObjectPtr<URFPokerHandWidget> OpponentHandWidget;
 	
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	TObjectPtr<UWidgetSwitcher> OverlaySwitcher;
+	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag CurrentTurnKey;
 	
@@ -100,6 +104,9 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag NPCHandKey;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag DiscardNumKey;
 
 private:
 	
