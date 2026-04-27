@@ -6,7 +6,6 @@ WwiseNiagara/Binaries/Mac
 WwiseNiagara/Binaries/Win64/*.pdb
 WwiseSoundEngine/Binaries/Mac
 WwiseSoundEngine/Binaries/Win64/*.pdb
-WwiseSoundEngine/ThirdParty/x64_vc160
 WwiseSoundEngine/ThirdParty/x64_vc170/Debug(StaticCRT)
 WwiseSoundEngine/ThirdParty/x64_vc170/Profile(StaticCRT)
 WwiseSoundEngine/ThirdParty/x64_vc170/Release(StaticCRT)

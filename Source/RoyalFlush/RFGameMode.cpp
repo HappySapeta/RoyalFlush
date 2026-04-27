@@ -47,7 +47,7 @@ void ARFGameMode::StartPokerGame()
 {
 	if (AActor* PlayerActor = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0))
 	{
-		PokerStateMachine->GetBlackboard()->SetValuesAsObject(PokerPlayerTag, PlayerActor);
+		PokerStateMachine->GetBlackboard()->SetValuesAsObject(OwningActorKey, PlayerActor);
 		PokerStateMachine->GetBlackboard()->SetValuesAsInt(PokerScoreTag, 0);
 		
 		PokerStateMachine->Start();
