@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="509666419" Type="Event" GUID="{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}" Language="SFX" Hash="{1120D532-9286-320E-6B1A-F179A6D40F3B}">
+		<SoundBank Id="509666419" Type="Event" GUID="{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}" Language="SFX" Hash="{7C22DE56-B8B5-AB0F-345E-41D3BE455379}">
 			<ObjectPath>Character_Speech_King</ObjectPath>
 			<ShortName>Character_Speech_King</ShortName>
 			<Path>Event/Character_Speech_King.bnk</Path>
@@ -43,7 +43,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="509666419" Name="Character_Speech_King" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_King" GUID="{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}" DurationType="OneShot" DurationMin="0.10905077" DurationMax="0.15425321">
+				<Event Id="509666419" Name="Character_Speech_King" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_King" GUID="{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}" DurationType="OneShot" DurationMin="0.7633781" DurationMax="1.0795797">
 					<MediaRefs>
 						<MediaRef Id="165316155"/>
 						<MediaRef Id="223110650"/>
@@ -57,5 +57,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A26107E3-F29A-1F7A-204A-FB56314ED6C0}</FileHash>
+	<FileHash>{CAC032FC-AB0E-B3AC-0626-5F14C5DD63E1}</FileHash>
 </SoundBanksInfo>

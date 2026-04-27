@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{EBD83DB8-EDCC-06EF-D0AA-92B9604CCE1C}">
+		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{CF9D0F65-91A6-B729-1AED-96678AE0C2C2}">
 			<ObjectPath>Character_Speech_Dealer</ObjectPath>
 			<ShortName>Character_Speech_Dealer</ShortName>
 			<Path>Event/Character_Speech_Dealer.bnk</Path>
@@ -34,7 +34,7 @@
 				<File Id="591661577" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Dealer_Speech_Oneshot_2.wav</ShortName>
 					<Path>Media/591661577.wem</Path>
-					<CachePath>DB/{DB814070-7FD9-92EF-2FAC-A122FDBA4E10}.wem</CachePath>
+					<CachePath>74/{74B9084E-E308-540F-BEBB-A572E1DCC892}.wem</CachePath>
 				</File>
 				<File Id="753993133" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Dealer_Speech_Oneshot_4.wav</ShortName>
@@ -44,16 +44,16 @@
 				<File Id="932306053" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Dealer_Speech_Oneshot_1.wav</ShortName>
 					<Path>Media/932306053.wem</Path>
-					<CachePath>E6/{E6CC5CDA-A73D-B2BC-FA20-61BC189137D7}.wem</CachePath>
+					<CachePath>B2/{B22046CB-0969-F2B6-E74D-4F3391427208}.wem</CachePath>
 				</File>
 				<File Id="952140260" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Dealer_Speech_Oneshot_3.wav</ShortName>
 					<Path>Media/952140260.wem</Path>
-					<CachePath>AB/{ABE5543A-C17D-1697-647F-93B9E4478051}.wem</CachePath>
+					<CachePath>7A/{7AA8EE59-9FEE-4BD6-0387-567916917799}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1402278545" Name="Character_Speech_Dealer" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Dealer" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" DurationType="OneShot" DurationMin="0.1" DurationMax="0.11724018">
+				<Event Id="1402278545" Name="Character_Speech_Dealer" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Dealer" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" MaxAttenuation="400" DurationType="OneShot" DurationMin="0.8690389" DurationMax="1.0186505">
 					<MediaRefs>
 						<MediaRef Id="252900410"/>
 						<MediaRef Id="295450687"/>
@@ -69,5 +69,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{708233F4-4F88-A3A0-5E35-2755A7A2B1F1}</FileHash>
+	<FileHash>{C742EF07-75C2-E51A-24E5-28140EB93BF9}</FileHash>
 </SoundBanksInfo>

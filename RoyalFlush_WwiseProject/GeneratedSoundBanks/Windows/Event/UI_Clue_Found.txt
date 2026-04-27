@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3788930864	UI_Clue_Found			\Default Work Unit\UI\UI_Clue_Found	
+

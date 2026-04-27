@@ -14,6 +14,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{5DB35827-6AD1-49F3-B0D5-BC2140CFCB54}" ShortID="56185034">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_ThirdLevel_Loop" ID="{251FF0D2-6D1F-4B11-A3CD-85EDFCBE1C8F}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Folder Name="Spot Ambiences" ID="{3DD7EBFC-684C-4C2C-BBA3-6352167B0075}" ShortID="541676629">
@@ -248,6 +255,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Cutsecen_Intro_SFXs" ID="{DEDF0E2E-D5C5-468E-8E86-8EE89B0EB0F9}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_Clue_Found" ID="{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}">
+							<ChildrenList>
+								<Action Name="" ID="{FB9E6B8B-6667-4ED1-8CFF-DA0598D86E6A}" ShortID="429824026">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Clue_Found" ID="{DC5B5AEC-E28A-4DF0-AB06-AA292B65F943}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

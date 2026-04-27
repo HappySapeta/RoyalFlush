@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}",
     "Language": "SFX",
-    "Hash": "{1120D532-9286-320E-6B1A-F179A6D40F3B}",
+    "Hash": "{7C22DE56-B8B5-AB0F-345E-41D3BE455379}",
     "ObjectPath": "Character_Speech_King",
     "ShortName": "Character_Speech_King",
     "Path": "Event/Character_Speech_King.bnk",
@@ -86,8 +86,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Character\\Speech\\Character_Speech_King",
       "GUID": "{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}",
       "DurationType": "OneShot",
-      "DurationMin": "0.10905077",
-      "DurationMax": "0.15425321",
+      "DurationMin": "0.7633781",
+      "DurationMax": "1.0795797",
       "MediaRefs": [
        {
         "Id": "165316155"
@@ -115,6 +115,6 @@
     ]
    }
   ],
-  "FileHash": "{450C5910-11BA-36A4-EFA9-798F09354BBE}"
+  "FileHash": "{FA4179C4-DAFB-5F60-68DE-5671D96BB38F}"
  }
 }
