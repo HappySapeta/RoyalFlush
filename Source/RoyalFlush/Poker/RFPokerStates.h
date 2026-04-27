@@ -5,14 +5,13 @@
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
 #include "StateMachine/RpState.h"
+#include "RFPokerRules.h"
+#include "RFPokerTypes.h"
 #include "RFPokerStates.generated.h"
 
-UENUM(BlueprintType)
-enum EPokerPlayer : uint8
-{
-	NPC,
-	Player
-};
+class URFHand;
+class URFCards;
+class URFRankedHands;
 
 /**
  * 
@@ -24,9 +23,20 @@ class ROYALFLUSH_API URFPokerState : public URpState
 	
 protected:
 	
-	UFUNCTION(BlueprintImplementableEvent)
-	void OnUpdateUI();
+	virtual void OnActivate() override;
 	
+	void ExecuteWithDelay(FTimerDelegate Callback, const float Delay);
+	
+protected:
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag OwningActorKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag CurrentStateKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	EPokerState CurrentState;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -35,31 +45,36 @@ class ROYALFLUSH_API URFPokerBeginState : public URFPokerState
 	GENERATED_BODY()
 	
 protected:
-	
+
 	virtual void OnActivate() override;
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_SwitchToPokerCamera();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_EnablePokerUI();
 	
 private:
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PoolMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag RoundNumKey;
 	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag CurrentPlayerIndexKey;
-	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag ScoreMultiplierKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CardsKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag RoundRestartKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag GameEndStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
+	
+private:
+	
+	UPROPERTY()
+	URFPokerStatus* StatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -68,51 +83,94 @@ class ROYALFLUSH_API URFPokerDealingState : public URFPokerState
 	GENERATED_BODY()
 	
 protected:
-	
-	virtual void OnActivate() override;
-	
-private:
 
-	UPROPERTY(EditDefaultsOnly)
+	virtual void OnActivate() override;
+
+private:
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float DealingStateDelay;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PotMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
 	FGameplayTag CardsKey;
 	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PlayerHandKey;
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
+	FGameplayTag HumanPlayerHandKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
 	FGameplayTag NPCHandKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
+	FGameplayTag RoundNumKey;
 };
 
 UCLASS(Blueprintable, BlueprintType)
 class ROYALFLUSH_API URFPokerDiscardingState : public URFPokerState
 {
 	GENERATED_BODY()
-
-public:
 	
-	virtual void OnActivate() override;
-
 protected:
+
+	virtual void OnActivate() override;
 	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_ShowPassDiscardUI();
+	virtual void OnDeactivate() override;
 
 private:
+
+	void SetTurn(EPokerPlayer Player);
+
+	void PlayNPCTurn();
 	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PlayerDiscardNumKey;
+	UFUNCTION()
+	void HandleDiscardRequested(const FGameplayTag& Key);
 	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag NPCDiscardNumKey;
+	UFUNCTION()
+	void HandlePlayerPassed(const FGameplayTag& Key);
 	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PlayerPassedKey;
+private:
+
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float NPCTurnDelay;
 	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag NPCPassedKey;
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float HumanTurnDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float EndStateDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag PassStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag DiscardStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag DiscardedHandKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag CurrentTurnKey;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag CardsKey;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag HumanPlayerHandKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag DiscardNumKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
+	
+private:
+	
+	EPokerPlayer CurrentTurn;
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -120,90 +178,144 @@ class ROYALFLUSH_API URFBettingState : public URFPokerState
 {
 	GENERATED_BODY()
 
-public:
+protected:
 	
 	virtual void OnActivate() override;
-
-	virtual void StateUpdate_Implementation(const float DeltaTime) override;
 	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnNPCPass();
+	virtual void OnDeactivate() override;
 	
-	UFUNCTION(BlueprintImplementableEvent)
-	void BP_OnPlayerPass();
+private:
+	
+	void SetTurn(EPokerPlayer Player);
+	
+	void PlayNPCTurn();
+	
+	UFUNCTION()
+	void OnPlayerPassed(const FGameplayTag& Key);
+	
+	UFUNCTION()
+	void OnPlayerFolded(const FGameplayTag& Key);
+	
+	UFUNCTION()
+	void OnPlayerDoubleDowned(const FGameplayTag& Key);
 
 private:
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float NPCTurnDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float NPCPlayDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float HumanTurnDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float EndStateDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PoolMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PotMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag ScoreMultiplierKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CurrentTurnKey;
 
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag PlayerMoneyKey;
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag HumanMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PassStatusKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag FoldStatusKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag DoubleDownStatusKey;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag NPCMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly)
-	FGameplayTag RoundEndKey;
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
 	
 private:
 	
 	EPokerPlayer CurrentPlayer;
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
-class ROYALFLUSH_API URFCards : public UObject
+class ROYALFLUSH_API URFRevealState : public URFPokerState
 {
 	GENERATED_BODY()
 
-public:
-	
-	URFCards();
-	
-	UFUNCTION(BlueprintCallable)
-	void Shuffle();
-	
-	UFUNCTION(BlueprintCallable)
-	TArray<int> NewHand();
-	
-	UFUNCTION(BlueprintCallable)
-	void Reset();
+protected:
 
+	virtual void OnActivate() override;
+	
+	EPokerRankComparision CompareFirstToSecond(URFHand* First, URFHand* Second);
+	
 private:
 	
-	TArray<int> Cards;
-	int LastHandEndIndex = -1;
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag HumanPlayerHandKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag NPCHandKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag PotMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag HumanMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag NPCMoneyKey;
+	
+private:
+	
+	UPROPERTY()
+	TArray<URFPokerHandRuleBase*> Rules;
+	
+	bool bRulesInit = false;
 };
 
-UCLASS(NotBlueprintable, NotBlueprintType)
-class ROYALFLUSH_API URFHand : public UObject
+UCLASS(Blueprintable, BlueprintType)
+class ROYALFLUSH_API URFEndOfRoundState : public URFPokerState
 {
 	GENERATED_BODY()
 
-public:
-	
-	void SetHand(const TArray<int>& NewHand);
+protected:
 
-private:
+	virtual void OnActivate() override;
 	
-	TArray<int> Cards;
+protected:
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag HumanMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag NPCMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag PoolMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag WinningPlayerKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag RoundNumKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag RoundRestartKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag GameEndStatusKey;
 };
