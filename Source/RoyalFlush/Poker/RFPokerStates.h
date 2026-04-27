@@ -63,9 +63,6 @@ private:
 	FGameplayTag CardsKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag RoundRestartKey;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
@@ -105,6 +102,14 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
 	FGameplayTag RoundNumKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
+	FGameplayTag StatusObjectKey;
+	
+private:
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -260,13 +265,16 @@ protected:
 
 	virtual void OnActivate() override;
 	
-	EPokerRankComparision CompareFirstToSecond(URFHand* First, URFHand* Second);
+	TPair<EPokerRankComparision, FString> CompareFirstToSecond(URFHand* First, URFHand* Second);
 	
 private:
+
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float DeclarationDelay;
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float EndStateDelay;
-	
+
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag HumanPlayerHandKey;
 	
@@ -282,7 +290,13 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag NPCMoneyKey;
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
+	
 private:
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
 	
 	UPROPERTY()
 	TArray<URFPokerHandRuleBase*> Rules;
@@ -315,9 +329,6 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag RoundNumKey;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag RoundRestartKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
