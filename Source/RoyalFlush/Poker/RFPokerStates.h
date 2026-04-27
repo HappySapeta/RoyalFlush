@@ -264,6 +264,9 @@ protected:
 	
 private:
 	
+	UPROPERTY(EditDefaultsOnly)
+	float EndStateDelay;
+	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag HumanPlayerHandKey;
 	
@@ -318,4 +321,15 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	float EndStateDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag StatusObjectKey;
+
+private:
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
 };

@@ -180,10 +180,9 @@ void URFPokerDiscardingState::HandleDiscardRequested(const FGameplayTag& Key)
 	Blackboard->SetValuesAsBool(DiscardStatusKey, true);
 	Blackboard->SetValuesAsObject(HumanPlayerHandKey, Hand);
 	
-	
-	CurrentStatusObject->SetStatus(TEXT("Turn ended."));
 	if (NumDiscards + 1 == 2)
 	{
+		CurrentStatusObject->SetStatus(TEXT("Turn ended."));
 		ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
 		{
 			EndState();
@@ -248,12 +247,6 @@ void URFBettingState::OnActivate()
 	});
 	ExecuteWithDelay(HumanTurnCallback, HumanTurnDelay);
 	
-	FTimerDelegate EndStateCallback = FTimerDelegate::CreateLambda([this]()
-	{
-		EndState();
-	});
-	ExecuteWithDelay(EndStateCallback, EndStateDelay);
-	
 	Super::OnActivate();
 }
 
@@ -303,7 +296,7 @@ void URFBettingState::SetTurn(EPokerPlayer Player)
 	{
 		case EPokerPlayer::NPC:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC's turn."));
+			CurrentStatusObject->SetStatus(TEXT("NPC betting..."));
 			break;
 		}
 		case EPokerPlayer::Human:
@@ -327,7 +320,7 @@ void URFBettingState::OnPlayerPassed(const FGameplayTag& Key)
 		}
 		else if (CurrentPlayer == EPokerPlayer::Human)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Human Passed."));
+			EndState();
 		}
 	}
 }
@@ -338,15 +331,6 @@ void URFBettingState::OnPlayerFolded(const FGameplayTag& Key)
 	
 	if (bDidPlayerFold)
 	{
-		if (CurrentPlayer == EPokerPlayer::NPC)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("NPC folded."));
-		}
-		else if (CurrentPlayer == EPokerPlayer::Human)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Human folded."));
-		}
-		
 		const FGameplayTag OtherPlayerMoneyKey = CurrentPlayer == EPokerPlayer::Human ? NPCMoneyKey : HumanMoneyKey;
 		
 		int OtherPlayerMoney = Blackboard->GetValuesAsInt(OtherPlayerMoneyKey);
@@ -357,6 +341,15 @@ void URFBettingState::OnPlayerFolded(const FGameplayTag& Key)
 		
 		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
 		Blackboard->SetValuesAsInt(OtherPlayerMoneyKey, OtherPlayerMoney);
+		
+		if (CurrentPlayer == EPokerPlayer::NPC)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("NPC folded."));
+		}
+		else if (CurrentPlayer == EPokerPlayer::Human)
+		{
+			EndState();
+		}
 	}
 }
 
@@ -389,7 +382,7 @@ void URFBettingState::OnPlayerDoubleDowned(const FGameplayTag& Key)
 		}
 		else if (CurrentPlayer == EPokerPlayer::Human)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Human double down."));
+			EndState();
 		}
 	}
 }
@@ -466,6 +459,11 @@ void URFRevealState::OnActivate()
 		}
 	}
 	
+	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
+	{
+		EndState();
+	}), EndStateDelay);
+	
 	Super::OnActivate();
 }
 
@@ -498,6 +496,10 @@ EPokerRankComparision URFRevealState::CompareFirstToSecond(URFHand* First, URFHa
 
 void URFEndOfRoundState::OnActivate()
 {
+	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
+	
+	CurrentStatusObject->SetStatus(TEXT("Round End"));
+
 	int HumanPlayerMoney = Blackboard->GetValuesAsInt(HumanMoneyKey);
 	int NPCMoney = Blackboard->GetValuesAsInt(NPCMoneyKey);
 	
@@ -514,6 +516,11 @@ void URFEndOfRoundState::OnActivate()
 	{
 		Blackboard->SetValuesAsBool(RoundRestartKey, true);
 	}
+	
+	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
+	{
+		EndState();
+	}), EndStateDelay);
 	
 	Super::OnActivate();
 }
