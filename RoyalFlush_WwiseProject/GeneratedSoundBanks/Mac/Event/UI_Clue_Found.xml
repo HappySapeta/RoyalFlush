@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="3788930864" Type="Event" GUID="{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}" Language="SFX" Hash="{74424CC1-7F66-BF83-8AFD-A43AA98F458E}">
+		<SoundBank Id="3788930864" Type="Event" GUID="{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}" Language="SFX" Hash="{294094E4-1C1C-461C-E308-14E3CE397332}">
 			<ObjectPath>UI_Clue_Found</ObjectPath>
 			<ShortName>UI_Clue_Found</ShortName>
 			<Path>Event/UI_Clue_Found.bnk</Path>
@@ -9,11 +9,11 @@
 				<File Id="757585217" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>UI_Clue_Found.wav</ShortName>
 					<Path>Media/757585217.wem</Path>
-					<CachePath>1B/{1B981685-AA1B-AC7A-B1AC-F7C9B582867B}.wem</CachePath>
+					<CachePath>19/{19791724-BE58-1924-C851-D552A7EB75E8}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3788930864" Name="UI_Clue_Found" ObjectPath="\Events\Default Work Unit\UI\UI_Clue_Found" GUID="{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}" DurationType="OneShot" DurationMin="4" DurationMax="4">
+				<Event Id="3788930864" Name="UI_Clue_Found" ObjectPath="\Events\Default Work Unit\UI\UI_Clue_Found" GUID="{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}" DurationType="OneShot" DurationMin="2.7883818" DurationMax="2.7883818">
 					<MediaRefs>
 						<MediaRef Id="757585217"/>
 					</MediaRefs>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{468F1B8C-8EAF-9519-C951-B942952C7684}</FileHash>
+	<FileHash>{12D8933D-0B95-827B-6C72-37700A49B570}</FileHash>
 </SoundBanksInfo>

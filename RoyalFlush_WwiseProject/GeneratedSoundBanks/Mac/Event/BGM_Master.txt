@@ -30,4 +30,5 @@ State	ID	Name	State Group			Notes
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	3636347407	UI_LowPass			\Default Work Unit\UI_LowPass	
+	3701174095	BGM_SingerMute			\Default Work Unit\BGM_SingerMute	
 

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}",
     "Language": "SFX",
-    "Hash": "{30F15A13-86E1-9CAD-A02B-711D3B7989D1}",
+    "Hash": "{C6CC3C90-C2CE-AEFA-0A1A-E3F386BCE0F5}",
     "ObjectPath": "Player_Foot_Step",
     "ShortName": "Player_Foot_Step",
     "Path": "Event/Player_Foot_Step.bnk",
@@ -418,6 +418,6 @@
     ]
    }
   ],
-  "FileHash": "{09759D37-7F06-8F6A-5DB1-29F8555F3A3F}"
+  "FileHash": "{CC2C85B9-0020-10D5-653E-E72C7F4E3706}"
  }
 }

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{41F162D7-B6D6-425C-A562-DFA1D785B6A8}",
     "Language": "SFX",
-    "Hash": "{66F3D53F-DB9A-6D25-8919-C17A5C10B5DA}",
+    "Hash": "{B6A25302-1284-4C55-EBB0-F592B11AF6BB}",
     "ObjectPath": "Metal_Collide",
     "ShortName": "Metal_Collide",
     "Path": "Event/Metal_Collide.bnk",
@@ -67,6 +67,6 @@
     ]
    }
   ],
-  "FileHash": "{7A834671-0F01-7F2C-2C93-034B9628DA19}"
+  "FileHash": "{8913F51F-2CAE-CB7E-277F-1EE2623337D6}"
  }
 }

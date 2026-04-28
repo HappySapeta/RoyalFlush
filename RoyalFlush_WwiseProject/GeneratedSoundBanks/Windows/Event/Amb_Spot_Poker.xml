@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1057270552" Type="Event" GUID="{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}" Language="SFX" Hash="{A0B2EAE6-86B3-1A09-C363-424DE1C79AEF}">
+		<SoundBank Id="1057270552" Type="Event" GUID="{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}" Language="SFX" Hash="{6248E580-5B05-85A1-412B-EA7C3F5F54F2}">
 			<ObjectPath>Amb_Spot_Poker</ObjectPath>
 			<ShortName>Amb_Spot_Poker</ShortName>
 			<Path>Event/Amb_Spot_Poker.bnk</Path>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9C902165-7555-E6F5-AE2F-204C20C2001B}</FileHash>
+	<FileHash>{93E614AE-709A-FE6A-1579-A423ED10B6B1}</FileHash>
 </SoundBanksInfo>
