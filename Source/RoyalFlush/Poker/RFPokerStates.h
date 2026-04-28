@@ -24,11 +24,8 @@ class ROYALFLUSH_API URFPokerState : public URpState
 protected:
 	
 	virtual void OnActivate() override;
-	
 	virtual void OnDeactivate() override;
-	
 	void ExecuteWithDelay(FTimerDelegate Callback, const float Delay);
-	
 	void ClearTimers();
 	
 protected:
@@ -38,9 +35,17 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CurrentStateKey;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	FGameplayTag StatusObjectKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	EPokerState CurrentState;
+
+protected:
+	
+	UPROPERTY()
+	URFPokerStatus* CurrentStatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -64,18 +69,10 @@ private:
 	FGameplayTag ScoreMultiplierKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag CardsKey;
+	FGameplayTag CardsObjectKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag StatusObjectKey;
-	
-private:
-	
-	UPROPERTY()
-	URFPokerStatus* StatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -106,14 +103,6 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
 	FGameplayTag RoundNumKey;
-	
-	UPROPERTY(EditDefaultsOnly, Category= "Blackboard" )
-	FGameplayTag StatusObjectKey;
-	
-private:
-	
-	UPROPERTY()
-	URFPokerStatus* CurrentStatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -171,15 +160,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag DiscardNumKey;
 	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag StatusObjectKey;
-	
 private:
 	
 	EPokerPlayer CurrentTurn;
-	
-	UPROPERTY()
-	URFPokerStatus* CurrentStatusObject;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -249,15 +232,12 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag NPCMoneyKey;
 	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag StatusObjectKey;
+	UPROPERTY(EditDefaultsOnly, Category = "Debug")
+	bool bNPCAlwaysPass;
 	
 private:
 	
-	EPokerPlayer CurrentPlayer;
-	
-	UPROPERTY()
-	URFPokerStatus* CurrentStatusObject;
+	EPokerPlayer CurrentTurn;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -293,14 +273,7 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag NPCMoneyKey;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag StatusObjectKey;
-	
 private:
-	
-	UPROPERTY()
-	URFPokerStatus* CurrentStatusObject;
 	
 	UPROPERTY()
 	TArray<URFPokerHandRuleBase*> Rules;
@@ -339,12 +312,4 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	float EndStateDelay;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag StatusObjectKey;
-
-private:
-	
-	UPROPERTY()
-	URFPokerStatus* CurrentStatusObject;
 };
