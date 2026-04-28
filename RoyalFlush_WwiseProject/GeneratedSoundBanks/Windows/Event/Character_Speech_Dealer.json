@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}",
     "Language": "SFX",
-    "Hash": "{CF9D0F65-91A6-B729-1AED-96678AE0C2C2}",
+    "Hash": "{B1EC2B00-5263-D04F-3526-C8BEB4B79080}",
     "ObjectPath": "Character_Speech_Dealer",
     "ShortName": "Character_Speech_Dealer",
     "Path": "Event/Character_Speech_Dealer.bnk",
@@ -67,7 +67,7 @@
       "Location": "Loose",
       "ShortName": "Character_Dealer_Speech_Oneshot_2.wav",
       "Path": "Media/591661577.wem",
-      "CachePath": "74/{74B9084E-E308-540F-BEBB-A572E1DCC892}.wem"
+      "CachePath": "3A/{3A1EA3CA-8753-4021-132A-0802BC38E8F3}.wem"
      },
      {
       "Id": "753993133",
@@ -85,7 +85,7 @@
       "Location": "Loose",
       "ShortName": "Character_Dealer_Speech_Oneshot_1.wav",
       "Path": "Media/932306053.wem",
-      "CachePath": "B2/{B22046CB-0969-F2B6-E74D-4F3391427208}.wem"
+      "CachePath": "2B/{2BDB8E6D-CA8E-5997-91AB-83831837B006}.wem"
      },
      {
       "Id": "952140260",
@@ -94,7 +94,7 @@
       "Location": "Loose",
       "ShortName": "Character_Dealer_Speech_Oneshot_3.wav",
       "Path": "Media/952140260.wem",
-      "CachePath": "7A/{7AA8EE59-9FEE-4BD6-0387-567916917799}.wem"
+      "CachePath": "50/{5099697E-6347-413E-0F29-F8E9CC97E4DE}.wem"
      }
     ],
     "Events": [
@@ -140,6 +140,6 @@
     ]
    }
   ],
-  "FileHash": "{DB2046DB-B3A0-F85B-BCE3-F98E0AE1B603}"
+  "FileHash": "{66651AC4-7704-5D86-6C67-570A7559E045}"
  }
 }

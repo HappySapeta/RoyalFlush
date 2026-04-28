@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{9DFEC552-1DD5-0577-F803-5F050B53561C}">
+		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{0FE13F64-918E-F85A-F85C-1B0BD6E71D71}">
 			<ObjectPath>Character_Speech_Ace</ObjectPath>
 			<ShortName>Character_Speech_Ace</ShortName>
 			<Path>Event/Character_Speech_Ace.bnk</Path>
@@ -33,7 +33,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1200163247" Name="Character_Speech_Ace" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Ace" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" DurationType="OneShot" DurationMin="0.4114568" DurationMax="0.4114568">
+				<Event Id="1200163247" Name="Character_Speech_Ace" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Ace" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" DurationType="OneShot" DurationMin="0.49499282" DurationMax="0.49499282">
 					<MediaRefs>
 						<MediaRef Id="327533658"/>
 						<MediaRef Id="444130920"/>
@@ -45,5 +45,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C184DFCB-FD67-7CAE-39DE-175D34BD00B9}</FileHash>
+	<FileHash>{295C6CB9-6D81-55A9-0C85-66DF96F281E7}</FileHash>
 </SoundBanksInfo>

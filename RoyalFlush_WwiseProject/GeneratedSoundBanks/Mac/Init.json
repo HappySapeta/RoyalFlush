@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{7BF26A55-120D-0450-C775-CDFA9AF7E284}",
+    "Hash": "{CC5AD849-2339-E15D-859D-4A5BC201631F}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -54,6 +54,18 @@
       "Name": "UI_LowPass",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\UI_LowPass",
       "GUID": "{6887D41A-E6D6-4546-AEE8-39D96C84F133}"
+     },
+     {
+      "Id": "3701174095",
+      "Name": "BGM_SingerMute",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\BGM_SingerMute",
+      "GUID": "{8C0E66A5-4852-47D2-A7F6-49D8F68085CD}"
+     },
+     {
+      "Id": "4179668880",
+      "Name": "Master_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Master_Volume",
+      "GUID": "{E523D4BD-A3B1-4731-BD6C-DCB8FAC714CC}"
      }
     ],
     "StateGroups": [
@@ -278,6 +290,6 @@
     ]
    }
   ],
-  "FileHash": "{143FB25C-A507-E557-8A38-676031BD6265}"
+  "FileHash": "{62C29EC7-DF85-C71C-58A8-889C2AE30764}"
  }
 }

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{8861D6C1-590B-48D9-8086-809FC1F2BD69}",
     "Language": "SFX",
-    "Hash": "{940FCB2D-DE98-27C5-4E5A-7F35445F87CA}",
+    "Hash": "{C1339DE2-5C60-A9A9-E859-7ECC3B03058A}",
     "ObjectPath": "Amb_Spot_Slots",
     "ShortName": "Amb_Spot_Slots",
     "Path": "Event/Amb_Spot_Slots.bnk",
@@ -42,6 +42,6 @@
     ]
    }
   ],
-  "FileHash": "{04F9A951-99F4-D5F1-52B6-3DF45B3F08E6}"
+  "FileHash": "{54F67909-6D11-FB22-D186-6E702591B3E6}"
  }
 }

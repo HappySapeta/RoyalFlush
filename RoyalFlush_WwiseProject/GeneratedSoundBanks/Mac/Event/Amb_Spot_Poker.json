@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}",
     "Language": "SFX",
-    "Hash": "{A0B2EAE6-86B3-1A09-C363-424DE1C79AEF}",
+    "Hash": "{6248E580-5B05-85A1-412B-EA7C3F5F54F2}",
     "ObjectPath": "Amb_Spot_Poker",
     "ShortName": "Amb_Spot_Poker",
     "Path": "Event/Amb_Spot_Poker.bnk",
@@ -42,6 +42,6 @@
     ]
    }
   ],
-  "FileHash": "{D9539F09-6C9F-91CC-E570-0E87C1CEB0EC}"
+  "FileHash": "{B40741E6-E72F-39D7-E929-C0BC73BEE912}"
  }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1886097022" Type="Event" GUID="{88D32B78-B244-4A47-BA8E-55D154003504}" Language="SFX" Hash="{7A966E03-C5A3-708A-BA2A-CBB9B914977F}">
+		<SoundBank Id="1886097022" Type="Event" GUID="{88D32B78-B244-4A47-BA8E-55D154003504}" Language="SFX" Hash="{0C86BA07-963C-DEEF-A8ED-AA7DCE8C127B}">
 			<ObjectPath>Leaf_Collide</ObjectPath>
 			<ShortName>Leaf_Collide</ShortName>
 			<Path>Event/Leaf_Collide.bnk</Path>
@@ -45,5 +45,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{66E1ECB2-3462-254D-C8E2-E1EB517EB727}</FileHash>
+	<FileHash>{A5A8D7CD-4142-AC0E-0BA5-24DF6192F79A}</FileHash>
 </SoundBanksInfo>

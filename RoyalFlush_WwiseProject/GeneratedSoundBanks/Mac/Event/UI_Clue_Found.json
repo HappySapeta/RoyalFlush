@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}",
     "Language": "SFX",
-    "Hash": "{74424CC1-7F66-BF83-8AFD-A43AA98F458E}",
+    "Hash": "{294094E4-1C1C-461C-E308-14E3CE397332}",
     "ObjectPath": "UI_Clue_Found",
     "ShortName": "UI_Clue_Found",
     "Path": "Event/UI_Clue_Found.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "UI_Clue_Found.wav",
       "Path": "Media/757585217.wem",
-      "CachePath": "1B/{1B981685-AA1B-AC7A-B1AC-F7C9B582867B}.wem"
+      "CachePath": "19/{19791724-BE58-1924-C851-D552A7EB75E8}.wem"
      }
     ],
     "Events": [
@@ -32,8 +32,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\UI\\UI_Clue_Found",
       "GUID": "{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}",
       "DurationType": "OneShot",
-      "DurationMin": "4",
-      "DurationMax": "4",
+      "DurationMin": "2.7883818",
+      "DurationMax": "2.7883818",
       "MediaRefs": [
        {
         "Id": "757585217"
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{076A48B7-4E10-BE6D-7E00-C876D8B97B73}"
+  "FileHash": "{176A1E4E-FE3B-1EE3-B068-05CF1645962A}"
  }
 }
