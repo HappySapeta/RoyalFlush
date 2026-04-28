@@ -6,16 +6,6 @@
 #include "UObject/Class.h"
 #include "RFPokerHandStruct.generated.h"
 
-UCLASS(Blueprintable, BlueprintType)
-class ROYALFLUSH_API URFPokerHandDataTable : public UDataTable
-{
-	GENERATED_BODY()
-
-public:
-
-	
-};
-
 /**
  * 
  */

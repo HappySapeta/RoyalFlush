@@ -45,13 +45,21 @@ void URFPokerBeginState::OnActivate()
 	BP_OnActivate();
 }
 
+TArray<int> URFPokerDealingState::DebugDealHand(const int RowIndex)
+{
+	TArray<FRFPokerHandStruct*> Rows;
+	SpawnData->GetAllRows("", Rows);
+	
+	return Rows[RowIndex]->Cards;
+}
+
 void URFPokerDealingState::OnActivate()
 {
 	Super::OnActivate();
 	
 	// Set status.
 	{
-		CurrentStatusObject->SetStatus(TEXT("..Dealing Cards..."));
+		CurrentStatusObject->SetStatus(TEXT("...Dealing Cards..."));
 	}
 	
 	// Initialize blackboard values.
@@ -62,6 +70,7 @@ void URFPokerDealingState::OnActivate()
 	
 	// Initialize cards.
 	URFCards* CardsObject = Cast<URFCards>(Blackboard->GetValuesAsObject(CardsKey));
+	CardsObject->SetSpawnData(SpawnData);
 	CardsObject->Reset();
 	CardsObject->Shuffle();
 		
@@ -81,14 +90,17 @@ void URFPokerDealingState::OnActivate()
 	
 	// Draw hands.
 	{
-		auto DrawHand = [this, CardsObject](const FGameplayTag& HandKey) -> void
+		auto DrawHand = [this, CardsObject](const FGameplayTag& HandKey, const EPokerPlayer Player, const int DebugIndex = -1) -> void
 		{
 			URFHand* HandObject = Cast<URFHand>(Blackboard->GetValuesAsObject(HandKey));
-			HandObject->SetCards(CardsObject->NewHand());
+			
+			TArray<int> NewHand = DebugIndex == -1 ? CardsObject->NewHand(Player) : DebugDealHand(DebugIndex - 1);
+			HandObject->SetCards(NewHand);
+			
 			Blackboard->SetValuesAsObject(HandKey, HandObject);
 		};
-		DrawHand(NPCHandKey);
-		DrawHand(HumanPlayerHandKey);
+		DrawHand(NPCHandKey, EPokerPlayer::NPC, NPCDebugHand);
+		DrawHand(HumanPlayerHandKey, EPokerPlayer::Human, PlayerDebugHand);
 	}
 	
 	// End this state with a delay.
@@ -463,13 +475,13 @@ void URFRevealState::OnActivate()
 		{
 			case EPokerRankComparision::HIGHER:
 			{
-				CurrentStatusObject->SetStatus(FString::Printf(TEXT("You won by rule : %s"), *RuleName));
+				CurrentStatusObject->SetStatus(FString::Printf(TEXT("You won by rule of \"%s\""), *RuleName));
 				MoveMoneyToPlayer(HumanMoneyKey);
 				break;
 			}
 			case EPokerRankComparision::LOWER:
 			{
-				CurrentStatusObject->SetStatus(FString::Printf(TEXT("NPC won by rule : %s"), *RuleName));
+				CurrentStatusObject->SetStatus(FString::Printf(TEXT("NPC won by rule of \"%s\""), *RuleName));
 				MoveMoneyToPlayer(NPCMoneyKey);
 				break;
 			}

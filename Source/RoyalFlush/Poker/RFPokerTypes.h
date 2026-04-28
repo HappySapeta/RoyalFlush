@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "RFPokerHandStruct.h"
 #include "RFPokerTypes.generated.h"
 
 UENUM(BlueprintType)
@@ -32,23 +33,38 @@ class ROYALFLUSH_API URFCards : public UObject
 public:
 
 	URFCards();
+	
+	void SetSpawnData(const UDataTable* Data);
 
 	UFUNCTION(BlueprintCallable)
 	void Shuffle();
+	
+	int DrawCard();
+	int DrawCard(const int SpecificCard);
+	void DrawHand(const TArray<int>& Hand);
+	bool IsHandDrawable(const TArray<int>& Hand);
 
 	UFUNCTION(BlueprintCallable)
-	TArray<int> NewHand();
+	TArray<int> NewHand(EPokerPlayer Player);
 
 	UFUNCTION(BlueprintCallable)
 	void Reset();
-	
+	void DebugLogCards();
+
 	UFUNCTION(BlueprintCallable)
 	void ReplaceDiscardedCards(TArray<int> CardIndicesToBeDiscarded, TArray<int>& TargetHand);
 
 private:
-
-	TArray<int> Cards;
+	
 	int LastHandEndIndex = -1;
+	float PlayerChanceUpperLimit = 0.0f;
+	float NPCChanceUpperLimit = 0.0f;
+	TArray<int> Cards;
+	TArray<TRange<float>> PlayerChances;
+	TArray<TRange<float>> NPCChances;
+	
+	UPROPERTY()
+	const UDataTable* DataTable;
 };
 
 UCLASS(BlueprintType)

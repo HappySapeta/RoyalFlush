@@ -82,12 +82,22 @@ class ROYALFLUSH_API URFPokerDealingState : public URFPokerState
 	
 protected:
 
+	TArray<int> DebugDealHand(int Index);
 	virtual void OnActivate() override;
 
 private:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	const UDataTable* SpawnData;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	float DealingStateDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Debug")
+	int NPCDebugHand = -1;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Debug")
+	int PlayerDebugHand = -1;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PotMoneyKey;

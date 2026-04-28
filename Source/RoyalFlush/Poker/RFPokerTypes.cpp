@@ -1,6 +1,10 @@
 ﻿#include "RFPokerTypes.h"
 #include "RFPokerDeck.h"
+#include "RFPokerHandStruct.h"
 #include "Algo/RandomShuffle.h"
+#include "Kismet/KismetMathLibrary.h"
+
+constexpr int NUM_TRIALS = 5;
 
 URFCards::URFCards()
 {
@@ -10,24 +14,121 @@ URFCards::URFCards()
 	}
 }
 
+void URFCards::SetSpawnData(const UDataTable* Data)
+{
+	DataTable = Data;
+	
+	TArray<FRFPokerHandStruct*> Rows;
+	Data->GetAllRows(TEXT(""), Rows);
+	
+	for (const FRFPokerHandStruct* Row : Rows)
+	{
+		PlayerChances.Add(TRange<float>(PlayerChanceUpperLimit, PlayerChanceUpperLimit + Row->PlayerChance));
+		NPCChances.Add(TRange<float>(NPCChanceUpperLimit, NPCChanceUpperLimit + Row->NPCChance));
+	
+		PlayerChanceUpperLimit += Row->PlayerChance;
+		NPCChanceUpperLimit += Row->NPCChance;
+	}
+}
+
 void URFCards::Shuffle()
 {
 	Algo::RandomShuffle(Cards);
+	DebugLogCards();
 }
 
-TArray<int> URFCards::NewHand()
+int URFCards::DrawCard()
 {
-	TArray<int> NewHand;
-	ensureAlways(!Cards.IsEmpty());
-	
-	for (int Index = 0; Index < HAND_SIZE; ++Index)
+	int NewCard = Cards.Pop(EAllowShrinking::Yes);
+	DebugLogCards();
+	return NewCard;
+}
+
+int URFCards::DrawCard(const int SpecificCard)
+{
+	ensureAlways(Cards.Contains(SpecificCard));
+	Cards.Remove(SpecificCard);
+	Cards.Shrink();
+	return SpecificCard;
+}
+
+bool URFCards::IsHandDrawable(const TArray<int>& Hand)
+{
+	for (int Card : Hand)
 	{
-		NewHand.Push(Cards[Index]);
-		Cards.RemoveAtSwap(Index);
+		if (!Cards.Contains(Card))
+		{
+			return false;
+		}
 	}
 	
-	Cards.Shrink();
-	return NewHand;
+	return true;
+}
+
+void URFCards::DrawHand(const TArray<int>& Hand)
+{
+	for (int Card : Hand)
+	{
+		DrawCard(Card);
+	}
+	
+	DebugLogCards();
+}
+
+TArray<int> URFCards::NewHand(const EPokerPlayer Player)
+{
+	TArray<TRange<float>>* Chances;
+	float ChanceUpperLimit;
+	switch (Player)
+	{
+		case EPokerPlayer::Human:
+		{
+			Chances = &PlayerChances;
+			ChanceUpperLimit = PlayerChanceUpperLimit;
+			break;
+		}
+		case EPokerPlayer::NPC:
+		default:
+		{
+			Chances = &NPCChances;
+			ChanceUpperLimit = NPCChanceUpperLimit;
+			break;
+		}
+	}
+	
+	check(Chances);
+	
+	float RandomFloat = UKismetMathLibrary::RandomFloatInRange(0.0f, ChanceUpperLimit);
+	TArray<FRFPokerHandStruct*> Rows;
+	DataTable->GetAllRows(TEXT(""), Rows);
+	int TrialsLeft = NUM_TRIALS;
+	while (TrialsLeft > 0)
+	{
+		for (int Index = 0; Index < Rows.Num(); ++Index)
+		{
+			const FRFPokerHandStruct* Row = Rows[Index];
+			if (Chances->operator[](Index).Contains(RandomFloat))
+			{
+				const TArray<int>& PotentialCards = Row->Cards;
+				if (!IsHandDrawable(PotentialCards))
+				{
+					continue;
+				}
+				DrawHand(PotentialCards);
+				return PotentialCards;
+			} 
+		}
+		--TrialsLeft;
+	}
+	
+	TArray<int> DefaultHand;
+	for (int Index = 0; Index < HAND_SIZE; ++Index)
+	{
+		DefaultHand.Push(DrawCard());
+	}
+	
+	UE_LOG(LogTemp, Warning, TEXT("Creating default hand."));
+	return DefaultHand;
 }
 
 void URFCards::Reset()
@@ -40,6 +141,18 @@ void URFCards::Reset()
 	}
 }
 
+void URFCards::DebugLogCards()
+{
+	//FString CardNumbers;
+	//for (int Card : Cards)
+	//{
+	//	CardNumbers += FString::FromInt(Card);
+	//	CardNumbers += ", ";
+	//}
+	//
+	//UE_LOG(LogTemp, Warning, TEXT("Cards : %s"), *CardNumbers);
+}
+
 void URFCards::ReplaceDiscardedCards(const TArray<int> CardIndicesToBeDiscarded, TArray<int>& TargetHand)
 {
 	for (int CardIndex : CardIndicesToBeDiscarded)
@@ -49,11 +162,10 @@ void URFCards::ReplaceDiscardedCards(const TArray<int> CardIndicesToBeDiscarded,
 			continue;
 		}
 		
-		TargetHand[CardIndex] = Cards[0];
-		Cards.RemoveAtSwap(0);
+		TargetHand[CardIndex] = DrawCard();
 	}
 	
-	Cards.Shrink();
+	DebugLogCards();
 }
 
 const TArray<int>& URFHand::GetCards() const
