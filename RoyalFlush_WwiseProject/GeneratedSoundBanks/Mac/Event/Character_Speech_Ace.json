@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}",
     "Language": "SFX",
-    "Hash": "{9DFEC552-1DD5-0577-F803-5F050B53561C}",
+    "Hash": "{0FE13F64-918E-F85A-F85C-1B0BD6E71D71}",
     "ObjectPath": "Character_Speech_Ace",
     "ShortName": "Character_Speech_Ace",
     "Path": "Event/Character_Speech_Ace.bnk",
@@ -68,8 +68,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Character\\Speech\\Character_Speech_Ace",
       "GUID": "{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}",
       "DurationType": "OneShot",
-      "DurationMin": "0.4114568",
-      "DurationMax": "0.4114568",
+      "DurationMin": "0.49499282",
+      "DurationMax": "0.49499282",
       "MediaRefs": [
        {
         "Id": "327533658"
@@ -91,6 +91,6 @@
     ]
    }
   ],
-  "FileHash": "{2B240826-D5C0-C9ED-0F37-85C5C1396AAC}"
+  "FileHash": "{1B808064-53EC-AF87-A0AE-F4C1999F14E8}"
  }
 }

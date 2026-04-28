@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
     "Language": "SFX",
-    "Hash": "{FAB3832E-96DD-AF42-8754-E206DCCBBC62}",
+    "Hash": "{B9A9190D-FE60-A28D-DE1D-934C43A8006F}",
     "ObjectPath": "Character_Speech_Joker",
     "ShortName": "Character_Speech_Joker",
     "Path": "Event/Character_Speech_Joker.bnk",
@@ -43,15 +43,6 @@
       "CachePath": "D7/{D7C2BA8D-954E-9FE4-BBDE-BCC33D1F09EA}.wem"
      },
      {
-      "Id": "660396686",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Character_Joker_Speech_Oneshot_10.wav",
-      "Path": "Media/660396686.wem",
-      "CachePath": "2D/{2D7F200B-DE39-4B22-9ED1-14C2698FEA59}.wem"
-     },
-     {
       "Id": "699183672",
       "Language": "SFX",
       "Streaming": "false",
@@ -68,15 +59,6 @@
       "ShortName": "Character_Joker_Speech_Oneshot_5.wav",
       "Path": "Media/733270745.wem",
       "CachePath": "D9/{D992B6B1-AB4D-62B0-D1FF-502A589EEAD0}.wem"
-     },
-     {
-      "Id": "911606311",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Character_Joker_Speech_Oneshot_9.wav",
-      "Path": "Media/911606311.wem",
-      "CachePath": "46/{46CD766A-9BD0-F4DC-46B3-983FE320695F}.wem"
      },
      {
       "Id": "947576081",
@@ -114,8 +96,8 @@
       "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
       "MaxAttenuation": "400",
       "DurationType": "OneShot",
-      "DurationMin": "0.87480855",
-      "DurationMax": "1.1847143",
+      "DurationMin": "0.6691307",
+      "DurationMax": "0.90617394",
       "MediaRefs": [
        {
         "Id": "182677997"
@@ -127,16 +109,10 @@
         "Id": "487891601"
        },
        {
-        "Id": "660396686"
-       },
-       {
         "Id": "699183672"
        },
        {
         "Id": "733270745"
-       },
-       {
-        "Id": "911606311"
        },
        {
         "Id": "947576081"
@@ -152,6 +128,6 @@
     ]
    }
   ],
-  "FileHash": "{76147C2F-32C6-92B7-1B59-297202D83CB3}"
+  "FileHash": "{B9E116B5-EA17-A0A3-3D2D-4DFAF61B9E3A}"
  }
 }

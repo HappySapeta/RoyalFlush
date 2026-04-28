@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}",
     "Language": "SFX",
-    "Hash": "{1EF312FA-302D-1197-76BE-00B26A48D560}",
+    "Hash": "{E382407E-083D-DFC3-9ABA-61D7AC5B1A7E}",
     "ObjectPath": "BGM_Master",
     "ShortName": "BGM_Master",
     "Path": "Event/BGM_Master.bnk",
@@ -396,6 +396,12 @@
       "Name": "UI_LowPass",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\UI_LowPass",
       "GUID": "{6887D41A-E6D6-4546-AEE8-39D96C84F133}"
+     },
+     {
+      "Id": "3701174095",
+      "Name": "BGM_SingerMute",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\BGM_SingerMute",
+      "GUID": "{8C0E66A5-4852-47D2-A7F6-49D8F68085CD}"
      }
     ],
     "StateGroups": [
@@ -548,6 +554,6 @@
     ]
    }
   ],
-  "FileHash": "{C4C250A5-5EF5-E4A2-6568-3EB14BA5DF42}"
+  "FileHash": "{546A12CE-783B-CD9B-D0B6-67FA2BC45279}"
  }
 }

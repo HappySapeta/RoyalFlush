@@ -75,6 +75,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="BGM_SingersTheme" ID="{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}">
+							<ChildrenList>
+								<Action Name="" ID="{92D35D6B-86CE-4324-B956-C4C1870AC5E5}" ShortID="686288308">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Singers Theme" ID="{687D3DF7-3681-4FB2-83B1-1877E8C16A6A}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Poker" ID="{BA22E753-88D0-4045-A85B-FBB6D8436C95}" ShortID="229474820">

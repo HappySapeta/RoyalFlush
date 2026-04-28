@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2819840396" Type="Event" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" Language="SFX" Hash="{940FCB2D-DE98-27C5-4E5A-7F35445F87CA}">
+		<SoundBank Id="2819840396" Type="Event" GUID="{8861D6C1-590B-48D9-8086-809FC1F2BD69}" Language="SFX" Hash="{C1339DE2-5C60-A9A9-E859-7ECC3B03058A}">
 			<ObjectPath>Amb_Spot_Slots</ObjectPath>
 			<ShortName>Amb_Spot_Slots</ShortName>
 			<Path>Event/Amb_Spot_Slots.bnk</Path>
@@ -21,5 +21,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A98EE1CD-5569-3DC7-8CC7-58AC0D1E3D0D}</FileHash>
+	<FileHash>{68A98BB8-7000-031A-3BCD-522047420795}</FileHash>
 </SoundBanksInfo>

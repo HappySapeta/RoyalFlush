@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1416308086",
+    "Type": "Event",
+    "GUID": "{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}",
+    "Language": "SFX",
+    "Hash": "{62E655CB-1A64-3300-2171-DEB8B6F24A0C}",
+    "ObjectPath": "BGM_SingersTheme",
+    "ShortName": "BGM_SingersTheme",
+    "Path": "Event/BGM_SingersTheme.bnk",
+    "Media": [
+     {
+      "Id": "679715356",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "BGM_SingersTheme_82bpm_4.4_64Bar.wav",
+      "Path": "Media/679715356.wem",
+      "CachePath": "C6/{C6B5E698-FC39-B5BB-369A-CE9851CEA263}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1416308086",
+      "Name": "BGM_SingersTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\BGM_SingersTheme",
+      "GUID": "{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}",
+      "DurationType": "OneShot",
+      "DurationMin": "187.29292",
+      "DurationMax": "187.29292",
+      "MediaRefs": [
+       {
+        "Id": "679715356"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D94BC569-0DC9-D960-18A5-DB461BD82A46}"
+ }
+}

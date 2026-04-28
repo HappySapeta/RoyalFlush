@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{FAB3832E-96DD-AF42-8754-E206DCCBBC62}">
+		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{B9A9190D-FE60-A28D-DE1D-934C43A8006F}">
 			<ObjectPath>Character_Speech_Joker</ObjectPath>
 			<ShortName>Character_Speech_Joker</ShortName>
 			<Path>Event/Character_Speech_Joker.bnk</Path>
@@ -21,11 +21,6 @@
 					<Path>Media/487891601.wem</Path>
 					<CachePath>D7/{D7C2BA8D-954E-9FE4-BBDE-BCC33D1F09EA}.wem</CachePath>
 				</File>
-				<File Id="660396686" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>Character_Joker_Speech_Oneshot_10.wav</ShortName>
-					<Path>Media/660396686.wem</Path>
-					<CachePath>2D/{2D7F200B-DE39-4B22-9ED1-14C2698FEA59}.wem</CachePath>
-				</File>
 				<File Id="699183672" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Joker_Speech_Oneshot_3.wav</ShortName>
 					<Path>Media/699183672.wem</Path>
@@ -35,11 +30,6 @@
 					<ShortName>Character_Joker_Speech_Oneshot_5.wav</ShortName>
 					<Path>Media/733270745.wem</Path>
 					<CachePath>D9/{D992B6B1-AB4D-62B0-D1FF-502A589EEAD0}.wem</CachePath>
-				</File>
-				<File Id="911606311" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>Character_Joker_Speech_Oneshot_9.wav</ShortName>
-					<Path>Media/911606311.wem</Path>
-					<CachePath>46/{46CD766A-9BD0-F4DC-46B3-983FE320695F}.wem</CachePath>
 				</File>
 				<File Id="947576081" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Joker_Speech_Oneshot_1.wav</ShortName>
@@ -58,15 +48,13 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2809965227" Name="Character_Speech_Joker" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Joker" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" MaxAttenuation="400" DurationType="OneShot" DurationMin="0.87480855" DurationMax="1.1847143">
+				<Event Id="2809965227" Name="Character_Speech_Joker" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Joker" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" MaxAttenuation="400" DurationType="OneShot" DurationMin="0.6691307" DurationMax="0.90617394">
 					<MediaRefs>
 						<MediaRef Id="182677997"/>
 						<MediaRef Id="397322122"/>
 						<MediaRef Id="487891601"/>
-						<MediaRef Id="660396686"/>
 						<MediaRef Id="699183672"/>
 						<MediaRef Id="733270745"/>
-						<MediaRef Id="911606311"/>
 						<MediaRef Id="947576081"/>
 						<MediaRef Id="984726317"/>
 						<MediaRef Id="1069705565"/>
@@ -75,5 +63,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C57F7675-95FE-74BA-A568-DE00B530E55A}</FileHash>
+	<FileHash>{F5C4E0CA-66EC-4472-BAE9-3BEC63B2A184}</FileHash>
 </SoundBanksInfo>

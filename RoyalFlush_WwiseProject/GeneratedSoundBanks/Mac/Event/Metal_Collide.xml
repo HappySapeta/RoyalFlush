@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="3674931761" Type="Event" GUID="{41F162D7-B6D6-425C-A562-DFA1D785B6A8}" Language="SFX" Hash="{66F3D53F-DB9A-6D25-8919-C17A5C10B5DA}">
+		<SoundBank Id="3674931761" Type="Event" GUID="{41F162D7-B6D6-425C-A562-DFA1D785B6A8}" Language="SFX" Hash="{B6A25302-1284-4C55-EBB0-F592B11AF6BB}">
 			<ObjectPath>Metal_Collide</ObjectPath>
 			<ShortName>Metal_Collide</ShortName>
 			<Path>Event/Metal_Collide.bnk</Path>
@@ -33,5 +33,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F3D3DC79-0FE0-02C4-3816-946F664F053F}</FileHash>
+	<FileHash>{137BCE01-4A45-32DA-6D87-B662600C79CD}</FileHash>
 </SoundBanksInfo>

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}",
     "Language": "SFX",
-    "Hash": "{31C9D37F-F852-EFB0-7A7F-CE4F9E9B448F}",
+    "Hash": "{94755A3B-AED3-2A30-3117-064B27DAD0C3}",
     "ObjectPath": "Character_Speech_Jack",
     "ShortName": "Character_Speech_Jack",
     "Path": "Event/Character_Speech_Jack.bnk",
@@ -79,15 +79,6 @@
       "CachePath": "55/{5510BCCF-F5C2-4E30-7AB4-BE6D73C1A176}.wem"
      },
      {
-      "Id": "1027906375",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Character_Jack_Speech_Oneshot_9.wav",
-      "Path": "Media/1027906375.wem",
-      "CachePath": "3D/{3D023648-8DC2-0446-2320-F2B8667B5662}.wem"
-     },
-     {
       "Id": "1071326686",
       "Language": "SFX",
       "Streaming": "false",
@@ -104,8 +95,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Character\\Speech\\Character_Speech_Jack",
       "GUID": "{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}",
       "DurationType": "OneShot",
-      "DurationMin": "0.87946427",
-      "DurationMax": "1.0160916",
+      "DurationMin": "0.80465543",
+      "DurationMax": "0.9296607",
       "MediaRefs": [
        {
         "Id": "56859308"
@@ -129,9 +120,6 @@
         "Id": "963672790"
        },
        {
-        "Id": "1027906375"
-       },
-       {
         "Id": "1071326686"
        }
       ]
@@ -139,6 +127,6 @@
     ]
    }
   ],
-  "FileHash": "{BC583102-45D6-BF15-1AA8-282F6A34AE71}"
+  "FileHash": "{023512A6-CAAF-6D40-B32F-11504CC94E84}"
  }
 }
