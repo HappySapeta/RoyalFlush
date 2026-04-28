@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{CF9D0F65-91A6-B729-1AED-96678AE0C2C2}">
+		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{B1EC2B00-5263-D04F-3526-C8BEB4B79080}">
 			<ObjectPath>Character_Speech_Dealer</ObjectPath>
 			<ShortName>Character_Speech_Dealer</ShortName>
 			<Path>Event/Character_Speech_Dealer.bnk</Path>
@@ -34,7 +34,7 @@
 				<File Id="591661577" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Dealer_Speech_Oneshot_2.wav</ShortName>
 					<Path>Media/591661577.wem</Path>
-					<CachePath>74/{74B9084E-E308-540F-BEBB-A572E1DCC892}.wem</CachePath>
+					<CachePath>3A/{3A1EA3CA-8753-4021-132A-0802BC38E8F3}.wem</CachePath>
 				</File>
 				<File Id="753993133" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Dealer_Speech_Oneshot_4.wav</ShortName>
@@ -44,12 +44,12 @@
 				<File Id="932306053" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Dealer_Speech_Oneshot_1.wav</ShortName>
 					<Path>Media/932306053.wem</Path>
-					<CachePath>B2/{B22046CB-0969-F2B6-E74D-4F3391427208}.wem</CachePath>
+					<CachePath>2B/{2BDB8E6D-CA8E-5997-91AB-83831837B006}.wem</CachePath>
 				</File>
 				<File Id="952140260" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Dealer_Speech_Oneshot_3.wav</ShortName>
 					<Path>Media/952140260.wem</Path>
-					<CachePath>7A/{7AA8EE59-9FEE-4BD6-0387-567916917799}.wem</CachePath>
+					<CachePath>50/{5099697E-6347-413E-0F29-F8E9CC97E4DE}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -69,5 +69,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C742EF07-75C2-E51A-24E5-28140EB93BF9}</FileHash>
+	<FileHash>{33DD8FBB-3BC0-5C2C-869C-8882F504FBC2}</FileHash>
 </SoundBanksInfo>

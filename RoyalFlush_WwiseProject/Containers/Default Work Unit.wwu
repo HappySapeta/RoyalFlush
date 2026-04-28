@@ -1015,7 +1015,7 @@
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-7</Value>
+										<Value>-11</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1171,6 +1171,15 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Character_Joker_Speech_Oneshot_6" ID="{624C7CC1-4874-4DB7-BCDD-5BCF97366083}" ShortID="56363639">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{CACE837C-F3C4-4F2B-B02E-E13198A64F19}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
@@ -1254,62 +1263,6 @@
 										<ActiveSource Name="Character_Joker_Speech_Oneshot_8" ID="{8CA0D939-D886-4A67-9509-C4F5DF786BCF}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="Character_Joker_Speech_Oneshot_9" ID="{18A5E5F8-28A0-4C7B-80E4-36099AD4FE28}" ShortID="399038424">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Character_Joker_Speech_Oneshot_9" ID="{C3948E6E-67DC-4A3E-BC49-4FCB42DC0B83}">
-											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.00360356253589813"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.0225881846762395"/>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.00624031561094554"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Character_Joker_Speech_Oneshot_9.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="911606311"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Character_Joker_Speech_Oneshot_9" ID="{C3948E6E-67DC-4A3E-BC49-4FCB42DC0B83}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Character_Joker_Speech_Oneshot_10" ID="{A4B1B90F-AE4A-478C-AC07-2A7E1FB5B5C2}" ShortID="228458229">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Character_Joker_Speech_Oneshot_10" ID="{D1FC16DD-B270-40D4-8363-5E223655FD25}">
-											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0043066966892441"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.0192482974478461"/>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0137111159902465"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>Character_Joker_Speech_Oneshot_10.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="660396686"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Character_Joker_Speech_Oneshot_10" ID="{D1FC16DD-B270-40D4-8363-5E223655FD25}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Jack Speech" ID="{1000AC8F-88CC-4A49-9CA4-D2FA1EE6422A}" ShortID="550798201">
@@ -1321,7 +1274,7 @@
 								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>40</Value>
+										<Value>-10</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -1338,7 +1291,7 @@
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-5</Value>
+										<Value>-14</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1525,28 +1478,6 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Character_Jack_Speech_Oneshot_8" ID="{7384F155-8611-4A1D-8B01-6C5008AEA018}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Character_Jack_Speech_Oneshot_9" ID="{68D2A8DC-94D0-48BD-B3D1-755C89FF133B}" ShortID="368854904">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Character_Jack_Speech_Oneshot_9" ID="{A2CCE411-C4CB-4C5E-BFC9-ECB91C87602E}">
-											<Language>SFX</Language>
-											<AudioFile>Character_Jack_Speech_Oneshot_9.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1027906375"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Character_Jack_Speech_Oneshot_9" ID="{A2CCE411-C4CB-4C5E-BFC9-ECB91C87602E}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -2717,6 +2648,20 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="UI_Clue_Found" ID="{DC5B5AEC-E28A-4DF0-AB06-AA292B65F943}" ShortID="833399549">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{BDAAB366-DD12-43DC-AAA3-C3577BC32B59}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="375"/>
+													<Property Name="Min" Type="Real64" Value="-325"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
@@ -2728,8 +2673,9 @@
 							<ChildrenList>
 								<AudioFileSource Name="UI_Clue_Found" ID="{9DE4ABAD-52CB-4844-B35A-5616DB401200}">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.0442600276625173"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.00138312586445"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.21161825726141"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>UI_Clue_Found.wav</AudioFile>

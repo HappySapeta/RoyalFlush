@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1416308086	BGM_SingersTheme			\Default Work Unit\Music\BGM_SingersTheme	
+

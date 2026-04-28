@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2402462855" Type="Event" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" Language="SFX" Hash="{31C9D37F-F852-EFB0-7A7F-CE4F9E9B448F}">
+		<SoundBank Id="2402462855" Type="Event" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" Language="SFX" Hash="{1A32D316-AFEE-0E2B-4862-F7A2DEA9CC85}">
 			<ObjectPath>Character_Speech_Jack</ObjectPath>
 			<ShortName>Character_Speech_Jack</ShortName>
 			<Path>Event/Character_Speech_Jack.bnk</Path>
@@ -41,11 +41,6 @@
 					<Path>Media/963672790.wem</Path>
 					<CachePath>55/{5510BCCF-F5C2-4E30-7AB4-BE6D73C1A176}.wem</CachePath>
 				</File>
-				<File Id="1027906375" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>Character_Jack_Speech_Oneshot_9.wav</ShortName>
-					<Path>Media/1027906375.wem</Path>
-					<CachePath>3D/{3D023648-8DC2-0446-2320-F2B8667B5662}.wem</CachePath>
-				</File>
 				<File Id="1071326686" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Character_Jack_Speech_Oneshot_4.wav</ShortName>
 					<Path>Media/1071326686.wem</Path>
@@ -53,7 +48,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2402462855" Name="Character_Speech_Jack" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Jack" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" DurationType="OneShot" DurationMin="0.87946427" DurationMax="1.0160916">
+				<Event Id="2402462855" Name="Character_Speech_Jack" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Jack" GUID="{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}" DurationType="OneShot" DurationMin="0.80465543" DurationMax="0.9296607">
 					<MediaRefs>
 						<MediaRef Id="56859308"/>
 						<MediaRef Id="216739166"/>
@@ -62,12 +57,11 @@
 						<MediaRef Id="859578213"/>
 						<MediaRef Id="932874341"/>
 						<MediaRef Id="963672790"/>
-						<MediaRef Id="1027906375"/>
 						<MediaRef Id="1071326686"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5F535459-ED89-400F-02FB-15C585F05BDD}</FileHash>
+	<FileHash>{030EC07B-1F94-9D43-9A0C-403A9A518712}</FileHash>
 </SoundBanksInfo>
