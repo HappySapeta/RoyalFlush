@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="3674931761" Type="Event" GUID="{41F162D7-B6D6-425C-A562-DFA1D785B6A8}" Language="SFX" Hash="{66F3D53F-DB9A-6D25-8919-C17A5C10B5DA}">
+		<SoundBank Id="3674931761" Type="Event" GUID="{41F162D7-B6D6-425C-A562-DFA1D785B6A8}" Language="SFX" Hash="{B6A25302-1284-4C55-EBB0-F592B11AF6BB}">
 			<ObjectPath>Metal_Collide</ObjectPath>
 			<ShortName>Metal_Collide</ShortName>
 			<Path>Event/Metal_Collide.bnk</Path>
@@ -33,5 +33,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DFE0EE5D-471E-BEAF-A39F-BF8AFF9685E3}</FileHash>
+	<FileHash>{0A2B5C0F-FA39-956D-E045-EF965D28817F}</FileHash>
 </SoundBanksInfo>

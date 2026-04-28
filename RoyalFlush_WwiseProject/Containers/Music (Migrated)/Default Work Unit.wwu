@@ -3454,7 +3454,7 @@
 				</MusicPlaylistContainer>
 				<MusicSegment Name="Singers Theme" ID="{687D3DF7-3681-4FB2-83B1-1877E8C16A6A}" ShortID="330036684">
 					<PropertyList>
-						<Property Name="EndPosition" Type="Real64" Value="187292.916666667"/>
+						<Property Name="EndPosition" Type="Real64" Value="245853.658536585"/>
 						<Property Name="Tempo" Type="Real64" Value="82"/>
 					</PropertyList>
 					<ReferenceList>
@@ -3518,6 +3518,12 @@
 								<PropertyList>
 									<Property Name="CueType" Type="int16" Value="1"/>
 									<Property Name="TimeMs" Type="Real64" Value="1000"/>
+								</PropertyList>
+							</MusicCue>
+							<MusicCue Name="" ID="{8C2BEC81-3C30-49BC-9DCD-775204812FC3}">
+								<PropertyList>
+									<Property Name="CueType" Type="int16" Value="2"/>
+									<Property Name="TimeMs" Type="Real64" Value="187317.073170732"/>
 								</PropertyList>
 							</MusicCue>
 						</ObjectList>

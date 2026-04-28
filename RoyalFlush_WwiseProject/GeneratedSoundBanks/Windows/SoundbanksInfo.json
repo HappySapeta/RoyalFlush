@@ -273,7 +273,7 @@
     "Type": "Event",
     "GUID": "{2D9E9F06-7C73-4ACA-8455-5C5FAAA5BBA4}",
     "Language": "SFX",
-    "Hash": "{A0B2EAE6-86B3-1A09-C363-424DE1C79AEF}",
+    "Hash": "{6248E580-5B05-85A1-412B-EA7C3F5F54F2}",
     "ObjectPath": "Amb_Spot_Poker",
     "ShortName": "Amb_Spot_Poker",
     "Path": "Event/Amb_Spot_Poker.bnk",
@@ -309,7 +309,7 @@
     "Type": "Event",
     "GUID": "{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}",
     "Language": "SFX",
-    "Hash": "{9DFEC552-1DD5-0577-F803-5F050B53561C}",
+    "Hash": "{0FE13F64-918E-F85A-F85C-1B0BD6E71D71}",
     "ObjectPath": "Character_Speech_Ace",
     "ShortName": "Character_Speech_Ace",
     "Path": "Event/Character_Speech_Ace.bnk",
@@ -367,8 +367,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Character\\Speech\\Character_Speech_Ace",
       "GUID": "{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}",
       "DurationType": "OneShot",
-      "DurationMin": "0.4114568",
-      "DurationMax": "0.4114568",
+      "DurationMin": "0.49499282",
+      "DurationMax": "0.49499282",
       "MediaRefs": [
        {
         "Id": "327533658"
@@ -394,7 +394,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{4FE073FD-F328-70A8-EC52-52E80D841CED}",
+    "Hash": "{FDC0B6F3-CC45-225E-3425-3F956320F53F}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -444,6 +444,12 @@
       "Name": "BGM_SingerMute",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\BGM_SingerMute",
       "GUID": "{8C0E66A5-4852-47D2-A7F6-49D8F68085CD}"
+     },
+     {
+      "Id": "4179668880",
+      "Name": "Master_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Master_Volume",
+      "GUID": "{E523D4BD-A3B1-4731-BD6C-DCB8FAC714CC}"
      }
     ],
     "StateGroups": [
@@ -1205,7 +1211,7 @@
     "Type": "Event",
     "GUID": "{88D32B78-B244-4A47-BA8E-55D154003504}",
     "Language": "SFX",
-    "Hash": "{7A966E03-C5A3-708A-BA2A-CBB9B914977F}",
+    "Hash": "{0C86BA07-963C-DEEF-A8ED-AA7DCE8C127B}",
     "ObjectPath": "Leaf_Collide",
     "ShortName": "Leaf_Collide",
     "Path": "Event/Leaf_Collide.bnk",
@@ -1520,7 +1526,7 @@
     "Type": "Event",
     "GUID": "{75319BAB-0AC0-46EB-BB95-F13B0D94647F}",
     "Language": "SFX",
-    "Hash": "{3A930623-A200-7B0A-69E6-81FCBC873861}",
+    "Hash": "{7A3923BA-602B-F0E6-CA33-0781226D7106}",
     "ObjectPath": "Poker_Card_Shuffle",
     "ShortName": "Poker_Card_Shuffle",
     "Path": "Event/Poker_Card_Shuffle.bnk",
@@ -1581,7 +1587,7 @@
     "Type": "Event",
     "GUID": "{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}",
     "Language": "SFX",
-    "Hash": "{1A32D316-AFEE-0E2B-4862-F7A2DEA9CC85}",
+    "Hash": "{94755A3B-AED3-2A30-3117-064B27DAD0C3}",
     "ObjectPath": "Character_Speech_Jack",
     "ShortName": "Character_Speech_Jack",
     "Path": "Event/Character_Speech_Jack.bnk",
@@ -1811,7 +1817,7 @@
     "Type": "Event",
     "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
     "Language": "SFX",
-    "Hash": "{5106506F-3425-15DA-652E-3765C6B9F9E6}",
+    "Hash": "{B9A9190D-FE60-A28D-DE1D-934C43A8006F}",
     "ObjectPath": "Character_Speech_Joker",
     "ShortName": "Character_Speech_Joker",
     "Path": "Event/Character_Speech_Joker.bnk",
@@ -1933,7 +1939,7 @@
     "Type": "Event",
     "GUID": "{8861D6C1-590B-48D9-8086-809FC1F2BD69}",
     "Language": "SFX",
-    "Hash": "{940FCB2D-DE98-27C5-4E5A-7F35445F87CA}",
+    "Hash": "{C1339DE2-5C60-A9A9-E859-7ECC3B03058A}",
     "ObjectPath": "Amb_Spot_Slots",
     "ShortName": "Amb_Spot_Slots",
     "Path": "Event/Amb_Spot_Slots.bnk",
@@ -2028,7 +2034,7 @@
     "Type": "Event",
     "GUID": "{8E1BD15B-C0C5-4ADC-84D5-8D0CCE189218}",
     "Language": "SFX",
-    "Hash": "{30F15A13-86E1-9CAD-A02B-711D3B7989D1}",
+    "Hash": "{C6CC3C90-C2CE-AEFA-0A1A-E3F386BCE0F5}",
     "ObjectPath": "Player_Foot_Step",
     "ShortName": "Player_Foot_Step",
     "Path": "Event/Player_Foot_Step.bnk",
@@ -2561,7 +2567,7 @@
     "Type": "Event",
     "GUID": "{41F162D7-B6D6-425C-A562-DFA1D785B6A8}",
     "Language": "SFX",
-    "Hash": "{66F3D53F-DB9A-6D25-8919-C17A5C10B5DA}",
+    "Hash": "{B6A25302-1284-4C55-EBB0-F592B11AF6BB}",
     "ObjectPath": "Metal_Collide",
     "ShortName": "Metal_Collide",
     "Path": "Event/Metal_Collide.bnk",
@@ -3207,7 +3213,7 @@
     "Type": "Event",
     "GUID": "{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}",
     "Language": "SFX",
-    "Hash": "{34D69932-89A5-DABF-5F20-CDFBC9695000}",
+    "Hash": "{FCAF5144-9D5E-F65E-E63C-8719B4E937B7}",
     "ObjectPath": "Poker_Chip_Collect",
     "ShortName": "Poker_Chip_Collect",
     "Path": "Event/Poker_Chip_Collect.bnk",
@@ -3219,7 +3225,7 @@
       "Location": "Loose",
       "ShortName": "Poker_Chip_Collect_3.wav",
       "Path": "Media/402992790.wem",
-      "CachePath": "BD/{BDE64BDD-23A3-9638-768A-E8CD54FE99F0}.wem"
+      "CachePath": "CA/{CA0257B6-8C54-0EC1-301A-63FD8CBF6D8B}.wem"
      },
      {
       "Id": "851016046",
@@ -3228,7 +3234,7 @@
       "Location": "Loose",
       "ShortName": "Poker_Chip_Collect_1.wav",
       "Path": "Media/851016046.wem",
-      "CachePath": "CC/{CC9E6467-37C8-2500-6ECD-BE6D7A78EA26}.wem"
+      "CachePath": "41/{412F0267-03B2-25A3-B520-AE8D4C907029}.wem"
      },
      {
       "Id": "892472531",
@@ -3237,7 +3243,7 @@
       "Location": "Loose",
       "ShortName": "Poker_Chip_Collect_2.wav",
       "Path": "Media/892472531.wem",
-      "CachePath": "1F/{1FE9D7E2-1A23-9610-9B41-00843541E632}.wem"
+      "CachePath": "32/{321BF68F-CCA7-23D9-76EA-33427FC55F04}.wem"
      }
     ],
     "Events": [
@@ -3247,8 +3253,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Poker\\Chip\\Poker_Chip_Collect",
       "GUID": "{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}",
       "DurationType": "OneShot",
-      "DurationMin": "2",
-      "DurationMax": "2",
+      "DurationMin": "0.4647303",
+      "DurationMax": "0.65836793",
       "MediaRefs": [
        {
         "Id": "402992790"
@@ -3264,6 +3270,6 @@
     ]
    }
   ],
-  "FileHash": "{296D9E3E-663E-ACB5-B635-AEB8FC39527E}"
+  "FileHash": "{4825F65C-F1AB-FE72-7D05-7793FAB6F00C}"
  }
 }

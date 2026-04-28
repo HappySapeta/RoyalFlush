@@ -200,6 +200,11 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="Poker_Chip_Collect_1" ID="{B6AB94C0-AF6D-4761-887C-59C300A76E9E}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0525587828492393"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.655601659751038"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Poker_Chip_Collect_1.wav</AudioFile>
 													<MediaIDList>
@@ -222,6 +227,11 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="Poker_Chip_Collect_2" ID="{037B8FDF-8C3E-43CC-AA4A-3F6E2DD62DF1}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.464730290456432"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Poker_Chip_Collect_2.wav</AudioFile>
 													<MediaIDList>
@@ -244,6 +254,11 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="Poker_Chip_Collect_3" ID="{A004AA91-4574-48D8-8EB7-9CE783A26E74}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.174273858921162"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.658367911479945"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Poker_Chip_Collect_3.wav</AudioFile>
 													<MediaIDList>
@@ -326,6 +341,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="Poker_Card_Shuffle_3" ID="{1AA095BB-14D7-4954-B7B7-30AB69B1A358}" ShortID="757312033">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
@@ -1015,7 +1037,7 @@
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-11</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1291,7 +1313,7 @@
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-14</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1730,7 +1752,7 @@
 							<PropertyList>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>-280</Value>
+										<Value>-600</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -2661,6 +2683,11 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>7</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2770,7 +2797,7 @@
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>10</Value>
+												<Value>2</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2803,7 +2830,7 @@
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>8</Value>
+												<Value>4</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2920,7 +2947,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-12</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -3691,7 +3718,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
+									<ObjectRef Name="In-Game Audio Bus" ID="{89A25BB1-D592-4CFF-8959-81B4070A0D9F}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -3836,7 +3863,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
+									<ObjectRef Name="In-Game Audio Bus" ID="{89A25BB1-D592-4CFF-8959-81B4070A0D9F}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>

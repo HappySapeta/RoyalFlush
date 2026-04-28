@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{36CEFDD4-B1C2-47B4-8E5D-BCCC0D130E3D}",
     "Language": "SFX",
-    "Hash": "{1A32D316-AFEE-0E2B-4862-F7A2DEA9CC85}",
+    "Hash": "{94755A3B-AED3-2A30-3117-064B27DAD0C3}",
     "ObjectPath": "Character_Speech_Jack",
     "ShortName": "Character_Speech_Jack",
     "Path": "Event/Character_Speech_Jack.bnk",
@@ -127,6 +127,6 @@
     ]
    }
   ],
-  "FileHash": "{17413E22-F47B-5114-2B9D-D9CA8377581E}"
+  "FileHash": "{8DA617D3-0A63-6B66-78C3-89421CA7E47D}"
  }
 }

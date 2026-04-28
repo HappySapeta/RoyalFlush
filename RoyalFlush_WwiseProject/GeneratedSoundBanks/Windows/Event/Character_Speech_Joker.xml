@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{5106506F-3425-15DA-652E-3765C6B9F9E6}">
+		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{B9A9190D-FE60-A28D-DE1D-934C43A8006F}">
 			<ObjectPath>Character_Speech_Joker</ObjectPath>
 			<ShortName>Character_Speech_Joker</ShortName>
 			<Path>Event/Character_Speech_Joker.bnk</Path>
@@ -63,5 +63,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{14CBD9D5-4254-1365-C54A-123F4DDBC252}</FileHash>
+	<FileHash>{F5C4E0CA-66EC-4472-BAE9-3BEC63B2A184}</FileHash>
 </SoundBanksInfo>

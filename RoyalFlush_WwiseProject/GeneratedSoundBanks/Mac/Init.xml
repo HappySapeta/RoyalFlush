@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{3BD8AABE-5056-E335-CE85-DABF5E6D9A09}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{CC5AD849-2339-E15D-859D-4A5BC201631F}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -18,6 +18,7 @@
 			<GameParameters>
 				<GameParameter Id="3636347407" Name="UI_LowPass" ObjectPath="\Game Parameters\Default Work Unit\UI_LowPass" GUID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}"/>
 				<GameParameter Id="3701174095" Name="BGM_SingerMute" ObjectPath="\Game Parameters\Default Work Unit\BGM_SingerMute" GUID="{8C0E66A5-4852-47D2-A7F6-49D8F68085CD}"/>
+				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\Master_Volume" GUID="{E523D4BD-A3B1-4731-BD6C-DCB8FAC714CC}"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="85412153" Name="Ambience" ObjectPath="\States\Default Work Unit\Ambience" GUID="{C3E27FFC-F0E4-4B6D-9BA0-C398BBF5CDB9}">
@@ -77,5 +78,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A59D34E7-BBC2-7725-F289-F60628A7B8F4}</FileHash>
+	<FileHash>{F97F08B2-7EC3-E2A0-30AC-2171822B24D1}</FileHash>
 </SoundBanksInfo>
