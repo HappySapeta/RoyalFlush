@@ -59,14 +59,14 @@ protected:
 	
 private:
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float InitialPotMoney;
+	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PoolMoneyKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag RoundNumKey;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	FGameplayTag ScoreMultiplierKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CardsObjectKey;
