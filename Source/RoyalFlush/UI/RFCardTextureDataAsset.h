@@ -26,6 +26,11 @@ class ROYALFLUSH_API URFCardTextureDataAsset : public UDataAsset
 	
 public:
 	
+	UFUNCTION(BlueprintCallable)
+	UTexture2D* GetImage(const int CardNumber);
+	
+public:
+	
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	TMap<int, FRFCardImageStruct> Textures;
 	
