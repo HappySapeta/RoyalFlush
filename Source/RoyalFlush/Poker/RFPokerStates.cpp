@@ -4,8 +4,6 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "StateMachine/RpStateMachineBlackboard.h"
 
-constexpr int BASE_SCORE_MULTIPLIER = 19;
-
 void URFPokerState::OnActivate()
 {
 	Super::OnActivate();
@@ -39,7 +37,7 @@ void URFPokerBeginState::OnActivate()
 {
 	Super::OnActivate();
 	
-	Blackboard->SetValuesAsInt(PoolMoneyKey, BASE_SCORE_MULTIPLIER * Blackboard->GetValuesAsInt(ScoreMultiplierKey));
+	Blackboard->SetValuesAsInt(PoolMoneyKey, InitialPotMoney);
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
 	Blackboard->SetValuesAsObject(CardsObjectKey, NewObject<URFCards>());
 	
