@@ -37,11 +37,12 @@ void URFPokerState::ClearTimers()
 
 void URFPokerBeginState::OnActivate()
 {
+	Super::OnActivate();
+	
 	Blackboard->SetValuesAsInt(PoolMoneyKey, BASE_SCORE_MULTIPLIER * Blackboard->GetValuesAsInt(ScoreMultiplierKey));
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
 	Blackboard->SetValuesAsObject(CardsObjectKey, NewObject<URFCards>());
 	
-	Super::OnActivate();
 	BP_OnActivate();
 }
 
@@ -114,8 +115,6 @@ void URFPokerDiscardingState::OnActivate()
 {
 	Super::OnActivate();
 	
-	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
-
 	// First action
 	{
 		CurrentStatusObject->SetStatus(TEXT("NPC Choosing..."));
@@ -238,6 +237,8 @@ void URFPokerDiscardingState::HandlePlayerPassed(const FGameplayTag& Key)
 
 void URFBettingState::OnActivate()
 {
+	Super::OnActivate();
+	
 	// set blackboard values
 	{
 		int PoolMoney = Blackboard->GetValuesAsInt(PoolMoneyKey);
@@ -251,7 +252,6 @@ void URFBettingState::OnActivate()
 		Blackboard->SetValuesAsInt(PotMoneyKey, PotMoney);
 	}
 	
-	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
 	CurrentStatusObject->SetStatus(TEXT("Betting Phase"));
 	
 	Blackboard->GetValueChangeCallback(PassStatusKey).AddUniqueDynamic(this, &URFBettingState::OnPlayerPassed);
@@ -287,8 +287,6 @@ void URFBettingState::OnActivate()
 		SetTurn(EPokerPlayer::Human);
 	});
 	ExecuteWithDelay(HumanTurnCallback, HumanTurnDelay);
-	
-	Super::OnActivate();
 }
 
 void URFBettingState::OnDeactivate()
@@ -433,7 +431,7 @@ void URFBettingState::OnPlayerDoubleDowned(const FGameplayTag& Key)
 
 void URFRevealState::OnActivate()
 {
-	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
+	Super::OnActivate();
 	
 	if (!bRulesInit)
 	{
@@ -475,13 +473,13 @@ void URFRevealState::OnActivate()
 		{
 			case EPokerRankComparision::HIGHER:
 			{
-				CurrentStatusObject->SetStatus(FString::Printf(TEXT("You won by rule of \"%s\""), *RuleName));
+				CurrentStatusObject->SetStatus(FString::Printf(TEXT("You flushed! \"%s\""), *RuleName));
 				MoveMoneyToPlayer(HumanMoneyKey);
 				break;
 			}
 			case EPokerRankComparision::LOWER:
 			{
-				CurrentStatusObject->SetStatus(FString::Printf(TEXT("NPC won by rule of \"%s\""), *RuleName));
+				CurrentStatusObject->SetStatus(FString::Printf(TEXT("You got flushed. \"%s\""), *RuleName));
 				MoveMoneyToPlayer(NPCMoneyKey);
 				break;
 			}
@@ -515,7 +513,6 @@ void URFRevealState::OnActivate()
 		EndState();
 	}), EndStateDelay);
 	
-	Super::OnActivate();
 }
 
 TPair<EPokerRankComparision, FString> URFRevealState::CompareFirstToSecond(URFHand* First, URFHand* Second)
@@ -547,27 +544,38 @@ TPair<EPokerRankComparision, FString> URFRevealState::CompareFirstToSecond(URFHa
 
 void URFEndOfRoundState::OnActivate()
 {
-	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
+	Super::OnActivate();
 	
 	CurrentStatusObject->SetStatus(TEXT("Round End"));
-
-	int HumanPlayerMoney = Blackboard->GetValuesAsInt(HumanMoneyKey);
-	int NPCMoney = Blackboard->GetValuesAsInt(NPCMoneyKey);
-	
-	int PoolMoney = Blackboard->GetValuesAsInt(PoolMoneyKey);
-	
-	int HalfPoolMoney = FMath::RoundToInt(PoolMoney / 2.0f);
-	if (HumanPlayerMoney >= HalfPoolMoney || NPCMoney >= HalfPoolMoney)
-	{
-		const EPokerPlayer WinningPlayer = HumanPlayerMoney > NPCMoney ? EPokerPlayer::Human : EPokerPlayer::NPC;
-		Blackboard->SetValuesAsInt(WinningPlayerKey, static_cast<int>(WinningPlayer));
-		Blackboard->SetValuesAsBool(GameEndStatusKey, true);
-	}
 	
 	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
 	{
+		const int NumRounds = Blackboard->GetValuesAsInt(RoundNumKey); 
+		if (NumRounds >= MaxNumRounds)
+		{
+			int HumanPlayerMoney = Blackboard->GetValuesAsInt(HumanMoneyKey);
+			int NPCMoney = Blackboard->GetValuesAsInt(NPCMoneyKey);
+			EPokerPlayer WinningPlayer;
+			if (HumanPlayerMoney > NPCMoney)
+			{
+				CurrentStatusObject->SetStatus(TEXT("You won the game!"));
+				WinningPlayer = EPokerPlayer::Human;
+			}
+			else if (HumanPlayerMoney < NPCMoney)
+			{
+				CurrentStatusObject->SetStatus(TEXT("NPC won the game."));
+				WinningPlayer = EPokerPlayer::NPC;
+			}
+			else
+			{
+				CurrentStatusObject->SetStatus(TEXT("DRAW!"));
+				WinningPlayer = EPokerPlayer::None;
+			}
+
+			Blackboard->SetValuesAsInt(WinningPlayerKey, static_cast<int>(WinningPlayer));
+			Blackboard->SetValuesAsBool(GameEndStatusKey, true);
+		}
+		
 		EndState();
-	}), EndStateDelay);
-	
-	Super::OnActivate();
+	}), DeclarationDelay);
 }

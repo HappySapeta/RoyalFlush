@@ -30,17 +30,17 @@ protected:
 	
 protected:
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	EPokerState CurrentState;
+	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag OwningActorKey;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag CurrentStateKey;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag StatusObjectKey;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "Default")
-	EPokerState CurrentState;
 
 protected:
 	
@@ -320,6 +320,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
 	
-	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
-	float EndStateDelay;
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float DeclarationDelay;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	int MaxNumRounds;
 };
