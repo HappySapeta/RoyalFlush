@@ -27,6 +27,8 @@ public:
 	
 private:
 
+	void SwitchToDefaultCamera();
+	
 	void CheckCameras(float DeltaSeconds);
 
 	float GetCosineScore(UCameraComponent* CameraComponent, const AActor* Pawn);
@@ -50,5 +52,5 @@ private:
 	TArray<ARFCamera*> CameraActors;
 	
 	UPROPERTY(VisibleAnywhere)
-	ACameraActor* CurrentCameraActor;
+	AActor* CurrentCameraActor;
 };
