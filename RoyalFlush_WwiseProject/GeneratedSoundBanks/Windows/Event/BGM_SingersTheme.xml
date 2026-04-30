@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1416308086" Type="Event" GUID="{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}" Language="SFX" Hash="{62E655CB-1A64-3300-2171-DEB8B6F24A0C}">
+		<SoundBank Id="1416308086" Type="Event" GUID="{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}" Language="SFX" Hash="{C16958FD-31BC-611D-FC33-4C608F40341A}">
 			<ObjectPath>BGM_SingersTheme</ObjectPath>
 			<ShortName>BGM_SingersTheme</ShortName>
 			<Path>Event/BGM_SingersTheme.bnk</Path>
@@ -19,7 +19,10 @@
 					</MediaRefs>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="1111042366" Name="BGM_SingerLPF" ObjectPath="\Game Parameters\Default Work Unit\BGM_SingerLPF" GUID="{FE06FD89-7160-493F-9313-81718E039CAA}"/>
+			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F5DA5D29-B204-F9AF-1A82-A779C5B39891}</FileHash>
+	<FileHash>{72002C34-5DC2-2014-FF85-1272D91950A9}</FileHash>
 </SoundBanksInfo>

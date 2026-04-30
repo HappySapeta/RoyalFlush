@@ -2715,6 +2715,35 @@
 								<ActiveSource Name="UI_Clue_Found" ID="{9DE4ABAD-52CB-4844-B35A-5616DB401200}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="UI_Whistle_Clue" ID="{62FDCB97-15F4-4968-9689-0498E6A579E0}" ShortID="464907516">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_Whistle_Clue" ID="{F73BB7B6-60C9-498C-865E-5A7E78ACDD99}">
+									<Language>SFX</Language>
+									<AudioFile>UI_Whistle_Clue.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="263242972"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_Whistle_Clue" ID="{F73BB7B6-60C9-498C-865E-5A7E78ACDD99}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Ambiences" ID="{FA90954C-C8AF-46EA-9755-C11978097104}" ShortID="783935235">

@@ -282,6 +282,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="UI_Whistle_Clue" ID="{953E95C8-327F-4469-8B50-4A4A3C645180}">
+							<ChildrenList>
+								<Action Name="" ID="{C9B268F0-2E63-43BD-9CAC-55A26E61E42F}" ShortID="3898566">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Whistle_Clue" ID="{62FDCB97-15F4-4968-9689-0498E6A579E0}" WorkUnitID="{9FCD7BAA-953E-439C-90AC-8055F22FCCDF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Character" ID="{47954856-AEE3-43DD-9AD8-878B2449369D}" ShortID="1003020565">

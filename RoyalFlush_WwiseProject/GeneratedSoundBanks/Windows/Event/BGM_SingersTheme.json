@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}",
     "Language": "SFX",
-    "Hash": "{62E655CB-1A64-3300-2171-DEB8B6F24A0C}",
+    "Hash": "{C16958FD-31BC-611D-FC33-4C608F40341A}",
     "ObjectPath": "BGM_SingersTheme",
     "ShortName": "BGM_SingersTheme",
     "Path": "Event/BGM_SingersTheme.bnk",
@@ -40,9 +40,17 @@
        }
       ]
      }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1111042366",
+      "Name": "BGM_SingerLPF",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\BGM_SingerLPF",
+      "GUID": "{FE06FD89-7160-493F-9313-81718E039CAA}"
+     }
     ]
    }
   ],
-  "FileHash": "{D94BC569-0DC9-D960-18A5-DB461BD82A46}"
+  "FileHash": "{9DA84C24-F238-A675-7C58-D2E46DCFA47F}"
  }
 }

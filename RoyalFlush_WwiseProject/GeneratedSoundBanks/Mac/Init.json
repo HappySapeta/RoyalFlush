@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{CC5AD849-2339-E15D-859D-4A5BC201631F}",
+    "Hash": "{6AD093E9-7011-FC2F-A0B9-368A79418923}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -49,6 +49,12 @@
      }
     ],
     "GameParameters": [
+     {
+      "Id": "1111042366",
+      "Name": "BGM_SingerLPF",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\BGM_SingerLPF",
+      "GUID": "{FE06FD89-7160-493F-9313-81718E039CAA}"
+     },
      {
       "Id": "3636347407",
       "Name": "UI_LowPass",
@@ -290,6 +296,6 @@
     ]
    }
   ],
-  "FileHash": "{62C29EC7-DF85-C71C-58A8-889C2AE30764}"
+  "FileHash": "{5E8E320E-17A6-57A9-76E2-84A0B07E91C9}"
  }
 }
