@@ -52,6 +52,12 @@ void ARFGameCameraManager::SwitchToFPS(const float Duration)
 	PlayerController->SetViewTargetWithBlend(PokerCameraActor, Duration);
 }
 
+void ARFGameCameraManager::SwitchToDefaultCamera()
+{
+	CurrentCameraActor = PlayerController->GetPawn();
+	PlayerController->SetViewTarget(CurrentCameraActor);
+}
+
 void ARFGameCameraManager::CheckCameras(float DeltaSeconds)
 {
 	if (!PlayerController)
@@ -88,6 +94,10 @@ void ARFGameCameraManager::CheckCameras(float DeltaSeconds)
 	if (DesiredCameraTarget && DesiredCameraTarget != CurrentCameraActor)
 	{
 		SwitchToCamera(DesiredCameraTarget);
+	}
+	else if (!DesiredCameraTarget)
+	{
+		SwitchToDefaultCamera();
 	}
 }
 
