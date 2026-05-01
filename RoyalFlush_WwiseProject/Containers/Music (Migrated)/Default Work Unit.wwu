@@ -51,6 +51,11 @@
 						<MusicSwitchContainer Name="Level 1 Switch" ID="{1294F058-1441-476C-B9A6-012A7A7FA99A}" ShortID="919852484">
 							<PropertyList>
 								<Property Name="Tempo" Type="Real64" Value="80"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1019,7 +1024,7 @@
 									<MultiSwitchEntry Name="" ID="{C15D9195-7BFB-4CF3-B0B3-7F693D90668B}">
 										<ReferenceList>
 											<Reference Name="AudioNode">
-												<ObjectRef Name="Level 1 Dealer" ID="{90705706-5906-47E8-BF69-183D7898F9C5}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
+												<ObjectRef Name="Dealer" ID="{E1902585-9E64-4CD2-B199-58B19999F8E1}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
 											</Reference>
 										</ReferenceList>
 										<ObjectLists>
@@ -2030,6 +2035,11 @@
 						<MusicSwitchContainer Name="Level 3 Switch" ID="{48E35418-ECF9-46FC-81C0-69E4A4CDBD14}" ShortID="256729787">
 							<PropertyList>
 								<Property Name="Tempo" Type="Real64" Value="82"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -3256,6 +3266,11 @@
 				<MusicPlaylistContainer Name="Music Menu" ID="{3702171F-BEA0-4BF8-A1F1-2C81C45A1CF9}" ShortID="14222536">
 					<PropertyList>
 						<Property Name="Tempo" Type="Real64" Value="148"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -3454,8 +3469,18 @@
 				</MusicPlaylistContainer>
 				<MusicSegment Name="Singers Theme" ID="{687D3DF7-3681-4FB2-83B1-1877E8C16A6A}" ShortID="330036684">
 					<PropertyList>
-						<Property Name="EndPosition" Type="Real64" Value="245853.658536585"/>
+						<Property Name="EndPosition" Type="Real64" Value="304390.243902439"/>
+						<Property Name="PlaybackSpeed" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Tempo" Type="Real64" Value="82"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -3517,7 +3542,7 @@
 							<MusicCue Name="Exit Cue" ID="{82E4F8A3-BE1C-4FC0-9E11-C1A715E68EED}">
 								<PropertyList>
 									<Property Name="CueType" Type="int16" Value="1"/>
-									<Property Name="TimeMs" Type="Real64" Value="1000"/>
+									<Property Name="TimeMs" Type="Real64" Value="4504.93899481393"/>
 								</PropertyList>
 							</MusicCue>
 							<MusicCue Name="" ID="{8C2BEC81-3C30-49BC-9DCD-775204812FC3}">

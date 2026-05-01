@@ -176,7 +176,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{0FE13F64-918E-F85A-F85C-1B0BD6E71D71}">
+		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{7B32F2FD-7C2F-B26D-F8F4-4487095A3579}">
 			<ObjectPath>Character_Speech_Ace</ObjectPath>
 			<ShortName>Character_Speech_Ace</ShortName>
 			<Path>Event/Character_Speech_Ace.bnk</Path>
@@ -296,7 +296,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{B1EC2B00-5263-D04F-3526-C8BEB4B79080}">
+		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{223983E8-EA10-1264-3FB7-C5CF0D951205}">
 			<ObjectPath>Character_Speech_Dealer</ObjectPath>
 			<ShortName>Character_Speech_Dealer</ShortName>
 			<Path>Event/Character_Speech_Dealer.bnk</Path>
@@ -363,7 +363,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1416308086" Type="Event" GUID="{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}" Language="SFX" Hash="{C16958FD-31BC-611D-FC33-4C608F40341A}">
+		<SoundBank Id="1416308086" Type="Event" GUID="{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}" Language="SFX" Hash="{E5DB9E27-6DD3-7E5F-B197-A3F9D67908D2}">
 			<ObjectPath>BGM_SingersTheme</ObjectPath>
 			<ShortName>BGM_SingersTheme</ShortName>
 			<Path>Event/BGM_SingersTheme.bnk</Path>
@@ -527,7 +527,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1812305438" Type="Event" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" Language="SFX" Hash="{5DB0CF4B-41CC-A5EC-6F15-B2AD5159CE11}">
+		<SoundBank Id="1812305438" Type="Event" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" Language="SFX" Hash="{3ED69605-0C39-6A08-8CE2-32CBAC93995B}">
 			<ObjectPath>BGM_Intro</ObjectPath>
 			<ShortName>BGM_Intro</ShortName>
 			<Path>Event/BGM_Intro.bnk</Path>
@@ -877,7 +877,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{B9A9190D-FE60-A28D-DE1D-934C43A8006F}">
+		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{4A9636CD-9173-21FB-CD24-98F75AE4B203}">
 			<ObjectPath>Character_Speech_Joker</ObjectPath>
 			<ShortName>Character_Speech_Joker</ShortName>
 			<Path>Event/Character_Speech_Joker.bnk</Path>
@@ -924,7 +924,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2809965227" Name="Character_Speech_Joker" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Joker" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" MaxAttenuation="400" DurationType="OneShot" DurationMin="0.6691307" DurationMax="0.90617394">
+				<Event Id="2809965227" Name="Character_Speech_Joker" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Joker" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" MaxAttenuation="400" DurationType="OneShot" DurationMin="0.6135955" DurationMax="0.83096504">
 					<MediaRefs>
 						<MediaRef Id="182677997"/>
 						<MediaRef Id="397322122"/>
@@ -1295,7 +1295,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4141759354" Type="Event" GUID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}" Language="SFX" Hash="{E382407E-083D-DFC3-9ABA-61D7AC5B1A7E}">
+		<SoundBank Id="4141759354" Type="Event" GUID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}" Language="SFX" Hash="{51389705-D70C-295C-0EBB-F9E76FC6B1E4}">
 			<ObjectPath>BGM_Master</ObjectPath>
 			<ShortName>BGM_Master</ShortName>
 			<Path>Event/BGM_Master.bnk</Path>
@@ -1561,5 +1561,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{109211C3-7C45-71B4-C60C-1E66773D9A4E}</FileHash>
+	<FileHash>{ACB2CC63-130F-9A70-7F49-480DD2C19C10}</FileHash>
 </SoundBanksInfo>

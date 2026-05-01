@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}",
     "Language": "SFX",
-    "Hash": "{5DB0CF4B-41CC-A5EC-6F15-B2AD5159CE11}",
+    "Hash": "{3ED69605-0C39-6A08-8CE2-32CBAC93995B}",
     "ObjectPath": "BGM_Intro",
     "ShortName": "BGM_Intro",
     "Path": "Event/BGM_Intro.bnk",
@@ -53,6 +53,6 @@
     ]
    }
   ],
-  "FileHash": "{879A650D-3D96-065E-EB38-073A2765F5DC}"
+  "FileHash": "{1916FDC8-AE15-F3A5-3086-1B8FAD995EF1}"
  }
 }

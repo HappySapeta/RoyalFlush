@@ -1018,9 +1018,10 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="Joker Speech" ID="{3646BD68-D629-415E-A2E3-5166C687C62E}" ShortID="466655152">
 							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>-230</Value>
+										<Value>-80</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -1520,6 +1521,11 @@
 								</Property>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1763,7 +1769,7 @@
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-8</Value>
+										<Value>-7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>

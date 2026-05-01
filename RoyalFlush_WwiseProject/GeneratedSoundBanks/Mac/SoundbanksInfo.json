@@ -346,7 +346,7 @@
     "Type": "Event",
     "GUID": "{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}",
     "Language": "SFX",
-    "Hash": "{0FE13F64-918E-F85A-F85C-1B0BD6E71D71}",
+    "Hash": "{7B32F2FD-7C2F-B26D-F8F4-4487095A3579}",
     "ObjectPath": "Character_Speech_Ace",
     "ShortName": "Character_Speech_Ace",
     "Path": "Event/Character_Speech_Ace.bnk",
@@ -721,7 +721,7 @@
     "Type": "Event",
     "GUID": "{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}",
     "Language": "SFX",
-    "Hash": "{B1EC2B00-5263-D04F-3526-C8BEB4B79080}",
+    "Hash": "{223983E8-EA10-1264-3FB7-C5CF0D951205}",
     "ObjectPath": "Character_Speech_Dealer",
     "ShortName": "Character_Speech_Dealer",
     "Path": "Event/Character_Speech_Dealer.bnk",
@@ -855,7 +855,7 @@
     "Type": "Event",
     "GUID": "{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}",
     "Language": "SFX",
-    "Hash": "{C16958FD-31BC-611D-FC33-4C608F40341A}",
+    "Hash": "{E5DB9E27-6DD3-7E5F-B197-A3F9D67908D2}",
     "ObjectPath": "BGM_SingersTheme",
     "ShortName": "BGM_SingersTheme",
     "Path": "Event/BGM_SingersTheme.bnk",
@@ -1178,7 +1178,7 @@
     "Type": "Event",
     "GUID": "{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}",
     "Language": "SFX",
-    "Hash": "{5DB0CF4B-41CC-A5EC-6F15-B2AD5159CE11}",
+    "Hash": "{3ED69605-0C39-6A08-8CE2-32CBAC93995B}",
     "ObjectPath": "BGM_Intro",
     "ShortName": "BGM_Intro",
     "Path": "Event/BGM_Intro.bnk",
@@ -1868,7 +1868,7 @@
     "Type": "Event",
     "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
     "Language": "SFX",
-    "Hash": "{B9A9190D-FE60-A28D-DE1D-934C43A8006F}",
+    "Hash": "{4A9636CD-9173-21FB-CD24-98F75AE4B203}",
     "ObjectPath": "Character_Speech_Joker",
     "ShortName": "Character_Speech_Joker",
     "Path": "Event/Character_Speech_Joker.bnk",
@@ -1954,8 +1954,8 @@
       "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
       "MaxAttenuation": "400",
       "DurationType": "OneShot",
-      "DurationMin": "0.6691307",
-      "DurationMax": "0.90617394",
+      "DurationMin": "0.6135955",
+      "DurationMax": "0.83096504",
       "MediaRefs": [
        {
         "Id": "182677997"
@@ -2716,7 +2716,7 @@
     "Type": "Event",
     "GUID": "{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}",
     "Language": "SFX",
-    "Hash": "{E382407E-083D-DFC3-9ABA-61D7AC5B1A7E}",
+    "Hash": "{51389705-D70C-295C-0EBB-F9E76FC6B1E4}",
     "ObjectPath": "BGM_Master",
     "ShortName": "BGM_Master",
     "Path": "Event/BGM_Master.bnk",
@@ -3321,6 +3321,6 @@
     ]
    }
   ],
-  "FileHash": "{583CF2A5-28DF-C618-C538-F11120ADEF6B}"
+  "FileHash": "{266E7F42-D64B-BA76-F5C1-36010C289D90}"
  }
 }
