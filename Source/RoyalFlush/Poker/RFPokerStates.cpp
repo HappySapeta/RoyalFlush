@@ -8,13 +8,18 @@ void URFPokerState::OnActivate()
 {
 	Super::OnActivate();
 	Blackboard->SetValuesAsInt(CurrentStateKey, static_cast<int>(CurrentState));
-	Blackboard->SetValuesAsObject(StatusObjectKey, NewObject<URFPokerStatus>());
+	if (!IsValid(Blackboard->GetValuesAsObject(StatusObjectKey)))
+	{
+		Blackboard->SetValuesAsObject(StatusObjectKey, NewObject<URFPokerStatus>());
+	}
 	CurrentStatusObject = Cast<URFPokerStatus>(Blackboard->GetValuesAsObject(StatusObjectKey));
 }
 
 void URFPokerState::OnDeactivate()
 {
-	ClearTimers();
+	const AActor* OwningActor = Cast<AActor>(Blackboard->GetValuesAsObject(OwningActorKey));
+	FTimerManager& TimerManager = OwningActor->GetWorld()->GetTimerManager();
+	TimerManager.ClearAllTimersForObject(this);
 	Super::OnDeactivate();
 }
 
@@ -26,30 +31,22 @@ void URFPokerState::ExecuteWithDelay(FTimerDelegate Callback, const float Delay)
 	TimerManager.SetTimer(TimerHandle, Callback, Delay, false);
 }
 
-void URFPokerState::ClearTimers()
-{
-	const AActor* OwningActor = Cast<AActor>(Blackboard->GetValuesAsObject(OwningActorKey));
-	FTimerManager& TimerManager = OwningActor->GetWorld()->GetTimerManager();
-	TimerManager.ClearAllTimersForObject(this);
-}
-
 void URFPokerBeginState::OnActivate()
 {
 	Super::OnActivate();
 	
-	Blackboard->SetValuesAsInt(PoolMoneyKey, InitialPotMoney);
+	Blackboard->SetValuesAsInt(PoolMoneyKey, InitialPoolMoney);
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
-	Blackboard->SetValuesAsObject(CardsObjectKey, NewObject<URFCards>());
+	Blackboard->SetValuesAsInt(HumanMoneyKey, 0);
+	Blackboard->SetValuesAsInt(NPCMoneyKey, 0);
+	
+	if (!IsValid(Blackboard->GetValuesAsObject(CardsObjectKey)))
+	{
+		Blackboard->SetValuesAsObject(CardsObjectKey, NewObject<URFCards>());
+	}
+	Blackboard->SetValuesAsInt(RoundNumKey, 0);
 	
 	BP_OnActivate();
-}
-
-TArray<int> URFPokerDealingState::DebugDealHand(const int RowIndex)
-{
-	TArray<FRFPokerHandStruct*> Rows;
-	SpawnData->GetAllRows("", Rows);
-	
-	return Rows[RowIndex]->Cards;
 }
 
 void URFPokerDealingState::OnActivate()
@@ -77,8 +74,9 @@ void URFPokerDealingState::OnActivate()
 	{
 		auto InitializeHand = [this](const FGameplayTag& HandKey) -> void
 		{
-			if (!Blackboard->GetValuesAsObject(HandKey))
+			if (!IsValid(Blackboard->GetValuesAsObject(HandKey)))
 			{
+				UE_LOG(LogTemp, Warning, TEXT("Creating new hand object."));
 				Blackboard->SetValuesAsObject(HandKey, NewObject<URFHand>());
 			}
 		};
@@ -115,7 +113,7 @@ void URFPokerDiscardingState::OnActivate()
 	
 	// First action
 	{
-		CurrentStatusObject->SetStatus(TEXT("NPC Choosing..."));
+		CurrentStatusObject->SetStatus(TEXT("Opponent Choosing..."));
 		FTimerDelegate NPCTurnCallback = FTimerDelegate::CreateLambda([this]()
 		{
 			Blackboard->SetValuesAsBool(PassStatusKey, false);
@@ -133,21 +131,13 @@ void URFPokerDiscardingState::OnActivate()
 			Blackboard->SetValuesAsBool(PassStatusKey, false);
 			Blackboard->SetValuesAsBool(DiscardStatusKey, false);
 			Blackboard->SetValuesAsInt(DiscardNumKey, 0);
+			
 			SetTurn(EPokerPlayer::Human);
 			Blackboard->GetValueChangeCallback(PassStatusKey).AddUniqueDynamic(this, &URFPokerDiscardingState::HandlePlayerPassed);
 			Blackboard->GetValueChangeCallback(DiscardedHandKey).AddUniqueDynamic(this, &URFPokerDiscardingState::HandleDiscardRequested);
 		});
 		ExecuteWithDelay(HumanTurnCallback, HumanTurnDelay);
 	}
-}
-
-void URFPokerDiscardingState::OnDeactivate()
-{
-	Blackboard->GetValueChangeCallback(DiscardedHandKey).RemoveAll(this);
-	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
-	Blackboard->GetValueChangeCallback(DiscardStatusKey).RemoveAll(this);
-	SetTurn(EPokerPlayer::None);
-	Super::OnDeactivate();
 }
 
 void URFPokerDiscardingState::SetTurn(EPokerPlayer Player)
@@ -159,7 +149,7 @@ void URFPokerDiscardingState::SetTurn(EPokerPlayer Player)
 	{
 		case EPokerPlayer::NPC:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC's turn."));
+			CurrentStatusObject->SetStatus(TEXT("Opponent's turn."));
 			break;
 		}
 		case EPokerPlayer::Human:
@@ -179,13 +169,13 @@ void URFPokerDiscardingState::PlayNPCTurn()
 	{
 		case 0:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC chose to discard."));
+			CurrentStatusObject->SetStatus(TEXT("Opponent chose to discard."));
 			Blackboard->SetValuesAsBool(DiscardStatusKey, true);
 			break;
 		}
 		case 1:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC chose to pass."));
+			CurrentStatusObject->SetStatus(TEXT("Opponent chose to pass."));
 			Blackboard->SetValuesAsBool(PassStatusKey, true);
 			break;
 		}
@@ -231,6 +221,14 @@ void URFPokerDiscardingState::HandlePlayerPassed(const FGameplayTag& Key)
 			EndState();
 		}), EndStateDelay);
 	}
+}
+
+void URFPokerDiscardingState::OnDeactivate()
+{
+	Blackboard->GetValueChangeCallback(DiscardedHandKey).RemoveAll(this);
+	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
+	SetTurn(EPokerPlayer::None);
+	Super::OnDeactivate();
 }
 
 void URFBettingState::OnActivate()
@@ -287,18 +285,6 @@ void URFBettingState::OnActivate()
 	ExecuteWithDelay(HumanTurnCallback, HumanTurnDelay);
 }
 
-void URFBettingState::OnDeactivate()
-{
-	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
-	Blackboard->GetValueChangeCallback(FoldStatusKey).RemoveAll(this);
-	Blackboard->GetValueChangeCallback(DoubleDownStatusKey).RemoveAll(this);
-	Blackboard->SetValuesAsBool(PassStatusKey, false);
-	Blackboard->SetValuesAsBool(FoldStatusKey, false);
-	Blackboard->SetValuesAsBool(DoubleDownStatusKey, false);
-	SetTurn(EPokerPlayer::None);
-	Super::OnDeactivate();
-}
-
 void URFBettingState::PlayNPCTurn()
 {
 	int RandomChoice = UKismetMathLibrary::RandomIntegerInRange(0,2);
@@ -312,25 +298,25 @@ void URFBettingState::PlayNPCTurn()
 	{
 		case 0:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC chose to Pass."));
+			CurrentStatusObject->SetStatus(TEXT("Opponent chose to Pass."));
 			Blackboard->SetValuesAsBool(PassStatusKey, true);
 			break;
 		}
 		case 1:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC chose to Fold."));
+			CurrentStatusObject->SetStatus(TEXT("Opponent chose to Fold."));
 			Blackboard->SetValuesAsBool(FoldStatusKey, true);
 			break;
 		}
 		case 2:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC chose to Double-Down."));
+			CurrentStatusObject->SetStatus(TEXT("Opponent chose to Double-Down."));
 			Blackboard->SetValuesAsBool(DoubleDownStatusKey, true);
 			break;
 		}
 		default:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC failed to chose."));
+			CurrentStatusObject->SetStatus(TEXT("Opponent failed to chose."));
 			break;
 		}
 	}
@@ -345,7 +331,7 @@ void URFBettingState::SetTurn(EPokerPlayer Player)
 	{
 		case EPokerPlayer::NPC:
 		{
-			CurrentStatusObject->SetStatus(TEXT("NPC betting..."));
+			CurrentStatusObject->SetStatus(TEXT("Opponent betting..."));
 			break;
 		}
 		case EPokerPlayer::Human:
@@ -427,12 +413,25 @@ void URFBettingState::OnPlayerDoubleDowned(const FGameplayTag& Key)
 	}
 }
 
+void URFBettingState::OnDeactivate()
+{
+	Blackboard->GetValueChangeCallback(PassStatusKey).RemoveAll(this);
+	Blackboard->GetValueChangeCallback(FoldStatusKey).RemoveAll(this);
+	Blackboard->GetValueChangeCallback(DoubleDownStatusKey).RemoveAll(this);
+	Blackboard->SetValuesAsBool(PassStatusKey, false);
+	Blackboard->SetValuesAsBool(FoldStatusKey, false);
+	Blackboard->SetValuesAsBool(DoubleDownStatusKey, false);
+	SetTurn(EPokerPlayer::None);
+	Super::OnDeactivate();
+}
+
 void URFRevealState::OnActivate()
 {
 	Super::OnActivate();
 	
 	if (!bRulesInit)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Pushing new rules."));
 		Rules.Push(NewObject<URFRoyalFlushRule>(this)); 
 		Rules.Push(NewObject<URFStraightFlushRule>(this));
 		Rules.Push(NewObject<URFFourOfAKindRule>(this));
@@ -561,7 +560,7 @@ void URFEndOfRoundState::OnActivate()
 			}
 			else if (HumanPlayerMoney < NPCMoney)
 			{
-				CurrentStatusObject->SetStatus(TEXT("NPC won the game."));
+				CurrentStatusObject->SetStatus(TEXT("You lost the game."));
 				WinningPlayer = EPokerPlayer::NPC;
 			}
 			else
@@ -571,9 +570,20 @@ void URFEndOfRoundState::OnActivate()
 			}
 
 			Blackboard->SetValuesAsInt(WinningPlayerKey, static_cast<int>(WinningPlayer));
-			Blackboard->SetValuesAsBool(GameEndStatusKey, true);
 		}
-		
-		EndState();
 	}), DeclarationDelay);
+	
+	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
+	{
+		Blackboard->SetValuesAsBool(GameEndStatusKey, true);
+		EndState();
+	}), EndGameDelay);
+}
+
+TArray<int> URFPokerDealingState::DebugDealHand(const int RowIndex)
+{
+	TArray<FRFPokerHandStruct*> Rows;
+	SpawnData->GetAllRows("", Rows);
+	
+	return Rows[RowIndex]->Cards;
 }

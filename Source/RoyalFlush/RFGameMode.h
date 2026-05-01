@@ -31,6 +31,12 @@ public:
 	}
 	
 protected:
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void StopPokerGame();
+
+	UFUNCTION()
+	void OnPokerGameEnded(const FGameplayTag& Key);
 	
 	virtual void BeginPlay() override;
 	
@@ -39,16 +45,22 @@ private:
 	UFUNCTION()
 	void HandleCluesSubmitted();
 	
-private:
+protected:
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	URpStateMachineComponent* PokerStateMachine;
+
+
+private:
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag OwningActorKey;
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag PokerScoreTag;
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag GameEndKey;
 	
 protected:
 	
