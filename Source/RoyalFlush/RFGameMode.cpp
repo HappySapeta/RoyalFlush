@@ -14,11 +14,20 @@ ARFGameMode::ARFGameMode()
 	JournalComponent = CreateDefaultSubobject<URFJournalComponent>(TEXT("JournalComponent"));
 }
 
+void ARFGameMode::OnPokerGameEnded(const FGameplayTag& Key)
+{
+	if (PokerStateMachine->GetBlackboard()->GetValuesAsBool(Key))
+	{
+		StopPokerGame();
+	}
+}
+
 void ARFGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 	
 	PokerStateMachine->Initialize();
+	PokerStateMachine->GetBlackboard()->GetValueChangeCallback(GameEndKey).AddUniqueDynamic(this, &ARFGameMode::OnPokerGameEnded);
 	JournalComponent->OnCluesSubmittedEvent.AddUniqueDynamic(this, &ARFGameMode::HandleCluesSubmitted);
 }
 
