@@ -35,6 +35,8 @@ void URFPokerBeginState::OnActivate()
 {
 	Super::OnActivate();
 	
+	CurrentStatusObject->ClearStatus();
+	
 	Blackboard->SetValuesAsInt(PoolMoneyKey, InitialPoolMoney);
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
 	Blackboard->SetValuesAsInt(HumanMoneyKey, 0);
@@ -47,6 +49,11 @@ void URFPokerBeginState::OnActivate()
 	Blackboard->SetValuesAsInt(RoundNumKey, 0);
 	
 	BP_OnActivate();
+	
+	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
+	{
+		EndState();
+	}), EndStateDelay);
 }
 
 void URFPokerDealingState::OnActivate()
@@ -570,14 +577,17 @@ void URFEndOfRoundState::OnActivate()
 			}
 
 			Blackboard->SetValuesAsInt(WinningPlayerKey, static_cast<int>(WinningPlayer));
+			ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
+			{
+				Blackboard->SetValuesAsBool(GameEndStatusKey, true);
+				EndState();
+			}), EndGameDelay);
+		}
+		else
+		{
+			EndState();
 		}
 	}), DeclarationDelay);
-	
-	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
-	{
-		Blackboard->SetValuesAsBool(GameEndStatusKey, true);
-		EndState();
-	}), EndGameDelay);
 }
 
 TArray<int> URFPokerDealingState::DebugDealHand(const int RowIndex)

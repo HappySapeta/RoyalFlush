@@ -18,6 +18,8 @@ void ARFGameMode::OnPokerGameEnded(const FGameplayTag& Key)
 {
 	if (PokerStateMachine->GetBlackboard()->GetValuesAsBool(Key))
 	{
+		const EPokerPlayer WinningPlayer = static_cast<EPokerPlayer>(PokerStateMachine->GetBlackboard()->GetValuesAsInt(WinningPlayingKey));
+		OnPokerGameEndedEvent.Broadcast(WinningPlayer, PokerParticipant);
 		StopPokerGame();
 	}
 }
@@ -52,13 +54,13 @@ void ARFGameMode::HandleCluesSubmitted()
 	UE_LOG(LogTemp, Warning, TEXT("Game won!!"));
 }
 
-void ARFGameMode::StartPokerGame()
+void ARFGameMode::StartPokerGame(const FName ParticipantName)
 {
 	if (AActor* PlayerActor = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0))
 	{
 		PokerStateMachine->GetBlackboard()->SetValuesAsObject(OwningActorKey, PlayerActor);
 		PokerStateMachine->GetBlackboard()->SetValuesAsInt(PokerScoreTag, 0);
-		
+		PokerParticipant = ParticipantName;
 		PokerStateMachine->Start();
 	}
 }

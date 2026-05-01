@@ -44,12 +44,19 @@ void ARFGameCameraManager::BeginPlay()
 void ARFGameCameraManager::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
-	CheckCameras(DeltaSeconds);
+	CheckCameras();
 }
 
-void ARFGameCameraManager::SwitchToFPS(const float Duration)
+void ARFGameCameraManager::SwitchToPokerCamera(const AActor* Target, const float Duration)
 {
+	bIsInPokerMode = true;
 	PlayerController->SetViewTargetWithBlend(PokerCameraActor, Duration);
+}
+
+void ARFGameCameraManager::SwitchToTopDown(float Duration)
+{
+	bIsInPokerMode = false;
+	CheckCameras();
 }
 
 void ARFGameCameraManager::SwitchToDefaultCamera()
@@ -58,8 +65,13 @@ void ARFGameCameraManager::SwitchToDefaultCamera()
 	PlayerController->SetViewTarget(CurrentCameraActor);
 }
 
-void ARFGameCameraManager::CheckCameras(float DeltaSeconds)
+void ARFGameCameraManager::CheckCameras()
 {
+	if (bIsInPokerMode)
+	{
+		return;
+	}
+	
 	if (!PlayerController)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("No player controller found. Cameras will not update."));

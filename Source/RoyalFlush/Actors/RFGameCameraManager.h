@@ -23,13 +23,16 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 	
 	UFUNCTION(BlueprintCallable)
-	void SwitchToFPS(float Duration);
+	void SwitchToPokerCamera(const AActor* Target, float Duration);
+	
+	UFUNCTION(BlueprintCallable)
+	void SwitchToTopDown(float Duration);
 	
 private:
 
 	void SwitchToDefaultCamera();
 	
-	void CheckCameras(float DeltaSeconds);
+	void CheckCameras();
 
 	float GetCosineScore(UCameraComponent* CameraComponent, const AActor* Pawn);
 	
@@ -53,4 +56,6 @@ private:
 	
 	UPROPERTY(VisibleAnywhere)
 	AActor* CurrentCameraActor;
+	
+	bool bIsInPokerMode = false;
 };
