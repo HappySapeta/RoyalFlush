@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
 #include "GameFramework/GameModeBase.h"
+#include "Poker/RFPokerTypes.h"
 #include "RFGameMode.generated.h"
 
 class URpStateMachineComponent;
@@ -16,6 +17,8 @@ class URFJournalComponent;
 UCLASS()
 class ROYALFLUSH_API ARFGameMode : public AGameModeBase
 {
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnPokerGameEndedDelegate, EPokerPlayer, WinningPlayer, FName, ParticipantName);
+	
 	GENERATED_BODY()
 
 public:
@@ -23,7 +26,7 @@ public:
 	ARFGameMode();
 	
 	UFUNCTION(BlueprintCallable)
-	void StartPokerGame();
+	void StartPokerGame(const FName ParticipantName);
 	
 	URFJournalComponent* GetJournalComponent() const
 	{
@@ -45,13 +48,23 @@ private:
 	UFUNCTION()
 	void HandleCluesSubmitted();
 	
+public:
+	
+	UPROPERTY(BlueprintAssignable)
+	FOnPokerGameEndedDelegate OnPokerGameEndedEvent;
+
 protected:
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	URpStateMachineComponent* PokerStateMachine;
-
+	
+	UPROPERTY(BlueprintReadOnly)
+	TObjectPtr<URFJournalComponent> JournalComponent;
 
 private:
+	
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag WinningPlayingKey;
 	
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag OwningActorKey;
@@ -62,9 +75,5 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag GameEndKey;
 	
-protected:
-	
-	UPROPERTY(BlueprintReadOnly)
-	TObjectPtr<URFJournalComponent> JournalComponent;
-	
+	FName PokerParticipant;
 };

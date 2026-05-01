@@ -78,6 +78,9 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag NPCMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float EndStateDelay = 2.0f;
 };
 
 UCLASS(Blueprintable, BlueprintType)

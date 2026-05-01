@@ -94,6 +94,10 @@ class ROYALFLUSH_API URFPokerStatus : public UObject
 
 public:
 	
+	UFUNCTION(BlueprintCallable)
+	void ClearStatus();
+	
+	UFUNCTION(BlueprintCallable)
 	void SetStatus(const FString Text);
 
 protected:
