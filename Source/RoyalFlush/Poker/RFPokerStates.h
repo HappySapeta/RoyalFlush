@@ -26,7 +26,6 @@ protected:
 	virtual void OnActivate() override;
 	virtual void OnDeactivate() override;
 	void ExecuteWithDelay(FTimerDelegate Callback, const float Delay);
-	void ClearTimers();
 	
 protected:
 	
@@ -60,7 +59,7 @@ protected:
 private:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Default")
-	float InitialPotMoney;
+	float InitialPoolMoney;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag PoolMoneyKey;
@@ -73,6 +72,12 @@ private:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag GameEndStatusKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag HumanMoneyKey;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
+	FGameplayTag NPCMoneyKey;
 };
 
 UCLASS(Blueprintable, BlueprintType)
@@ -325,4 +330,7 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Default")
 	int MaxNumRounds;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Default")
+	float EndGameDelay;
 };
