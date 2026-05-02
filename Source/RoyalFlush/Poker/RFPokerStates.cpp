@@ -28,7 +28,7 @@ void URFPokerState::ExecuteWithDelay(FTimerDelegate Callback, const float Delay)
 	const AActor* OwningActor = Cast<AActor>(Blackboard->GetValuesAsObject(OwningActorKey));
 	FTimerManager& TimerManager = OwningActor->GetWorld()->GetTimerManager();
 	FTimerHandle TimerHandle;
-	TimerManager.SetTimer(TimerHandle, Callback, Delay, false);
+	TimerManager.SetTimer(TimerHandle, Callback, Delay / SpeedUpFactor, false);
 }
 
 void URFPokerBeginState::OnActivate()
@@ -103,8 +103,8 @@ void URFPokerDealingState::OnActivate()
 			
 			Blackboard->SetValuesAsObject(HandKey, HandObject);
 		};
-		DrawHand(NPCHandKey, EPokerPlayer::NPC, NPCDebugHand);
 		DrawHand(HumanPlayerHandKey, EPokerPlayer::Human, PlayerDebugHand);
+		DrawHand(NPCHandKey, EPokerPlayer::NPC, NPCDebugHand);
 	}
 	
 	// End this state with a delay.

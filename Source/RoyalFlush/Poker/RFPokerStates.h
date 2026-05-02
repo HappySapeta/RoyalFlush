@@ -40,11 +40,12 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Blackboard")
 	FGameplayTag StatusObjectKey;
-
-protected:
 	
 	UPROPERTY()
 	URFPokerStatus* CurrentStatusObject;
+	
+	UPROPERTY(EditDefaultsOnly, meta = (ClampMin = 1.0f, ClampMax = 10.0f, UIMin = 1.0f, UIMax = 10.0f))
+	float SpeedUpFactor = 1.5f;
 };
 
 UCLASS(Blueprintable, BlueprintType)
