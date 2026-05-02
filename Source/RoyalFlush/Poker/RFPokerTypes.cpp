@@ -4,7 +4,7 @@
 #include "Algo/RandomShuffle.h"
 #include "Kismet/KismetMathLibrary.h"
 
-constexpr int NUM_TRIALS = 10;
+constexpr int NUM_TRIALS = 30;
 
 URFCards::URFCards()
 {
@@ -20,6 +20,11 @@ void URFCards::SetSpawnData(const UDataTable* Data)
 	
 	TArray<FRFPokerHandStruct*> Rows;
 	Data->GetAllRows(TEXT(""), Rows);
+	
+	PlayerChances.Empty();
+	NPCChances.Empty();
+	PlayerChanceUpperLimit = 0.0f;
+	NPCChanceUpperLimit = 0.0f;
 	
 	for (const FRFPokerHandStruct* Row : Rows)
 	{
@@ -110,6 +115,9 @@ TArray<int> URFCards::NewHand(const EPokerPlayer Player)
 				{
 					continue;
 				}
+				const FString PlayerName = Player == EPokerPlayer::NPC ? TEXT("Opponent") : TEXT("Player");
+				UE_LOG(LogTemp, Warning, TEXT("%s received %s hand."), *PlayerName, *Row->Hand);
+				
 				DrawHand(PotentialCards);
 				return PotentialCards;
 			} 
@@ -123,7 +131,8 @@ TArray<int> URFCards::NewHand(const EPokerPlayer Player)
 		DefaultHand.Push(DrawCard());
 	}
 	
-	UE_LOG(LogTemp, Warning, TEXT("Creating default hand."));
+	const FString PlayerName = Player == EPokerPlayer::NPC ? TEXT("Opponent") : TEXT("Player");
+	UE_LOG(LogTemp, Warning, TEXT("%s received default hand."), *PlayerName);
 	return DefaultHand;
 }
 
