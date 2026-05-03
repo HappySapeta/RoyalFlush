@@ -7,6 +7,18 @@
 #include "Components/UniformGridSlot.h"
 #include "Kismet/KismetMathLibrary.h"
 
+void URFJournalPageWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
+	for (int Row = 0; Row < NumRows; ++Row)
+	{
+		for (int Col = 0; Col < NumColumns; ++Col)
+		{
+			AvailableSlots.Push({Row, Col});
+		}
+	}
+}
+
 void URFJournalPageWidget::AddClue(const FRFClue& ClueItem)
 {
 	if (Clues.Contains(ClueItem))
@@ -19,23 +31,12 @@ void URFJournalPageWidget::AddClue(const FRFClue& ClueItem)
 	URFJournalClueWidget* ClueWidget = Cast<URFJournalClueWidget>(CreateWidget(this, ClueWidgetClass));
 	ClueWidget->SetData(ClueItem);
 	
-	int NewRow;
-	int NewCol;
 	const FString DescriptionString = ClueItem.Description.ToString();
-	if (ClueLocations.Contains(DescriptionString))
-	{
-		NewRow = ClueLocations[DescriptionString].Get<0>();
-		NewCol = ClueLocations[DescriptionString].Get<1>();
-	}
-	else
-	{
-		int NumChildren = UniformGridPanel->GetChildrenCount();
-		NewRow = (NumChildren) / NumColumns;
-		NewCol = (NumChildren) % NumColumns;
-		ClueLocations.Add(ClueItem.Description.ToString(), {NewRow, NewCol});
-	}
 	
-	UUniformGridSlot* GridSlot = UniformGridPanel->AddChildToUniformGrid(ClueWidget, NewRow, NewCol);
+	TPair<int, int> SlotAddress = AvailableSlots.Last();
+	AvailableSlots.Pop();
+	
+	UUniformGridSlot* GridSlot = UniformGridPanel->AddChildToUniformGrid(ClueWidget, SlotAddress.Get<0>(), SlotAddress.Get<1>());
 	GridSlot->GetContent()->SetRenderTranslation
 	(
 		{
@@ -49,7 +50,7 @@ void URFJournalPageWidget::AddClue(const FRFClue& ClueItem)
 
 bool URFJournalPageWidget::CanContainMoreClues()
 {
-	return UniformGridPanel->GetChildrenCount() < ClueCapacity; 
+	return !AvailableSlots.IsEmpty();
 }
 
 void URFJournalPageWidget::RemoveClue(const FRFClue& TargetClue)
@@ -62,6 +63,12 @@ void URFJournalPageWidget::RemoveClue(const FRFClue& TargetClue)
 			{
 				UniformGridPanel->RemoveChild(ClueWidget);
 				Clues.Remove(TargetClue);
+				
+				if (UUniformGridSlot* GridSlot = Cast<UUniformGridSlot>(Child))
+				{
+					AvailableSlots.Push({GridSlot->GetRow(), GridSlot->GetColumn()});
+				}
+				
 				return;
 			}
 		}

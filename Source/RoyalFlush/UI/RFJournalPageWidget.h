@@ -19,6 +19,8 @@ class ROYALFLUSH_API URFJournalPageWidget : public UUserWidget
 	
 public:
 	
+	virtual void NativeConstruct() override;
+	
 	UFUNCTION(BlueprintCallable)
 	void AddClue(const FRFClue& ClueItem);
 	
@@ -46,6 +48,9 @@ protected:
 	int NumColumns;
 	
 	UPROPERTY(EditDefaultsOnly)
+	int NumRows;
+	
+	UPROPERTY(EditDefaultsOnly)
 	float MaxRandomTranslation;
 	
 	UPROPERTY(EditDefaultsOnly)
@@ -53,6 +58,6 @@ protected:
 	
 private:
 	
-	TMap<FString, TPair<int, int>> ClueLocations;
 	TArray<FRFClue> Clues;
+	TArray<TPair<int, int>> AvailableSlots;
 };
