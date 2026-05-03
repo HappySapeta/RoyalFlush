@@ -2,6 +2,7 @@
 
 #include "RFGameMode.h"
 
+#include "RFGameInstance.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 #include "Journal/RFJournalComponent.h"
@@ -38,20 +39,24 @@ void ARFGameMode::HandleCluesSubmitted()
 	const TArray<FRFClue>& StagedClues = JournalComponent->GetStagedClues();
 	if (StagedClues.IsEmpty())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Game lost!"));
 		return;
 	}
+	
+	URFGameInstance* GameInstance = Cast<URFGameInstance>(GetGameInstance());
+	checkf(GameInstance, TEXT("Game Instance class has not been set "));
 	
 	for (const FRFClue& Clue : StagedClues)
 	{
 		if (!Clue.IsReal)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Game lost!"));
+			GameInstance->SetGameResult(false);
+			OnGameEnded();
 			return;
 		}
 	}
 	
-	UE_LOG(LogTemp, Warning, TEXT("Game won!!"));
+	GameInstance->SetGameResult(true);
+	OnGameEnded();
 }
 
 void ARFGameMode::StartPokerGame(const FName ParticipantName)
@@ -63,4 +68,15 @@ void ARFGameMode::StartPokerGame(const FName ParticipantName)
 		PokerParticipant = ParticipantName;
 		PokerStateMachine->Start();
 	}
+}
+
+void ARFGameMode::Debug_InvokeEndings(const bool bWin)
+{
+#ifdef UE_BUILD_DEVELOPMENT
+	URFGameInstance* GameInstance = Cast<URFGameInstance>(GetGameInstance());
+	checkf(GameInstance, TEXT("Game Instance class has not been set "));
+	
+	GameInstance->SetGameResult(bWin);
+	OnGameEnded();
+#endif
 }
