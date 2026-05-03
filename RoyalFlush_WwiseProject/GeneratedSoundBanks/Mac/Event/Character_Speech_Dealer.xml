@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{223983E8-EA10-1264-3FB7-C5CF0D951205}">
+		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{B1EC2B00-5263-D04F-3526-C8BEB4B79080}">
 			<ObjectPath>Character_Speech_Dealer</ObjectPath>
 			<ShortName>Character_Speech_Dealer</ShortName>
 			<Path>Event/Character_Speech_Dealer.bnk</Path>
@@ -69,5 +69,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AB65A557-581C-1CF0-297B-8FFCE3BFA090}</FileHash>
+	<FileHash>{E8A06977-5CD6-257E-5127-655E1181647E}</FileHash>
 </SoundBanksInfo>

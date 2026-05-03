@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}",
     "Language": "SFX",
-    "Hash": "{D8344E54-C1D6-14B1-C7FB-61F49A4535C1}",
+    "Hash": "{FCAF5144-9D5E-F65E-E63C-8719B4E937B7}",
     "ObjectPath": "Poker_Chip_Collect",
     "ShortName": "Poker_Chip_Collect",
     "Path": "Event/Poker_Chip_Collect.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Poker_Chip_Collect_3.wav",
       "Path": "Media/402992790.wem",
-      "CachePath": "D8/{D8F0AC6A-7381-95A5-5DA7-89A8E27AA3CE}.wem"
+      "CachePath": "CA/{CA0257B6-8C54-0EC1-301A-63FD8CBF6D8B}.wem"
      },
      {
       "Id": "851016046",
@@ -31,7 +31,7 @@
       "Location": "Loose",
       "ShortName": "Poker_Chip_Collect_1.wav",
       "Path": "Media/851016046.wem",
-      "CachePath": "37/{37176097-2B50-EF56-BF15-B2D6B3934379}.wem"
+      "CachePath": "41/{412F0267-03B2-25A3-B520-AE8D4C907029}.wem"
      },
      {
       "Id": "892472531",
@@ -40,7 +40,7 @@
       "Location": "Loose",
       "ShortName": "Poker_Chip_Collect_2.wav",
       "Path": "Media/892472531.wem",
-      "CachePath": "96/{969E981E-D306-EB39-4192-FF5DD5F3D51A}.wem"
+      "CachePath": "32/{321BF68F-CCA7-23D9-76EA-33427FC55F04}.wem"
      }
     ],
     "Events": [
@@ -67,6 +67,6 @@
     ]
    }
   ],
-  "FileHash": "{3F327AD9-A0C0-B3AC-0C54-46E6EE99310B}"
+  "FileHash": "{76D51E72-93F0-8083-02CC-147F39ED710A}"
  }
 }

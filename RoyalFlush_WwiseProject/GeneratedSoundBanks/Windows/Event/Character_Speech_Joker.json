@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
     "Language": "SFX",
-    "Hash": "{4A9636CD-9173-21FB-CD24-98F75AE4B203}",
+    "Hash": "{B9A9190D-FE60-A28D-DE1D-934C43A8006F}",
     "ObjectPath": "Character_Speech_Joker",
     "ShortName": "Character_Speech_Joker",
     "Path": "Event/Character_Speech_Joker.bnk",
@@ -96,8 +96,8 @@
       "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
       "MaxAttenuation": "400",
       "DurationType": "OneShot",
-      "DurationMin": "0.6135955",
-      "DurationMax": "0.83096504",
+      "DurationMin": "0.6691307",
+      "DurationMax": "0.90617394",
       "MediaRefs": [
        {
         "Id": "182677997"
@@ -128,6 +128,6 @@
     ]
    }
   ],
-  "FileHash": "{332F765B-F727-C617-F3AC-E88BB47369B2}"
+  "FileHash": "{D2B23D43-4DB8-70EA-17BC-A334E53C1649}"
  }
 }

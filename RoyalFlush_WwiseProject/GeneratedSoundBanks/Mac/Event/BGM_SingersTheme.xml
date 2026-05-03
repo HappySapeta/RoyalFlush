@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1416308086" Type="Event" GUID="{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}" Language="SFX" Hash="{3B51537A-46B8-70D9-6D52-952EB09CFCE1}">
+		<SoundBank Id="1416308086" Type="Event" GUID="{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}" Language="SFX" Hash="{62E655CB-1A64-3300-2171-DEB8B6F24A0C}">
 			<ObjectPath>BGM_SingersTheme</ObjectPath>
 			<ShortName>BGM_SingersTheme</ShortName>
 			<Path>Event/BGM_SingersTheme.bnk</Path>
@@ -19,10 +19,7 @@
 					</MediaRefs>
 				</Event>
 			</Events>
-			<GameParameters>
-				<GameParameter Id="1111042366" Name="BGM_SingerLPF" ObjectPath="\Game Parameters\Default Work Unit\BGM_SingerLPF" GUID="{FE06FD89-7160-493F-9313-81718E039CAA}"/>
-			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3A51CB89-F2A7-99F8-A181-6125B32D4EED}</FileHash>
+	<FileHash>{84AE200A-2639-EB35-A41E-E63C9FF6873D}</FileHash>
 </SoundBanksInfo>

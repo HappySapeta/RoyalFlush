@@ -9,25 +9,6 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="438028380" Type="Event" GUID="{953E95C8-327F-4469-8B50-4A4A3C645180}" Language="SFX" Hash="{E1806E13-49B7-2272-0646-AE1A5B293C83}">
-			<ObjectPath>UI_Whistle_Clue</ObjectPath>
-			<ShortName>UI_Whistle_Clue</ShortName>
-			<Path>Event/UI_Whistle_Clue.bnk</Path>
-			<Media>
-				<File Id="263242972" Language="SFX" Streaming="false" Location="Loose">
-					<ShortName>UI_Whistle_Clue.wav</ShortName>
-					<Path>Media/263242972.wem</Path>
-					<CachePath>DD/{DDE58669-F0D1-F108-89A6-A582575A6C17}.wem</CachePath>
-				</File>
-			</Media>
-			<Events>
-				<Event Id="438028380" Name="UI_Whistle_Clue" ObjectPath="\Events\Default Work Unit\UI\UI_Whistle_Clue" GUID="{953E95C8-327F-4469-8B50-4A4A3C645180}" DurationType="OneShot" DurationMin="2.4994376" DurationMax="2.4994376">
-					<MediaRefs>
-						<MediaRef Id="263242972"/>
-					</MediaRefs>
-				</Event>
-			</Events>
-		</SoundBank>
 		<SoundBank Id="509666419" Type="Event" GUID="{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}" Language="SFX" Hash="{7C22DE56-B8B5-AB0F-345E-41D3BE455379}">
 			<ObjectPath>Character_Speech_King</ObjectPath>
 			<ShortName>Character_Speech_King</ShortName>
@@ -176,7 +157,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{7B32F2FD-7C2F-B26D-F8F4-4487095A3579}">
+		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{0FE13F64-918E-F85A-F85C-1B0BD6E71D71}">
 			<ObjectPath>Character_Speech_Ace</ObjectPath>
 			<ShortName>Character_Speech_Ace</ShortName>
 			<Path>Event/Character_Speech_Ace.bnk</Path>
@@ -219,7 +200,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{AED9F888-FA9C-CFBD-1C12-A7BF364D4F24}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{FDC0B6F3-CC45-225E-3425-3F956320F53F}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -234,7 +215,6 @@
 				<Bus Id="3833275939" Name="In-Game Audio Bus" ObjectPath="\Busses\Default Work Unit\In-Game Audio Bus" GUID="{89A25BB1-D592-4CFF-8959-81B4070A0D9F}"/>
 			</Busses>
 			<GameParameters>
-				<GameParameter Id="1111042366" Name="BGM_SingerLPF" ObjectPath="\Game Parameters\Default Work Unit\BGM_SingerLPF" GUID="{FE06FD89-7160-493F-9313-81718E039CAA}"/>
 				<GameParameter Id="3636347407" Name="UI_LowPass" ObjectPath="\Game Parameters\Default Work Unit\UI_LowPass" GUID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}"/>
 				<GameParameter Id="3701174095" Name="BGM_SingerMute" ObjectPath="\Game Parameters\Default Work Unit\BGM_SingerMute" GUID="{8C0E66A5-4852-47D2-A7F6-49D8F68085CD}"/>
 				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\Master_Volume" GUID="{E523D4BD-A3B1-4731-BD6C-DCB8FAC714CC}"/>
@@ -284,12 +264,6 @@
 						<State Id="970584711" Name="BGM_MasterLvl3" ObjectPath="\States\Default Work Unit\Music\BGM_MasterState\BGM_MasterLvl3" GUID="{02F0FC18-739D-440E-BB0E-498922295119}"/>
 					</States>
 				</StateGroup>
-				<StateGroup Id="4063164037" Name="BGM_Intro_Switch" ObjectPath="\States\Default Work Unit\BGM_Intro_Switch" GUID="{20CDBBA3-B8D7-4329-A082-9F197C9D5A16}">
-					<States>
-						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\BGM_Intro_Switch\None" GUID="{DBE23039-FC95-449D-8489-672A87CF4677}"/>
-						<State Id="1651971902" Name="On" ObjectPath="\States\Default Work Unit\BGM_Intro_Switch\On" GUID="{A8C70167-6CBC-48F9-AC93-8E19CE24A836}"/>
-					</States>
-				</StateGroup>
 			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="1368630905" Name="Foot_Steps" ObjectPath="\Switches\Default Work Unit\Foot_Steps" GUID="{061CA91F-4F6D-4E5E-A0E5-CBBFF6474DEA}">
@@ -302,7 +276,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{223983E8-EA10-1264-3FB7-C5CF0D951205}">
+		<SoundBank Id="1402278545" Type="Event" GUID="{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}" Language="SFX" Hash="{B1EC2B00-5263-D04F-3526-C8BEB4B79080}">
 			<ObjectPath>Character_Speech_Dealer</ObjectPath>
 			<ShortName>Character_Speech_Dealer</ShortName>
 			<Path>Event/Character_Speech_Dealer.bnk</Path>
@@ -369,7 +343,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1416308086" Type="Event" GUID="{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}" Language="SFX" Hash="{3B51537A-46B8-70D9-6D52-952EB09CFCE1}">
+		<SoundBank Id="1416308086" Type="Event" GUID="{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}" Language="SFX" Hash="{62E655CB-1A64-3300-2171-DEB8B6F24A0C}">
 			<ObjectPath>BGM_SingersTheme</ObjectPath>
 			<ShortName>BGM_SingersTheme</ShortName>
 			<Path>Event/BGM_SingersTheme.bnk</Path>
@@ -387,9 +361,6 @@
 					</MediaRefs>
 				</Event>
 			</Events>
-			<GameParameters>
-				<GameParameter Id="1111042366" Name="BGM_SingerLPF" ObjectPath="\Game Parameters\Default Work Unit\BGM_SingerLPF" GUID="{FE06FD89-7160-493F-9313-81718E039CAA}"/>
-			</GameParameters>
 		</SoundBank>
 		<SoundBank Id="1648916886" Type="Event" GUID="{F3916218-2FBA-4A6E-BFAE-ED570484A083}" Language="SFX" Hash="{EE2A6385-7990-1B58-7C2F-8F09511AA2BB}">
 			<ObjectPath>Poker_Impact_Win</ObjectPath>
@@ -533,7 +504,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1812305438" Type="Event" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" Language="SFX" Hash="{60950BB2-1624-61E6-62CA-157C474ACC7E}">
+		<SoundBank Id="1812305438" Type="Event" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" Language="SFX" Hash="{5DB0CF4B-41CC-A5EC-6F15-B2AD5159CE11}">
 			<ObjectPath>BGM_Intro</ObjectPath>
 			<ShortName>BGM_Intro</ShortName>
 			<Path>Event/BGM_Intro.bnk</Path>
@@ -883,7 +854,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{4A9636CD-9173-21FB-CD24-98F75AE4B203}">
+		<SoundBank Id="2809965227" Type="Event" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" Language="SFX" Hash="{B9A9190D-FE60-A28D-DE1D-934C43A8006F}">
 			<ObjectPath>Character_Speech_Joker</ObjectPath>
 			<ShortName>Character_Speech_Joker</ShortName>
 			<Path>Event/Character_Speech_Joker.bnk</Path>
@@ -930,7 +901,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2809965227" Name="Character_Speech_Joker" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Joker" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" MaxAttenuation="400" DurationType="OneShot" DurationMin="0.6135955" DurationMax="0.83096504">
+				<Event Id="2809965227" Name="Character_Speech_Joker" ObjectPath="\Events\Default Work Unit\Character\Speech\Character_Speech_Joker" GUID="{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}" MaxAttenuation="400" DurationType="OneShot" DurationMin="0.6691307" DurationMax="0.90617394">
 					<MediaRefs>
 						<MediaRef Id="182677997"/>
 						<MediaRef Id="397322122"/>
@@ -1282,7 +1253,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3788930864" Type="Event" GUID="{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}" Language="SFX" Hash="{6EB34C61-AD22-8E27-9C79-446A363A00B9}">
+		<SoundBank Id="3788930864" Type="Event" GUID="{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}" Language="SFX" Hash="{294094E4-1C1C-461C-E308-14E3CE397332}">
 			<ObjectPath>UI_Clue_Found</ObjectPath>
 			<ShortName>UI_Clue_Found</ShortName>
 			<Path>Event/UI_Clue_Found.bnk</Path>
@@ -1290,7 +1261,7 @@
 				<File Id="757585217" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>UI_Clue_Found.wav</ShortName>
 					<Path>Media/757585217.wem</Path>
-					<CachePath>CA/{CAA2C19B-3567-D0DB-CA45-2B7F8D455C22}.wem</CachePath>
+					<CachePath>19/{19791724-BE58-1924-C851-D552A7EB75E8}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -1301,7 +1272,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="4141759354" Type="Event" GUID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}" Language="SFX" Hash="{51389705-D70C-295C-0EBB-F9E76FC6B1E4}">
+		<SoundBank Id="4141759354" Type="Event" GUID="{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}" Language="SFX" Hash="{E382407E-083D-DFC3-9ABA-61D7AC5B1A7E}">
 			<ObjectPath>BGM_Master</ObjectPath>
 			<ShortName>BGM_Master</ShortName>
 			<Path>Event/BGM_Master.bnk</Path>
@@ -1535,7 +1506,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="4187610610" Type="Event" GUID="{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}" Language="SFX" Hash="{D8344E54-C1D6-14B1-C7FB-61F49A4535C1}">
+		<SoundBank Id="4187610610" Type="Event" GUID="{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}" Language="SFX" Hash="{FCAF5144-9D5E-F65E-E63C-8719B4E937B7}">
 			<ObjectPath>Poker_Chip_Collect</ObjectPath>
 			<ShortName>Poker_Chip_Collect</ShortName>
 			<Path>Event/Poker_Chip_Collect.bnk</Path>
@@ -1543,17 +1514,17 @@
 				<File Id="402992790" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Poker_Chip_Collect_3.wav</ShortName>
 					<Path>Media/402992790.wem</Path>
-					<CachePath>D8/{D8F0AC6A-7381-95A5-5DA7-89A8E27AA3CE}.wem</CachePath>
+					<CachePath>CA/{CA0257B6-8C54-0EC1-301A-63FD8CBF6D8B}.wem</CachePath>
 				</File>
 				<File Id="851016046" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Poker_Chip_Collect_1.wav</ShortName>
 					<Path>Media/851016046.wem</Path>
-					<CachePath>37/{37176097-2B50-EF56-BF15-B2D6B3934379}.wem</CachePath>
+					<CachePath>41/{412F0267-03B2-25A3-B520-AE8D4C907029}.wem</CachePath>
 				</File>
 				<File Id="892472531" Language="SFX" Streaming="false" Location="Loose">
 					<ShortName>Poker_Chip_Collect_2.wav</ShortName>
 					<Path>Media/892472531.wem</Path>
-					<CachePath>96/{969E981E-D306-EB39-4192-FF5DD5F3D51A}.wem</CachePath>
+					<CachePath>32/{321BF68F-CCA7-23D9-76EA-33427FC55F04}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -1567,5 +1538,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B36A5B4E-A852-F7FC-7BF5-778EFE27259D}</FileHash>
+	<FileHash>{45F372A6-A6C6-9300-BCD6-297F35DB2360}</FileHash>
 </SoundBanksInfo>

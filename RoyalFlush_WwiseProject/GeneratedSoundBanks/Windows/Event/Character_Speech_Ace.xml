@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{7B32F2FD-7C2F-B26D-F8F4-4487095A3579}">
+		<SoundBank Id="1200163247" Type="Event" GUID="{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}" Language="SFX" Hash="{0FE13F64-918E-F85A-F85C-1B0BD6E71D71}">
 			<ObjectPath>Character_Speech_Ace</ObjectPath>
 			<ShortName>Character_Speech_Ace</ShortName>
 			<Path>Event/Character_Speech_Ace.bnk</Path>
@@ -45,5 +45,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{132C2F99-CC30-702F-C920-BDE33C949451}</FileHash>
+	<FileHash>{7AA3A56B-962B-E716-085C-9AF36CE7D8B7}</FileHash>
 </SoundBanksInfo>

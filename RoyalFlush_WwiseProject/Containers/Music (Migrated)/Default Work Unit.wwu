@@ -51,11 +51,6 @@
 						<MusicSwitchContainer Name="Level 1 Switch" ID="{1294F058-1441-476C-B9A6-012A7A7FA99A}" ShortID="919852484">
 							<PropertyList>
 								<Property Name="Tempo" Type="Real64" Value="80"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>1</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1024,7 +1019,7 @@
 									<MultiSwitchEntry Name="" ID="{C15D9195-7BFB-4CF3-B0B3-7F693D90668B}">
 										<ReferenceList>
 											<Reference Name="AudioNode">
-												<ObjectRef Name="Dealer" ID="{E1902585-9E64-4CD2-B199-58B19999F8E1}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
+												<ObjectRef Name="Level 1 Dealer" ID="{90705706-5906-47E8-BF69-183D7898F9C5}" WorkUnitID="{9285F19F-749B-4B35-97C1-0CEA3E234BFB}"/>
 											</Reference>
 										</ReferenceList>
 										<ObjectLists>
@@ -2035,11 +2030,6 @@
 						<MusicSwitchContainer Name="Level 3 Switch" ID="{48E35418-ECF9-46FC-81C0-69E4A4CDBD14}" ShortID="256729787">
 							<PropertyList>
 								<Property Name="Tempo" Type="Real64" Value="82"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-1</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -3246,7 +3236,7 @@
 												<PointList>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>0</YPos>
+														<YPos>-0</YPos>
 														<Flags>5</Flags>
 													</Point>
 													<Point>
@@ -3266,11 +3256,6 @@
 				<MusicPlaylistContainer Name="Music Menu" ID="{3702171F-BEA0-4BF8-A1F1-2C81C45A1CF9}" ShortID="14222536">
 					<PropertyList>
 						<Property Name="Tempo" Type="Real64" Value="148"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>2</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -3466,50 +3451,18 @@
 							</ObjectLists>
 						</MusicSegment>
 					</ChildrenList>
-					<StateInfo>
-						<StateGroupList>
-							<StateGroupInfo>
-								<StateGroupRef Name="BGM_Intro_Switch" ID="{20CDBBA3-B8D7-4329-A082-9F197C9D5A16}"/>
-								<StateGroupInfo Name="" ID="{6C0F22C7-9708-4E63-92B2-73B2520BCEBD}" ShortID="709496716"/>
-							</StateGroupInfo>
-						</StateGroupList>
-						<CustomStateList>
-							<CustomState>
-								<StateRef Name="None" ID="{DBE23039-FC95-449D-8489-672A87CF4677}"/>
-								<CustomState Name="" ID="{7C21A2E5-5C5B-48AF-9F89-A95754236863}" ShortID="897135496">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64" Value="-108"/>
-									</PropertyList>
-								</CustomState>
-							</CustomState>
-							<CustomState>
-								<StateRef Name="On" ID="{A8C70167-6CBC-48F9-AC93-8E19CE24A836}"/>
-								<CustomState Name="" ID="{155203FD-E267-48E3-A49C-9D245F0FC578}" ShortID="898821574"/>
-							</CustomState>
-						</CustomStateList>
-					</StateInfo>
 				</MusicPlaylistContainer>
 				<MusicSegment Name="Singers Theme" ID="{687D3DF7-3681-4FB2-83B1-1877E8C16A6A}" ShortID="330036684">
 					<PropertyList>
-						<Property Name="EndPosition" Type="Real64" Value="304390.243902439"/>
-						<Property Name="PlaybackSpeed" Type="Real64">
-							<ValueList>
-								<Value>4</Value>
-							</ValueList>
-						</Property>
+						<Property Name="EndPosition" Type="Real64" Value="245853.658536585"/>
 						<Property Name="Tempo" Type="Real64" Value="82"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-2</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{FA3958C5-E225-45C8-9CFE-B9D2641787C0}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="In-Game Audio Bus" ID="{89A25BB1-D592-4CFF-8959-81B4070A0D9F}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1CB361A9-D312-4D39-B304-6CF4D7158889}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -3564,7 +3517,7 @@
 							<MusicCue Name="Exit Cue" ID="{82E4F8A3-BE1C-4FC0-9E11-C1A715E68EED}">
 								<PropertyList>
 									<Property Name="CueType" Type="int16" Value="1"/>
-									<Property Name="TimeMs" Type="Real64" Value="4504.93899481393"/>
+									<Property Name="TimeMs" Type="Real64" Value="1000"/>
 								</PropertyList>
 							</MusicCue>
 							<MusicCue Name="" ID="{8C2BEC81-3C30-49BC-9DCD-775204812FC3}">
@@ -3573,44 +3526,6 @@
 									<Property Name="TimeMs" Type="Real64" Value="187317.073170732"/>
 								</PropertyList>
 							</MusicCue>
-						</ObjectList>
-						<ObjectList Name="RTPC">
-							<RTPC Name="" ID="{FD20EEF5-7EBF-4D3D-A947-221273F2DC5A}" ShortID="760950573">
-								<PropertyList>
-									<Property Name="PropertyName" Type="string" Value="OutputBusLowpass"/>
-								</PropertyList>
-								<ReferenceList>
-									<Reference Name="ControlInput">
-										<ObjectRef Name="BGM_SingerLPF" ID="{FE06FD89-7160-493F-9313-81718E039CAA}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
-									</Reference>
-									<Reference Name="Curve">
-										<Custom>
-											<Curve Name="" ID="{FA19603D-5737-410A-9FB6-BC2E935B9DAA}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="65537"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>0</YPos>
-														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>50.06119</XPos>
-														<YPos>49</YPos>
-														<Flags>0</Flags>
-													</Point>
-													<Point>
-														<XPos>100</XPos>
-														<YPos>69</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</Custom>
-									</Reference>
-								</ReferenceList>
-							</RTPC>
 						</ObjectList>
 					</ObjectLists>
 				</MusicSegment>

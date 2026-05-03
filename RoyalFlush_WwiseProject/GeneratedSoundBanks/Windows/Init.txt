@@ -4,7 +4,6 @@ State Group	ID	Name			Wwise Object Path	Notes
 	649345181	BGM_Level3			\Default Work Unit\Music\BGM_Level3	
 	649345183	BGM_Level1			\Default Work Unit\Music\BGM_Level1	
 	1563625601	BGM_MasterState			\Default Work Unit\Music\BGM_MasterState	
-	4063164037	BGM_Intro_Switch			\Default Work Unit\BGM_Intro_Switch	
 
 State	ID	Name	State Group			Notes
 	748895195	None	Ambience			
@@ -31,8 +30,6 @@ State	ID	Name	State Group			Notes
 	970584709	BGM_MasterLvl1	BGM_MasterState			
 	970584710	BGM_MasterLvl2	BGM_MasterState			
 	970584711	BGM_MasterLvl3	BGM_MasterState			
-	748895195	None	BGM_Intro_Switch			
-	1651971902	On	BGM_Intro_Switch			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	3636347407	UI_LowPass			\Default Work Unit\UI_LowPass	

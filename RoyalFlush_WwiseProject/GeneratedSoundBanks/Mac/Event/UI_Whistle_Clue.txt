@@ -1,3 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	438028380	UI_Whistle_Clue			\Default Work Unit\UI\UI_Whistle_Clue	
-

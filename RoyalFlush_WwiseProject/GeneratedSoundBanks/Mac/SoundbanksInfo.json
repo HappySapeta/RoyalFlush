@@ -14,43 +14,6 @@
   "DialogueEvents": [],
   "SoundBanks": [
    {
-    "Id": "438028380",
-    "Type": "Event",
-    "GUID": "{953E95C8-327F-4469-8B50-4A4A3C645180}",
-    "Language": "SFX",
-    "Hash": "{E1806E13-49B7-2272-0646-AE1A5B293C83}",
-    "ObjectPath": "UI_Whistle_Clue",
-    "ShortName": "UI_Whistle_Clue",
-    "Path": "Event/UI_Whistle_Clue.bnk",
-    "Media": [
-     {
-      "Id": "263242972",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "UI_Whistle_Clue.wav",
-      "Path": "Media/263242972.wem",
-      "CachePath": "DD/{DDE58669-F0D1-F108-89A6-A582575A6C17}.wem"
-     }
-    ],
-    "Events": [
-     {
-      "Id": "438028380",
-      "Name": "UI_Whistle_Clue",
-      "ObjectPath": "\\Events\\Default Work Unit\\UI\\UI_Whistle_Clue",
-      "GUID": "{953E95C8-327F-4469-8B50-4A4A3C645180}",
-      "DurationType": "OneShot",
-      "DurationMin": "2.4994376",
-      "DurationMax": "2.4994376",
-      "MediaRefs": [
-       {
-        "Id": "263242972"
-       }
-      ]
-     }
-    ]
-   },
-   {
     "Id": "509666419",
     "Type": "Event",
     "GUID": "{C1FF43D7-AD5B-4EED-9A46-79F9BCAC143D}",
@@ -346,7 +309,7 @@
     "Type": "Event",
     "GUID": "{8B0CDC8F-5A79-4557-BAEC-5D371D07EBBC}",
     "Language": "SFX",
-    "Hash": "{7B32F2FD-7C2F-B26D-F8F4-4487095A3579}",
+    "Hash": "{0FE13F64-918E-F85A-F85C-1B0BD6E71D71}",
     "ObjectPath": "Character_Speech_Ace",
     "ShortName": "Character_Speech_Ace",
     "Path": "Event/Character_Speech_Ace.bnk",
@@ -431,7 +394,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{F3276608-7AB8-BC2F-4DA6-6434560DDD39}",
+    "Hash": "{CC5AD849-2339-E15D-859D-4A5BC201631F}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -470,12 +433,6 @@
      }
     ],
     "GameParameters": [
-     {
-      "Id": "1111042366",
-      "Name": "BGM_SingerLPF",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\BGM_SingerLPF",
-      "GUID": "{FE06FD89-7160-493F-9313-81718E039CAA}"
-     },
      {
       "Id": "3636347407",
       "Name": "UI_LowPass",
@@ -679,26 +636,6 @@
         "GUID": "{02F0FC18-739D-440E-BB0E-498922295119}"
        }
       ]
-     },
-     {
-      "Id": "4063164037",
-      "Name": "BGM_Intro_Switch",
-      "ObjectPath": "\\States\\Default Work Unit\\BGM_Intro_Switch",
-      "GUID": "{20CDBBA3-B8D7-4329-A082-9F197C9D5A16}",
-      "States": [
-       {
-        "Id": "748895195",
-        "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Intro_Switch\\None",
-        "GUID": "{DBE23039-FC95-449D-8489-672A87CF4677}"
-       },
-       {
-        "Id": "1651971902",
-        "Name": "On",
-        "ObjectPath": "\\States\\Default Work Unit\\BGM_Intro_Switch\\On",
-        "GUID": "{A8C70167-6CBC-48F9-AC93-8E19CE24A836}"
-       }
-      ]
      }
     ],
     "SwitchGroups": [
@@ -741,7 +678,7 @@
     "Type": "Event",
     "GUID": "{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}",
     "Language": "SFX",
-    "Hash": "{223983E8-EA10-1264-3FB7-C5CF0D951205}",
+    "Hash": "{B1EC2B00-5263-D04F-3526-C8BEB4B79080}",
     "ObjectPath": "Character_Speech_Dealer",
     "ShortName": "Character_Speech_Dealer",
     "Path": "Event/Character_Speech_Dealer.bnk",
@@ -875,7 +812,7 @@
     "Type": "Event",
     "GUID": "{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}",
     "Language": "SFX",
-    "Hash": "{3B51537A-46B8-70D9-6D52-952EB09CFCE1}",
+    "Hash": "{62E655CB-1A64-3300-2171-DEB8B6F24A0C}",
     "ObjectPath": "BGM_SingersTheme",
     "ShortName": "BGM_SingersTheme",
     "Path": "Event/BGM_SingersTheme.bnk",
@@ -904,14 +841,6 @@
         "Id": "679715356"
        }
       ]
-     }
-    ],
-    "GameParameters": [
-     {
-      "Id": "1111042366",
-      "Name": "BGM_SingerLPF",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\BGM_SingerLPF",
-      "GUID": "{FE06FD89-7160-493F-9313-81718E039CAA}"
      }
     ]
    },
@@ -1198,7 +1127,7 @@
     "Type": "Event",
     "GUID": "{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}",
     "Language": "SFX",
-    "Hash": "{60950BB2-1624-61E6-62CA-157C474ACC7E}",
+    "Hash": "{5DB0CF4B-41CC-A5EC-6F15-B2AD5159CE11}",
     "ObjectPath": "BGM_Intro",
     "ShortName": "BGM_Intro",
     "Path": "Event/BGM_Intro.bnk",
@@ -1888,7 +1817,7 @@
     "Type": "Event",
     "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
     "Language": "SFX",
-    "Hash": "{4A9636CD-9173-21FB-CD24-98F75AE4B203}",
+    "Hash": "{B9A9190D-FE60-A28D-DE1D-934C43A8006F}",
     "ObjectPath": "Character_Speech_Joker",
     "ShortName": "Character_Speech_Joker",
     "Path": "Event/Character_Speech_Joker.bnk",
@@ -1974,8 +1903,8 @@
       "GUID": "{ABCB1A73-02EA-4BAC-9311-0B07C34D5121}",
       "MaxAttenuation": "400",
       "DurationType": "OneShot",
-      "DurationMin": "0.6135955",
-      "DurationMax": "0.83096504",
+      "DurationMin": "0.6691307",
+      "DurationMax": "0.90617394",
       "MediaRefs": [
        {
         "Id": "182677997"
@@ -2699,7 +2628,7 @@
     "Type": "Event",
     "GUID": "{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}",
     "Language": "SFX",
-    "Hash": "{6EB34C61-AD22-8E27-9C79-446A363A00B9}",
+    "Hash": "{294094E4-1C1C-461C-E308-14E3CE397332}",
     "ObjectPath": "UI_Clue_Found",
     "ShortName": "UI_Clue_Found",
     "Path": "Event/UI_Clue_Found.bnk",
@@ -2711,7 +2640,7 @@
       "Location": "Loose",
       "ShortName": "UI_Clue_Found.wav",
       "Path": "Media/757585217.wem",
-      "CachePath": "CA/{CAA2C19B-3567-D0DB-CA45-2B7F8D455C22}.wem"
+      "CachePath": "19/{19791724-BE58-1924-C851-D552A7EB75E8}.wem"
      }
     ],
     "Events": [
@@ -2736,7 +2665,7 @@
     "Type": "Event",
     "GUID": "{2888D622-ACC1-4E53-9B37-9DE3109D4BAE}",
     "Language": "SFX",
-    "Hash": "{51389705-D70C-295C-0EBB-F9E76FC6B1E4}",
+    "Hash": "{E382407E-083D-DFC3-9ABA-61D7AC5B1A7E}",
     "ObjectPath": "BGM_Master",
     "ShortName": "BGM_Master",
     "Path": "Event/BGM_Master.bnk",
@@ -3284,7 +3213,7 @@
     "Type": "Event",
     "GUID": "{C5938E14-C57B-464F-ADF6-09F7B93EFFCD}",
     "Language": "SFX",
-    "Hash": "{D8344E54-C1D6-14B1-C7FB-61F49A4535C1}",
+    "Hash": "{FCAF5144-9D5E-F65E-E63C-8719B4E937B7}",
     "ObjectPath": "Poker_Chip_Collect",
     "ShortName": "Poker_Chip_Collect",
     "Path": "Event/Poker_Chip_Collect.bnk",
@@ -3296,7 +3225,7 @@
       "Location": "Loose",
       "ShortName": "Poker_Chip_Collect_3.wav",
       "Path": "Media/402992790.wem",
-      "CachePath": "D8/{D8F0AC6A-7381-95A5-5DA7-89A8E27AA3CE}.wem"
+      "CachePath": "CA/{CA0257B6-8C54-0EC1-301A-63FD8CBF6D8B}.wem"
      },
      {
       "Id": "851016046",
@@ -3305,7 +3234,7 @@
       "Location": "Loose",
       "ShortName": "Poker_Chip_Collect_1.wav",
       "Path": "Media/851016046.wem",
-      "CachePath": "37/{37176097-2B50-EF56-BF15-B2D6B3934379}.wem"
+      "CachePath": "41/{412F0267-03B2-25A3-B520-AE8D4C907029}.wem"
      },
      {
       "Id": "892472531",
@@ -3314,7 +3243,7 @@
       "Location": "Loose",
       "ShortName": "Poker_Chip_Collect_2.wav",
       "Path": "Media/892472531.wem",
-      "CachePath": "96/{969E981E-D306-EB39-4192-FF5DD5F3D51A}.wem"
+      "CachePath": "32/{321BF68F-CCA7-23D9-76EA-33427FC55F04}.wem"
      }
     ],
     "Events": [
@@ -3341,6 +3270,6 @@
     ]
    }
   ],
-  "FileHash": "{4152ABFD-EFDD-D4B9-82B0-DF35A142E475}"
+  "FileHash": "{F25FFE75-7739-4187-0D6C-690A830DCAA2}"
  }
 }

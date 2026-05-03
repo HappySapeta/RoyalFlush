@@ -100,9 +100,7 @@
 					<ChildrenList>
 						<Effect Name="Light_Expander" ID="{C7E71A3B-745F-47B0-8F31-276DD413F83C}" PluginName="Wwise Expander" CompanyID="0" PluginID="109" PluginType="3">
 							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="1.29"/>
-								<Property Name="Ratio" Type="Real32" Value="1"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="0"/>
+								<Property Name="Ratio" Type="Real32" Value="1.5"/>
 								<Property Name="Threshold" Type="Real32" Value="0"/>
 							</PropertyList>
 						</Effect>
@@ -130,13 +128,7 @@
 								<Property Name="DelayTime" Type="Real32" Value="1"/>
 							</PropertyList>
 						</Effect>
-						<Effect Name="Echoes_Linear" ID="{D20F3717-EBA2-4E3A-84F8-C8BD431563FB}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
-							<PropertyList>
-								<Property Name="DelayTime" Type="Real32" Value="0.011"/>
-								<Property Name="Feedback" Type="Real32" Value="99.5"/>
-								<Property Name="WetDryMix" Type="Real32" Value="58.5"/>
-							</PropertyList>
-						</Effect>
+						<Effect Name="Echoes_Linear" ID="{D20F3717-EBA2-4E3A-84F8-C8BD431563FB}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3"/>
 						<Effect Name="One_Tap_Half_Second" ID="{B8FE0D3B-7AAB-4344-89FE-177602B7BF19}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3"/>
 						<Effect Name="One_Tap_Quarter_Second" ID="{6BD2D67D-601A-45A6-AD4C-2C089078EBED}" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
 							<PropertyList>
@@ -721,83 +713,11 @@
 						</Effect>
 						<Effect Name="Medium_Room1" ID="{71B802A7-03E2-4998-B241-B2B84FE9DDFF}" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
 							<PropertyList>
-								<Property Name="DryLevel" Type="Real32" Value="-0.3"/>
-								<Property Name="HFRatio" Type="Real32" Value="4.7"/>
+								<Property Name="HFRatio" Type="Real32" Value="6"/>
 								<Property Name="NumberOfDelays" Type="int32" Value="12"/>
-								<Property Name="ReverbTime" Type="Real32" Value="1.8"/>
-								<Property Name="WetLevel" Type="Real32" Value="-31"/>
+								<Property Name="ReverbTime" Type="Real32" Value="2"/>
+								<Property Name="WetLevel" Type="Real32" Value="-30"/>
 							</PropertyList>
-							<ObjectLists>
-								<ObjectList Name="RTPC">
-									<RTPC Name="" ID="{14D8FC85-C494-4A24-B814-6AB9FDD95A89}" ShortID="977150214">
-										<PropertyList>
-											<Property Name="PropertyName" Type="string" Value="DryLevel"/>
-										</PropertyList>
-										<ReferenceList>
-											<Reference Name="ControlInput">
-												<ObjectRef Name="BGM_SingerLPF" ID="{FE06FD89-7160-493F-9313-81718E039CAA}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
-											</Reference>
-											<Reference Name="Curve">
-												<Custom>
-													<Curve Name="" ID="{17E101B7-1E45-46A6-8E78-979A8CA9977D}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-7E-05</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>-13.30519</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</Custom>
-											</Reference>
-										</ReferenceList>
-									</RTPC>
-									<RTPC Name="" ID="{60E3E3CE-7FAB-4D1E-A4B9-67C54257F2AF}" ShortID="463025919">
-										<PropertyList>
-											<Property Name="PropertyName" Type="string" Value="WetLevel"/>
-										</PropertyList>
-										<ReferenceList>
-											<Reference Name="ControlInput">
-												<ObjectRef Name="BGM_SingerLPF" ID="{FE06FD89-7160-493F-9313-81718E039CAA}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
-											</Reference>
-											<Reference Name="Curve">
-												<Custom>
-													<Curve Name="" ID="{CC01496F-9ACE-444B-8E1A-19A555077CE0}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-96.3000030517578</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>43.90009</XPos>
-																<YPos>2.74743</YPos>
-																<Flags>0</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>4.07115</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</Custom>
-											</Reference>
-										</ReferenceList>
-									</RTPC>
-								</ObjectList>
-							</ObjectLists>
 						</Effect>
 						<Effect Name="PA_Announcement1" ID="{65E0ACE4-B404-4485-87A4-5907277D9858}" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
 							<PropertyList>
@@ -849,129 +769,22 @@
 							<ChildrenList>
 								<Effect Name="Hall_Large_Bright" ID="{CB602948-2D1D-4977-A8D5-378184293E80}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
-										<Property Name="DecayTime" Type="Real32" Value="2.3"/>
+										<Property Name="DecayTime" Type="Real32" Value="4.9"/>
 										<Property Name="Density" Type="Real32" Value="70"/>
 										<Property Name="DryLevel" Type="Real32" Value="-2"/>
-										<Property Name="ERLevel" Type="Real32" Value="-96"/>
+										<Property Name="ERLevel" Type="Real32" Value="-23"/>
 										<Property Name="ERPattern" Type="int32" Value="15"/>
 										<Property Name="Filter1Freq" Type="Real32" Value="590"/>
 										<Property Name="Filter1InsertPos" Type="int32" Value="2"/>
 										<Property Name="Filter3Freq" Type="Real32" Value="8440"/>
 										<Property Name="Filter3Gain" Type="Real32" Value="3"/>
-										<Property Name="HFDamping" Type="Real32" Value="6.65"/>
+										<Property Name="HFDamping" Type="Real32" Value="1.6"/>
 										<Property Name="PreDelay" Type="Real32" Value="75"/>
 										<Property Name="Quality" Type="int32" Value="14"/>
-										<Property Name="ReverbLevel" Type="Real32" Value="-70"/>
+										<Property Name="ReverbLevel" Type="Real32" Value="-23"/>
 										<Property Name="RoomShape" Type="Real32" Value="55"/>
-										<Property Name="RoomSize" Type="Real32" Value="25"/>
+										<Property Name="RoomSize" Type="Real32" Value="49"/>
 									</PropertyList>
-									<ObjectLists>
-										<ObjectList Name="RTPC">
-											<RTPC Name="" ID="{F285FDD2-3C71-4E76-855F-03125C67F132}" ShortID="498889266">
-												<PropertyList>
-													<Property Name="PropertyName" Type="string" Value="DryLevel"/>
-												</PropertyList>
-												<ReferenceList>
-													<Reference Name="ControlInput">
-														<ObjectRef Name="BGM_SingerLPF" ID="{FE06FD89-7160-493F-9313-81718E039CAA}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
-													</Reference>
-													<Reference Name="Curve">
-														<Custom>
-															<Curve Name="" ID="{63180938-2B67-4C41-9061-E2F17C1E8026}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-7E-05</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>-4.43693</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</RTPC>
-											<RTPC Name="" ID="{F125F555-C708-4E9D-82A5-85289DA9C547}" ShortID="926902695">
-												<PropertyList>
-													<Property Name="PropertyName" Type="string" Value="ERLevel"/>
-												</PropertyList>
-												<ReferenceList>
-													<Reference Name="ControlInput">
-														<ObjectRef Name="BGM_SingerLPF" ID="{FE06FD89-7160-493F-9313-81718E039CAA}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
-													</Reference>
-													<Reference Name="Curve">
-														<Custom>
-															<Curve Name="" ID="{1B8D8B8A-58A7-46D2-A11C-C8204A5A154D}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-96.3</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>50.43227</XPos>
-																		<YPos>49.78617</YPos>
-																		<Flags>0</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>80</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</RTPC>
-											<RTPC Name="" ID="{8545A6B4-560C-44E9-9C89-3C9F66C93027}" ShortID="508469337">
-												<PropertyList>
-													<Property Name="PropertyName" Type="string" Value="ReverbLevel"/>
-												</PropertyList>
-												<ReferenceList>
-													<Reference Name="ControlInput">
-														<ObjectRef Name="BGM_SingerLPF" ID="{FE06FD89-7160-493F-9313-81718E039CAA}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
-													</Reference>
-													<Reference Name="Curve">
-														<Custom>
-															<Curve Name="" ID="{AF0D75F9-2134-4E6D-8766-F1364A147301}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-0.02813</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>50.1440922190202</XPos>
-																		<YPos>37.7883869236708</YPos>
-																		<Flags>0</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>43.78629</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</RTPC>
-										</ObjectList>
-									</ObjectLists>
 								</Effect>
 								<Effect Name="Hall_Medium_Bright" ID="{3C3845B2-C76E-4634-9108-83FA43A5A7BC}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
@@ -1428,90 +1241,18 @@
 										<Property Name="DecayTime" Type="Real32" Value="1.8"/>
 										<Property Name="Density" Type="Real32" Value="70"/>
 										<Property Name="Diffusion" Type="Real32" Value="46"/>
-										<Property Name="DryLevel" Type="Real32" Value="-1.3"/>
-										<Property Name="ERLevel" Type="Real32" Value="0"/>
+										<Property Name="ERLevel" Type="Real32" Value="-23"/>
 										<Property Name="Filter1Freq" Type="Real32" Value="590"/>
 										<Property Name="Filter3Freq" Type="Real32" Value="8440"/>
 										<Property Name="Filter3Gain" Type="Real32" Value="-4.5"/>
 										<Property Name="HFDamping" Type="Real32" Value="2.7"/>
-										<Property Name="PreDelay" Type="Real32" Value="0"/>
+										<Property Name="PreDelay" Type="Real32" Value="35"/>
 										<Property Name="Quality" Type="int32" Value="12"/>
-										<Property Name="ReverbLevel" Type="Real32" Value="-43"/>
+										<Property Name="ReverbLevel" Type="Real32" Value="-23"/>
 										<Property Name="RoomShape" Type="Real32" Value="55"/>
 										<Property Name="RoomSize" Type="Real32" Value="15"/>
-										<Property Name="StereoWidth" Type="Real32" Value="128"/>
+										<Property Name="StereoWidth" Type="Real32" Value="140"/>
 									</PropertyList>
-									<ObjectLists>
-										<ObjectList Name="RTPC">
-											<RTPC Name="" ID="{D1BA614F-5281-4C32-B7E2-E3515D6A9485}" ShortID="726060371">
-												<PropertyList>
-													<Property Name="PropertyName" Type="string" Value="DryLevel"/>
-												</PropertyList>
-												<ReferenceList>
-													<Reference Name="ControlInput">
-														<ObjectRef Name="UI_LowPass" ID="{6887D41A-E6D6-4546-AEE8-39D96C84F133}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
-													</Reference>
-													<Reference Name="Curve">
-														<Custom>
-															<Curve Name="" ID="{1F2D2526-5557-4EB9-A3A5-E9B3E4A8F8EF}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-96.3000030517578</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>0.001</XPos>
-																		<YPos>96.3</YPos>
-																		<Flags>0</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</RTPC>
-											<RTPC Name="" ID="{3D489790-D56C-445A-A5D6-9209B68435E8}" ShortID="438384757">
-												<PropertyList>
-													<Property Name="PropertyName" Type="string" Value="DryLevel"/>
-												</PropertyList>
-												<ReferenceList>
-													<Reference Name="ControlInput">
-														<ObjectRef Name="BGM_SingerLPF" ID="{FE06FD89-7160-493F-9313-81718E039CAA}" WorkUnitID="{E28F7B77-6672-4312-B55B-F2C7A3B6FB8A}"/>
-													</Reference>
-													<Reference Name="Curve">
-														<Custom>
-															<Curve Name="" ID="{D8495EF5-1BFB-4E39-A240-7A6DE6B31280}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-7E-05</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>-7.41323</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</RTPC>
-										</ObjectList>
-									</ObjectLists>
 								</Effect>
 								<Effect Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
