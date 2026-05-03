@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1812305438" Type="Event" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" Language="SFX" Hash="{3ED69605-0C39-6A08-8CE2-32CBAC93995B}">
+		<SoundBank Id="1812305438" Type="Event" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" Language="SFX" Hash="{60950BB2-1624-61E6-62CA-157C474ACC7E}">
 			<ObjectPath>BGM_Intro</ObjectPath>
 			<ShortName>BGM_Intro</ShortName>
 			<Path>Event/BGM_Intro.bnk</Path>
@@ -27,5 +27,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B055A4A6-E9D5-CA2A-B4A2-3E6F5B08ECF3}</FileHash>
+	<FileHash>{1B9A1A3A-0FCD-E02D-90BE-427FDFB1C33B}</FileHash>
 </SoundBanksInfo>

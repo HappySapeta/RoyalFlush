@@ -431,7 +431,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{58DFC220-ADAE-3234-3ABB-D2548ED7E52B}",
+    "Hash": "{AED9F888-FA9C-CFBD-1C12-A7BF364D4F24}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -679,6 +679,26 @@
         "GUID": "{02F0FC18-739D-440E-BB0E-498922295119}"
        }
       ]
+     },
+     {
+      "Id": "4063164037",
+      "Name": "BGM_Intro_Switch",
+      "ObjectPath": "\\States\\Default Work Unit\\BGM_Intro_Switch",
+      "GUID": "{20CDBBA3-B8D7-4329-A082-9F197C9D5A16}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM_Intro_Switch\\None",
+        "GUID": "{DBE23039-FC95-449D-8489-672A87CF4677}"
+       },
+       {
+        "Id": "1651971902",
+        "Name": "On",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM_Intro_Switch\\On",
+        "GUID": "{A8C70167-6CBC-48F9-AC93-8E19CE24A836}"
+       }
+      ]
      }
     ],
     "SwitchGroups": [
@@ -855,7 +875,7 @@
     "Type": "Event",
     "GUID": "{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}",
     "Language": "SFX",
-    "Hash": "{E5DB9E27-6DD3-7E5F-B197-A3F9D67908D2}",
+    "Hash": "{3B51537A-46B8-70D9-6D52-952EB09CFCE1}",
     "ObjectPath": "BGM_SingersTheme",
     "ShortName": "BGM_SingersTheme",
     "Path": "Event/BGM_SingersTheme.bnk",
@@ -1178,7 +1198,7 @@
     "Type": "Event",
     "GUID": "{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}",
     "Language": "SFX",
-    "Hash": "{3ED69605-0C39-6A08-8CE2-32CBAC93995B}",
+    "Hash": "{60950BB2-1624-61E6-62CA-157C474ACC7E}",
     "ObjectPath": "BGM_Intro",
     "ShortName": "BGM_Intro",
     "Path": "Event/BGM_Intro.bnk",
@@ -3321,6 +3341,6 @@
     ]
    }
   ],
-  "FileHash": "{0F55AA80-6E0F-9EB4-9FA2-E8E103D74C02}"
+  "FileHash": "{232CDA00-75F5-DF5E-C245-FBEC4386A4E3}"
  }
 }

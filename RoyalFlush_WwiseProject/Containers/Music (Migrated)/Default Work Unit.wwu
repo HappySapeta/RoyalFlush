@@ -3466,6 +3466,28 @@
 							</ObjectLists>
 						</MusicSegment>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="BGM_Intro_Switch" ID="{20CDBBA3-B8D7-4329-A082-9F197C9D5A16}"/>
+								<StateGroupInfo Name="" ID="{6C0F22C7-9708-4E63-92B2-73B2520BCEBD}" ShortID="709496716"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="None" ID="{DBE23039-FC95-449D-8489-672A87CF4677}"/>
+								<CustomState Name="" ID="{7C21A2E5-5C5B-48AF-9F89-A95754236863}" ShortID="897135496">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64" Value="-108"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="On" ID="{A8C70167-6CBC-48F9-AC93-8E19CE24A836}"/>
+								<CustomState Name="" ID="{155203FD-E267-48E3-A49C-9D245F0FC578}" ShortID="898821574"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 				</MusicPlaylistContainer>
 				<MusicSegment Name="Singers Theme" ID="{687D3DF7-3681-4FB2-83B1-1877E8C16A6A}" ShortID="330036684">
 					<PropertyList>

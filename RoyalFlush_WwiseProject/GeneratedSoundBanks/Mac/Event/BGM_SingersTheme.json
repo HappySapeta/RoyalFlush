@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{76DC57CA-7C2D-42F4-AA87-9377FC5DE51F}",
     "Language": "SFX",
-    "Hash": "{E5DB9E27-6DD3-7E5F-B197-A3F9D67908D2}",
+    "Hash": "{3B51537A-46B8-70D9-6D52-952EB09CFCE1}",
     "ObjectPath": "BGM_SingersTheme",
     "ShortName": "BGM_SingersTheme",
     "Path": "Event/BGM_SingersTheme.bnk",
@@ -51,6 +51,6 @@
     ]
    }
   ],
-  "FileHash": "{523DAC8F-C32B-6556-75FD-B27202CADD0D}"
+  "FileHash": "{8A4FC053-7251-7306-600F-9360A994E151}"
  }
 }

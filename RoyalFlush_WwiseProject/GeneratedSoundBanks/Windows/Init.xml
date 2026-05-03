@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{58DFC220-ADAE-3234-3ABB-D2548ED7E52B}">
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{AED9F888-FA9C-CFBD-1C12-A7BF364D4F24}">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -66,6 +66,12 @@
 						<State Id="970584711" Name="BGM_MasterLvl3" ObjectPath="\States\Default Work Unit\Music\BGM_MasterState\BGM_MasterLvl3" GUID="{02F0FC18-739D-440E-BB0E-498922295119}"/>
 					</States>
 				</StateGroup>
+				<StateGroup Id="4063164037" Name="BGM_Intro_Switch" ObjectPath="\States\Default Work Unit\BGM_Intro_Switch" GUID="{20CDBBA3-B8D7-4329-A082-9F197C9D5A16}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\BGM_Intro_Switch\None" GUID="{DBE23039-FC95-449D-8489-672A87CF4677}"/>
+						<State Id="1651971902" Name="On" ObjectPath="\States\Default Work Unit\BGM_Intro_Switch\On" GUID="{A8C70167-6CBC-48F9-AC93-8E19CE24A836}"/>
+					</States>
+				</StateGroup>
 			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="1368630905" Name="Foot_Steps" ObjectPath="\Switches\Default Work Unit\Foot_Steps" GUID="{061CA91F-4F6D-4E5E-A0E5-CBBFF6474DEA}">
@@ -79,5 +85,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B1009B59-1B4B-100D-AD55-C59F88BFA792}</FileHash>
+	<FileHash>{E879FA9B-4573-63B3-3915-493867E91905}</FileHash>
 </SoundBanksInfo>

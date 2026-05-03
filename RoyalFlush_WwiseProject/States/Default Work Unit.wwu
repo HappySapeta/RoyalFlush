@@ -51,6 +51,12 @@
 						</StateGroup>
 					</ChildrenList>
 				</Folder>
+				<StateGroup Name="BGM_Intro_Switch" ID="{20CDBBA3-B8D7-4329-A082-9F197C9D5A16}">
+					<ChildrenList>
+						<State Name="None" ID="{DBE23039-FC95-449D-8489-672A87CF4677}"/>
+						<State Name="On" ID="{A8C70167-6CBC-48F9-AC93-8E19CE24A836}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>
