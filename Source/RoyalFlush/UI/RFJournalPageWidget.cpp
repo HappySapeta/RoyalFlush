@@ -61,6 +61,7 @@ void URFJournalPageWidget::RemoveClue(const FRFClue& TargetClue)
 			if (ClueWidget->GetData() == TargetClue)
 			{
 				UniformGridPanel->RemoveChild(ClueWidget);
+				Clues.Remove(TargetClue);
 				return;
 			}
 		}
