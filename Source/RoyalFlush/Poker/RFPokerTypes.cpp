@@ -4,7 +4,7 @@
 #include "Algo/RandomShuffle.h"
 #include "Kismet/KismetMathLibrary.h"
 
-constexpr int NUM_TRIALS = 5;
+constexpr int NUM_TRIALS = 30;
 
 URFCards::URFCards()
 {
@@ -21,6 +21,11 @@ void URFCards::SetSpawnData(const UDataTable* Data)
 	TArray<FRFPokerHandStruct*> Rows;
 	Data->GetAllRows(TEXT(""), Rows);
 	
+	PlayerChances.Empty();
+	NPCChances.Empty();
+	PlayerChanceUpperLimit = 0.0f;
+	NPCChanceUpperLimit = 0.0f;
+	
 	for (const FRFPokerHandStruct* Row : Rows)
 	{
 		PlayerChances.Add(TRange<float>(PlayerChanceUpperLimit, PlayerChanceUpperLimit + Row->PlayerChance));
@@ -34,13 +39,11 @@ void URFCards::SetSpawnData(const UDataTable* Data)
 void URFCards::Shuffle()
 {
 	Algo::RandomShuffle(Cards);
-	DebugLogCards();
 }
 
 int URFCards::DrawCard()
 {
 	int NewCard = Cards.Pop(EAllowShrinking::Yes);
-	DebugLogCards();
 	return NewCard;
 }
 
@@ -71,8 +74,6 @@ void URFCards::DrawHand(const TArray<int>& Hand)
 	{
 		DrawCard(Card);
 	}
-	
-	DebugLogCards();
 }
 
 TArray<int> URFCards::NewHand(const EPokerPlayer Player)
@@ -114,6 +115,9 @@ TArray<int> URFCards::NewHand(const EPokerPlayer Player)
 				{
 					continue;
 				}
+				const FString PlayerName = Player == EPokerPlayer::NPC ? TEXT("Opponent") : TEXT("Player");
+				UE_LOG(LogTemp, Warning, TEXT("%s received %s hand."), *PlayerName, *Row->Hand);
+				
 				DrawHand(PotentialCards);
 				return PotentialCards;
 			} 
@@ -127,30 +131,34 @@ TArray<int> URFCards::NewHand(const EPokerPlayer Player)
 		DefaultHand.Push(DrawCard());
 	}
 	
-	UE_LOG(LogTemp, Warning, TEXT("Creating default hand."));
+	const FString PlayerName = Player == EPokerPlayer::NPC ? TEXT("Opponent") : TEXT("Player");
+	UE_LOG(LogTemp, Warning, TEXT("%s received default hand."), *PlayerName);
 	return DefaultHand;
 }
 
 void URFCards::Reset()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Resetting cards."));
 	LastHandEndIndex = -1;
 	Cards.Init(0, NUM_PLAYING_CARDS);
 	for (int Index = 0; Index < NUM_PLAYING_CARDS; ++Index)
 	{
 		Cards[Index] = Index;
 	}
+	
+	DebugLogCards();
 }
 
 void URFCards::DebugLogCards()
 {
-	//FString CardNumbers;
-	//for (int Card : Cards)
-	//{
-	//	CardNumbers += FString::FromInt(Card);
-	//	CardNumbers += ", ";
-	//}
-	//
-	//UE_LOG(LogTemp, Warning, TEXT("Cards : %s"), *CardNumbers);
+	FString CardNumbers;
+	for (int Card : Cards)
+	{
+		CardNumbers += FString::FromInt(Card);
+		CardNumbers += ", ";
+	}
+	
+	UE_LOG(LogTemp, Warning, TEXT("Cards : %s"), *CardNumbers);
 }
 
 void URFCards::ReplaceDiscardedCards(const TArray<int> CardIndicesToBeDiscarded, TArray<int>& TargetHand)
@@ -164,8 +172,6 @@ void URFCards::ReplaceDiscardedCards(const TArray<int> CardIndicesToBeDiscarded,
 		
 		TargetHand[CardIndex] = DrawCard();
 	}
-	
-	DebugLogCards();
 }
 
 const TArray<int>& URFHand::GetCards() const
@@ -190,6 +196,11 @@ bool URFHand::Equals(const URFHand* Other) const
 	}
 	
 	return true;
+}
+
+void URFPokerStatus::ClearStatus()
+{
+	StatusText = FText::GetEmpty();
 }
 
 void URFPokerStatus::SetStatus(const FString Text)

@@ -28,12 +28,14 @@ void URFPokerState::ExecuteWithDelay(FTimerDelegate Callback, const float Delay)
 	const AActor* OwningActor = Cast<AActor>(Blackboard->GetValuesAsObject(OwningActorKey));
 	FTimerManager& TimerManager = OwningActor->GetWorld()->GetTimerManager();
 	FTimerHandle TimerHandle;
-	TimerManager.SetTimer(TimerHandle, Callback, Delay, false);
+	TimerManager.SetTimer(TimerHandle, Callback, Delay / SpeedUpFactor, false);
 }
 
 void URFPokerBeginState::OnActivate()
 {
 	Super::OnActivate();
+	
+	CurrentStatusObject->ClearStatus();
 	
 	Blackboard->SetValuesAsInt(PoolMoneyKey, InitialPoolMoney);
 	Blackboard->SetValuesAsBool(GameEndStatusKey, false);
@@ -47,6 +49,11 @@ void URFPokerBeginState::OnActivate()
 	Blackboard->SetValuesAsInt(RoundNumKey, 0);
 	
 	BP_OnActivate();
+	
+	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
+	{
+		EndState();
+	}), EndStateDelay);
 }
 
 void URFPokerDealingState::OnActivate()
@@ -96,8 +103,8 @@ void URFPokerDealingState::OnActivate()
 			
 			Blackboard->SetValuesAsObject(HandKey, HandObject);
 		};
-		DrawHand(NPCHandKey, EPokerPlayer::NPC, NPCDebugHand);
 		DrawHand(HumanPlayerHandKey, EPokerPlayer::Human, PlayerDebugHand);
+		DrawHand(NPCHandKey, EPokerPlayer::NPC, NPCDebugHand);
 	}
 	
 	// End this state with a delay.
@@ -570,14 +577,17 @@ void URFEndOfRoundState::OnActivate()
 			}
 
 			Blackboard->SetValuesAsInt(WinningPlayerKey, static_cast<int>(WinningPlayer));
+			ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
+			{
+				Blackboard->SetValuesAsBool(GameEndStatusKey, true);
+				EndState();
+			}), EndGameDelay);
+		}
+		else
+		{
+			EndState();
 		}
 	}), DeclarationDelay);
-	
-	ExecuteWithDelay(FTimerDelegate::CreateLambda([this]()
-	{
-		Blackboard->SetValuesAsBool(GameEndStatusKey, true);
-		EndState();
-	}), EndGameDelay);
 }
 
 TArray<int> URFPokerDealingState::DebugDealHand(const int RowIndex)
