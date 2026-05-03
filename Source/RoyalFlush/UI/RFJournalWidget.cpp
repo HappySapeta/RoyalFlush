@@ -49,12 +49,19 @@ void URFJournalWidget::HandleClueStaged(FRFClue ClueData)
 	{
 		if (URFJournalPageWidget* Page = Cast<URFJournalPageWidget>(ChildWidget))
 		{
+			if (!Page->ContainsClue(ClueData))
+			{
+				continue;
+			}
+			
 			CurrentClues.Remove(ClueData);
 			Page->RemoveClue(ClueData);
 			
 			URFJournalClueWidget* ClueWidget = Cast<URFJournalClueWidget>(CreateWidget(this, ClueWidgetClass));
 			ClueWidget->SetData(ClueData);
 			CluesContainer->AddChild(ClueWidget);
+			
+			break;
 		}
 	}
 }

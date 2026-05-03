@@ -6,6 +6,11 @@ URFJournalComponent::URFJournalComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
+int URFJournalComponent::GetNumCluesCollected() const
+{
+	return Clues.Num();
+}
+
 void URFJournalComponent::AddClue(FRFClue ClueData)
 {
 	if (!Clues.Contains(ClueData))
