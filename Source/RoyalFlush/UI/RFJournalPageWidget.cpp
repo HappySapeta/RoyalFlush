@@ -9,6 +9,13 @@
 
 void URFJournalPageWidget::AddClue(const FRFClue& ClueItem)
 {
+	if (Clues.Contains(ClueItem))
+	{
+		return;
+	}
+	
+	Clues.Add(ClueItem);
+	
 	URFJournalClueWidget* ClueWidget = Cast<URFJournalClueWidget>(CreateWidget(this, ClueWidgetClass));
 	ClueWidget->SetData(ClueItem);
 	
@@ -42,7 +49,7 @@ void URFJournalPageWidget::AddClue(const FRFClue& ClueItem)
 
 bool URFJournalPageWidget::CanContainMoreClues()
 {
-	return UniformGridPanel->GetChildrenCount() < ClueCapacity;
+	return UniformGridPanel->GetChildrenCount() < ClueCapacity; 
 }
 
 void URFJournalPageWidget::RemoveClue(const FRFClue& TargetClue)
@@ -58,4 +65,9 @@ void URFJournalPageWidget::RemoveClue(const FRFClue& TargetClue)
 			}
 		}
 	}
+}
+
+bool URFJournalPageWidget::ContainsClue(const FRFClue& ClueItem)
+{
+	return Clues.Contains(ClueItem);
 }

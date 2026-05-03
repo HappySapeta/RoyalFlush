@@ -21,6 +21,9 @@ public:
 	URFJournalComponent();
 	
 	UFUNCTION(BlueprintCallable)
+	int GetNumCluesCollected() const;
+	
+	UFUNCTION(BlueprintCallable)
 	void AddClue(FRFClue ClueData);
 	
 	UFUNCTION(BlueprintCallable)

@@ -27,6 +27,9 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	void RemoveClue(const FRFClue& TargetClue);
+	
+	UFUNCTION(BlueprintCallable)
+	bool ContainsClue(const FRFClue& ClueItem);
 
 protected:
 	
@@ -51,4 +54,5 @@ protected:
 private:
 	
 	TMap<FString, TPair<int, int>> ClueLocations;
+	TArray<FRFClue> Clues;
 };
