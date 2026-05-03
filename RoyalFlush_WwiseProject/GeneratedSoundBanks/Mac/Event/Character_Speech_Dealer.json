@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{95D0FF01-7A2C-46A8-8828-0207A2A05BFA}",
     "Language": "SFX",
-    "Hash": "{B1EC2B00-5263-D04F-3526-C8BEB4B79080}",
+    "Hash": "{223983E8-EA10-1264-3FB7-C5CF0D951205}",
     "ObjectPath": "Character_Speech_Dealer",
     "ShortName": "Character_Speech_Dealer",
     "Path": "Event/Character_Speech_Dealer.bnk",
@@ -140,6 +140,6 @@
     ]
    }
   ],
-  "FileHash": "{52FEC9B9-1D45-B764-FE23-0C4813EF0A2E}"
+  "FileHash": "{9677C5E2-C7D4-B136-8FC5-F231165CBCA5}"
  }
 }
