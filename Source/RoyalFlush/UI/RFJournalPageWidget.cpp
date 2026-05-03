@@ -64,7 +64,7 @@ void URFJournalPageWidget::RemoveClue(const FRFClue& TargetClue)
 				UniformGridPanel->RemoveChild(ClueWidget);
 				Clues.Remove(TargetClue);
 				
-				if (UUniformGridSlot* GridSlot = Cast<UUniformGridSlot>(Child))
+				if (UUniformGridSlot* GridSlot = Cast<UUniformGridSlot>(Child->Slot))
 				{
 					AvailableSlots.Push({GridSlot->GetRow(), GridSlot->GetColumn()});
 				}
