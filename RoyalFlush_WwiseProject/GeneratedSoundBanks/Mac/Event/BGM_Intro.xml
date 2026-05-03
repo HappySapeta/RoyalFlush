@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1812305438" Type="Event" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" Language="SFX" Hash="{5DB0CF4B-41CC-A5EC-6F15-B2AD5159CE11}">
+		<SoundBank Id="1812305438" Type="Event" GUID="{5A7EB4A7-D9E9-473C-AF6D-081DB357408E}" Language="SFX" Hash="{60950BB2-1624-61E6-62CA-157C474ACC7E}">
 			<ObjectPath>BGM_Intro</ObjectPath>
 			<ShortName>BGM_Intro</ShortName>
 			<Path>Event/BGM_Intro.bnk</Path>
@@ -27,5 +27,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{33459D2F-8D71-AB8F-7EC2-38965F6A4FDB}</FileHash>
+	<FileHash>{1E2E47CB-4224-DC78-A11C-1EFED2E998F3}</FileHash>
 </SoundBanksInfo>

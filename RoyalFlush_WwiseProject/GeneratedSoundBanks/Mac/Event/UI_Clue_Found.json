@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{10128118-2F86-4F90-B9AB-7A9DB91CFF8C}",
     "Language": "SFX",
-    "Hash": "{294094E4-1C1C-461C-E308-14E3CE397332}",
+    "Hash": "{6EB34C61-AD22-8E27-9C79-446A363A00B9}",
     "ObjectPath": "UI_Clue_Found",
     "ShortName": "UI_Clue_Found",
     "Path": "Event/UI_Clue_Found.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "UI_Clue_Found.wav",
       "Path": "Media/757585217.wem",
-      "CachePath": "19/{19791724-BE58-1924-C851-D552A7EB75E8}.wem"
+      "CachePath": "CA/{CAA2C19B-3567-D0DB-CA45-2B7F8D455C22}.wem"
      }
     ],
     "Events": [
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{176A1E4E-FE3B-1EE3-B068-05CF1645962A}"
+  "FileHash": "{084798C7-84F9-7BAE-07DE-00993BFA8117}"
  }
 }

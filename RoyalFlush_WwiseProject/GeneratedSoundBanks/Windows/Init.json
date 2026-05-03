@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{FDC0B6F3-CC45-225E-3425-3F956320F53F}",
+    "Hash": "{AED9F888-FA9C-CFBD-1C12-A7BF364D4F24}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -49,6 +49,12 @@
      }
     ],
     "GameParameters": [
+     {
+      "Id": "1111042366",
+      "Name": "BGM_SingerLPF",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\BGM_SingerLPF",
+      "GUID": "{FE06FD89-7160-493F-9313-81718E039CAA}"
+     },
      {
       "Id": "3636347407",
       "Name": "UI_LowPass",
@@ -252,6 +258,26 @@
         "GUID": "{02F0FC18-739D-440E-BB0E-498922295119}"
        }
       ]
+     },
+     {
+      "Id": "4063164037",
+      "Name": "BGM_Intro_Switch",
+      "ObjectPath": "\\States\\Default Work Unit\\BGM_Intro_Switch",
+      "GUID": "{20CDBBA3-B8D7-4329-A082-9F197C9D5A16}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM_Intro_Switch\\None",
+        "GUID": "{DBE23039-FC95-449D-8489-672A87CF4677}"
+       },
+       {
+        "Id": "1651971902",
+        "Name": "On",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM_Intro_Switch\\On",
+        "GUID": "{A8C70167-6CBC-48F9-AC93-8E19CE24A836}"
+       }
+      ]
      }
     ],
     "SwitchGroups": [
@@ -290,6 +316,6 @@
     ]
    }
   ],
-  "FileHash": "{F0AB1CD3-E925-A8D8-EBAB-49CAEF39968B}"
+  "FileHash": "{7C762126-87F3-97BE-90FE-D9FDA6026962}"
  }
 }
