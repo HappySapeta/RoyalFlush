@@ -24,9 +24,15 @@ void URFJournalComponent::AddClue(FRFClue ClueData)
 
 void URFJournalComponent::StageClue(FRFClue ClueData)
 {
+	if (NumStagedClues == MaxNumStagedClues)
+	{
+		return;
+	}
+	
 	const int Index = Clues.Find(ClueData);
 	if (Clues.IsValidIndex(Index))
 	{
+		++NumStagedClues;
 		Clues[Index].IsStaged = true;
 		OnClueStagedEvent.Broadcast(Clues[Index]);
 	}
@@ -37,6 +43,7 @@ void URFJournalComponent::UnStageClue(FRFClue ClueData)
 	const int Index = Clues.Find(ClueData);
 	if (Clues.IsValidIndex(Index))
 	{
+		--NumStagedClues;
 		Clues[Index].IsStaged = false;
 		OnClueUnStagedEvent.Broadcast(Clues[Index]);
 	}
