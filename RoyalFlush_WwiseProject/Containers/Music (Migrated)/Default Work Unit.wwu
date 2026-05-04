@@ -3492,11 +3492,6 @@
 				<MusicSegment Name="Singers Theme" ID="{687D3DF7-3681-4FB2-83B1-1877E8C16A6A}" ShortID="330036684">
 					<PropertyList>
 						<Property Name="EndPosition" Type="Real64" Value="304390.243902439"/>
-						<Property Name="PlaybackSpeed" Type="Real64">
-							<ValueList>
-								<Value>4</Value>
-							</ValueList>
-						</Property>
 						<Property Name="Tempo" Type="Real64" Value="82"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
