@@ -34,7 +34,10 @@ public:
 	}
 	
 protected:
-
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnGameEnded();
+	
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void StopPokerGame();
 
@@ -42,6 +45,9 @@ protected:
 	void OnPokerGameEnded(const FGameplayTag& Key);
 	
 	virtual void BeginPlay() override;
+
+	UFUNCTION(BlueprintCallable)
+	void Debug_InvokeEndings(bool bWin);
 	
 private:
 	

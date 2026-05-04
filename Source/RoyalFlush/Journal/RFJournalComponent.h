@@ -54,9 +54,15 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FOnCluesSubmittedDelegate OnCluesSubmittedEvent;
 
+protected:
+	
+	UPROPERTY(EditDefaultsOnly)
+	int MaxNumStagedClues = 6;
+	
 private:
 	
 	UPROPERTY(VisibleAnywhere)
 	TArray<FRFClue> Clues;
 	
+	int NumStagedClues = 0;
 };
