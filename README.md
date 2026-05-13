@@ -9,3 +9,6 @@
 4. Open *RoyalFlush.uproject*.
    Confirm rebuilding modules if prompted.
    If the engine displays a warning about missing modules, proceed without installing the modules if that is an option.
+
+#### Gameplay Video
+https://github.com/user-attachments/assets/cb49653d-b963-4e67-bbc6-8ac83eee19d2
